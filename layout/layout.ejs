@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- partial('_partial/header') %>
+  </head>
+  <body>
+    <%- partial('_partial/nav') %>
+    <div id="post">
+      <div id="pjax">
+        <%- body %>
+        <p id="copyright">Powered by <a href="http://hexo.io" target="_blank">HEXO</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Hosted on <a href="https://pages.github.com" target="_blank">Github</a></p>
+      </div>
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div>
+    <%- partial('_partial/footer') %>
+  </body>
+</html>

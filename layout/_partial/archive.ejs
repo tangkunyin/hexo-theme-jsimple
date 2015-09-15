@@ -1,0 +1,5 @@
+<% if (pagination == 0){ %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('post') %>
+  <% }) %>
+<% } %>
