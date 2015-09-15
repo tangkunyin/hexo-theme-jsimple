@@ -1,0 +1,33 @@
+<aside id="sidebar">
+  <nav id="tags">
+    <a href="/index.html" id="avatar" style="background-image:url(<%= theme.avatar %>)"></a>
+
+    <ul id="tags__ul">
+      <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
+      <% site.categories.each(function(item){ %>
+      <li id="<%= item.title %>" class="tags__li tags-btn"><%= item.title %></li>
+      <% }); %>
+    </ul>
+
+    <div id="tags__bottom">
+      <a href="mailto:tangkunyin@shuoit.net" id="icon-email" class="tags-btn fontello"></a>
+      <a href="/pages/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+    </div>
+  </nav> <!-- end #tags -->
+
+  <div id="posts-list">
+    <form action="" id="search-form">
+      <a href="/index.html" id="mobile-avatar" style="background-image:url(<%= theme.avatar %>)"></a>
+      <!-- NOTE: input field is disabled by default -->
+      <input id="search-input" type="text" placeholder="戳一下不会怀孕">
+    </form>
+
+    <nav id="pl__container">
+      <% page.posts.each(function(item){ %>
+      <a class="<%= item.categorie %> pl__all" href="<%- url_for(item.path) %>"><span class="pl__circle"></span><span
+                class="pl__title"><%= item.title%></span><span class="pl__date"><%= date(item.date, item_format)
+          %></span></a>
+      <% }); %>
+    </nav>
+  </div> <!-- end #posts-list -->
+</aside> <!-- end #sidebar -->

@@ -1,0 +1,6 @@
+<article id="post__content">
+  <h1 id="post__title" data-identifier="<%= date(post.date, date_format) %>"><%= post.title %></h1>
+  <%- post.content %>
+</article>
+<%- partial('share') %>
+<%- partial('disqus') %>
