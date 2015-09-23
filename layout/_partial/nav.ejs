@@ -23,10 +23,9 @@
     </form>
 
     <nav id="pl__container">
-      <% page.posts.each(function(item){ %>
+      <% site.posts.each(function(item){ %>
       <a class="<%= item.categorie %> pl__all" href="<%- url_for(item.path) %>"><span class="pl__circle"></span><span
-                class="pl__title"><%= item.title%></span><span class="pl__date"><%= date(item.date, item_format)
-          %></span></a>
+                class="pl__title"><%= item.title%></span><span class="pl__date"><%= date(item.date) %></span></a>
       <% }); %>
     </nav>
   </div> <!-- end #posts-list -->
