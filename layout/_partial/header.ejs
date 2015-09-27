@@ -18,7 +18,7 @@ if (is_archive()){
 }
 %>
 <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
-<meta name="author" content="{{ site.author.name }}">
+<meta name="author" content="<%= theme.author %>">
 <%
    var keywords;
    if(page.keywords){
