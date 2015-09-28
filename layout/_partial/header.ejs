@@ -2,22 +2,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 <%
-var title = page.title;
-if (is_archive()){
-  title = 'Archives';
-
-  if (is_month()){
-    title += ': ' + page.year + '/' + page.month;
-  } else if (is_year()){
-    title += ': ' + page.year;
-  }
-} else if (is_category()){
-  title = 'Category: ' + page.category;
-} else if (is_tag()){
-  title = 'Tag: ' + page.tag;
-}
+    var title;
+    if(is_home()){
+        title = config.title + ' - ' + config.subtitle;
+    }else if(is_archive()){
+      title = 'Archives';
+      if (is_month()){
+        title += ': ' + page.year + '/' + page.month;
+      } else if (is_year()){
+        title += ': ' + page.year;
+      }
+    } else if (is_category()){
+      title = 'Category: ' + page.category;
+    } else if (is_tag()){
+      title = 'Tag: ' + page.tag;
+    }else{
+        title = page.title;
+    }
 %>
-<title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+<title><%= title %></title>
 <meta name="author" content="<%= theme.author %>">
 <%
    var keywords;
