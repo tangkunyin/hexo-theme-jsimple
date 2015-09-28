@@ -1,9 +1,7 @@
-# contactLinks
-
-contactLink:
-  github: "http://github.com/tangkunyin"
-  weibo: "http://weibo.com/tangkunyin"
-  mail: "mailto://tangkunyin@shuoit.net"
+# 社交链接
+github: "http://github.com/tangkunyin"
+wechat: "mailto://tangkunyin@shuoit.net"
+weibo: "http://weibo.com/tangkunyin"
 
 #rss: /atom.xml
 

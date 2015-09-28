@@ -188,12 +188,12 @@ a {
 #icon-email {
   border-right: 1px solid #3c4149; }
   #icon-email:before {
-    content: "\e800"; }
+    content: "\e808"; }
 
 #icon-feed {
   border-left: 1px solid #525965; }
   #icon-feed:before {
-    content: "\e802"; }
+    content: "\e814"; }
 
 .tags-btn {
   color: #a6a6a7;
@@ -262,8 +262,7 @@ a {
   -moz-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
-  appearance: none;
-  cursor: not-allowed; }
+  appearance: none; }
   #search-input::-webkit-input-placeholder {
     color: #cbcbcb;
     font-style: italic; }
@@ -509,7 +508,7 @@ iframe {
   display: block;
   overflow: hidden; }
   .post__toc-li:before {
-    content: "\e806";
+    content: "\e812";
     margin-right: 5px; }
   .post__toc-li > a:hover {
     color: #2eb695; }
@@ -562,26 +561,26 @@ iframe {
     #post__share > .fontello:hover, #post__share > .post__toc-li:hover:before {
       box-shadow: 0 0 0 2px rgba(125, 139, 153, 0.15); }
 
-#icon-twitter {
+#icon-github {
   margin-left: -90px; }
-  #icon-twitter:hover {
+  #icon-github:hover {
     color: #4099ff; }
-  #icon-twitter:before {
-    content: "\e805"; }
+  #icon-github:before {
+    content: "\e804"; }
 
-#icon-cc {
+#icon-wechat {
   margin-left: -20px; }
-  #icon-cc:hover {
+  #icon-wechat:hover {
     color: #f8ce5e; }
-  #icon-cc:before {
-    content: "\e803"; }
+  #icon-wechat:before {
+    content: "\e800"; }
 
 #icon-weibo {
   margin-left: 50px; }
   #icon-weibo:hover {
     color: #d40220; }
   #icon-weibo:before {
-    content: "\e804"; }
+    content: "\e801"; }
 
 #disqus_thread {
   padding: 30px 0;
@@ -673,7 +672,7 @@ iframe {
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: block; }
   #icon-arrow:before {
-    content: "\e801";
+    content: "\e80C";
     margin-left: -1px;
     font-size: 20px;
     line-height: 1; }

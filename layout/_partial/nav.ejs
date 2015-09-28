@@ -16,12 +16,10 @@
   </nav> <!-- end #tags -->
 
   <div id="posts-list">
-    <form action="" id="search-form">
-      <a href="/index.html" id="mobile-avatar" style="background-image:url(<%= theme.avatar %>)"></a>
-      <!-- NOTE: input field is disabled by default -->
-      <input id="search-input" type="text" placeholder="戳一下不会怀孕">
+    <form action="https://www.baidu.com/s?wd=site:shuoit.net" id="search-form" target="_blank">
+      <a href="/" id="mobile-avatar" style="background-image:url(<%= theme.avatar %>)"></a>
+      <input id="search-input" type="text" placeholder="戳一下不会怀孕" />
     </form>
-
     <nav id="pl__container">
       <% site.posts.each(function(item){ %>
       <a class="<%= item.categorie %> pl__all" href="<%- url_for(item.path) %>"><span class="pl__circle"></span><span
