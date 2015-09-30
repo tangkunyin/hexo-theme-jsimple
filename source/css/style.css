@@ -1,11 +1,3 @@
-/*!--------------------------------*\
-   3-Ghost Theme
-   @author Peiwen Lu (P233)
-   https://github.com/P233/3-Ghost
-\*---------------------------------*/
-/*---------------------------------*\
-   Fonts
-\*---------------------------------*/
 @font-face {
   font-family: "fontello";
   src: url("../font/fontello.eot");
@@ -184,6 +176,42 @@ a {
     text-align: center;
     border-top: 1px solid #525965;
     float: left; }
+
+#post__share {
+  height: 21px;
+  margin-top: 2.5em;
+  margin-bottom: 19px;
+  border-bottom: 2px solid rgba(229, 232, 236, 0.5);
+  position: relative; }
+#post__share > .fontello, #post__share > .post__toc-li:before {
+  display: block;
+  width: 40px;
+  height: 40px;
+  color: #7d8b99;
+  font-size: 20px;
+  text-align: center;
+  line-height: 36px;
+  background: white;
+  border: 2px solid rgba(229, 232, 236, 0.5);
+  box-shadow: 0 0 7px 7px transparent;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transition: color .35s, box-shadow .35s;
+  -moz-transition: color .35s, box-shadow .35s;
+  -ms-transition: color .35s, box-shadow .35s;
+  -o-transition: color .35s, box-shadow .35s;
+  transition: color .35s, box-shadow .35s; }
+#post__share > .fontello:hover, #post__share > .post__toc-li:hover:before {
+  box-shadow: 0 0 0 2px rgba(125, 139, 153, 0.15); }
+
+#icon-heart {
+  margin-left: -20px; }
+#icon-heart:hover {
+  color: #CD3700; }
+#icon-heart:before {
+  content: "\e809"; }
+
 
 #icon-github {
   border-right: 1px solid #3c4149; }
@@ -508,7 +536,7 @@ iframe {
   display: block;
   overflow: hidden; }
   .post__toc-li:before {
-    content: "\e801";
+    content: "\E80A";
     margin-right: 5px; }
   .post__toc-li > a:hover {
     color: #2eb695; }
@@ -859,15 +887,6 @@ iframe {
   -o-animation: spin 400ms linear infinite;
   animation: spin 400ms linear infinite; }
 
-/*!-------------------------------------
- * Syntax Colours
- * https://gist.github.com/edwardhotchkiss/2005058
- *
- * Theme based on prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
- * @author Tim  Shedor
- * ------------------------------------- */
-/*! Modified by Peiwen Lu @ 30 Nov 2013 */
-/* Code blocks */
 .highlight {
   margin: 1.715em 0; }
 

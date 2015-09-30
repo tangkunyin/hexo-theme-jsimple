@@ -108,5 +108,8 @@ function afterPjax() {
       });
     });
   });
+
+
+
 }afterPjax();
 
