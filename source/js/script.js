@@ -109,7 +109,35 @@ function afterPjax() {
     });
   });
 
-
+  // Lazy Loading Share and DuoShuo
+  var ds_loaded = false,
+      top = $('#post__share').offset().top;
+  window._bd_share_config={
+    "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},
+    "share":{"bdSize":16},"image":{"viewList":["weixin","qzone","tsina","tqq","bdhome"],"viewText":"分享到：","viewSize":"24"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","qzone","tsina","tqq","bdhome"]}
+  };
+  var ds_shortname = $('.ds-thread').attr('name');
+  var duoshuoQuery = {short_name:ds_shortname};
+  function check() {
+    if ( !ds_loaded && container.scrollTop() + container.height() > top ) {
+      //loading baiduShare
+      $.ajax({
+        type: 'GET',
+        url: 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5),
+        dataType: 'script',
+        cache: true
+      });
+      //loading duoshuo
+      $.ajax({
+        type: 'GET',
+        url: (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js',
+        dataType: 'script',
+        cache: true
+      });
+      ds_loaded = true;
+    }
+  }check();
+  container.scroll(check);
 
 }afterPjax();
 
