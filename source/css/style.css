@@ -188,12 +188,12 @@ a {
 #icon-github {
   border-right: 1px solid #3c4149; }
   #icon-github:before {
-    content: "\e804"; }
+    content: "\e802"; }
 
 #icon-feed {
   border-left: 1px solid #525965; }
   #icon-feed:before {
-    content: "\e814"; }
+    content: "\e806"; }
 
 .tags-btn {
   color: #a6a6a7;
@@ -508,7 +508,7 @@ iframe {
   display: block;
   overflow: hidden; }
   .post__toc-li:before {
-    content: "\e812";
+    content: "\e801";
     margin-right: 5px; }
   .post__toc-li > a:hover {
     color: #2eb695; }
@@ -623,7 +623,7 @@ iframe {
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   display: block; }
   #icon-arrow:before {
-    content: "\e80C";
+    content: "\e800";
     margin-left: -1px;
     font-size: 20px;
     line-height: 1; }
