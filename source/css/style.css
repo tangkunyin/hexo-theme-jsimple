@@ -185,10 +185,10 @@ a {
     border-top: 1px solid #525965;
     float: left; }
 
-#icon-email {
+#icon-github {
   border-right: 1px solid #3c4149; }
-  #icon-email:before {
-    content: "\e808"; }
+  #icon-github:before {
+    content: "\e804"; }
 
 #icon-feed {
   border-left: 1px solid #525965; }
@@ -533,56 +533,7 @@ iframe {
   -o-animation: flash .6s;
   animation: flash .6s; }
 
-#post__share {
-  height: 21px;
-  margin-top: 2.5em;
-  margin-bottom: 19px;
-  border-bottom: 2px solid rgba(229, 232, 236, 0.5);
-  position: relative; }
-  #post__share > .fontello, #post__share > .post__toc-li:before {
-    display: block;
-    width: 40px;
-    height: 40px;
-    color: #7d8b99;
-    font-size: 20px;
-    text-align: center;
-    line-height: 36px;
-    background: white;
-    border: 2px solid rgba(229, 232, 236, 0.5);
-    box-shadow: 0 0 7px 7px transparent;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    -webkit-transition: color .35s, box-shadow .35s;
-    -moz-transition: color .35s, box-shadow .35s;
-    -ms-transition: color .35s, box-shadow .35s;
-    -o-transition: color .35s, box-shadow .35s;
-    transition: color .35s, box-shadow .35s; }
-    #post__share > .fontello:hover, #post__share > .post__toc-li:hover:before {
-      box-shadow: 0 0 0 2px rgba(125, 139, 153, 0.15); }
-
-#icon-github {
-  margin-left: -90px; }
-  #icon-github:hover {
-    color: #4099ff; }
-  #icon-github:before {
-    content: "\e804"; }
-
-#icon-wechat {
-  margin-left: -20px; }
-  #icon-wechat:hover {
-    color: #f8ce5e; }
-  #icon-wechat:before {
-    content: "\e800"; }
-
-#icon-weibo {
-  margin-left: 50px; }
-  #icon-weibo:hover {
-    color: #d40220; }
-  #icon-weibo:before {
-    content: "\e801"; }
-
-#disqus_thread {
+.ds-thread {
   padding: 30px 0;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;

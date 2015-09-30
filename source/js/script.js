@@ -1,10 +1,3 @@
-
-/*!--------------------------------*\
-   3-Jekyll Theme
-   @author Peiwen Lu (P233)
-   https://github.com/P233/3-Jekyll
-\*---------------------------------*/
-
 // Detect window size, if less than 1280px add class 'mobile' to sidebar therefore it will be auto hide when trigger the pjax request in small screen devices.
 if ($(window).width() <= 1280) {
   $('#sidebar').addClass('mobile')
@@ -115,24 +108,5 @@ function afterPjax() {
       });
     });
   });
-
-  // Lazy Loading Disqus
-  // http://jsfiddle.net/dragoncrew/SHGwe/1/
-  var ds_loaded = false,
-      top = $('#disqus_thread').offset().top;
-  window.disqus_shortname = $('#disqus_thread').attr('name');
-
-  function check() {
-    if ( !ds_loaded && container.scrollTop() + container.height() > top ) {
-      $.ajax({
-        type: 'GET',
-        url: 'http://' + disqus_shortname + '.disqus.com/embed.js',
-        dataType: 'script',
-        cache: true
-      });
-      ds_loaded = true;
-    }
-  }check();
-  container.scroll(check);
 }afterPjax();
 

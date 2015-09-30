@@ -1,9 +1,13 @@
-# 社交链接
-github: "http://github.com/tangkunyin"
-wechat: "mailto://tangkunyin@shuoit.net"
-weibo: "http://weibo.com/tangkunyin"
+theme_name: TTStyle
+site_url: http://shuoit.net
 
-#rss: /atom.xml
+# 社交信息
+github: "http://github.com/tangkunyin"
+#mail: "mailto:tangkunyin@shuoit.net"
+#weixin: "http://wsq.qq.com/reflow/263382663"
+#weibo: "http://weibo.com/tangkunyin"
+
+rss: /atom.xml
 
 # 是否在新窗口打开链接
 open_in_new: true
@@ -16,9 +20,9 @@ avatar: /favicon.png
 
 #是否开启分享
 share: true
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
-#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: false
+
+#若使用duoshuo
+duoshuo: true
 
 #是否开启云标签
 tagcloud: true
