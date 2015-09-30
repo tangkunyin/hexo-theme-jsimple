@@ -3,6 +3,5 @@
       <h1 id="post__title" data-identifier="<%= date(page.posts.first().date) %>"><%= page.posts.first().title %></h1>
       <%- page.posts.first().content %>
     </article>
-    <%- partial('share') %>
-    <%- partial('disqus') %>
+    <%- partial('additional') %>
 <% } %>

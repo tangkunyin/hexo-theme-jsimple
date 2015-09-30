@@ -1,20 +1,17 @@
 <aside id="sidebar">
   <nav id="tags">
-    <a href="/index.html" id="avatar" style="background-image:url(<%= theme.avatar %>)"></a>
-
+    <a href="<%= theme.site_url %>" id="avatar" style="background-image:url(<%= theme.avatar %>)"></a>
     <ul id="tags__ul">
       <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
       <% site.categories.each(function(item){ %>
       <li id="<%= item.title %>" class="tags__li tags-btn"><%= item.title %></li>
       <% }); %>
     </ul>
-
     <div id="tags__bottom">
-      <a href="mailto:tangkunyin@shuoit.net" id="icon-email" class="tags-btn fontello"></a>
-      <a href="/pages/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+      <a href="<%= theme.github %>" id="icon-github" target="_blank" class="tags-btn fontello"></a>
+      <a href="<%= theme.rss %>" id="icon-feed" target="_blank" class="tags-btn fontello"></a>
     </div>
   </nav> <!-- end #tags -->
-
   <div id="posts-list">
     <form action="https://www.baidu.com/s?wd=site:shuoit.net" id="search-form" target="_blank">
       <a href="/" id="mobile-avatar" style="background-image:url(<%= theme.avatar %>)"></a>
