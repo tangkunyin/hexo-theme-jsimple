@@ -564,9 +564,7 @@ iframe {
     -o-transform: translateX(-585px);
     transform: translateX(-585px); } }
 
-#pjax.fullscreen {
-  max-width: 800px;
-  margin: 0 auto; }
+#pjax.fullscreen {margin: 0 auto; }
 
 #js-fullscreen, #nprogress .spinner-icon {
   width: 40px;
