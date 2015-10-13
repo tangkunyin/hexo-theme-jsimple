@@ -1,7 +1,7 @@
-<% if (pagination == 2){ %>
+<% if (index){ %>
     <article id="post__content">
       <h1 id="post__title" data-identifier="<%= date(page.posts.first().date) %>"><%= page.posts.first().title %></h1>
       <%- page.posts.first().content %>
     </article>
-    <%- partial('additional') %>
+    <%- partial('additional',{index: index}) %>
 <% } %>

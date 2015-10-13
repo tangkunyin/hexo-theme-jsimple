@@ -6,5 +6,9 @@
     <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more">分享到：</a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页">百度新首页</a></div>
 <% } %>
 <% if(theme.duoshuo){ %>
-    <div class="ds-thread" name="<%= config.duoshuo_shortname %>" data-thread-key="<%= page.permalink %>" data-title="<%= page.title %>" data-url="<%= page.permalink %>"></div>
+    <% if (index){ %>
+        <div class="ds-thread" name="<%= config.duoshuo_shortname %>" data-thread-key="<%= page.posts.first().permalink %>" data-title="<%= page.posts.first().title %>" data-url="<%= page.posts.first().permalink %>"></div>
+    <% }else{ %>
+        <div class="ds-thread" name="<%= config.duoshuo_shortname %>" data-thread-key="<%= page.permalink %>" data-title="<%= page.title %>" data-url="<%= page.permalink %>"></div>
+    <% } %>
 <% } %>
