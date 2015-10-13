@@ -125,14 +125,14 @@ function afterPjax() {
         type: 'GET',
         url: 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5),
         dataType: 'script',
-        cache: true
+        cache: false
       });
       //loading duoshuo
       $.ajax({
         type: 'GET',
         url: (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js',
         dataType: 'script',
-        cache: true
+        cache: false
       });
       ds_loaded = true;
     }
