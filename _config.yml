@@ -18,11 +18,11 @@ favicon: /favicon.png
 #你的头像url
 avatar: /favicon.png
 
-#是否开启分享
+#是否开启百度分享
 share: true
 
-#若使用duoshuo
-duoshuo: true
+#是否开始搜狐畅言
+discuss: true
 
 #是否开启云标签
 tagcloud: true
