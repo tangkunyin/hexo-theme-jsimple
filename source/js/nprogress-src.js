@@ -269,30 +269,15 @@
     }
   };
 
-  /**
-   * Helpers
-   */
-
   function clamp(n, min, max) {
     if (n < min) return min;
     if (n > max) return max;
     return n;
   }
 
-  /**
-   * (Internal) converts a percentage (`0..1`) to a bar translateX
-   * percentage (`-100%..0%`).
-   */
-
   function toBarPerc(n) {
     return (-1 + n) * 100;
   }
-
-
-  /**
-   * (Internal) returns the correct CSS for changing the bar's
-   * position given an n percentage, and speed and ease from Settings
-   */
 
   function barPositionCSS(n, speed, ease) {
     var barCSS;
