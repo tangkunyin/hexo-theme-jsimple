@@ -3,11 +3,13 @@ site_url: http://shuoit.net
 
 # 社交信息
 github: "http://github.com/tangkunyin"
-#mail: "mailto:tangkunyin@shuoit.net"
-#weixin: "http://wsq.qq.com/reflow/263382663"
-#weibo: "http://weibo.com/tangkunyin"
+qq: "http://shang.qq.com/wpa/qunwpa?idkey=6dc2741479cd031cc533fe5080081df44d0f9d95bc5083e8e1244c92f4aae218"
 
-rss: /atom.xml
+
+# 托管服务器
+gitPagesServerAddr: "http://gitcafe.com/signup?invited_by=tangkunyin"
+gitPagesServerName: "GitCafe"
+
 
 # 是否在新窗口打开链接
 open_in_new: true

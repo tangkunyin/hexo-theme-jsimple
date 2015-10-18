@@ -218,10 +218,10 @@ a {
   #icon-github:before {
     content: "\e802"; }
 
-#icon-feed {
+#icon-qq {
   border-left: 1px solid #525965; }
-  #icon-feed:before {
-    content: "\e806"; }
+  #icon-qq:before {
+    content: "\e804"; }
 
 .tags-btn {
   color: #a6a6a7;
