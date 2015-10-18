@@ -6,7 +6,7 @@
   if (typeof module === 'function') {
     module.exports = factory(this.jQuery || require('jquery'));
   } else if (typeof define === 'function' && define.amd) {
-    define(['jquery'], function($) {
+    define(['../js-min'], function($) {
       return factory($);
     });
   } else {
