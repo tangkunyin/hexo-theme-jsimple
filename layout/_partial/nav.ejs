@@ -4,7 +4,7 @@
     <ul id="tags__ul">
       <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
       <% site.categories.each(function(item){ %>
-      <li id="<%= item.title %>" class="tags__li tags-btn"><%= item.title %></li>
+      <li id="<%= item.name %>" class="tags__li tags-btn"><%= item.name %></li>
       <% }); %>
     </ul>
     <div id="tags__bottom">
@@ -18,9 +18,10 @@
       <input id="search-input" type="text" placeholder="戳一下不会怀孕" />
     </form>
     <nav id="pl__container">
-      <% site.posts.each(function(item){ %>
-      <a class="<%= item.categorie %> pl__all" href="<%- url_for(item.path) %>"><span class="pl__circle"></span><span
-                class="pl__title"><%= item.title%></span><span class="pl__date"><%= date(item.date) %></span></a>
+      <% site.categories.each(function(category){ %>
+            <% category.posts.each(function(post){ %>
+                <a class="<%= category.name %> pl__all" href="<%- url_for(post.path) %>"><span class="pl__circle"></span><span class="pl__title"><%= post.title%></span><span class="pl__date"><%= date(post.date) %></span></a>
+            <% }); %>
       <% }); %>
     </nav>
   </div> <!-- end #posts-list -->
