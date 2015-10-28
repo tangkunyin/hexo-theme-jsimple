@@ -331,8 +331,8 @@ a {
       top: 50px; } }
 
 .pl__all {
-  margin: 4px 12px;
-  padding: 4px 8px 3px;
+  margin: 4px 1px;
+  padding: 4px 6px 3px;
   border-radius: 4px;
   display: block; }
   .pl__all:hover {
