@@ -1,0 +1,46 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+<%
+    var title;
+    if(is_home()){
+        title = config.title + ' - ' + config.subtitle;
+    }else if(is_archive()){
+      title = 'Archives';
+      if (is_month()){
+        title += ': ' + page.year + '/' + page.month;
+      } else if (is_year()){
+        title += ': ' + page.year;
+      }
+    } else if (is_category()){
+      title = 'Category: ' + page.category;
+    } else if (is_tag()){
+      title = 'Tag: ' + page.tag;
+    }else{
+        title = page.title;
+    }
+%>
+<title><%= title %></title>
+<meta name="author" content="<%= theme.author %>">
+<%
+   var keywords;
+   if(page.keywords){
+      keywords = page.keywords;
+   }else{
+      keywords = config.keywords;
+   }
+%>
+<meta name="keywords" content="<%= keywords %>">
+<%
+  var description;
+  if(page.description){
+    description = page.description;
+  }else{
+    description = config.description;
+  }
+%>
+<meta name="description " content="<%= description %>">
+<% if (theme.favicon){ %>
+<link rel="icon" href="<%- theme.favicon %>">
+<% } %>
+<%- css('css/style') %>

@@ -1,0 +1,36 @@
+<aside id="sidebar">
+  <nav id="tags">
+    <a href="<%= theme.site_url %>" id="avatar" style="background-image:url(<%= theme.avatar %>)"></a>
+    <ul id="tags__ul">
+      <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
+      <% site.categories.each(function(item){ %>
+      <li id="<%= item.name %>" class="tags__li tags-btn"><%= item.name %></li>
+      <% }); %>
+    </ul>
+    <div id="tags__bottom">
+      <a href="<%= theme.github %>" rel="nofollow" id="icon-github" target="_blank" class="tags-btn fontello"></a>
+      <a href="<%= theme.qq %>" rel="nofollow" id="icon-qq" target="_blank" class="tags-btn fontello"></a>
+    </div>
+  </nav> <!-- end #tags -->
+  <div id="posts-list">
+    <form action="https://www.baidu.com/s?wd=site:shuoit.net" id="search-form" target="_blank">
+      <a href="/" id="mobile-avatar" style="background-image:url(<%= theme.avatar %>)"></a>
+      <input id="search-input" type="text" placeholder="戳一下不会怀孕" />
+    </form>
+    <nav id="pl__container">
+      <% site.categories.each(function(category){ %>
+            <% category.posts.each(function(post){ %>
+                <a class="<%= category.name %> pl__all" href="<%- url_for(post.path) %>" title="<%= post.title%>">
+                  <%
+                      var title = post.title;
+                      if(title.length > 20){
+                          title = title.substr(0,20)+"...";
+                      }
+                  %>
+                  <span class="pl__circle"></span><span class="pl__title"><%= title %></span><span class="pl__date"><%= date(post.date) %></span>
+                </a>
+            <% }); %>
+      <% }); %>
+    </nav>
+  </div> <!-- end #posts-list -->
+</aside> <!-- end #sidebar -->
