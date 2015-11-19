@@ -14,25 +14,26 @@
 你可使用`git clone https://github.com/tangkunyin/hexo-theme-ttstyle.git`命令将本项目下载到你本地。然后复制到`hexo`主题目录，改下总配置文件`_config.yml`
 
 ### 配置主题
-1.使用文章ID作为访问链接(因为默认配置会产生中文URL，看着很不舒服):`permalink: :year/:month/:day/:_id/`
+1.使用别名和时间戳作为文章永久访问链接(因为`title`配置会产生中文URL，`_id`又是随机的。所有很不爽):`permalink: :catAlias/:timestamp.html`
 
 2.主题左侧导航栏使用分类目录，因此你需要在`aricleName.md`中加入`categories`
 
 3.关键字和文章描述也是一样，需要增加`keywords`和`description`
 
-	title: {{ title }}
-	date: {{ date }}
-	tags:
-	categories:
-	keywords:
-	description:
-	---
+		title: {{ title }}
+		date: {{ date }}
+		timestamp:
+		catAlias:
+		categories: defaultCategory
+		tags:
+		keywords:
+		description:
+		---
 
-> `scaffolds`文件夹里增加article.md，加入上边的代码。更改总配置文件为`default_layout: article`
+> `scaffolds`文件夹里增加article.md，加入上边的代码。更改总配置文件为`default_layout: article`。需要注意的是`timestamp`这个是需要手填的。目前我还不知道调用什么属性或方法能显示时间戳。希望知道的朋友不吝赐教:)
 
-### 配置图示
+### 多平台发布配置图示
 
-![站点信息配置](http://i11.tietuku.com/6427adf85a35027f.png)
 ![发布配置](http://i11.tietuku.com/ac416783141af114.png)
 
 # 效果演示
