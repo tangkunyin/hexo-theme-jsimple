@@ -1,0 +1,30 @@
+theme_name: TTStyle
+site_url: http://shuoit.net
+
+# 社交信息
+github: "http://github.com/tangkunyin"
+qq: "http://shang.qq.com/wpa/qunwpa?idkey=6dc2741479cd031cc533fe5080081df44d0f9d95bc5083e8e1244c92f4aae218"
+
+
+# 托管服务器
+gitPagesServerAddr: "http://gitcafe.com/signup?invited_by=tangkunyin"
+gitPagesServerName: "GitCafe"
+
+
+# 是否在新窗口打开链接
+open_in_new: true
+
+# favicon
+favicon: /favicon.png
+
+#你的头像url
+avatar: /favicon.png
+
+#是否开启百度分享
+share: true
+
+#是否开始搜狐畅言
+discuss: true
+
+#是否开启云标签
+tagcloud: true

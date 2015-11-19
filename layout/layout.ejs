@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- partial('_partial/header') %>
+  </head>
+  <body>
+    <%- partial('_partial/nav') %>
+    <div id="post">
+      <div id="pjax">
+        <%- body %>
+        <p id="copyright">由<a href="http://hexo.io" target="_blank">黑客死喔</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-ttstyle" target="_blank"><%= theme.theme_name %></a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动</p>
+      </div>
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">目录</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+  </body>
+</html>
