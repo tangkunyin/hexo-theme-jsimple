@@ -2,3 +2,31 @@
     <!-- 打赏入口 -->
     <a id="icon-heart" class="fontello" href="#"></a>
 </div>
+<%
+    var articleId,articleTitle,articlePath;
+    if(index){
+      articleId = page.posts.first().timestamp;
+      articleTitle = page.posts.first().title;
+      articlePath = page.posts.first().path;
+    }else{
+      articleId = page.timestamp;
+      articleTitle = page.title;
+      articlePath = page.path;
+    }
+%>
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="<%= articleId  %>" data-title="<%= articleTitle  %>" data-url="<%= theme.site_url %><%= url_for(articlePath) %>"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shuoit"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
