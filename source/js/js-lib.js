@@ -31,6 +31,10 @@ $().ready(function(){
     titleClick();
     afterPjax();
     NProgress.done();
+    //代码高亮自定义
+    $('figure').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
 });
 
 // Tags switcher
