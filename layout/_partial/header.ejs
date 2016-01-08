@@ -44,3 +44,7 @@
 <link rel="icon" href="<%- theme.favicon %>">
 <% } %>
 <%- css('css/style') %>
+<% if (theme.highlightCode){ %>
+  <link rel="stylesheet" type="text/css" href="/css/prism.css" />
+  <script src="/js/prism.js" type="text/javascript"></script>
+<% } %>
