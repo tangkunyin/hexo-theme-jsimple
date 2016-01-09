@@ -27,3 +27,7 @@ tagcloud: true
 
 #是否高亮代码。默认开启
 highlightCode: true
+
+#代码高亮样式名称
+## 内置样式名称5种：idea xcode solarized-dark solarized-light googlecode
+highlightStyle: xcode
