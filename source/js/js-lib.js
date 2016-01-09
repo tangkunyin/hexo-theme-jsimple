@@ -31,11 +31,15 @@ $().ready(function(){
     titleClick();
     afterPjax();
     NProgress.done();
-    //代码高亮自定义
-    $('figure').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
+    hightLightCode();
 });
+
+function hightLightCode(){
+  hljs.configure({useBR: true});
+  $('figure.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+}
 
 // Tags switcher
 var clickHandler = function(id) {
