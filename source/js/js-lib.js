@@ -119,9 +119,9 @@ function afterPjax() {
         });
     });
 };
-
+/* 为保持移动端适配，捐赠图片大小默认为：400px * 500px ，过大产生的问题你懂的... */
 function donate(){
-    $.getJSON('/js/photos.json', function(json){
+    $.getJSON('/js/donates.json', function(json){
       layer.photos({
           photos: json
       });
