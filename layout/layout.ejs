@@ -8,7 +8,7 @@
     <div id="post">
       <div id="pjax">
         <%- body %>
-        <p id="copyright">由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-ttstyle" target="_blank"><%= theme.theme_name %></a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动</p>
+        <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
       </div>
       <div id="post__toc-trigger">
         <div id="post__toc">
@@ -17,6 +17,5 @@
         </div>
       </div>
     </div>
-    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
   </body>
 </html>
