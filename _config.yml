@@ -17,10 +17,10 @@ gitPagesServerName: "GitCafe"
 open_in_new: true
 
 # favicon
-favicon: /favicon.png
+favicon: /images/favicon.png
 
 #你的头像url
-avatar: /favicon.png
+avatar: /images/favicon.png
 
 #是否高亮代码。默认开启
 highlightCode: true
