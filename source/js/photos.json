@@ -1,0 +1,13 @@
+{
+    "title": "",
+    "id": 123,
+    "start": 0,
+    "data": [
+        {
+            "alt": "微信打赏",
+            "pid": 1,
+            "src": "/donateQRImg.png",
+            "thumb": "/donateQRImg.png"
+        }
+    ]
+}

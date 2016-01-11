@@ -22,12 +22,12 @@ favicon: /favicon.png
 #你的头像url
 avatar: /favicon.png
 
-#是否开启云标签
-tagcloud: true
-
 #是否高亮代码。默认开启
 highlightCode: true
 
 #代码高亮样式名称
 ## 内置样式名称5种：idea xcode solarized-dark solarized-light googlecode
 highlightStyle: xcode
+
+#捐赠相关。默认微信打赏
+donateEnable: true

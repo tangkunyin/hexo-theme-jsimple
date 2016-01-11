@@ -1,7 +1,16 @@
-<div id="post__share">
-    <!-- 打赏入口 -->
-    <a id="icon-wechat" class="fontello" href="javascript:"></a>
-</div>
+<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+<script src="/js/js-lib.js" type="text/javascript"></script>
+<% if (theme.highlightCode){ %>
+  <link rel="stylesheet" type="text/css" href="/css/codeStyle/<%= theme.highlightStyle %>.css" />
+  <script src="/js/highlight.pack.js" type="text/javascript"></script>
+<% } %>
+<% if (theme.donateEnable){ %>
+  <div id="post__action">
+      <a id="icon-wechat" class="fontello" href="javascript:donate();"></a>
+  </div>
+  <script src="/layer/layer.js" type="text/javascript"></script>
+  <script src="/layer/extend/layer.ext.js" type="text/javascript"></script>
+<% } %>
 <%
     var articleId,articleTitle,articlePath;
     if(index){
