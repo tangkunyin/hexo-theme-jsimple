@@ -1,16 +1,16 @@
 {
-    "title": "",
-    "id": 123,
+    "title": "爱心捐赠",
+    "id": 1,
     "start": 0,
     "data": [
         {
-            "alt": "微信扫一扫，给个鼓励呗",
+            "alt": "爱心支持，我会更努力",
             "pid": 1,
             "src": "/images/donateWechatQR.png",
             "thumb": "/donateWechatQR.png"
         },
         {
-            "alt": "支付宝扫一扫，给个赞呗",
+            "alt": "爱心支持，我会更努力",
             "pid": 2,
             "src": "/images/donateAlipayQR.jpg",
             "thumb": "/donateAlipayQR.jpg"
