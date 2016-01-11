@@ -21,13 +21,7 @@
       <% site.categories.each(function(category){ %>
             <% category.posts.each(function(post){ %>
                 <a class="<%= category.name %> pl__all" href="<%- url_for(post.path) %>" title="<%= post.title%>">
-                  <%
-                      var title = post.title;
-                      if(title.length > 20){
-                          title = title.substr(0,20)+"...";
-                      }
-                  %>
-                  <span class="pl__circle"></span><span class="pl__title"><%= title %></span><span class="pl__date"><%= date(post.date) %></span>
+                  <span class="pl__circle"></span><span class="pl__title"><%= post.title %></span><span class="pl__date"><%= date(post.date) %></span>
                 </a>
             <% }); %>
       <% }); %>
