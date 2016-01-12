@@ -28,6 +28,17 @@ $().ready(function(){
     afterPjax();
     NProgress.done();
     hightLightCode();
+
+    $("#search-input").unbind("keydown");
+    $("#search-input").bind("keydown",function(event){
+        if (event.keyCode == "13") {
+            var keywords = $.trim($("#search-input").val());
+            if (keywords != "") {
+              window.location.href = "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=site%3Ashuoit.net%20"+keywords;
+            }
+            return false;
+        }
+    });
 });
 
 function hightLightCode(){
