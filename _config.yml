@@ -1,6 +1,4 @@
-# 统计代码请直接替换 _partial/footer.ejs 文件里的代码
-
-theme_name: TTStyle
+#网站首页地址
 site_url: http://shuoit.net
 
 # 社交信息
@@ -22,12 +20,11 @@ favicon: /images/favicon.png
 #你的头像url
 avatar: /images/favicon.png
 
-#是否高亮代码。默认开启
-highlightCode: true
-
-#代码高亮样式名称
-## 内置样式名称5种：idea xcode solarized-dark solarized-light googlecode
+#代码高亮样式名称，可选样式名称有：idea xcode solarized-dark solarized-light googlecode
 highlightStyle: xcode
 
 #捐赠相关。默认微信打赏
 donateEnable: true
+
+
+# 统计代码请直接替换 _partial/footer.ejs 文件里的代码
