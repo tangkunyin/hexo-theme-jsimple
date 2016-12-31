@@ -12,25 +12,10 @@
 
 <!-- 中边栏 -->
 <div class="row-fluid">
+
     <div class="recommended">
-        <!-- aside -->
-        <div class="span3 left-aside">
-            <div class="cover-img"
-                 style="background-image: url(http://upload.jianshu.io/daily_images/images/UcuAMamvgH4cqqEeqz9d.jpg)"></div>
-            <div class="bottom-block">
-                <h1>简书</h1>
-                <h3>交流故事，沟通想法</h3>
-                <p>一个基于内容分享的社区</p>
-                <a class="btn btn btn-large btn-success" id="write-button" data-signin-link="true" data-toggle="modal"
-                   href="http://www.jianshu.com/sign_in">提笔写篇文章</a>
-            </div>
-            <div class="img-info">
-                <i class="fa fa-info"></i>
-                <div class="info">
-                    Photo by <a target="_blank" href="http://unsplash.com/">unsplash</a>
-                </div>
-            </div>
-        </div>
+
+        <%- partial('_partial/middleNav') %>
 
         <div class="span7 offset3">
             <div class="page-title" style="width: 957px;">
@@ -62,6 +47,24 @@
 
             <!-- 文章列表 -->
             <div id="list-container">
+
+                <ul class="unstyled clearfix sort-nav" id="collection-categories-nav" data-js-module="collection-category" data-fetch-url="/recommendations/notes">
+                    <li class=active><a class="category" data-dimension="now" href="javascript:void(null);">热门</a></li>
+                    <li ><a class="category" data-category-id="66" href="javascript:void(null);">小说精选</a></li>
+                    <li ><a class="category" data-category-id="70" href="javascript:void(null);">摄影游记</a></li>
+                    <li ><a class="category" data-category-id="68" href="javascript:void(null);">漫画手绘</a></li>
+                    <li ><a class="category" data-category-id="67" href="javascript:void(null);">签约作者</a></li>
+                    <li ><a class="category" data-category-id="56" href="javascript:void(null);">新上榜</a></li>
+                    <li ><a class="category" data-dimension="weekly" href="javascript:void(null);">七日热门</a></li>
+                    <li ><a class="category" data-dimension="monthly" href="javascript:void(null);">三十日热门</a></li>
+                    <li ><a class="category" data-category-id="60" href="javascript:void(null);">日报</a></li>
+                    <li ><a class="category" data-category-id="65" href="javascript:void(null);">专题精选</a></li>
+                    <li ><a class="category" data-category-id="61" href="javascript:void(null);">有奖活动</a></li>
+                    <li ><a class="category" data-category-id="62" href="javascript:void(null);">简书出版</a></li>
+                    <li ><a class="category" data-category-id="63" href="javascript:void(null);">简书播客</a></li>
+                    <li><img class="hide loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></li>
+                </ul>
+
                 <ul class="article-list thumbnails">
                     <li class="have-img">
                         <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36"><img

@@ -2,8 +2,10 @@
 site_url: https://shuoit.net
 
 # 社交信息
+sinaWb: "http://weibo.com/tangkunyin"
+facebook: "https://fackbook.com/tangkunyin"
 github: "http://github.com/tangkunyin"
-qq: "http://shang.qq.com/wpa/qunwpa?idkey=6dc2741479cd031cc533fe5080081df44d0f9d95bc5083e8e1244c92f4aae218"
+
 
 
 # 托管服务器
@@ -20,8 +22,6 @@ favicon: /images/favicon.png
 avatar: /images/favicon.png
 
 
-#捐赠相关。默认微信打赏
-donateEnable: true
 
 
 # 统计代码请直接替换 _partial/footer.ejs 文件里的代码
