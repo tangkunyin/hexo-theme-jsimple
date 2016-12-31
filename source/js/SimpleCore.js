@@ -15,33 +15,36 @@ $(document).on({
       main.removeClass('fadeIn');
     },
     'pjax:end': function() {
-      afterPjax();
       NProgress.done();
       main.scrollTop(0).addClass('fadeIn');
       sidebar.add(sidebar).removeClass('open');
-
     }
 });
-  
+
 $().ready(function(){
-    
-    if ($(window).width() <= 1280) {
+
+    if ($(window).width() <= 1024) {
         $('#sidebar').addClass('mobile')
     }
-    
-    afterPjax();
+
+    $('#tags__ul li').each(function(index){
+        $('#' + $(this).attr('id')).on('click', clickHandler($(this).attr('id')));
+    });
+
+    // If sidebar has class 'mobile', hide it after clicking.
+    $('.pl__all').on('click', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        if (sidebar.hasClass('mobile')) {
+            $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
+        }
+    });
+
     NProgress.done();
     hightLightCode();
 
-    
+    fullScreenAction();
 });
 
-function hightLightCode(){
-  hljs.configure({useBR: true});
-  $('figure.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-}
 
 // Tags switcher
 var clickHandler = function(id) {
@@ -52,79 +55,38 @@ var clickHandler = function(id) {
     }
 };
 
-$('#tags__ul li').each(function(index){
-    $('#' + $(this).attr('id')).on('click', clickHandler($(this).attr('id')));
-});
-
-// If sidebar has class 'mobile', hide it after clicking.
-$('.pl__all').on('click', function() {
-    $(this).addClass('active').siblings().removeClass('active');
-    if (sidebar.hasClass('mobile')) {
-        $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
-    }
-});
-
 // Enable fullscreen.
-$('#js-fullscreen').on('click', function() {
-    if (button.hasClass('fullscreen')) {
-        sidebar.removeClass('fullscreen');
-        button.removeClass('fullscreen');
-        content.delay(300).queue(function(){
-            $(this).removeClass('fullscreen').dequeue();
-        });
-    } else {
-        sidebar.addClass('fullscreen');
-        button.addClass('fullscreen');
-        content.delay(200).queue(function(){
-            $(this).addClass('fullscreen').dequeue();
-        });
-    }
-});
-
-$('#mobile-avatar').on('click', function(){
-    $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
-});
-
-function afterPjax() {
-
-    // Open links in new tab
-    $('#post__content a').attr('target','_blank');
-
-    // Generate post TOC for h1 h2 and h3
-    var toc = $('#post__toc-ul');
-    // Empty TOC and generate an entry for h1
-    toc.empty().append('<li class="post__toc-li post__toc-h1"><a href="#post__title" class="js-anchor-link">' + $('#post__title').text() + '</a></li>');
-
-    // Generate entries for h2 and h3
-    $('#post__content').children('h2,h3').each(function() {
-        // Generate random ID for each heading
-        $(this).attr('id', function() {
-            var ID = "",
-                alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-            for(var i=0; i < 5; i++) {
-                ID += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-            }
-            return ID;
-        });
-
-        if ($(this).prop("tagName") == 'H2') {
-            toc.append('<li class="post__toc-li post__toc-h2"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
+function fullScreenAction() {
+    $('#js-fullscreen').unbind("click");
+    $('#js-fullscreen').bind("click",function () {
+        if (button.hasClass('fullscreen')) {
+            sidebar.removeClass('fullscreen');
+            button.removeClass('fullscreen');
+            content.delay(300).queue(function(){
+                $(this).removeClass('fullscreen').dequeue();
+            });
         } else {
-            toc.append('<li class="post__toc-li post__toc-h3"><a href="#' + $(this).attr('id') + '" class="js-anchor-link">' + $(this).text() + '</a></li>');
+            sidebar.addClass('fullscreen');
+            button.addClass('fullscreen');
+            content.delay(200).queue(function(){
+                $(this).addClass('fullscreen').dequeue();
+            });
         }
     });
 
-    // Smooth scrolling
-    $('.js-anchor-link').on('click', function() {
-        var target = $(this.hash);
-        container.animate({scrollTop: target.offset().top + container.scrollTop() - 70}, 500, function() {
-            target.addClass('flash').delay(700).queue(function() {
-                $(this).removeClass('flash').dequeue();
-            });
-        });
+    $('#mobile-avatar').unbind("click");
+    $('#mobile-avatar').bind("click",function () {
+        $('#sidebar, #pjax, #icon-arrow').addClass('fullscreen');
     });
-};
+
+}
+
+function hightLightCode(){
+    hljs.configure({useBR: true});
+    $('figure.highlight').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+}
 
 /* 为保持移动端适配，捐赠图片大小默认为：400px * 500px ，过大产生的问题你懂的... */
 function donate(){
@@ -134,3 +96,4 @@ function donate(){
       });
     });
 }
+
