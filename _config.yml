@@ -1,5 +1,5 @@
 #网站首页地址
-site_url: http://shuoit.net
+site_url: https://shuoit.net
 
 # 社交信息
 github: "http://github.com/tangkunyin"
@@ -10,7 +10,6 @@ qq: "http://shang.qq.com/wpa/qunwpa?idkey=6dc2741479cd031cc533fe5080081df44d0f9d
 gitPagesServerAddr: "https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2"
 gitPagesServerName: "Coding"
 
-
 # 是否在新窗口打开链接
 open_in_new: true
 
@@ -20,8 +19,6 @@ favicon: /images/favicon.png
 #你的头像url
 avatar: /images/favicon.png
 
-#代码高亮样式名称，可选样式名称有：idea xcode solarized-dark solarized-light googlecode
-highlightStyle: xcode
 
 #捐赠相关。默认微信打赏
 donateEnable: true
