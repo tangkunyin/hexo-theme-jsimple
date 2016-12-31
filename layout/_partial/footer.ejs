@@ -1,34 +1,36 @@
 <footer>
     <div class="footer-l">
         <p>
-            <a href="http://www.jianshu.com/collection/jppzD2" target="_blank">关于简书</a> |
-            <a target="_blank" href="http://www.jianshu.com/contact">联系我们</a> |
-            <a href="http://www.jianshu.com/collection/fc488cd78374" target="_blank">作者成书计划</a> |
-            <a href="http://www.jianshu.com/notebooks/547/latest" target="_blank">帮助中心</a> |
-            <a href="http://jianshucom.taobao.com/" target="_blank">简书周边</a> |
-            <a href="http://www.jianshu.com/p/cabc8fa39830">合作伙伴</a> |
+            <a href="<%= theme.site_url %>/about" target="_blank">关于本站</a> |
+            <a href="<%= theme.site_url %>/contact" target="_blank" >联系作者</a> |
+            <a href="<%= theme.site_url %>/help" target="_blank">帮助中心</a> |
+            <a href="<%= theme.site_url %>/others" target="_blank">技术周边</a> |
+            <a href="<%= theme.site_url %>/flinks" target="_blank">友情链接</a>
         </p>
-        <p>
-            ©2012-2016 由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a
-                    href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">Simple</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a
-                    href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动
+        <p>©2014-2016 由
+            <a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;
+            主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">Simple</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动
         </p>
     </div>
-
     <div class="footer-r pull-right">
         <div>
             关注本站:
-            <a href="http://weibo.com/jianshuio" target="_blank">
+            <a href="<%= theme.sinaWb %>" target="_blank">
                 <i class="fa fa-weibo"></i>
             </a>
-            <a class="weixin" href="http://www.jianshu.com/#share-weixin-modal" data-toggle="modal">
+            <a href="<%= theme.facebook %>" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="<%= theme.github %>" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+            <a class="weixin" href="<%= theme.site_url %>/#share-weixin-modal" data-toggle="modal">
                 <i class="fa fa-weixin"></i>
             </a>
-            <a href="https://twitter.com/jianshucom" target="_blank">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <br><a href="http://windows.microsoft.com/zh-CN/internet-explorer/download-ie" class="upgrade-ie">本网站不支持
-                IE6/IE7，如果您希望继续使用 IE 浏览器，请升级至IE8及以上版本</a>
+            <br>
+            <a href="http://windows.microsoft.com/zh-CN/internet-explorer/download-ie" class="upgrade-ie">
+                本网站不支持IE6/IE7，如果您希望继续使用 IE 浏览器，请升级至IE8及以上版本</a>
         </div>
     </div>
 
@@ -41,8 +43,8 @@
             </div>
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>关注我们的微信公众号，获得每日好文推荐。微信中搜索「简书」或者扫一扫下方二维码：</p>
-                    <img src="./images/jianshu_wechat_qrcode.jpg" alt="Jianshu wechat qrcode">
+                    <p>关注微信公众号，获得每日好文推荐。微信中搜索「说IT」或者扫一扫下方二维码：</p>
+                    <img src="./images/jianshu_wechat_qrcode.jpg" alt="shuoit wechat qrcode">
                 </div>
             </div>
         </div>
@@ -77,12 +79,14 @@
 <script src="js/home.js"></script>
 
 <div id="window-resizer-tooltip" style="display: block;">
-    <a href="http://www.jianshu.com/#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span
-            class="tooltipWidth" id="winWidth">1903</span> x <span class="tooltipHeight"
-                                                                   id="winHeight">1057</span><br><span
-            class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1903</span> x <span
-            class="tooltipHeight" id="vpHeight">941</span></div>
-
+    <a href="<%= theme.site_url %>/#" title="Edit settings"></a>
+    <span class="tooltipTitle">Window size: </span>
+    <span class="tooltipWidth" id="winWidth">1903</span> x
+    <span class="tooltipHeight" id="winHeight">1057</span><br>
+    <span class="tooltipTitle">Viewport size: </span>
+    <span class="tooltipWidth" id="vpWidth">1903</span> x
+    <span class="tooltipHeight" id="vpHeight">941</span>
+</div>
 
 <!-- 百度统计 -->
 <script>
