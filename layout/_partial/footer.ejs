@@ -1,11 +1,96 @@
-<p id="copyright">由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">Simple</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动</p>
+<footer>
+    <div class="footer-l">
+        <p>
+            <a href="http://www.jianshu.com/collection/jppzD2" target="_blank">关于简书</a> |
+            <a target="_blank" href="http://www.jianshu.com/contact">联系我们</a> |
+            <a href="http://www.jianshu.com/collection/fc488cd78374" target="_blank">作者成书计划</a> |
+            <a href="http://www.jianshu.com/notebooks/547/latest" target="_blank">帮助中心</a> |
+            <a href="http://jianshucom.taobao.com/" target="_blank">简书周边</a> |
+            <a href="http://www.jianshu.com/p/cabc8fa39830">合作伙伴</a> |
+        </p>
+        <p>
+            ©2012-2016 由<a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;主题<a
+                    href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">Simple</a>&nbsp;&nbsp;|&nbsp;&nbsp;感谢<a
+                    href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动
+        </p>
+    </div>
+
+    <div class="footer-r pull-right">
+        <div>
+            关注本站:
+            <a href="http://weibo.com/jianshuio" target="_blank">
+                <i class="fa fa-weibo"></i>
+            </a>
+            <a class="weixin" href="http://www.jianshu.com/#share-weixin-modal" data-toggle="modal">
+                <i class="fa fa-weixin"></i>
+            </a>
+            <a href="https://twitter.com/jianshucom" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <br><a href="http://windows.microsoft.com/zh-CN/internet-explorer/download-ie" class="upgrade-ie">本网站不支持
+                IE6/IE7，如果您希望继续使用 IE 浏览器，请升级至IE8及以上版本</a>
+        </div>
+    </div>
+
+    <!--modal-->
+    <div class="modal hide fade share-weixin-modal" id="share-weixin-modal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>关注我们的微信公众号，获得每日好文推荐。微信中搜索「简书」或者扫一扫下方二维码：</p>
+                    <img src="./images/jianshu_wechat_qrcode.jpg" alt="Jianshu wechat qrcode">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<div id="flash" class="hide"></div>
+
+<div id="view-mode-modal" tabindex="-1" class="modal hide read-modal" aria-hidden="false"
+     data-js-module="view-mode-modal">
+    <div class="btn-group change-background" data-toggle="buttons-radio">
+        <a class="btn btn-daytime active" data-mode="day" href="javascript:void(null);">
+            <i class="fa fa-sun-o"></i>
+        </a>
+        <a class="btn btn-nighttime " data-mode="night" href="javascript:void(null);">
+            <i class="fa fa-moon-o"></i>
+        </a>
+    </div>
+    <div class="btn-group change-font" data-toggle="buttons-radio">
+        <a class="btn font active" data-font="font1" href="javascript:void(null);">宋体</a>
+        <a class="btn font hei " data-font="font2" href="javascript:void(null);">黑体</a>
+    </div>
+    <div class="btn-group change-locale" data-toggle="buttons-radio">
+        <a class="btn font active" data-locale="zh-CN" href="javascript:void(null);">简</a>
+        <a class="btn font hei " data-locale="zh-TW" href="javascript:void(null);">繁</a>
+    </div>
+</div>
+
+<script src="js/base.js"></script>
+<script src="js/reading-base.js"></script>
+<script src="js/home.js"></script>
+
+<div id="window-resizer-tooltip" style="display: block;">
+    <a href="http://www.jianshu.com/#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span
+            class="tooltipWidth" id="winWidth">1903</span> x <span class="tooltipHeight"
+                                                                   id="winHeight">1057</span><br><span
+            class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1903</span> x <span
+            class="tooltipHeight" id="vpHeight">941</span></div>
+
+
 <!-- 百度统计 -->
 <script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?a01595b492af7e4a793230e3d49ae638";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?a01595b492af7e4a793230e3d49ae638";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
