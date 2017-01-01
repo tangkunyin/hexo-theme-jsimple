@@ -56,13 +56,16 @@
                 <ul class="article-list thumbnails">
                     <% site.categories.each(function(category){ %>
                     <% category.posts.each(function(post){ %>
-                    <li class="have-img">
+                    <li class="<%=post.haveImage ? 'have-img' : '' %>">
+                        <!-- 有配图就渲染 -->
+                        <% if (post.haveImage){%>
                         <a class="wrap-img" href="<%- url_for(post.path) %>">
                             <img src="./images/articleThumb.jpg" alt="300">
                         </a>
+                        <%}%>
                         <div>
                             <p class="list-top">
-                                <a class="author-name blue-link" target="_blank" href="<%= theme.authorUrl %>"><%= category.name %></a>
+                                <a class="author-name blue-link" target="_blank" href="<%= theme.authorUrl %>"><%=post.author %></a>
                                 <em>·</em>
                                 <span class="time" data-shared-at="<%= date(post.date) %>"><%= date(post.date) %></span>
                             </p>
