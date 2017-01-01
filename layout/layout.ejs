@@ -3,40 +3,27 @@
 <head>
     <%- partial('_partial/header') %>
 </head>
-
 <body class="output fluid zh cn win reader-day-mode reader-font1" data-js-module="recommendation" data-locale="zh-CN">
-
 <%- partial('_partial/mobileHeader') %>
-
 <%- partial('_partial/leftNav') %>
-
 <!-- 中边栏 -->
 <div class="row-fluid">
-
     <div class="recommended">
-
         <%- partial('_partial/middleNav') %>
 
         <div class="span7 offset3">
             <div class="page-title" style="width: 957px;">
-                <ul class="recommened-nav navigation clearfix" data-container="#list-container"
-                    data-loader=".loader-tiny" data-user-slug="">
-                    <li class="active">
-                        <a data-pjax="true" href="http://www.jianshu.com/trending/now">发现</a>
+                <!-- 分类和搜索 -->
+                <ul class="recommened-nav navigation clearfix" data-container="#list-container" data-loader=".loader-tiny" data-user-slug="">
+                    <% site.categories.each(function(item, index){ %>
+                    <li class="<%=(index == 0) ? 'active' : 'bonus' %>">
+                        <a href="/<%= item.path %>" data-name="<%= item.name %>"><%= item.name %></a>
                     </li>
-                    <li class="bonus">
-                        <a data-toggle="modal" href="http://www.jianshu.com/#time-machine-modal"
-                           data-name="time_machine">
-                            时光机
-                        </a>
-                    </li>
-                    <li class="bonus">
-                        <a href="http://www.jianshu.com/zodiac/2015"><i class="fa fa-bars"></i> 2015精选</a>
-                    </li>
+                    <% }); %>
                     <img class="hide loader-tiny" src="./images/tiny.gif" alt="Tiny">
                     <li class="search">
-                        <form class="search-form" target="_blank" action="http://www.jianshu.com/search"
-                              accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                        <form class="search-form" target="_blank" action="" accept-charset="UTF-8" method="get">
+                            <input name="utf8" type="hidden" value="✓">
                             <input type="search" name="q" id="q" placeholder="搜索" class="input-medium search-query">
                             <span class="search_trigger" onclick="">
                                 <i class="fa fa-search"></i></span>
@@ -44,31 +31,26 @@
                     </li>
                 </ul>
             </div>
-
             <!-- 文章列表 -->
             <div id="list-container">
-
-                <ul class="unstyled clearfix sort-nav" id="collection-categories-nav" data-js-module="collection-category" data-fetch-url="/recommendations/notes">
-                    <li class=active><a class="category" data-dimension="now" href="javascript:void(null);">热门</a></li>
-                    <li ><a class="category" data-category-id="66" href="javascript:void(null);">小说精选</a></li>
-                    <li ><a class="category" data-category-id="70" href="javascript:void(null);">摄影游记</a></li>
-                    <li ><a class="category" data-category-id="68" href="javascript:void(null);">漫画手绘</a></li>
-                    <li ><a class="category" data-category-id="67" href="javascript:void(null);">签约作者</a></li>
-                    <li ><a class="category" data-category-id="56" href="javascript:void(null);">新上榜</a></li>
-                    <li ><a class="category" data-dimension="weekly" href="javascript:void(null);">七日热门</a></li>
-                    <li ><a class="category" data-dimension="monthly" href="javascript:void(null);">三十日热门</a></li>
-                    <li ><a class="category" data-category-id="60" href="javascript:void(null);">日报</a></li>
-                    <li ><a class="category" data-category-id="65" href="javascript:void(null);">专题精选</a></li>
-                    <li ><a class="category" data-category-id="61" href="javascript:void(null);">有奖活动</a></li>
-                    <li ><a class="category" data-category-id="62" href="javascript:void(null);">简书出版</a></li>
-                    <li ><a class="category" data-category-id="63" href="javascript:void(null);">简书播客</a></li>
-                    <li><img class="hide loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></li>
+                <!-- 标签 -->
+                <ul class="unstyled clearfix sort-nav" id="collection-categories-nav" data-js-module="collection-category">
+                    <% site.tags.each(function(item, index){ %>
+                    <% console.log(item.path) %>
+                    <li class="<%=(index == 0) ? 'active' : '' %>">
+                        <a class="category" data-dimension="now" href="javascript:void(null);"><%= item.name %></a>
+                    </li>
+                    <% }); %>
+                    <li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>
                 </ul>
 
                 <ul class="article-list thumbnails">
+
+
                     <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36"><img
-                                    src="./images/articleThumb.jpg" alt="300"></a>
+                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                            <img src="./images/articleThumb.jpg" alt="300">
+                        </a>
                         <div>
                             <p class="list-top">
                                 <a class="author-name blue-link" target="_blank"
@@ -84,14 +66,120 @@
                             </div>
                         </div>
                     </li>
+
+                    <li class="have-img">
+                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                            <img src="./images/articleThumb.jpg" alt="300">
+                        </a>
+                        <div>
+                            <p class="list-top">
+                                <a class="author-name blue-link" target="_blank"
+                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
+                                <em>·</em>
+                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
+                            </p>
+                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
+                            </h4>
+                            <div class="list-footer">
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="have-img">
+                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                            <img src="./images/articleThumb.jpg" alt="300">
+                        </a>
+                        <div>
+                            <p class="list-top">
+                                <a class="author-name blue-link" target="_blank"
+                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
+                                <em>·</em>
+                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
+                            </p>
+                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
+                            </h4>
+                            <div class="list-footer">
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="have-img">
+                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                            <img src="./images/articleThumb.jpg" alt="300">
+                        </a>
+                        <div>
+                            <p class="list-top">
+                                <a class="author-name blue-link" target="_blank"
+                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
+                                <em>·</em>
+                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
+                            </p>
+                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
+                            </h4>
+                            <div class="list-footer">
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="have-img">
+                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                            <img src="./images/articleThumb.jpg" alt="300">
+                        </a>
+                        <div>
+                            <p class="list-top">
+                                <a class="author-name blue-link" target="_blank"
+                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
+                                <em>·</em>
+                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
+                            </p>
+                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
+                            </h4>
+                            <div class="list-footer">
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="have-img">
+                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                            <img src="./images/articleThumb.jpg" alt="300">
+                        </a>
+                        <div>
+                            <p class="list-top">
+                                <a class="author-name blue-link" target="_blank"
+                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
+                                <em>·</em>
+                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
+                            </p>
+                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
+                            </h4>
+                            <div class="list-footer">
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
+                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+
+
                 </ul>
 
                 <!-- 分页开始 -->
                 <div class="load-more">
                     <button class="ladda-button " data-style="slide-left" data-type="script" data-remote=""
                             data-size="medium"
-                            data-url="/top/daily?note_ids%5B%5D=4623104&amp;note_ids%5B%5D=4534286&amp;note_ids%5B%5D=4618592&amp;note_ids%5B%5D=4620716&amp;note_ids%5B%5D=4641519&amp;note_ids%5B%5D=4626140&amp;note_ids%5B%5D=4621730&amp;note_ids%5B%5D=4629009&amp;note_ids%5B%5D=4599705&amp;note_ids%5B%5D=4621158&amp;note_ids%5B%5D=4578089&amp;note_ids%5B%5D=4624842&amp;note_ids%5B%5D=4601702&amp;note_ids%5B%5D=4625209&amp;note_ids%5B%5D=4639375&amp;note_ids%5B%5D=4628501&amp;note_ids%5B%5D=4622295&amp;note_ids%5B%5D=4627644&amp;note_ids%5B%5D=4541907&amp;note_ids%5B%5D=4594407&amp;page=2"
-                            data-color="maleskine" data-method="get">
+                            data-url="#"
+                            data-color="maleskine"
+                            data-method="get">
                         <span class="ladda-label">点击查看更多</span>
                         <span class="ladda-spinner"></span></button>
                 </div>
@@ -99,7 +187,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <!-- 页脚 -->
