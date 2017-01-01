@@ -722,7 +722,7 @@ body.reader-night-mode .pay-modal .modal-body .main-inputs [data-toggle], body.r
 }
 
 body.reader-night-mode .pay-modal .alipay-bg, body.reader-night-mode .success-pay .alipay-bg {
-    background: url(http://cdn-qn0.jianshu.io/assets/alipay-b-b049211456415131cb5c82d9267a3b0b.png) no-repeat
+    background: url(/images/alipay-b.png) no-repeat
 }
 
 body.reader-night-mode .pay-modal .modal-footer .btn-pay, body.reader-night-mode .success-pay .modal-footer .btn-pay {
@@ -762,7 +762,7 @@ body.reader-night-mode .success-pay img {
 }
 
 body.reader-night-mode .top-up-modal .choose-pay .alipay-bg {
-    background: url(http://cdn-qn0.jianshu.io/assets/alipay-b-b049211456415131cb5c82d9267a3b0b.png) no-repeat
+    background: url(/images/alipay-b.png) no-repeat
 }
 
 body.reader-night-mode .top-up-modal .main-inputs, body.reader-night-mode .withdraw-modal .main-inputs {
