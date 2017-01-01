@@ -1,15 +1,15 @@
 <footer>
     <div class="footer-l">
         <p>
-            <a href="<%= theme.site_url %>/about" target="_blank">关于本站</a> |
-            <a href="<%= theme.site_url %>/contact" target="_blank" >联系作者</a> |
-            <a href="<%= theme.site_url %>/help" target="_blank">帮助中心</a> |
-            <a href="<%= theme.site_url %>/others" target="_blank">技术周边</a> |
-            <a href="<%= theme.site_url %>/flinks" target="_blank">友情链接</a>
+            <a href="<%= theme.aboutUrl %>" target="_blank">关于<%= theme.siteName %></a> |
+            <a href="<%= theme.contactUrl %>" target="_blank" >联系作者</a> |
+            <a href="<%= theme.helpUrl %>" target="_blank">帮助中心</a> |
+            <a href="<%= theme.othersUrl %>" target="_blank">技术周边</a> |
+            <a href="<%= theme.flinks %>" target="_blank">友情链接</a>
         </p>
         <p>©2014-2016 由
             <a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;
-            主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">Simple</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">森破</a>&nbsp;&nbsp;|&nbsp;&nbsp;
             感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动
         </p>
     </div>
@@ -25,7 +25,7 @@
             <a href="<%= theme.github %>" target="_blank">
                 <i class="fa fa-github"></i>
             </a>
-            <a class="weixin" href="<%= theme.site_url %>/#share-weixin-modal" data-toggle="modal">
+            <a class="weixin" href="<%= theme.siteUrl %>/#share-weixin-modal" data-toggle="modal">
                 <i class="fa fa-weixin"></i>
             </a>
             <br>
@@ -43,8 +43,8 @@
             </div>
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>关注微信公众号，获得每日好文推荐。微信中搜索「说IT」或者扫一扫下方二维码：</p>
-                    <img src="./images/jianshu_wechat_qrcode.jpg" alt="shuoit wechat qrcode">
+                    <p>关注微信公众号，获得每日好文推荐。微信中搜索「<%= theme.siteName %>」或者扫一扫下方二维码：</p>
+                    <img src="./images/site_wechat_qrcode.jpg" alt="shuoit wechat qrcode">
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
 <script src="js/home.js"></script>
 
 <div id="window-resizer-tooltip" style="display: block;">
-    <a href="<%= theme.site_url %>/#" title="Edit settings"></a>
+    <a href="<%= theme.siteUrl %>/#" title="Edit settings"></a>
     <span class="tooltipTitle">Window size: </span>
     <span class="tooltipWidth" id="winWidth">1903</span> x
     <span class="tooltipHeight" id="winHeight">1057</span><br>
