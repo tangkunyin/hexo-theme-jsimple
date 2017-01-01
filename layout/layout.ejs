@@ -5,6 +5,15 @@
 </head>
 <body class="output fluid zh cn win reader-day-mode reader-font1" data-js-module="recommendation" data-locale="zh-CN">
 <%- partial('_partial/mobileHeader') %>
+<!-- 用户相关 -->
+<div class="navbar-user">
+    <a class="login" data-signup-link="true" data-toggle="modal" href="<%= theme.donateUrl %>">
+        <i class="fa fa-heart"></i> 献爱心
+    </a>
+    <a class="login" data-signin-link="true" data-toggle="modal" href="<%= theme.authorUrl %>">
+        <i class="fa fa-user"></i> 群英汇
+    </a> <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
+</div>
 <%- partial('_partial/leftNav') %>
 <!-- 中边栏 -->
 <div class="row-fluid">
@@ -45,20 +54,19 @@
                 </ul>
 
                 <ul class="article-list thumbnails">
-
-
+                    <% site.categories.each(function(category){ %>
+                    <% category.posts.each(function(post){ %>
                     <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
+                        <a class="wrap-img" href="<%- url_for(post.path) %>">
                             <img src="./images/articleThumb.jpg" alt="300">
                         </a>
                         <div>
                             <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
+                                <a class="author-name blue-link" target="_blank" href="<%= theme.authorUrl %>"><%= category.name %></a>
                                 <em>·</em>
-                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
+                                <span class="time" data-shared-at="<%= date(post.date) %>"><%= date(post.date) %></span>
                             </p>
-                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
+                            <h4 class="title"><a target="_blank" href="<%- url_for(post.path) %>"><%= post.title %></a>
                             </h4>
                             <div class="list-footer">
                                 <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
@@ -66,111 +74,8 @@
                             </div>
                         </div>
                     </li>
-
-                    <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
-                            <img src="./images/articleThumb.jpg" alt="300">
-                        </a>
-                        <div>
-                            <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
-                                <em>·</em>
-                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
-                            </p>
-                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
-                            </h4>
-                            <div class="list-footer">
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
-                            <img src="./images/articleThumb.jpg" alt="300">
-                        </a>
-                        <div>
-                            <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
-                                <em>·</em>
-                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
-                            </p>
-                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
-                            </h4>
-                            <div class="list-footer">
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
-                            <img src="./images/articleThumb.jpg" alt="300">
-                        </a>
-                        <div>
-                            <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
-                                <em>·</em>
-                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
-                            </p>
-                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
-                            </h4>
-                            <div class="list-footer">
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
-                            <img src="./images/articleThumb.jpg" alt="300">
-                        </a>
-                        <div>
-                            <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
-                                <em>·</em>
-                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
-                            </p>
-                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
-                            </h4>
-                            <div class="list-footer">
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="have-img">
-                        <a class="wrap-img" href="http://www.jianshu.com/p/6ef29580bf36">
-                            <img src="./images/articleThumb.jpg" alt="300">
-                        </a>
-                        <div>
-                            <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="http://www.jianshu.com/users/d9edcb44e2f2">简书日报</a>
-                                <em>·</em>
-                                <span class="time" data-shared-at="2016-07-03T18:00:08+08:00">大约3小时之前</span>
-                            </p>
-                            <h4 class="title"><a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">简书晚报160703——《免费的才是最贵的？》</a>
-                            </h4>
-                            <div class="list-footer">
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
-                            </div>
-                        </div>
-                    </li>
-
-
-
-
-
+                    <% }); %>
+                    <% }); %>
                 </ul>
 
                 <!-- 分页开始 -->
