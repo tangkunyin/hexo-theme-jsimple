@@ -1006,8 +1006,6 @@
     margin: 0 auto;
     border-top: 1px solid #eeeeee;
     overflow: hidden;
-    background: url(http://cdn-qn0.jianshu.io/assets/long-footer-aadce65914ab0a9040d41b3090b23053.png) no-repeat;
-    background-position: center 32px
 }
 
 .post.output.longweibo .video-package {
@@ -1034,7 +1032,7 @@
     display: block;
     width: 90px;
     height: 90px;
-    background-image: url(http://cdn-qn0.jianshu.io/assets/play-btn-505b83790aefbf01d434dc6cf86160a9.png);
+    background-image: url(/images/play-btn.png);
     background-repeat: no-repeat;
     background-position: 0px 0px;
     background-size: 90px 90px
@@ -6184,7 +6182,6 @@ body.reader-night-mode .row-fluid .app-download .btn-success.disabled, body.read
     top: 2px;
     height: 14px;
     margin-right: 3px;
-    background: url(http://cdn-qn0.jianshu.io/assets/zhifubao-g-e928437e8011a6c67b24324f00bdac22.png) 0 0 no-repeat
 }
 
 .account-page .account-info .binding-mobile {
@@ -6196,7 +6193,7 @@ body.reader-night-mode .row-fluid .app-download .btn-success.disabled, body.read
 }
 
 .account-page .account-info .binding-alipay .fa-alipay {
-    background: url(http://cdn-qn0.jianshu.io/assets/zhifubao-451c3372b260bb9c3e082b9a8617e003.png) 0 0 no-repeat;
+    background: url(/images/zhifubao.png) 0 0 no-repeat;
     background-size: 18px
 }
 
@@ -6972,51 +6969,51 @@ body.reader-night-mode .row-fluid .app-download .btn-success.disabled, body.read
 }
 
 .page1 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/1-c4ee1190b0d1caa463899098d0abf8a9.jpg)
+    background-image: url(/images/january.jpg)
 }
 
 .page2 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/2-c99d495b6b2a777d8227e535e7b618e4.jpg)
+    background-image: url(/images/february.jpg)
 }
 
 .page3 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/3-a5197e9beffe43687e33c2ceb69ac76d.jpg)
+    background-image: url(/images/march.jpg)
 }
 
 .page4 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/4-001a02ffbf4f7203dead5323d8dbc95c.jpg)
+    background-image: url(/images/april.jpg)
 }
 
 .page5 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/5-6db42a13f02e8d813d3f41e5d621863f.jpg)
+    background-image: url(/images/may.jpg)
 }
 
 .page6 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/6-27346a354af5e7d4bdf0f43a80a82865.jpg)
+    background-image: url(/images/june.jpg)
 }
 
 .page7 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/7-b300f0e63eab730a8c80412d9c0b8352.jpg)
+    background-image: url(/images/july.jpg)
 }
 
 .page8 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/8-b810cde649c61f5a85437f7d77c3edbf.jpg)
+    background-image: url(/images/augest.jpg)
 }
 
 .page9 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/9-17b88552056e7eebd764303a758a0e8b.jpg)
+    background-image: url(/images/september.jpg)
 }
 
 .page10 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/10-45adc54538f685987fd64db715e4902f.jpg)
+    background-image: url(/images/october.jpg)
 }
 
 .page11 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/11-248c2eae04c01ccc7531dd71a1c733be.jpg)
+    background-image: url(/images/november.jpg)
 }
 
 .page12 > .pan {
-    background-image: url(http://cdn-qn0.jianshu.io/assets/stats2015/zodiac/12-eb45fb6f4d9999028a0e1a6cafe8effd.jpg)
+    background-image: url(/images/december.jpg)
 }
 
 .swiper-slide > .pan .article {
