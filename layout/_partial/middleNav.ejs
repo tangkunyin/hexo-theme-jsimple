@@ -1,17 +1,16 @@
 <div class="span3 left-aside">
-    <div class="cover-img"
-         style="background-image: url(http://upload.jianshu.io/daily_images/images/UcuAMamvgH4cqqEeqz9d.jpg)"></div>
+    <div class="cover-img" style="background-image: url(/images/defaultSiteDailyImg.jpg)"></div>
     <div class="bottom-block">
-        <h1>简书</h1>
-        <h3>交流故事，沟通想法</h3>
-        <p>一个基于内容分享的社区</p>
+        <h1><%= theme.siteName %></h1>
+        <h3><%= theme.siteSubtitle %></h3>
+        <p><%= theme.siteDescription %></p>
         <a class="btn btn btn-large btn-success" id="write-button" data-signin-link="true" data-toggle="modal"
-           href="http://www.jianshu.com/sign_in">提笔写篇文章</a>
+           href="<%= theme.pullRequestUrl %>">提笔写篇文章</a>
     </div>
     <div class="img-info">
         <i class="fa fa-info"></i>
         <div class="info">
-            Photo by <a target="_blank" href="http://unsplash.com/">unsplash</a>
+            Photo by <a target="_blank" rel="nofollow" href="http://unsplash.com/">unsplash</a>
         </div>
     </div>
 </div>

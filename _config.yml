@@ -1,27 +1,43 @@
 #网站首页地址
-site_url: https://shuoit.net
+siteUrl: https://shuoit.net
+siteName: 说IT
+siteShortName: 说
+siteSubtitle: 说人文，撸科技
+siteDescription: 关注技术与人文的原创IT博客
+
 
 # 社交信息
-sinaWb: "http://weibo.com/tangkunyin"
-facebook: "https://fackbook.com/tangkunyin"
-github: "http://github.com/tangkunyin"
+sinaWb: https://weibo.com/tangkunyin
+facebook: https://fackbook.com/tangkunyin
+github: https://github.com/tangkunyin
+
+# 网站app下载链接
+iOSDownLink: https://github.com/tangkunyin/shuoitApp
+andriodDownLink: https://github.com/tangkunyin/shuoitApp
 
 
+# 独立页链接
+aboutUrl: /about
+contactUrl: /contact
+helpUrl: /help
+othersUrl: /others
+flinks: /flinks
+rssUrl: /rss
+donateUrl: /donate
+pullRequestUrl: /pullRequest
 
 # 托管服务器
-gitPagesServerAddr: "https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2"
-gitPagesServerName: "Coding"
+gitPagesServerAddr: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
+gitPagesServerName: Coding
 
 # 是否在新窗口打开链接
-open_in_new: true
+openInTab: true
 
 # favicon
 favicon: /images/favicon.png
 
 #你的头像url
 avatar: /images/favicon.png
-
-
 
 
 # 统计代码请直接替换 _partial/footer.ejs 文件里的代码
