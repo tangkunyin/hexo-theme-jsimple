@@ -2,3 +2,6 @@
   <h1 id="post__title" data-identifier="<%= date(page.date) %>"><%= page.title %></h1>
   <%- page.content %>
 </article>
+<% if (page.comment || theme.page_comment) { %>
+<%- partial('_partial/comments',{post: page}) %>
+<% } %>

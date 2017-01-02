@@ -11,6 +11,10 @@ sinaWb: https://weibo.com/tangkunyin
 facebook: https://fackbook.com/tangkunyin
 github: https://github.com/tangkunyin
 
+# Disqus评论(由于个人喜好，仅支持disqus。多说请自行修改)
+page_comment: true
+disqus_shortname: shuoit
+
 # 网站app下载链接
 iOSDownLink: https://github.com/tangkunyin/shuoitApp
 andriodDownLink: https://github.com/tangkunyin/shuoitApp
