@@ -72,8 +72,9 @@
                             <h4 class="title"><a target="_blank" href="<%- url_for(post.path) %>"><%= post.title %></a>
                             </h4>
                             <div class="list-footer">
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36">阅读 5027</a>
-                                <a target="_blank" href="http://www.jianshu.com/p/6ef29580bf36#comments">评论 9</a> <span> · 喜欢 69</span>
+                                <a target="_blank" href="<%- url_for(post.path) %>">阅读</a> ·
+                                <a target="_blank" href="<%- url_for(post.path) %>#disqus_thread">评论</a> ·
+                                <a target="_blank" href="<%= theme.donateUrl %>">喜欢</a>
                             </div>
                         </div>
                     </li>
