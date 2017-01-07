@@ -19,9 +19,6 @@
 <div class="row-fluid">
     <div class="recommended">
         <%- partial('_partial/middleNav') %>
-
-        <% console.log(JSON.stringify(site.posts)) %>
-
         <div class="span7 offset3">
             <div class="page-title" style="width: 957px;">
                 <!-- 分类和搜索 -->
@@ -48,20 +45,21 @@
                 <ul class="unstyled clearfix sort-nav" id="collection-categories-nav" data-js-module="collection-category">
                     <% site.tags.each(function(item, index){ %>
                     <li class="<%=(index == 0) ? 'active' : '' %>">
-                        <a class="category" data-dimension="now" href="javascript:void(null);"><%= item.name %></a>
+                        <a class="category" data-dimension="now" href="/<%= item.path %>"><%= item.name %></a>
                     </li>
                     <% }); %>
-                    <li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>
+                    <!--<li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>-->
                 </ul>
 
                 <ul class="article-list thumbnails">
                     <% site.categories.each(function(category){ %>
                     <% category.posts.each(function(post){ %>
+
                     <li class="<%= (post.photos && post.photos.length) ? 'have-img' : '' %>">
                         <!-- 有配图默认渲染第一张 -->
                         <% if (post.photos && post.photos.length){%>
                         <a class="wrap-img" href="<%- url_for(post.path) %>">
-                            <img src="<%- url_for(post.photos[0]) %>" alt="300">
+                            <img src="<%= post.photos[0] %>" alt="<%= post.title %>">
                         </a>
                         <%}%>
                         <div>

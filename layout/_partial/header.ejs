@@ -3,10 +3,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 <meta http-equiv="mobile-agent" content="format=html5; url=<%= theme.siteUrl %>">
+<% if (theme.favicon){ %>
+<%- favicon_tag(theme.favicon) %>
+<% } %>
 <link rel="stylesheet" media="all" href="/css/base.css">
 <link rel="stylesheet" media="all" href="/css/reading.css">
 <link rel="stylesheet" media="all" href="/css/base-read-mode.css">
-<script src="/js/modernizr.js"></script>
 <%
     var title;
     if(is_home()){
@@ -46,6 +48,3 @@
   }
 %>
 <meta name="description " content="<%= description %>">
-<% if (theme.favicon){ %>
-<link rel="icon" href="<%- theme.favicon %>">
-<% } %>

@@ -74,10 +74,6 @@
     </div>
 </div>
 
-<script src="js/base.js"></script>
-<script src="js/reading-base.js"></script>
-<script src="js/home.js"></script>
-
 <div id="window-resizer-tooltip" style="display: block;">
     <a href="<%= theme.siteUrl %>/#" title="Edit settings"></a>
     <span class="tooltipTitle">Window size: </span>
@@ -88,13 +84,15 @@
     <span class="tooltipHeight" id="vpHeight">941</span>
 </div>
 
-<!-- 百度统计 -->
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?a01595b492af7e4a793230e3d49ae638";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
+<%- js(['js/modernizr.js', 'js/base.js','js/reading-base.js','js/home.js']) %>
+
+<!--&lt;!&ndash; 百度统计 &ndash;&gt;-->
+<!--<script>-->
+    <!--var _hmt = _hmt || [];-->
+    <!--(function () {-->
+        <!--var hm = document.createElement("script");-->
+        <!--hm.src = "//hm.baidu.com/hm.js?a01595b492af7e4a793230e3d49ae638";-->
+        <!--var s = document.getElementsByTagName("script")[0];-->
+        <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+<!--</script>-->
