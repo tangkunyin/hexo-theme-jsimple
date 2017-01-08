@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- partial('_partial/header') %>
+    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
 </head>
 <body class="output fluid zh cn win reader-day-mode reader-font1" data-js-module="recommendation" data-locale="zh-CN">
-<%- partial('_partial/mobileHeader') %>
+<%- partial('_partial/mobileHeader', null, {cache: !config.relative_link}) %>
 <!-- 用户相关 -->
 <div class="navbar-user">
     <a class="login" data-signup-link="true" data-toggle="modal" href="<%= theme.donateUrl %>">
@@ -14,17 +14,18 @@
         <i class="fa fa-user"></i> 群英汇
     </a> <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
 </div>
-<%- partial('_partial/leftNav') %>
+<%- partial('_partial/leftNav', null, {cache: !config.relative_link}) %>
 <!-- 中边栏 -->
 <div class="row-fluid">
     <div class="recommended">
-        <%- partial('_partial/middleNav') %>
+        <%- partial('_partial/middleNav', null, {cache: !config.relative_link}) %>
         <div class="span7 offset3">
             <div class="page-title" style="width: 957px;">
                 <!-- 分类和搜索 -->
-                <ul class="recommened-nav navigation clearfix" data-container="#list-container" data-loader=".loader-tiny" data-user-slug="">
+                <ul class="recommened-nav navigation clearfix" data-container="#list-container"
+                    data-loader=".loader-tiny" data-user-slug="">
                     <% site.categories.each(function(item, index){ %>
-                    <li class="<%=(index == 0) ? 'active' : 'bonus' %>">
+                    <li class="<%= (index == 0) ? 'active' : 'bonus' %>">
                         <a href="/<%= item.path %>" data-name="<%= item.name %>"><%= item.name %></a>
                     </li>
                     <% }); %>
@@ -42,9 +43,10 @@
             <!-- 文章列表 -->
             <div id="list-container">
                 <!-- 标签 -->
-                <ul class="unstyled clearfix sort-nav" id="collection-categories-nav" data-js-module="collection-category">
+                <ul class="unstyled clearfix sort-nav" id="collection-categories-nav"
+                    data-js-module="collection-category">
                     <% site.tags.each(function(item, index){ %>
-                    <li class="<%=(index == 0) ? 'active' : '' %>">
+                    <li class="<%= (index == 0) ? 'active' : '' %>">
                         <a class="category" data-dimension="now" href="/<%= item.path %>"><%= item.name %></a>
                     </li>
                     <% }); %>
@@ -58,14 +60,15 @@
 
                     <li class="<%= (post.photos && post.photos.length) ? 'have-img' : '' %>">
                         <!-- 有配图默认渲染第一张 -->
-                        <% if (post.photos && post.photos.length){%>
+                        <% if (post.photos && post.photos.length){ %>
                         <a class="wrap-img" href="<%- url_for(post.path) %>">
                             <img src="<%= post.photos[0] %>" alt="<%= post.title %>">
                         </a>
-                        <%}%>
+                        <% } %>
                         <div>
                             <p class="list-top">
-                                <a class="author-name blue-link" target="_blank" href="<%= theme.authorUrl %>"><%=post.author %></a>
+                                <a class="author-name blue-link" target="_blank"
+                                   href="<%= theme.authorUrl %>"><%= post.author %></a>
                                 <em>·</em>
                                 <span class="time" data-shared-at="<%= date(post.date) %>"><%= date(post.date) %></span>
                             </p>

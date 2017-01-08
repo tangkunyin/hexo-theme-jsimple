@@ -42,8 +42,6 @@ pullRequestUrl: /pullRequest
 gitPagesServerAddr: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 gitPagesServerName: Coding
 
-# 是否在新窗口打开链接
-openInTab: true
 
 # favicon
 favicon: /images/favicon.png
