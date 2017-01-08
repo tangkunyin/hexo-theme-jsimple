@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/head', null, {cache: !config.relative_link}) %>
 </head>
 <body class="output fluid zh cn win reader-day-mode reader-font1" data-js-module="recommendation" data-locale="zh-CN">
 <%- partial('_partial/mobileHeader', null, {cache: !config.relative_link}) %>
-<!-- 用户相关 -->
-<div class="navbar-user">
-    <a class="login" data-signup-link="true" data-toggle="modal" href="<%= theme.donateUrl %>">
-        <i class="fa fa-heart"></i> 献爱心
-    </a>
-    <a class="login" data-signin-link="true" data-toggle="modal" href="<%= theme.authorUrl %>">
-        <i class="fa fa-user"></i> 群英汇
-    </a>
-    <a class="daytime set-view-mode pull-right" href="javascript:void(0)">
-        <i class="fa fa-moon-o"></i>
-    </a>
-</div>
+<%- partial('_widget/user-entry', null, {cache: !config.relative_link}) %>
 <%- partial('_partial/leftNav', null, {cache: !config.relative_link}) %>
 <!-- 中边栏 -->
 <div class="row-fluid">
