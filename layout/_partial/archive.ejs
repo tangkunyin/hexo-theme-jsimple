@@ -1,6 +1,31 @@
-<% if (index){ %>
-    <article id="post__content">
-      <h1 id="post__title" data-identifier="<%= date(page.posts.first().date) %>"><%= page.posts.first().title %></h1>
-      <%- page.posts.first().content %>
-    </article>
+<% if (pagination == 2){ %>
+<!-- 首页默认取最最新一篇文章 -->
+<% site.posts.sort('date', -1).limit(1).each(function(post){ %>
+<%- partial('article', {post: post, index: true}) %>
+<% }) %>
+<% } else { %>
+<ul class="article-list thumbnails">
+    <% page.posts.each(function(post){ %>
+    <%- partial('_widget/category_posts', {post: post}) %>
+    <% })} %>
+</ul>
+<% if (page.total > 1){ %>
+<!-- 分页开始 -->
+<!--<div class="load-more">-->
+<!--<button class="ladda-button " data-style="slide-left" data-type="script" data-remote=""-->
+<!--data-size="medium"-->
+<!--data-url="#"-->
+<!--data-color="maleskine"-->
+<!--data-method="get">-->
+<!--<span class="ladda-label">点击查看更多</span>-->
+<!--<span class="ladda-spinner"></span></button>-->
+<!--</div>-->
+<nav id="page-nav">
+    <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
+    <%- paginator({
+        prev_text: prev_text,
+        next_text: next_text
+    }) %>
+</nav>
 <% } %>
+
