@@ -1,4 +1,4 @@
-<% if (theme.disqus_shortname && page.comments){ %>
+<% if (theme.disqus_shortname && (theme.indexComment || page.comments)){ %>
 <section class="post-comments">
     <div id="disqus_thread"></div>
     <script>
