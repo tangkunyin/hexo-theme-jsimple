@@ -6,7 +6,7 @@
 <% } else { %>
 <ul class="article-list thumbnails">
     <% page.posts.each(function(post){ %>
-    <%- partial('_widget/category_posts', {post: post}) %>
+    <%- partial('_widget/archive-posts', {post: post}) %>
     <% })} %>
 </ul>
 <% if (page.total > 1){ %>
