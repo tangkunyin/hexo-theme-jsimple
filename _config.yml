@@ -16,6 +16,9 @@ menu:
 # 首页文章排序(-1: 最新的靠前，1: 最旧的靠前)
 homePageSortType: -1
 
+# 中部分割图
+coverImg: defaultSiteDailyImg.jpg
+
 # 社交信息
 sinaWb: https://weibo.com/tangkunyin
 facebook: https://fackbook.com/tangkunyin
