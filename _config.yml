@@ -13,6 +13,9 @@ menu:
    视角: views
    资源: resources
 
+# 首页文章排序(-1: 最新的靠前，1: 最旧的靠前)
+homePageSortType: -1
+
 # 社交信息
 sinaWb: https://weibo.com/tangkunyin
 facebook: https://fackbook.com/tangkunyin
