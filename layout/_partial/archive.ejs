@@ -1,14 +1,10 @@
-<% var indexPost; %>
-<% site.posts.sort('date', theme.homePageSortType).limit(1).each(function(post){ %>
-<% indexPost = post; %>
-<% }) %>
 <div class="span7 offset3">
     <div class="page-title" style="width: 957px;">
         <!-- 分类和搜索 -->
         <ul class="recommened-nav navigation clearfix" data-container="#list-container"
             data-loader=".loader-tiny" data-user-slug="">
             <% for (var i in theme.menu){ %>
-            <li class="<%= (indexPost.categories.first().name == i) ? 'active' : 'bonus' %>">
+            <li class="<%= (page.category == i) ? 'active' : 'bonus' %>">
                 <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
             </li>
             <% } %>
@@ -30,7 +26,7 @@
         <ul class="unstyled clearfix sort-nav" id="collection-categories-nav"
             data-js-module="collection-category">
             <% site.tags.each(function(item){ %>
-            <li class="<%= (indexPost.tags.length && indexPost.tags.first().name == item.name) ? 'active' : '' %>">
+            <li class="<%= (page.tag == item.name) ? 'active' : '' %>">
                 <a class="category" data-dimension="now" href="/<%= item.path %>"><%= item.name %></a>
             </li>
             <% }); %>
@@ -39,7 +35,7 @@
         <% if (pagination == 2){ %>
         <!-- 首页默认取最最新一篇文章 -->
         <% site.posts.sort('date', theme.homePageSortType).limit(1).each(function(post){ %>
-        <%- partial('article', {post: indexPost, index: true}) %>
+        <%- partial('article', {post: post, index: true}) %>
         <% }) %>
         <% } else { %>
         <ul class="article-list thumbnails">
