@@ -24,18 +24,20 @@
                 <!-- 分类和搜索 -->
                 <ul class="recommened-nav navigation clearfix" data-container="#list-container"
                     data-loader=".loader-tiny" data-user-slug="">
-                    <% site.categories.each(function(item, index){ %>
-                    <li class="<%= (index == 0) ? 'active' : 'bonus' %>">
-                        <a href="/<%= item.path %>" data-name="<%= item.name %>"><%= item.name %></a>
+                    <% for (var i in theme.menu){ %>
+                    <!--  'active' : 'bonus'  -->
+                    <li class="bonus">
+                        <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
                     </li>
-                    <% }); %>
-                    <img class="hide loader-tiny" src="./images/tiny.gif" alt="Tiny">
+                    <% } %>
+                    <!--<img class="hide loader-tiny" src="./images/tiny.gif" alt="Tiny">-->
                     <li class="search">
                         <form class="search-form" target="_blank" action="" accept-charset="UTF-8" method="get">
                             <input name="utf8" type="hidden" value="✓">
                             <input type="search" name="q" id="q" placeholder="搜索" class="input-medium search-query">
                             <span class="search_trigger" onclick="">
-                                <i class="fa fa-search"></i></span>
+                                <i class="fa fa-search"></i>
+                            </span>
                         </form>
                     </li>
                 </ul>
@@ -46,62 +48,18 @@
                 <ul class="unstyled clearfix sort-nav" id="collection-categories-nav"
                     data-js-module="collection-category">
                     <% site.tags.each(function(item, index){ %>
-                    <li class="<%= (index == 0) ? 'active' : '' %>">
+                    <!-- 'active' : '' -->
+                    <li class="">
                         <a class="category" data-dimension="now" href="/<%= item.path %>"><%= item.name %></a>
                     </li>
                     <% }); %>
-
                     <!--<li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>-->
                 </ul>
-
-                <ul class="article-list thumbnails">
-                    <% site.categories.each(function(category){ %>
-                    <% category.posts.each(function(post){ %>
-
-                    <li class="<%= (post.photos && post.photos.length) ? 'have-img' : '' %>">
-                        <!-- 有配图默认渲染第一张 -->
-                        <% if (post.photos && post.photos.length){ %>
-                        <a class="wrap-img" href="<%- url_for(post.path) %>">
-                            <img src="<%= post.photos[0] %>" alt="<%= post.title %>">
-                        </a>
-                        <% } %>
-                        <div>
-                            <p class="list-top">
-                                <a class="author-name blue-link" target="_blank"
-                                   href="<%= theme.authorUrl %>"><%= post.author %></a>
-                                <em>·</em>
-                                <span class="time" data-shared-at="<%= date(post.date) %>"><%= date(post.date) %></span>
-                            </p>
-                            <h4 class="title"><a target="_blank" href="<%- url_for(post.path) %>"><%= post.title %></a>
-                            </h4>
-                            <div class="list-footer">
-                                <a target="_blank" href="<%- url_for(post.path) %>">阅读</a> ·
-                                <a target="_blank" href="<%- url_for(post.path) %>#disqus_thread">评论</a> ·
-                                <a target="_blank" href="<%= theme.donateUrl %>">喜欢</a>
-                            </div>
-                        </div>
-                    </li>
-                    <% }); %>
-                    <% }); %>
-                </ul>
-
-                <!-- 分页开始 -->
-                <div class="load-more">
-                    <button class="ladda-button " data-style="slide-left" data-type="script" data-remote=""
-                            data-size="medium"
-                            data-url="#"
-                            data-color="maleskine"
-                            data-method="get">
-                        <span class="ladda-label">点击查看更多</span>
-                        <span class="ladda-spinner"></span></button>
-                </div>
-
+                <%- body %>
             </div>
         </div>
     </div>
 </div>
-
-<!-- 页脚 -->
 <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 </body>
 </html>
