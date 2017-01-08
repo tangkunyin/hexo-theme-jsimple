@@ -12,52 +12,17 @@
     </a>
     <a class="login" data-signin-link="true" data-toggle="modal" href="<%= theme.authorUrl %>">
         <i class="fa fa-user"></i> 群英汇
-    </a> <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
+    </a>
+    <a class="daytime set-view-mode pull-right" href="javascript:void(0)">
+        <i class="fa fa-moon-o"></i>
+    </a>
 </div>
 <%- partial('_partial/leftNav', null, {cache: !config.relative_link}) %>
 <!-- 中边栏 -->
 <div class="row-fluid">
     <div class="recommended">
         <%- partial('_partial/middleNav', null, {cache: !config.relative_link}) %>
-        <div class="span7 offset3">
-            <div class="page-title" style="width: 957px;">
-                <!-- 分类和搜索 -->
-                <ul class="recommened-nav navigation clearfix" data-container="#list-container"
-                    data-loader=".loader-tiny" data-user-slug="">
-                    <% for (var i in theme.menu){ %>
-                    <!--  'active' : 'bonus'  -->
-                    <li class="bonus">
-                        <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-                    </li>
-                    <% } %>
-                    <!--<img class="hide loader-tiny" src="./images/tiny.gif" alt="Tiny">-->
-                    <li class="search">
-                        <form class="search-form" target="_blank" action="" accept-charset="UTF-8" method="get">
-                            <input name="utf8" type="hidden" value="✓">
-                            <input type="search" name="q" id="q" placeholder="搜索" class="input-medium search-query">
-                            <span class="search_trigger" onclick="">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-            <!-- 文章列表 -->
-            <div id="list-container">
-                <!-- 标签 -->
-                <ul class="unstyled clearfix sort-nav" id="collection-categories-nav"
-                    data-js-module="collection-category">
-                    <% site.tags.each(function(item, index){ %>
-                    <!-- 'active' : '' -->
-                    <li class="">
-                        <a class="category" data-dimension="now" href="/<%= item.path %>"><%= item.name %></a>
-                    </li>
-                    <% }); %>
-                    <!--<li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>-->
-                </ul>
-                <%- body %>
-            </div>
-        </div>
+        <%- body %>
     </div>
 </div>
 <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
