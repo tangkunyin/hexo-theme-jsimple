@@ -3,6 +3,9 @@
         <!-- 分类和搜索 -->
         <ul class="recommened-nav navigation clearfix" data-container="#list-container"
             data-loader=".loader-tiny" data-user-slug="">
+            <li class="<%= pagination == 2 ? 'active' : 'bonus' %>">
+                <a href="/" data-name="最近文章">最近</a>
+            </li>
             <% for (var i in theme.menu){ %>
             <li class="<%= (page.category == i) ? 'active' : 'bonus' %>">
                 <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
@@ -14,8 +17,8 @@
                     <input name="utf8" type="hidden" value="✓">
                     <input type="search" name="q" id="q" placeholder="搜索" class="input-medium search-query">
                     <span class="search_trigger" onclick="">
-                                <i class="fa fa-search"></i>
-                            </span>
+                        <i class="fa fa-search"></i>
+                    </span>
                 </form>
             </li>
         </ul>
@@ -32,13 +35,13 @@
             <% }); %>
             <!--<li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>-->
         </ul>
+        <ul class="article-list thumbnails">
         <% if (pagination == 2){ %>
-        <!-- 首页默认取最最新一篇文章 -->
-        <% site.posts.sort('date', theme.homePageSortType).limit(1).each(function(post){ %>
-        <%- partial('article', {post: post, index: true}) %>
+        <!-- 首页默认取最最新文章集 -->
+        <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
+        <%- partial('_widget/archive-posts', {post: post}) %>
         <% }) %>
         <% } else { %>
-        <ul class="article-list thumbnails">
             <% page.posts.each(function(post){ %>
             <%- partial('_widget/archive-posts', {post: post}) %>
             <% })} %>
