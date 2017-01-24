@@ -1,24 +1,51 @@
-<div class="post">
-    <div class="article">
-        <h1 class="title"><%- post.title %></h1>
-
-        <!-- 文章内容 -->
-        <div class="show-content">
-            <%- post.content %>
-        </div>
-
-        <div class="show-foot">
-            <a class="notebook" href="/nb/2240104">
-                <i class="iconfont ic-search-notebook"></i> <span>聊书</span>
-            </a>
-            <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
-                © 著作权归作者所有
-            </div>
-            <div class="modal-wrap" data-report-note="">
-                <a id="report-modal">举报文章</a>
-            </div>
-        </div>
-
+<div class="row-fluid">
+    <div class="page-title" style="width: 100%;padding-right: 30%">
+        <!-- 当前分类和搜索 -->
+        <ul class="recommened-nav navigation clearfix" data-container="#list-container"
+            data-loader=".loader-tiny" data-user-slug="">
+            <li class="bonus">
+                <a href="/" data-name="最近文章">最近</a>
+            </li>
+            <% for (var i in theme.menu){ %>
+            <li class="<%= (page.categories.first().name == i) ? 'active' : 'bonus' %>">
+                <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
+            </li>
+            <% } %>
+            <!--<img class="hide loader-tiny" src="./images/tiny.gif" alt="Tiny">-->
+            <li class="search">
+                <form class="search-form" target="_blank" action="" accept-charset="UTF-8" method="get">
+                    <input name="utf8" type="hidden" value="✓">
+                    <input type="search" name="q" id="q" placeholder="搜索" class="input-medium search-query">
+                    <span class="search_trigger" onclick="">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </form>
+            </li>
+        </ul>
     </div>
+    <div class="post">
+        <div class="article">
+            <h1 class="title"><%- post.title %></h1>
+
+            <!-- 文章内容 -->
+            <div class="show-content">
+                <%- post.content %>
+            </div>
+
+            <div class="show-foot">
+                <a class="notebook" href="/nb/2240104">
+                    <i class="iconfont ic-search-notebook"></i> <span>聊书</span>
+                </a>
+                <div class="copyright" data-toggle="tooltip" data-html="true"
+                     data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+                    © 著作权归作者所有
+                </div>
+                <div class="modal-wrap" data-report-note="">
+                    <a id="report-modal">举报文章</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%- partial('_partial/comments', {post: post}) %>
 </div>
-<%- partial('_partial/comments', {post: post}) %>
