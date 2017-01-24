@@ -1,6 +1,6 @@
 <div class="row-fluid">
+    <!-- 当前分类和搜索 -->
     <div class="page-title" style="width: 100%;padding-right: 30%">
-        <!-- 当前分类和搜索 -->
         <ul class="recommened-nav navigation clearfix" data-container="#list-container"
             data-loader=".loader-tiny" data-user-slug="">
             <li class="bonus">
@@ -23,29 +23,34 @@
             </li>
         </ul>
     </div>
-    <div class="post">
-        <div class="article">
-            <h1 class="title"><%- post.title %></h1>
-
-            <!-- 文章内容 -->
-            <div class="show-content">
+    <!-- 文章内容 -->
+    <div class="main-inner">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="post-header">
+                <div class="post-author clearfix">
+                    <a class="avatar fleft" href="#"><img width="30" height="30" src="/images/favicon.png" alt=""/></a>
+                    <p><span class="label">作者</span> <a href="#">绛木子</a> <span
+                                title="最后编辑于2015.06.18 17:16:34">2015.06.18 10:36:00</span></p>
+                    <p>写了15篇文章,回复540人,</p>
+                </div>
+                <h2 class="post-title"><%- post.title %></h2>
+                <div class="post-meta">
+                    <a href="https://lixianhua.com/start.html#comments">评论：1</a>
+                    <em>·</em>
+                    <a href="https://lixianhua.com/start.html">阅读：1826</a><em>·</em>
+                    <span>喜欢：23</span>
+                </div>
+            </div>
+            <div class="post-content markdown-body">
                 <%- post.content %>
             </div>
-
-            <div class="show-foot">
-                <a class="notebook" href="/nb/2240104">
-                    <i class="iconfont ic-search-notebook"></i> <span>聊书</span>
-                </a>
-                <div class="copyright" data-toggle="tooltip" data-html="true"
-                     data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
-                    © 著作权归作者所有
-                </div>
-                <div class="modal-wrap" data-report-note="">
-                    <a id="report-modal">举报文章</a>
-                </div>
+            <div class="post-tool">
+                <a class="btn-like" href="javascript:void(0);" data-cid="1" title="23"><i class="fa fa-heart-o"></i> 赞 |
+                    <span>23</span></a>
+                <a class="btn-donate" href="javascript:void(0);">赏</a>
             </div>
-
-        </div>
+            <div class="post-tags">标签：none</div>
+        </article>
     </div>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
