@@ -1,77 +1,16 @@
-<footer>
-    <div class="footer-l">
+<footer class="footer">
+    <div class="footer-inner">
         <p>
-            <a href="<%= theme.aboutUrl %>" target="_blank">关于<%= theme.siteName %></a> |
-            <a href="<%= theme.contactUrl %>" target="_blank" >联系作者</a> |
-            <a href="<%= theme.helpUrl %>" target="_blank">帮助中心</a> |
-            <a href="<%= theme.othersUrl %>" target="_blank">技术周边</a> |
-            <a href="<%= theme.flinks %>" target="_blank">友情链接</a>
+            <a href="https://lixianhua.com/archives.html" title="归档">归档</a>
+            <a href="https://lixianhua.com/tags.html" title="标签">标签</a>
+            <a href="https://lixianhua.com/links.html" title="链接">链接</a>
+            <a href="https://lixianhua.com/guestbook.html" title="留言">留言</a>
+            <a href="https://lixianhua.com/about.html" title="关于">关于</a>
         </p>
-        <p>©2014-2016 由
-            <a href="http://hexo.io" target="_blank">Hexo</a>创建&nbsp;&nbsp;|&nbsp;&nbsp;
-            主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">森破</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-            感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动
+        <p>&copy; 2017 <a href="https://lixianhua.com/">绛木子</a>
+            <em>·</em> <a href="http://www.typecho.org" target="_blank">Typecho</a>
+            <em>·</em> <a href="http://www.miitbeian.gov.cn/" target="blank">赣ICP备10004449号-5</a>			<em>·</em> Theme By <a href="http://lixianhua.com/" target="_blank">绛木子</a>
+
         </p>
     </div>
-    <div class="footer-r pull-right">
-        <div>
-            关注本站:
-            <a href="<%= theme.sinaWb %>" target="_blank">
-                <i class="fa fa-weibo"></i>
-            </a>
-            <a href="<%= theme.facebook %>" target="_blank">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a href="<%= theme.github %>" target="_blank">
-                <i class="fa fa-github"></i>
-            </a>
-            <a class="weixin" href="<%= theme.siteUrl %>/#share-weixin-modal" data-toggle="modal">
-                <i class="fa fa-weixin"></i>
-            </a>
-            <br>
-            <a href="http://windows.microsoft.com/zh-CN/internet-explorer/download-ie" class="upgrade-ie">
-                本网站不支持IE6/IE7，如果您希望继续使用 IE 浏览器，请升级至IE8及以上版本</a>
-        </div>
-    </div>
-
-    <!--modal-->
-    <div class="modal hide fade share-weixin-modal" id="share-weixin-modal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-content">
-                <div class="modal-body">
-                    <p>关注微信公众号，获得每日好文推荐。微信中搜索「<%= theme.siteName %>」或者扫一扫下方二维码：</p>
-                    <img src="./images/site_wechat_qrcode.jpg" alt="shuoit wechat qrcode">
-                </div>
-            </div>
-        </div>
-    </div>
-
 </footer>
-
-<div id="flash" class="hide"></div>
-
-<div id="view-mode-modal" tabindex="-1" class="modal hide read-modal" aria-hidden="false"
-     data-js-module="view-mode-modal">
-    <div class="btn-group change-background" data-toggle="buttons-radio">
-        <a class="btn btn-daytime active" data-mode="day" href="javascript:void(null);">
-            <i class="fa fa-sun-o"></i>
-        </a>
-        <a class="btn btn-nighttime " data-mode="night" href="javascript:void(null);">
-            <i class="fa fa-moon-o"></i>
-        </a>
-    </div>
-    <div class="btn-group change-font" data-toggle="buttons-radio">
-        <a class="btn font active" data-font="font1" href="javascript:void(null);">宋体</a>
-        <a class="btn font hei " data-font="font2" href="javascript:void(null);">黑体</a>
-    </div>
-    <div class="btn-group change-locale" data-toggle="buttons-radio">
-        <a class="btn font active" data-locale="zh-CN" href="javascript:void(null);">简</a>
-        <a class="btn font hei " data-locale="zh-TW" href="javascript:void(null);">繁</a>
-    </div>
-</div>
-
-<%- js(['js/modernizr.js', 'js/base.js','js/reading-base.js','js/home.js']) %>

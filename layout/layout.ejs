@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html class="no-js">
 <head>
     <%- partial('_partial/head', null, {cache: !config.relative_link}) %>
 </head>
-<body class="output fluid zh cn win reader-day-mode reader-font1" data-js-module="recommendation" data-locale="zh-CN">
-<%- partial('_partial/mobileHeader', null, {cache: !config.relative_link}) %>
+<body class="">
+<%- partial('_partial/leftMenu', null, {cache: !config.relative_link}) %>
 <%- partial('_widget/user-entry', null, {cache: !config.relative_link}) %>
-<%- partial('_partial/leftNav', null, {cache: !config.relative_link}) %>
 <!-- 中边栏 -->
-<div class="row-fluid">
-    <div class="recommended">
-        <%- body %>
-    </div>
+<div id="wrapper" class="clearfix">
+    <%- body %>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 </div>
-<%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
 </body>
 </html>
