@@ -1,23 +1,43 @@
-<li class="<%= (post.photos && post.photos.length) ? 'have-img' : '' %>">
-  <!-- 有配图默认渲染第一张 -->
-    <% if (post.photos && post.photos.length){ %>
-  <a class="wrap-img" href="<%- url_for(post.path) %>">
-    <img src="<%= post.photos[0] %>" alt="<%= post.title %>">
-  </a>
-    <% } %>
-  <div>
-    <p class="list-top">
-      <a class="author-name blue-link" target="_blank"
-         href="<%= theme.authorUrl %>"><%= post.author %></a>
-      <em>·</em>
-      <span class="time" data-shared-at="<%= date(post.date) %>"><%= date(post.date) %></span>
-    </p>
-    <h4 class="title"><a target="_blank" href="<%- url_for(post.path) %>"><%= post.title %></a>
-    </h4>
-    <div class="list-footer">
-      <a target="_blank" href="<%- url_for(post.path) %>">阅读</a> ·
-      <a target="_blank" href="<%- url_for(post.path) %>#disqus_thread">评论</a> ·
-      <a target="_blank" href="<%= theme.donateUrl %>">喜欢</a>
+<article class="post">
+    <div class="post-cover">
+        <a href="https://lixianhua.com/clone_jianshu_theme.html"
+           title="仿简书响应式Typecho博客主题 (2016.11.28更新)"
+           style="background-image:url(https://dn-lee.qbox.me/2015/07/3257680062.png?imageView2/4/w/100/h/90)"></a>
     </div>
-  </div>
-</li>
+    <div class="post-header">
+        <div class="post-meta"><a href="https://lixianhua.com/author/1/"><strong>绛木子</strong></a><em>·</em>2016年05月14日
+        </div>
+        <a class="post-title" href="https://lixianhua.com/clone_jianshu_theme.html"
+           title="仿简书响应式Typecho博客主题 (2016.11.28更新)">仿简书响应式Typecho博客主题 (2016.11.28更新)</a>
+        <div class="post-meta">
+
+            <a href="https://lixianhua.com/clone_jianshu_theme.html#comments">评论：226</a>
+            <em>·</em>
+            <a href="https://lixianhua.com/clone_jianshu_theme.html">阅读：60125</a><em>·</em>
+            <span>喜欢：248</span>
+        </div>
+    </div>
+    <div class="post-desc">
+        2016.11.28更新修复bug添加pjax支持2016.05.14更新页面重制脚本重制部分功能整合到配套插件中暂时去掉了七牛CDN下载:JianShu先安装插件再安装主题，若已安装旧版本，请...
+    </div>
+</article>
+
+
+<article class="post">
+    <div class="post-header">
+        <div class="post-meta"><a href="https://lixianhua.com/author/1/"><strong>绛木子</strong></a><em>·</em>2015年10月23日
+        </div>
+        <a class="post-title" href="https://lixianhua.com/typecho_forum_3.html"
+           title="基于Typecho的社区系统3">基于Typecho的社区系统3</a>
+        <div class="post-meta">
+
+            <a href="https://lixianhua.com/typecho_forum_3.html#comments">评论：5</a>
+            <em>·</em>
+            <a href="https://lixianhua.com/typecho_forum_3.html">阅读：4295</a><em>·</em>
+            <span>喜欢：35</span>
+        </div>
+    </div>
+    <div class="post-desc">
+        社区系统的功能页面通过路由功能都实现了，但是页面上的表单、表单处理方法却还没有解决继续看Typecho源码，会发现默认的表单操作都是使用action路由的，而action路由对应的组件为Widg...
+    </div>
+</article>

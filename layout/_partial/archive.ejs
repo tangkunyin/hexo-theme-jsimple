@@ -1,70 +1,59 @@
 <%- partial('_partial/middleCover', null, {cache: !config.relative_link}) %>
-<div class="span7 offset3">
-    <div class="page-title" style="width: 957px;">
-        <!-- 分类和搜索 -->
-        <ul class="recommened-nav navigation clearfix" data-container="#list-container"
-            data-loader=".loader-tiny" data-user-slug="">
-            <li class="<%= pagination == 2 ? 'active' : 'bonus' %>">
-                <a href="/" data-name="最近文章">最近</a>
-            </li>
-            <% for (var i in theme.menu){ %>
-            <li class="<%= (page.category == i) ? 'active' : 'bonus' %>">
-                <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-            </li>
-            <% } %>
-            <!--<img class="hide loader-tiny" src="./images/tiny.gif" alt="Tiny">-->
-            <li class="search">
-                <form class="search-form" target="_blank" action="" accept-charset="UTF-8" method="get">
-                    <input name="utf8" type="hidden" value="✓">
-                    <input type="search" name="q" id="q" placeholder="搜索" class="input-medium search-query">
-                    <span class="search_trigger" onclick="">
-                        <i class="fa fa-search"></i>
-                    </span>
-                </form>
-            </li>
-        </ul>
-    </div>
-    <!-- 文章列表 -->
-    <div id="list-container">
-        <!-- 标签 -->
-        <ul class="unstyled clearfix sort-nav" id="collection-categories-nav"
-            data-js-module="collection-category">
-            <% site.tags.each(function(item){ %>
-            <li class="<%= (page.tag == item.name) ? 'active' : '' %>">
-                <a class="category" data-dimension="now" href="/<%= item.path %>"><%= item.name %></a>
-            </li>
-            <% }); %>
-            <!--<li><img class="hide loader-tiny" src="/images/tiny.gif" alt="Tiny"/></li>-->
-        </ul>
-        <ul class="article-list thumbnails">
-        <% if (pagination == 2){ %>
-        <!-- 首页默认取最最新文章集 -->
-        <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
-        <%- partial('_widget/archive-posts', {post: post}) %>
-        <% }) %>
-        <% } else { %>
+
+<div id="body">
+    <div class="main" id="main">
+
+
+        <div class="page-title">
+            <ul>
+                <li class="<%= pagination == 2 ? 'active' : '' %>">
+                    <a href="/" data-name="最近文章">最近</a>
+                </li>
+                <% for (var i in theme.menu){ %>
+                <li class="<%= (page.category == i) ? 'active' : '' %>">
+                    <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
+                </li>
+                <% } %>
+                <li class="page-search">
+                    <form id="search" method="post" action="./" role="search">
+                        <label for="s" class="sr-only">搜索关键字</label>
+                        <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
+                        <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-inner">
+
+            <% if (pagination == 2){ %>
+            <!-- 首页默认取最最新文章集 -->
+            <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
+            <%- partial('_widget/category-items', {post: post}) %>
+            <% }) %>
+            <% } else { %>
             <% page.posts.each(function(post){ %>
-            <%- partial('_widget/archive-posts', {post: post}) %>
+            <%- partial('_widget/category-items', {post: post}) %>
             <% })} %>
-        </ul>
+
+        </div>
+
         <% if (page.total > 1){ %>
-        <!-- 分页开始 -->
-        <!--<div class="load-more">-->
-        <!--<button class="ladda-button " data-style="slide-left" data-type="script" data-remote=""-->
-        <!--data-size="medium"-->
-        <!--data-url="#"-->
-        <!--data-color="maleskine"-->
-        <!--data-method="get">-->
-        <!--<span class="ladda-label">点击查看更多</span>-->
-        <!--<span class="ladda-spinner"></span></button>-->
-        <!--</div>-->
-        <nav id="page-nav">
-            <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
-            <%- paginator({
-                prev_text: prev_text,
-                next_text: next_text
-            }) %>
-        </nav>
+
+        <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
+        <%- paginator({
+            prev_text: prev_text,
+            next_text: next_text
+        }) %>
+
+        <div id="btn-archive">
+            <ol class="page-navigator">
+                <li class="current"><a href="https://lixianhua.com/page/1/">1</a></li>
+                <li><a href="https://lixianhua.com/page/2/">2</a></li>
+                <li class="next"><a href="https://lixianhua.com/page/2/">&raquo;</a></li>
+            </ol>
+        </div>
         <% } %>
-    </div>
-</div>
+
+    </div><!-- end #main-->
+</div><!-- end #body -->
