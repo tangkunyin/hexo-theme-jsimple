@@ -18,8 +18,6 @@ homePageSortType: -1
 # 首页最新文章数量(默认5篇)
 homeArticleShown: 10
 
-# 中部分割图
-coverImg: defaultSiteDailyImg.jpg
 
 # 社交信息
 sinaWb: https://weibo.com/tangkunyin
@@ -37,20 +35,23 @@ andriodDownLink: https://github.com/tangkunyin/shuoitApp
 
 
 # 独立页链接
-aboutUrl: /about
-contactUrl: /contact
-helpUrl: /help
-othersUrl: /others
-flinks: /flinks
-rssUrl: /rss
-authorUrl: /authors
-donateUrl: /donate
-pullRequestUrl: /pullRequest
+about: /about
+contact: /contact
+help: /help
+others: /others
+links: /flinks
+feedback: /feedback
+rss: /rss
+author: /authors
+donate: /donate
+pullRequest: /pullRequest
 
 # 托管服务器
 gitPagesServerAddr: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 gitPagesServerName: Coding
 
+# 中部分割图
+coverImage: /images/defaultSiteDailyImg.jpg
 
 # favicon
 favicon: /images/favicon.png
