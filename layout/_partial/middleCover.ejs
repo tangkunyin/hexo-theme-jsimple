@@ -1,18 +1,22 @@
-<div id="cover" >
-    <div class="cover-img" style="background-image:url('<%= theme.coverImage %>')"></div>
+<div id="cover" style="display: <%= display %>">
+    <div class="cover-img" style="background-image:url('<%= theme.indexCover %>')"></div>
     <div class="cover-info">
         <img class="avatar" width="72" src="<%= theme.avatar %>" alt="" />
         <p><%= theme.siteSubtitle %></p>
         <div class="cover-sns">
-            <div class="btn btn-weibo">
-                <a href="javascript:void(0);"><i class="fa fa-weibo"></i></a>
-                <div class="qrcode"><img src="/images/qrcode.png" alt="weiboQrcode" /></div>
+            <div class="btn btn-weixin">
+                <a class="" href="javascript:"><i class="fa fa-weixin"></i></a>
+                <div class="qrcode"><img src="/images/weixin-mp.png" alt="weixinQrcode" /></div>
                 <div class="qrcode-arrow"></div>
             </div>
-            <div class="btn btn-weixin">
-                <a class="" href="javascript:void(0);"><i class="fa fa-weixin"></i></a>
-                <div class="qrcode"><img src="/images/qrcode.png" alt="weixinQrcode" /></div>
-                <div class="qrcode-arrow"></div>
+            <div class="btn btn-weibo">
+                <a href="<%= theme.sinaWb %>" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href="<%= theme.facebook %>"  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="<%= theme.github %>"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </div>
