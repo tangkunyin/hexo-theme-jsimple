@@ -2985,6 +2985,14 @@ a.btn:hover {
     color: #fff;
 }
 
+.btn-weixin {
+    background: #6cc775;
+}
+
+.btn-weixin:hover {
+    background: #59b863;
+}
+
 .btn-weibo {
     background-color: #f96774;
 }
@@ -2993,13 +3001,22 @@ a.btn:hover {
     background-color: #e34e5c;
 }
 
-.btn-weixin {
-    background: #6cc775;
+.btn-facebook {
+    background-color: #1c95f4;
 }
 
-.btn-weixin:hover {
-    background: #59b863;
+.btn-facebook:hover {
+    background-color: #3286f9;
 }
+
+.btn-github {
+    background-color: #999999;
+}
+
+.btn-github:hover {
+    background-color: #8a8a8a;
+}
+
 
 a.avatar img, img.avatar {
     vertical-align: middle;
