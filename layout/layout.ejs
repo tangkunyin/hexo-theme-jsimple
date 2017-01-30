@@ -3,10 +3,9 @@
 <head>
     <%- partial('_partial/head', null, {cache: !config.relative_link}) %>
 </head>
-<body class="">
+<body class="<%= (is_post() || is_page()) ? 'single' : '' %>">
 <%- partial('_partial/leftMenu', null, {cache: !config.relative_link}) %>
 <%- partial('_widget/user-entry', null, {cache: !config.relative_link}) %>
-<!-- 中边栏 -->
 <div id="wrapper" class="clearfix">
     <%- body %>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
@@ -14,5 +13,18 @@
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
+<script>
+    $(function(){
+        jBlog.init({
+            url:'<%= config.url %>',
+            action:'<%= config.root %>',
+            usePjax:'1',
+            current:'<%= (is_post() || is_page()) ? 'post' : 'archive' %>',
+            prefix:'_<%= config.url %>',
+            respondId:'respond-post-13',
+            donateImg:'/images/weixin_donate.png'
+        });
+    });
+</script>
 </body>
 </html>
