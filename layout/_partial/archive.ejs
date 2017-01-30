@@ -1,9 +1,6 @@
-<%- partial('_partial/middleCover', null, {cache: !config.relative_link}) %>
-
+<%- partial('_partial/middleCover', {display:'block'}, {cache: !config.relative_link}) %>
 <div id="body">
     <div class="main" id="main">
-
-
         <div class="page-title">
             <ul>
                 <li class="<%= pagination == 2 ? 'active' : '' %>">
@@ -23,9 +20,7 @@
                 </li>
             </ul>
         </div>
-
         <div class="main-inner">
-
             <% if (pagination == 2){ %>
             <!-- 首页默认取最最新文章集 -->
             <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>

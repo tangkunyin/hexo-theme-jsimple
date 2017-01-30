@@ -1,55 +1,55 @@
-<div class="page-title">
-    <ul>
-        <li><a href="/">最新</a></li>
-
-        <% for (var i in theme.menu){ %>
-        <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
-            <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-        </li>
-        <% } %>
-
-        <li class="page-search">
-            <form id="search" method="post" action="./" role="search">
-                <label for="s" class="sr-only">搜索关键字</label>
-                <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
-                <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
-            </form>
-        </li>
-    </ul>
-</div>
-
-<div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <div class="post-header">
-            <div class="post-author clearfix">
-                <a class="avatar fleft" href="https://lixianhua.com/author/1/">
-                    <img width="48"
-                         src="https://cn.gravatar.com/avatar/970cd1739638622379ebcf4882b1a5fc?s=48&amp;r=&amp;d="
-                         alt=""/></a>
-                <p><span class="label">作者</span> <a href="https://lixianhua.com/author/1/">绛木子</a> <span
-                            title="最后编辑于2016.11.30 19:00:34">2015.12.25 14:37:00</span></p>
-                <p>写了15篇文章,回复540人,</p>
-            </div>
-            <h2 class="post-title"><%- post.title %></h2>
-            <div class="post-meta">
-                <a href="https://lixianhua.com/jiang_theme_for_typecho.html#comments">评论：15</a>
-                <em>·</em>
-                <a href="https://lixianhua.com/jiang_theme_for_typecho.html">阅读：6123</a><em>·</em>
-                <span>喜欢：95</span>
-            </div>
+<%- partial('_partial/middleCover', {display:'none'}, {cache: !config.relative_link}) %>
+<div id="body">
+    <div class="main" id="main">
+        <div class="page-title">
+            <ul>
+                <li><a href="/">最新</a></li>
+                <% for (var i in theme.menu){ %>
+                <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
+                    <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
+                </li>
+                <% } %>
+                <li class="page-search">
+                    <form id="search" method="post" action="./" role="search">
+                        <label for="s" class="sr-only">搜索关键字</label>
+                        <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
+                        <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
+                    </form>
+                </li>
+            </ul>
         </div>
-        <div class="post-content markdown-body">
-            <%- post.content %>
-        </div>
-        <div class="post-tool">
-            <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95"><i class="fa fa-heart-o"></i> 赞 |
-                <span>95</span></a>
-            <a class="btn-donate" href="javascript:void(0);">赏</a>
-        </div>
-        <div class="post-tags">标签：none</div>
-    </article>
 
-    <div id="comments">
-        <%- partial('_partial/comments', {post: post}) %>
-    </div>
-</div>
+        <div class="main-inner">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <div class="post-header">
+                    <div class="post-author clearfix">
+                        <a class="avatar fleft" href="https://lixianhua.com/author/1/">
+                            <img width="48"
+                                 src="https://cn.gravatar.com/avatar/970cd1739638622379ebcf4882b1a5fc?s=48&amp;r=&amp;d="
+                                 alt=""/></a>
+                        <p><span class="label">作者</span> <a href="https://lixianhua.com/author/1/">绛木子</a> <span
+                                    title="最后编辑于2016.11.30 19:00:34">2015.12.25 14:37:00</span></p>
+                        <p>写了15篇文章,回复540人,</p>
+                    </div>
+                    <h2 class="post-title"><%- post.title %></h2>
+                    <div class="post-meta">
+                        <a href="https://lixianhua.com/jiang_theme_for_typecho.html#comments">评论：15</a>
+                        <em>·</em>
+                        <a href="https://lixianhua.com/jiang_theme_for_typecho.html">阅读：6123</a><em>·</em>
+                        <span>喜欢：95</span>
+                    </div>
+                </div>
+                <div class="post-content markdown-body">
+                    <%- post.content %>
+                </div>
+                <div class="post-tool">
+                    <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95"><i
+                                class="fa fa-heart-o"></i> 赞</a>
+                    <a class="btn-donate" href="javascript:void(0);" class="fa fa-">赏</a>
+                </div>
+                <div class="post-tags">标签：none</div>
+            </article>
+            <%- partial('_partial/comments', {post: post}) %>
+        </div>
+    </div><!-- end #main-->
+</div><!-- end #body -->

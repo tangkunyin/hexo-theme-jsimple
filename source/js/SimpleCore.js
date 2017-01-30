@@ -156,7 +156,7 @@ var jBlog = {
         });
         $(document).on('pjax:end', function(e) {
             if(e.relatedTarget === undefined){
-                if($('#comments').length > 0){
+                if($('#disqus_thread').length > 0){
                     jBlog.current = 'post';
                 }else{
                     jBlog.current = 'archive';
@@ -266,14 +266,7 @@ var jBlog = {
             jBlog.alert('请选择要点赞的文章!',type);
             return false;
         }
-        $.get(jBlog.action+'/tools?do=like&cid='+cid,function(rs){
-            var type = 'error';
-            if(rs.status==1){
-                type= 'success';
-                that.find('span').text(num+1)
-            }
-            jBlog.alert(rs.msg,type);
-        });
+        jBlog.alert('承让 :)');
     },
     ajaxGetExplore:function(){
         $.get(jBlog.action+'/tools?do=explore',function(rs){
@@ -307,10 +300,9 @@ var jBlog = {
             $('body').addClass('night-mode');
         }
         btn.find('i').attr('class',icon);
-        jBlog.alert('显示模式已切换');
         jBlog.setCookie('read-mode', next_mode);
     },
-    alert:function(msg,type,time){		//提示信息
+    alert:function(msg,type,time){  //提示信息
         var id = 'notice-'+(new Date().getTime());
         type = type==='error' ? 'error' :'success';
         time = time === undefined ? (type=='success' ? 3000 : 5000) : time;
