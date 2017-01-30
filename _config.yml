@@ -29,10 +29,6 @@ disqus_shortname: shuoit
 ## 首页第一篇文章是否开启评论(禁止可提高首页打开速度)
 indexComment: false
 
-# 网站app下载链接
-iOSDownLink: https://github.com/tangkunyin/shuoitApp
-andriodDownLink: https://github.com/tangkunyin/shuoitApp
-
 
 # 独立页链接
 about: /about
@@ -50,8 +46,9 @@ pullRequest: /pullRequest
 gitPagesServerAddr: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 gitPagesServerName: Coding
 
-# 中部分割图
-coverImage: /images/defaultSiteDailyImg.jpg
+# cover(首页和文章页可分别设置)
+indexCover: /images/coverImage.jpg
+
 
 # favicon
 favicon: /images/favicon.png
