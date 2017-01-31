@@ -1,4 +1,4 @@
-<%- partial('_partial/middleCover', {display:'none'}, {cache: !config.relative_link}) %>
+<%- partial('_partial/middleCover', {display: 'none'}, {cache: !config.relative_link}) %>
 <div id="body">
     <div class="main" id="main">
         <div class="page-title">
@@ -23,29 +23,30 @@
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
                 <div class="post-header">
                     <div class="post-author clearfix">
-                        <a class="avatar fleft" href="https://lixianhua.com/author/1/">
-                            <img width="48"
-                                 src="https://cn.gravatar.com/avatar/970cd1739638622379ebcf4882b1a5fc?s=48&amp;r=&amp;d="
-                                 alt=""/></a>
-                        <p><span class="label">作者</span> <a href="https://lixianhua.com/author/1/">绛木子</a> <span
-                                    title="最后编辑于2016.11.30 19:00:34">2015.12.25 14:37:00</span></p>
-                        <p>写了15篇文章,回复540人,</p>
+                        <a class="avatar fleft" href="<%= theme.authorLink %>" target="_blank">
+                            <img width="48" src="<%= theme.avatar %>" alt="avatar"/>
+                        </a>
+                        <p><span class="label">作者</span>
+                            <a href="<%= theme.authorAbout %>" target="_blank"><%= post.author %></a>
+                            <span title="最后编辑于<%= date(post.date) %>"><%= date(post.date) %></span>
+                        </p>
+                        <p><%= theme.authorDesc %></p>
                     </div>
                     <h2 class="post-title"><%- post.title %></h2>
                     <div class="post-meta">
-                        <a href="https://lixianhua.com/jiang_theme_for_typecho.html#comments">评论：15</a>
+                        <a href="<%- url_for(post.path) %>#disqus_thread">评论：X</a>
                         <em>·</em>
-                        <a href="https://lixianhua.com/jiang_theme_for_typecho.html">阅读：6123</a><em>·</em>
-                        <span>喜欢：95</span>
+                        <a href="<%- url_for(post.path) %>">阅读：Y</a><em>·</em>
+                        <span>喜欢：Z</span>
                     </div>
                 </div>
                 <div class="post-content markdown-body">
                     <%- post.content %>
                 </div>
                 <div class="post-tool">
-                    <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95"><i
-                                class="fa fa-heart-o"></i> 赞</a>
-                    <a class="btn-donate" href="javascript:void(0);" class="fa fa-">赏</a>
+                    <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95">
+                        <i class="fa fa-heart-o"></i> 赞
+                    </a>
                 </div>
                 <div class="post-tags">标签：none</div>
             </article>
