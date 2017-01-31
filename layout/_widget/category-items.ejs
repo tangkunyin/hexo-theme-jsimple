@@ -1,3 +1,4 @@
+<% var external_link = config.external_link ? '' : '';%>
 <article class="post">
     <!-- 有配图默认渲染第一张 -->
     <% if (post.photos && post.photos.length){ %>
@@ -6,14 +7,14 @@
     </div>
     <% } %>
     <div class="post-header">
-        <div class="post-meta"><a href="#"><strong><%= post.author %></strong></a><em>·</em><%= date(post.date) %>
+        <div class="post-meta"><a href="<%= theme.authorLink %>"><strong><%= post.author %></strong></a><em>·</em><%= date(post.date) %>
         </div>
         <a class="post-title" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
         <div class="post-meta">
-            <a href="<%- url_for(post.path) %>#comments">评论：226</a>
+            <a href="<%- url_for(post.path) %>#disqus_thread">评论：?</a>
             <em>·</em>
-            <a href="<%- url_for(post.path) %>">阅读：60125</a><em>·</em>
-            <span>喜欢：248</span>
+            <a href="<%- url_for(post.path) %>">阅读：?</a><em>·</em>
+            <span>喜欢：?</span>
         </div>
     </div>
     <div class="post-desc">

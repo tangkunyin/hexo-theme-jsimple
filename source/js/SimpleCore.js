@@ -266,7 +266,7 @@ var jBlog = {
             jBlog.alert('请选择要点赞的文章!',type);
             return false;
         }
-        jBlog.alert('承让 :)');
+        jBlog.alert('多谢支持 ：）');
     },
     ajaxGetExplore:function(){
         $.get(jBlog.action+'/tools?do=explore',function(rs){
