@@ -129,7 +129,7 @@ var SimpleCore = {
             $('body').removeClass('single');
         }
         $.each($('.nav-menu a'), function (k, v) {
-            if ($(v).attr('href') === window.location.href) {
+            if (v.href == window.location.href) {
                 $(v).addClass('current');
             } else {
                 $(v).removeClass('current');
