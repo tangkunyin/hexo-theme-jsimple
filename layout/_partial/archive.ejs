@@ -1,54 +1,47 @@
-<%- partial('_partial/middleCover', {cache: !config.relative_link}) %>
-<div id="body">
-    <div class="main" id="main">
-        <div class="page-title">
-            <ul>
-                <li class="<%= pagination == 2 ? 'active' : '' %>">
-                    <a href="/" data-name="最近文章">最近</a>
-                </li>
-                <% for (var i in theme.menu){ %>
-                <li class="<%= (page.category == i) ? 'active' : '' %>">
-                    <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-                </li>
-                <% } %>
-                <li class="page-search">
-                    <form id="search" method="post" action="" role="search">
-                        <label for="s" class="sr-only">搜索关键字</label>
-                        <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
-                        <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
-                    </form>
-                </li>
-            </ul>
-        </div>
-        <div class="main-inner">
-            <% if (pagination == 2){ %>
-            <!-- 首页默认取最最新文章集 -->
-            <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
-            <%- partial('_widget/category-items', {post: post}) %>
-            <% }) %>
-            <% } else { %>
-            <% page.posts.each(function(post){ %>
-            <%- partial('_widget/category-items', {post: post}) %>
-            <% })} %>
-
-        </div>
-
-        <% if (page.total > 1){ %>
-
-        <% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
-        <%- paginator({
-            prev_text: prev_text,
-            next_text: next_text
-        }) %>
-
-        <div id="btn-archive">
-            <ol class="page-navigator">
-                <li class="current"><a href="https://lixianhua.com/page/1/">1</a></li>
-                <li><a href="https://lixianhua.com/page/2/">2</a></li>
-                <li class="next"><a href="https://lixianhua.com/page/2/">&raquo;</a></li>
-            </ol>
-        </div>
+<div class="page-title">
+    <ul>
+        <li class="<%= pagination == 2 ? 'active' : '' %>">
+            <a href="/" data-name="最近文章">最近</a>
+        </li>
+        <% for (var i in theme.menu){ %>
+        <li class="<%= (page.category == i) ? 'active' : '' %>">
+            <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
+        </li>
         <% } %>
+        <li class="page-search">
+            <form id="search" method="post" action="" role="search">
+                <label for="s" class="sr-only">搜索关键字</label>
+                <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
+                <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
+            </form>
+        </li>
+    </ul>
+</div>
+<div class="main-inner">
+    <% if (pagination == 2){ %>
+    <!-- 首页默认取最最新文章集 -->
+    <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
+    <%- partial('_widget/category-items', {post: post}) %>
+    <% }) %>
+    <% } else { %>
+    <% page.posts.each(function(post){ %>
+    <%- partial('_widget/category-items', {post: post}) %>
+    <% })} %>
 
-    </div><!-- end #main-->
-</div><!-- end #body -->
+</div>
+
+<% if (page.total > 1){ %>
+<% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
+<%- paginator({
+    prev_text: prev_text,
+    next_text: next_text
+}) %>
+
+<div id="btn-archive">
+    <ol class="page-navigator">
+        <li class="current"><a href="https://lixianhua.com/page/1/">1</a></li>
+        <li><a href="https://lixianhua.com/page/2/">2</a></li>
+        <li class="next"><a href="https://lixianhua.com/page/2/">&raquo;</a></li>
+    </ol>
+</div>
+<% } %>

@@ -39,7 +39,12 @@
 <%- partial('_partial/leftMenu', null, {cache: !config.relative_link}) %>
 <%- partial('_widget/user-entry', null, {cache: !config.relative_link}) %>
 <div id="wrapper" class="clearfix">
-    <%- body %>
+    <div id="body">
+        <div class="main" id="main">
+            <%- partial('_partial/middleCover', {cache: !config.relative_link}) %>
+            <%- body %>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 </div>
 <div class="fixed-btn">

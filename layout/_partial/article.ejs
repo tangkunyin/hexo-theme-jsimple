@@ -1,56 +1,50 @@
-<%- partial('_partial/middleCover', {cache: !config.relative_link}) %>
-<div id="body">
-    <div class="main" id="main">
-        <div class="page-title">
-            <ul>
-                <li><a href="/">最新</a></li>
-                <% for (var i in theme.menu){ %>
-                <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
-                    <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-                </li>
-                <% } %>
-                <li class="page-search">
-                    <form id="search" method="post" action="" role="search">
-                        <label for="s" class="sr-only">搜索关键字</label>
-                        <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
-                        <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
-                    </form>
-                </li>
-            </ul>
+<div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        <% for (var i in theme.menu){ %>
+        <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
+            <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
+        </li>
+        <% } %>
+        <li class="page-search">
+            <form id="search" method="post" action="" role="search">
+                <label for="s" class="sr-only">搜索关键字</label>
+                <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
+                <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
+            </form>
+        </li>
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="<%= theme.authorLink %>" target="_blank">
+                    <img width="48" src="<%= theme.avatar %>" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="<%= theme.authorAbout %>" target="_blank"><%= post.author %></a>
+                    <span title="最后编辑于<%= date(post.date) %>"><%= date(post.date) %></span>
+                </p>
+                <p><%= theme.authorDesc %></p>
+            </div>
+            <h2 class="post-title"><%- post.title %></h2>
+            <div class="post-meta">
+                <a href="<%- url_for(post.path) %>#disqus_thread">评论：X</a>
+                <em>·</em>
+                <a href="<%- url_for(post.path) %>">阅读：Y</a><em>·</em>
+                <span>喜欢：Z</span>
+            </div>
         </div>
-
-        <div class="main-inner">
-            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                <div class="post-header">
-                    <div class="post-author clearfix">
-                        <a class="avatar fleft" href="<%= theme.authorLink %>" target="_blank">
-                            <img width="48" src="<%= theme.avatar %>" alt="avatar"/>
-                        </a>
-                        <p><span class="label">作者</span>
-                            <a href="<%= theme.authorAbout %>" target="_blank"><%= post.author %></a>
-                            <span title="最后编辑于<%= date(post.date) %>"><%= date(post.date) %></span>
-                        </p>
-                        <p><%= theme.authorDesc %></p>
-                    </div>
-                    <h2 class="post-title"><%- post.title %></h2>
-                    <div class="post-meta">
-                        <a href="<%- url_for(post.path) %>#disqus_thread">评论：X</a>
-                        <em>·</em>
-                        <a href="<%- url_for(post.path) %>">阅读：Y</a><em>·</em>
-                        <span>喜欢：Z</span>
-                    </div>
-                </div>
-                <div class="post-content markdown-body">
-                    <%- post.content %>
-                </div>
-                <div class="post-tool">
-                    <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95">
-                        <i class="fa fa-heart-o"></i> 赞
-                    </a>
-                </div>
-                <div class="post-tags">标签：none</div>
-            </article>
-            <%- partial('_partial/comments', {post: post}) %>
+        <div class="post-content markdown-body">
+            <%- post.content %>
         </div>
-    </div><!-- end #main-->
-</div><!-- end #body -->
+        <div class="post-tool">
+            <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-heart-o"></i> 赞
+            </a>
+        </div>
+        <div class="post-tags">标签：none</div>
+    </article>
+    <%- partial('_partial/comments', {post: post}) %>
+</div>
