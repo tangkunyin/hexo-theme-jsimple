@@ -30,7 +30,7 @@ var SimpleCore = {
         SimpleCore.donateImg = params.donateImg;
     },
     initPjax: function () {
-        $(document).pjax('a[target!=_blank]', '#wrapper', {fragment: '#wrapper', timeout: 10000});
+        $(document).pjax('a[target!=_blank]', '#main', {fragment: '#main', timeout: 10000});
         $(document).on('pjax:send', function (e) {
             SimpleCore.pjaxLoading('show');
         });
