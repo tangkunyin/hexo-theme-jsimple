@@ -47,8 +47,9 @@
 </div>
 <script>
     $(function () {
-        jBlog.init({
+        SimpleCore.init({
             url: '<%= config.url %>',
+            buildingTime: '<%= theme.siteBuildingTime %>',
             usePjax: true,
             current: $('#disqus_thread').length == 0 ? 'archive' : 'post',
             prefix: '_<%= config.url %>',

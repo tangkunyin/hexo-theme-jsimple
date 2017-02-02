@@ -46,6 +46,9 @@ feedback: /feedback
 gitPagesServerAddr: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 gitPagesServerName: Coding
 
+# 网站建立时间
+siteBuildingTime: 12/12/2014
+
 
 # favicon
 favicon: /images/favicon.png
