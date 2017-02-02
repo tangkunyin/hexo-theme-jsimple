@@ -36,8 +36,7 @@ var jBlog = {
             jBlog.pjaxLoading('hide');
         });
         $(document).on('pjax:end', function (e) {
-            var baseURI = e.relatedTarget.baseURI;
-            if (baseURI && baseURI.indexOf('.html') == -1) {
+            if (e.relatedTarget.baseURI.indexOf('.html') == -1) {
                 jBlog.current = 'archive';
             }else {
                 jBlog.current = 'post';
@@ -45,10 +44,6 @@ var jBlog = {
             jBlog.setPageCurrent();
             jBlog.syncSize();
         });
-    },
-    initPageParams: function (params) {
-        jBlog.current = params.current;
-        $('title').text(params.title);
     },
     //外部调用初始化
     init: function (params) {
@@ -85,7 +80,9 @@ var jBlog = {
             e.preventDefault();
             jBlog.goTop();
         });
+
         jBlog.syncSize();
+        jBlog.setPageCurrent();
 
         if (jBlog.usePjax) {
             jBlog.initPjax();
@@ -121,7 +118,7 @@ var jBlog = {
         $("html, body").animate({scrollTop: 0}, 200);
     },
     setPageCurrent: function () {
-        if (jBlog.current === 'post' || jBlog.current === 'page') {
+        if (jBlog.current === 'post') {
             $('#cover').hide();
             $('body').addClass('single');
         } else {
@@ -168,7 +165,7 @@ var jBlog = {
     syncSize: function () {	//同步窗口大小
         var pageTitle = $('.page-title');
         var size = $(window).width();
-        if (size > 768 && (jBlog.current != 'post' && jBlog.current != 'page')) {
+        if (size > 768 && jBlog.current != 'post') {
             pageTitle.width($('#body > .main').width());
         } else {
             pageTitle.removeAttr('style');
