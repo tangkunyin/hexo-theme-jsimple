@@ -50,6 +50,7 @@
         jBlog.init({
             url: '<%= config.url %>',
             usePjax: true,
+            current: $('#disqus_thread').length == 0 ? 'archive' : 'post',
             prefix: '_<%= config.url %>',
             donateImg: '/images/weixin_donate.png'
         });
