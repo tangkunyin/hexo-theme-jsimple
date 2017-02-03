@@ -1,1 +1,41 @@
-<%- partial('_partial/archive-posts', {pagination: config.archive, index: true}) %>
+<div class="page-title">
+    <ul>
+        <li><a href="/" data-name="首页" title="返回首页">首页</a></li>
+        <li><a href="/tags" data-name="标签云" title="标签云">标签</a></li>
+        <li class="page-search">
+            <form id="search" method="post" action="" role="search">
+                <label for="s" class="sr-only">搜索关键字</label>
+                <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
+                <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
+            </form>
+        </li>
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <h3 class="post-title">坦率的讲 - 本站目前共计<%= page.posts.length %>篇文章</h3>
+        </div>
+        <div class="post-content markdown-body" itemprop="articleBody">
+            <div class="archives">
+                <% var lastDate; %>
+                <% page.posts.each(function(post, i){ %>
+                <% var currentDate = parseInt(date(post.date, 'YYYYMM')); %>
+                <% if (lastDate != currentDate){ %>
+                <% lastDate = currentDate; %>
+                <div class="archives-item">
+                    <h2><%= date(post.date, 'YYYY') %>年<%= date(post.date, 'MM') %>月</h2>
+                    <ul class="archives_list">
+                        <% } %>
+                        <li><%= date(post.date, 'DD') %>日<%= time(post.date) %>
+                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        </li>
+                        <% if (!page.posts.eq(i + 1) || currentDate != parseInt(date(page.posts.eq(i + 1).date, 'YYYYMM'))){ %>
+                    </ul>
+                </div>
+                <% } %>
+                <% }) %>
+            </div>
+        </div>
+    </article>
+</div>
