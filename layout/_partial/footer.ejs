@@ -1,18 +1,19 @@
 <footer class="footer">
     <div class="footer-inner">
         <p>
-            <a href="<%= theme.about %>" target="_blank" title="关于本站"><%= config.title %></a>&nbsp;
+            <a href="<%= theme.about %>"  title="关于本站">关于</a>&nbsp;
             &nbsp<em>·</em>&nbsp;&nbsp
-            <a href="<%= theme.contact %>" target="_blank" title="联系作者" >联系</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="<%= theme.help %>" target="_blank" title="帮助中心">帮助</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="<%= theme.others %>" target="_blank" title="技术周边">周边</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="<%= theme.links %>" target="_blank" title="友情链接">友链</a>
+            <a href="/archives" title="联系作者" >归档</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/tags" title="帮助中心">标签</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="<%= theme.feedback %>" title="技术周边">反馈</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="<%= theme.links %>" title="友情链接">友链</a>
         </p>
-        <p>©2014-2016 由 <a href="http://hexo.io" target="_blank">Hexo</a>创建
-            &nbsp;&nbsp<em>·</em>&nbsp;&nbsp本站已建立<a href="#" target="_blank" id="siteBuildingTime"></a>天
-            &nbsp;&nbsp<em>·</em>&nbsp;&nbsp主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">森破</a>
-            &nbsp;&nbsp<em>·</em>&nbsp;&nbsp感谢<a href="<%= theme.gitPagesServerAddr %>" target="_blank"><%= theme.gitPagesServerName %></a>提供强力驱动
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="<%= theme.timeline %>" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题<a href="https://github.com/tangkunyin/hexo-theme-simple" target="_blank">Simple</a>
+            ，感谢<a href="<%= theme.pageServerUrl %>" target="_blank"><%= theme.pageServerName %></a>提供免费优质的强力驱动
         </p>
     </div>
-    <%- partial('cnzz-analytics', null, {cache: !config.relative_link}) %>
+    <%- partial('site-analytics', null, {cache: !config.relative_link}) %>
 </footer>
