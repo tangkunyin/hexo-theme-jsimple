@@ -40,8 +40,9 @@ search:
 
 
 # comment ShortName, you can choose only ONE to display.
-disqus_shortname: shuoit
-duoshuo_shortname:
+duoshuo_shortname: shuoit
+disqus_shortname:
+
 
 
 # 独立页链接
