@@ -6,7 +6,7 @@
             <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
         </li>
         <% } %>
-        <%- partial('_widget/search-bar', null, {cache: !config.relative_link}) %>
+        <%- partial('_widget/search-bar') %>
     </ul>
 </div>
 <div class="main-inner">
@@ -34,11 +34,15 @@
             <%- post.content %>
         </div>
         <div class="post-tool">
-            <a class="btn-like" href="javascript:void(0);" data-cid="52" title="95">
-                <i class="fa fa-heart-o"></i> 赞
+            <a class="btn-donate" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 赏
             </a>
         </div>
-        <div class="post-tags">标签：none</div>
+        <div class="post-tags">标签：
+            <% post.tags.each(function(tag){ %>
+                <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+            <% }) %>
+        </div>
     </article>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
