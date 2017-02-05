@@ -36,6 +36,7 @@ var SimpleCore = {
         });
         $(document).on('pjax:complete', function (e) {
             SimpleCore.pjaxLoading('hide');
+            SimpleCore.pajx_loadDuodsuo();//pjax加载完成之后调用重载多说函数
         });
         $(document).on('pjax:end', function (e) {
             if (e.relatedTarget.baseURI.indexOf('.html') == -1) {
@@ -238,6 +239,16 @@ var SimpleCore = {
         expires = ';expires=' + expires.toGMTString();
         path = ';path=/';
         document.cookie = SimpleCore.prefix + name + "=" + escape(value) + expires + path;   //转码并赋值
+    },
+    pajx_loadDuodsuo: function (){
+        var dus=$(".ds-thread");
+        if($(dus).length==1){
+            var el = document.createElement('div');
+            el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+            el.setAttribute('data-url',$(dus).attr("data-url"));
+            DUOSHUO.EmbedThread(el);
+            $(dus).html(el);
+        }
     },
     setBuildingTime:function () {
         var urodz= new Date(SimpleCore.buildingTime);  //建站时间
