@@ -46,15 +46,13 @@ duoshuo_shortname:
 
 # 独立页链接
 about: /about
-contact: /contact
-help: /help
-others: /others
 links: /friendlinks
 feedback: /feedback
+timeline: /timeline
 
 # CNZZ count
-cnzz_siteid: 1260716016
+cnzz_siteid: 1261190932
 
 # 托管服务器信息
-gitPagesServerAddr: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
-gitPagesServerName: Coding
+pageServerName: Coding
+pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
