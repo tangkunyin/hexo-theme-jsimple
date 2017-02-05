@@ -1,4 +1,5 @@
-<!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html"><![endif]-->
+<!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html"><![endif]-->
 <!--[if lt IE 9]>
 <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
 <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -9,46 +10,42 @@
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 <meta http-equiv="mobile-agent" content="format=html5; url=<%= config.url %>">
+<meta name="author" content="<%= config.author %>">
 <link rel="stylesheet" media="all" href="/css/SimpleStyle.css">
 <% if (theme.favicon){ %>
 <%- favicon_tag(theme.favicon) %>
 <% } %>
 <%
-    var title;
-    if(is_home()){
-        title = config.title + ' - ' + config.subtitle;
-    }else if(is_archive()){
-      title = 'Archives';
-      if (is_month()){
-        title += ': ' + page.year + '/' + page.month;
-      } else if (is_year()){
-        title += ': ' + page.year;
-      }
-    } else if (is_category()){
-      title = 'Category: ' + page.category;
-    } else if (is_tag()){
-      title = 'Tag: ' + page.tag;
-    }else{
-        title = page.title;
+var siteTitle = page.title;
+if (is_archive()) {
+    siteTitle = '归档集';
+    if (is_month()) {
+        siteTitle += '- ' + page.year + '/' + page.month;
+    } else if (is_year()) {
+        siteTitle += '- ' + page.year;
     }
+} else if (is_category()) {
+    siteTitle = '分类 - ' + page.category;
+} else if (is_tag()) {
+    siteTitle = '标签 - ' + page.tag;
+}
 %>
-<title><%= title %></title>
-<meta name="author" content="<%= config.author %>">
+<title><% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %></title>
 <%
-   var keywords;
-   if(page.keywords){
-      keywords = page.keywords;
-   }else{
-      keywords = config.keywords;
-   }
+var keywords;
+if (page.keywords) {
+    keywords = page.keywords;
+} else {
+    keywords = config.keywords;
+}
 %>
 <meta name="keywords" content="<%= keywords %>">
 <%
-  var description;
-  if(page.description){
+var description;
+if (page.description) {
     description = page.description;
-  }else{
+} else {
     description = config.description;
-  }
+}
 %>
 <meta name="description " content="<%= description %>">
