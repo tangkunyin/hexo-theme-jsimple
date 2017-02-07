@@ -1,0 +1,12 @@
+<div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        <% for (var i in theme.menu){ %>
+        <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
+            <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
+        </li>
+        <% } %>
+        <%- partial('_widget/search-bar') %>
+    </ul>
+</div>
+<%- partial('_widget/common-article', {post: post}) %>
