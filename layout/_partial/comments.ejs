@@ -1,4 +1,4 @@
-<% if (theme.duoshuo_shortname){ %>
+<% if (theme.duoshuo_shortname && page.comments){ %>
 <!-- 多说评论框 start -->
 <div id="ds-thread" class="ds-thread" data-thread-key="<%- config.root %><%- post.path %>" data-title="<%- post.title %>" data-url="<%- post.permalink %>"></div>
 <!-- 多说评论框 end -->
@@ -16,7 +16,7 @@
     })();
 </script>
 <!-- 多说公共JS代码 end -->
-<% } else if (theme.disqus_shortname) { %>
+<% } else if (theme.disqus_shortname && page.comments) { %>
 <section class="post-comments">
     <div id="disqus_thread">
         <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
