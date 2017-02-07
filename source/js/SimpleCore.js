@@ -29,6 +29,7 @@ var SimpleCore = {
         SimpleCore.current = params.current;
         SimpleCore.donateImg = params.donateImg;
     },
+
     initPjax: function () {
         $(document).pjax('a[target!=_blank]', '#main', {fragment: '#main', timeout: 10000});
         $(document).on('pjax:send', function (e) {
@@ -48,6 +49,7 @@ var SimpleCore = {
             SimpleCore.syncSize();
         });
     },
+
     //外部调用初始化
     init: function (params) {
         SimpleCore.initParams(params);
@@ -92,6 +94,7 @@ var SimpleCore = {
         SimpleCore.setPageCurrent();
         SimpleCore.setBuildingTime();
     },
+
     pjaxLoading: function (type) {
         var loading = $('#pjax-loading'), width = 0;
         var progress = function () {
@@ -118,9 +121,11 @@ var SimpleCore = {
             SimpleCore.loadingShow = false;
         }
     },
+
     goTop: function () {
         $("html, body").animate({scrollTop: 0}, 200);
     },
+
     setPageCurrent: function () {
         if (SimpleCore.current === 'post') {
             $('#cover').hide();
@@ -137,6 +142,7 @@ var SimpleCore = {
             }
         });
     },
+
     scrollCallback: function () {
         var top = document.body.scrollTop;
         if (top > 100) {
@@ -150,6 +156,7 @@ var SimpleCore = {
         }
         SimpleCore.prevTop = top;
     },
+
     headerToggle: function () {
         if (SimpleCore.headerShow) {
             $('.page-title').css("top", 0);
@@ -166,6 +173,7 @@ var SimpleCore = {
             }
         }
     },
+
     syncSize: function () {	//同步窗口大小
         var pageTitle = $('.page-title');
         var size = $(window).width();
@@ -180,6 +188,7 @@ var SimpleCore = {
             });
         }
     },
+
     ajaxSetLike: function (that) {		//提交like
         var cid = that.data('cid');
         var num = parseInt(that.find('span').text());
@@ -189,6 +198,7 @@ var SimpleCore = {
         }
         SimpleCore.alert('多谢支持 ：）');
     },
+
     switchSearch: function () {	//显示搜索
         var srh = $('#search');
         if (srh.hasClass('active')) {
@@ -197,6 +207,7 @@ var SimpleCore = {
             srh.addClass('active');
         }
     },
+
     switchReadMode: function () {		//切换显示模式
         var btn = $('.btn-read-mode');
         var next_mode = $('body').hasClass('night-mode') ? 'day' : 'night';
@@ -233,6 +244,7 @@ var SimpleCore = {
         }
 
     },
+
     setCookie: function (name, value, expires) {
         expires = expires === undefined ? 1 : expires;
         expires = new Date(+new Date + 1000 * 60 * 60 * 24 * expires);
@@ -240,16 +252,22 @@ var SimpleCore = {
         path = ';path=/';
         document.cookie = SimpleCore.prefix + name + "=" + escape(value) + expires + path;   //转码并赋值
     },
+
     pajx_loadDuodsuo: function (){
-        var dus=$(".ds-thread");
-        if($(dus).length==1){
-            var el = document.createElement('div');
-            el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
-            el.setAttribute('data-url',$(dus).attr("data-url"));
-            DUOSHUO.EmbedThread(el);
-            $(dus).html(el);
+        var dus=$("#ds-thread");
+        if($(dus).length == 1){
+            try {
+                var el = document.createElement('div');
+                el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
+                el.setAttribute('data-url',$(dus).attr("data-url"));
+                DUOSHUO.EmbedThread(el);
+                $(dus).html(el);
+            }catch (e){
+                console.log(e);
+            }
         }
     },
+
     setBuildingTime:function () {
         var urodz= new Date(SimpleCore.buildingTime);  //建站时间
         var now = new Date();
