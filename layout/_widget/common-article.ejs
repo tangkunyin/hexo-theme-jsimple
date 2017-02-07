@@ -1,14 +1,3 @@
-<div class="page-title">
-    <ul>
-        <li><a href="/">最新</a></li>
-        <% for (var i in theme.menu){ %>
-        <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
-            <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-        </li>
-        <% } %>
-        <%- partial('_widget/search-bar') %>
-    </ul>
-</div>
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
@@ -38,11 +27,13 @@
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i> 赏
             </a>
         </div>
+        <% if (post.tags){%>
         <div class="post-tags">标签：
             <% post.tags.each(function(tag){ %>
-                <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+            <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
             <% }) %>
         </div>
+        <% }%>
     </article>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
