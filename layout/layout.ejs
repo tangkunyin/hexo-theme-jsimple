@@ -56,7 +56,7 @@
             url: '<%= config.url %>',
             buildingTime: '<%= theme.siteBuildingTime %>',
             usePjax: true,
-            current: $('<%= theme.duoshuo_shortname.length ? '#ds-thread' : '#disqus_thread' %>').length == 0 ? 'archive' : 'post',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
             prefix: '_<%= config.url %>',
             donateImg: '/images/weixin_donate.png'
         });
