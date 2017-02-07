@@ -1,13 +1,17 @@
-# A good experience  and simple style for hexo
+# 森破你的生活
 
-一款适用于hexo静态博客的森破主题(simple音译森破)
+## Simple three columns theme for Hexo
 
-根据`Jekyll`版的`闫肃博客3-Jekyll主题`移植，综合`简书`设计，向[闫肃](http://yansu.org/)和[简书](http://www.jianshu.com)致敬！
+> Inspired by JianShu.com
+
+一款适用于hexo静态博客的森破主题，当前持续改进中，尚未稳定...喜欢就点赞吧
 
 
-# Important !!!
+## 永远相信美好的事情即将发生 !
 
-## The theme under construction...
 
-### (本主题近期大改中，请慎重使用)
+##### 注：森破来自音译Simple
+
+![my-goal-of-2017](https://o7x2uynbh.qnssl.com/my-goal-of-2017.jpg)
+
 
