@@ -3401,55 +3401,38 @@ body {
 
 /* Page nav */
 
-.page-navigator {
-    list-style: none;
-    margin: 15px 0;
-    padding: 0;
-    text-align: center;
-}
-
-.page-navigator li {
-    display: inline-block;
-    margin: 0 4px;
-}
-
-.page-navigator a {
-    display: inline-block;
-    padding: 0 10px;
-    height: 30px;
-    line-height: 30px;
-}
-
-.page-navigator a:hover {
-    background: #EEE;
-    text-decoration: none;
-}
-
-.page-navigator .current a {
-    color: #444;
-    background: #EEE;
-}
-
-#btn-archive {
+#btn-pager {
     text-align: center;
     margin-bottom: 10px;
 }
 
-#btn-archive .btn {
+.page-number {
     display: inline-block;
-    width: 100px;
-    line-height: 32px;
+    margin: 0 5px;
+    padding: 0 10px;
+    text-align: center;
+    color: #333;
 }
 
-#btn-archive .btn a {
-    color: #fff;
-    display: block;
-    line-height: 32px;
+.page-number.current {
+    background: #EEE;
+    font-weight: bolder;
 }
 
-#btn-archive .btn.nomore {
-    background-color: transparent;
-    color: #999;
+.page-number:hover {
+    color: #e78170 !important;
+    background: #EEE !important;;
+    text-decoration: none !important;;
+}
+
+.extend .prev a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.extend .next a {
+    display: inline-block;
+    margin-left: 5px;
 }
 
 .tag-list {
@@ -3851,7 +3834,7 @@ body.night-mode, .night-mode #body, .night-mode .page-title, .night-mode .fixed-
     box-shadow: none;
 }
 
-body.night-mode, .night-mode .btn, body.night-mode a, .night-mode .nav-user a, #search .search-form-submit, .night-mode .post-title, .night-mode .post-meta, .night-mode .post-meta a, .night-mode .post-meta span, .night-mode .page-navigator .current a {
+body.night-mode, .night-mode .btn, body.night-mode a, .night-mode .nav-user a, #search .search-form-submit, .night-mode .post-title, .night-mode .post-meta, .night-mode .post-meta a, .night-mode .post-meta span, .night-mode .page-number.current {
     color: #b1b1b1;
 }
 
@@ -3879,7 +3862,7 @@ body.night-mode, .night-mode .btn, body.night-mode a, .night-mode .nav-user a, #
     background-color: #373737;
 }
 
-.night-mode .btn, .night-mode .page-navigator a:hover, .night-mode .page-navigator .current a {
+.night-mode .btn, .night-mode .page-number a:hover, .night-mode .page-number.current {
     background-color: #2f2f2f;
 }
 
