@@ -1,0 +1,35 @@
+siteName: TalkIt
+home: Home
+archives: Archives
+about: About
+categories: Categories
+search: Search
+searchPlaceHolder: Input Search key Words Here
+tags: Tags
+tagcloud: Tag Cloud
+feedback: Feed Back
+friendlink: Friend Link
+prev: Prev
+next: Next
+comment: Comments
+page: Page %d
+recent_posts: Recent Posts
+newer: Newer
+older: Older
+share: Share
+theme_by: Theme by
+rss_feed: RSS Feed
+category: Category
+tag: Tag
+connect: 'Connect With Us'
+post_total_count: There are %d posts in total till now.
+read_more: Continue Reading →
+contents: Contents
+none: None
+insight:
+    hint: 'Type something...'
+    posts: 'Posts'
+    pages: 'Pages'
+    categories: 'Categories'
+    tags: 'Tags'
+    untitled: '(Untitled)'
