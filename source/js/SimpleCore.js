@@ -85,7 +85,6 @@ var SimpleCore = {
             e.preventDefault();
             SimpleCore.goTop();
         });
-
         if (SimpleCore.usePjax) {
             SimpleCore.initPjax();
         }
@@ -207,7 +206,6 @@ var SimpleCore = {
             srh.addClass('active');
         }
     },
-
     switchReadMode: function () {		//切换显示模式
         var btn = $('.btn-read-mode');
         var next_mode = $('body').hasClass('night-mode') ? 'day' : 'night';
