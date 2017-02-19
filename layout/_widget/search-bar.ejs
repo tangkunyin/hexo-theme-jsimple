@@ -1,7 +1,8 @@
 <li class="page-search">
-    <form id="search" method="post" action="" role="search">
-        <label for="s" class="sr-only">搜索关键字</label>
-        <input type="text" name="s" class="text" placeholder="输入关键字搜索"/>
-        <button type="submit" class="submit" title="搜索"><i class="fa fa-search"></i></button>
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only"><%= __('searchPlaceHolder') %></label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="<%= __('searchPlaceHolder') %>" />
+        <button type="submit" class="search-form-submit" title="<%= __('search') %>"><i class="fa fa-search"></i></button>
     </form>
+    <%- partial('search/insight') %>
 </li>

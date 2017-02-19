@@ -2767,7 +2767,7 @@ button, select {
     text-transform: none
 }
 
-button, html input[type=button], input[type=reset], input[type=submit] {
+button, html input[type=button], input[type=reset], input[type=search-form-submit] {
     -webkit-appearance: button;
     cursor: pointer
 }
@@ -2897,7 +2897,7 @@ input[type="file"] {
     box-shadow: none;
 }
 
-input[type="button"], input[type="reset"], input[type="submit"] {
+input[type="button"], input[type="reset"], input[type="search-form-submit"] {
     height: auto;
     width: auto;
 }
@@ -3138,7 +3138,7 @@ body {
 
 #pjax-loading {
     position: fixed;
-    z-index: 9999;
+    z-index: 2500;
     top: 0;
     left: 0;
     height: 2px;
@@ -3482,7 +3482,7 @@ body {
     padding-right: 32px;
 }
 
-#search .submit {
+#search .search-form-submit {
     position: absolute;
     top: 0;
     right: 0;
@@ -3851,7 +3851,7 @@ body.night-mode, .night-mode #body, .night-mode .page-title, .night-mode .fixed-
     box-shadow: none;
 }
 
-body.night-mode, .night-mode .btn, body.night-mode a, .night-mode .nav-user a, #search .submit, .night-mode .post-title, .night-mode .post-meta, .night-mode .post-meta a, .night-mode .post-meta span, .night-mode .page-navigator .current a {
+body.night-mode, .night-mode .btn, body.night-mode a, .night-mode .nav-user a, #search .search-form-submit, .night-mode .post-title, .night-mode .post-meta, .night-mode .post-meta a, .night-mode .post-meta span, .night-mode .page-navigator .current a {
     color: #b1b1b1;
 }
 
