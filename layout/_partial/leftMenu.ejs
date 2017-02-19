@@ -1,11 +1,11 @@
 <div id="nav">
     <nav class="nav-menu">
-        <a class="site-name current" href="/" title="说IT">说</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
-        <a href="<%= theme.links %>" title="链接"><i class="fa fa-links"></i><span>链接</span></a>
-        <a href="<%= theme.feedback %>" title="留言"><i class="fa fa-guestbook"></i><span>留言</span></a>
-        <a href="<%= theme.about %>" title="关于"><i class="fa fa-about"></i><span>关于</span></a>
+        <a class="site-name current" href="/" title="<%= __('siteName')  %>"><%= __('siteName')  %></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span><%= __('home') %></span></a>
+        <a href="/archives" title="<%= __('archives')  %>"><i class="fa fa-archives"></i><span><%= __('archives')  %></span></a>
+        <a href="/tags" title="<%= __('tags')  %>"><i class="fa fa-tags"></i><span><%= __('tags')  %></span></a>
+        <a href="<%= theme.links %>" title="<%= __('friendlink')  %>"><i class="fa fa-links"></i><span><%= __('friendlink')  %></span></a>
+        <a href="<%= theme.feedback %>" title="<%= __('feedback')  %>"><i class="fa fa-guestbook"></i><span><%= __('feedback')  %></span></a>
+        <a href="<%= theme.about %>" title="<%= __('about')  %>"><i class="fa fa-about"></i><span><%= __('about')  %></span></a>
     </nav>
 </div>
