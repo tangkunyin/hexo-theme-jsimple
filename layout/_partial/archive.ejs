@@ -14,28 +14,21 @@
 <div class="main-inner">
     <% if (pagination == 2){ %>
     <!-- 首页默认取最最新文章集 -->
-    <% site.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
+    <% page.posts.sort('date', theme.homePageSortType).limit(theme.homeArticleShown).each(function(post){ %>
     <%- partial('_widget/category-items', {post: post}) %>
     <% }) %>
     <% } else { %>
     <% page.posts.each(function(post){ %>
     <%- partial('_widget/category-items', {post: post}) %>
     <% })} %>
-
 </div>
-
+<!-- 分页开始 -->
 <% if (page.total > 1){ %>
-<% var prev_text = "&laquo; " + __('prev');var next_text = __('next') + " &raquo;" %>
-<%- paginator({
-    prev_text: prev_text,
-    next_text: next_text
-}) %>
-
-<div id="btn-archive">
-    <ol class="page-navigator">
-        <li class="current"><a href="https://lixianhua.com/page/1/">1</a></li>
-        <li><a href="https://lixianhua.com/page/2/">2</a></li>
-        <li class="next"><a href="https://lixianhua.com/page/2/">&raquo;</a></li>
-    </ol>
+<div id="btn-pager">
+    <% var prev_text = __('prev');var next_text = __('next') %>
+    <%- paginator({
+        prev_text: prev_text,
+        next_text: next_text
+    }) %>
 </div>
 <% } %>
