@@ -28,7 +28,7 @@
             </a>
         </div>
         <% if (post.tags){%>
-        <div class="post-tags">标签：
+        <div class="post-tags"><%= __('tags')  %>：
             <% post.tags.each(function(tag){ %>
             <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
             <% }) %>
