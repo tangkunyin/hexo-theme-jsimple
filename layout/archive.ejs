@@ -13,7 +13,7 @@
         <div class="post-content markdown-body" itemprop="articleBody">
             <div class="archives">
                 <% var lastDate; %>
-                <% site.posts.each(function(post, i){ %>
+                <% site.posts.sort('date', theme.homePageSortType).each(function(post, i){ %>
                 <% var currentDate = parseInt(date(post.date, 'YYYYMM')); %>
                 <% if (lastDate != currentDate){ %>
                 <% lastDate = currentDate; %>
@@ -24,7 +24,7 @@
                         <li><%= date(post.date, 'DD') %>日<%= time(post.date) %>
                             <a href="<%- url_for(post.path) %>"><%= post.title %></a>
                         </li>
-                        <% if (!site.posts.eq(i + 1) || currentDate != parseInt(date(site.posts.eq(i + 1).date, 'YYYYMM'))){ %>
+                        <% if (!site.posts.sort('date', theme.homePageSortType).eq(i + 1) || currentDate != parseInt(date(site.posts.sort('date', theme.homePageSortType).eq(i + 1).date, 'YYYYMM'))){ %>
                     </ul>
                 </div>
                 <% } %>
