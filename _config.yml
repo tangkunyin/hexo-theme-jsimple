@@ -22,6 +22,7 @@ homeArticleShown: 10
 
 # 作者信息
 avatar: /images/favicon.png
+authorName: 唐先森
 authorLink: https://www.tangkunyin.com
 authorAbout: https://about.tangkunyin.com
 authorDesc: 一个写代码的「伪文人」
