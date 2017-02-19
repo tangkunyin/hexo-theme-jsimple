@@ -8,12 +8,12 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">坦率的讲 - 本站目前共计<%= page.posts.length %>篇文章</h3>
+            <h3 class="post-title">坦率的讲 - 本站目前共计<%= site.posts.length %>篇文章</h3>
         </div>
         <div class="post-content markdown-body" itemprop="articleBody">
             <div class="archives">
                 <% var lastDate; %>
-                <% page.posts.each(function(post, i){ %>
+                <% site.posts.each(function(post, i){ %>
                 <% var currentDate = parseInt(date(post.date, 'YYYYMM')); %>
                 <% if (lastDate != currentDate){ %>
                 <% lastDate = currentDate; %>
@@ -24,7 +24,7 @@
                         <li><%= date(post.date, 'DD') %>日<%= time(post.date) %>
                             <a href="<%- url_for(post.path) %>"><%= post.title %></a>
                         </li>
-                        <% if (!page.posts.eq(i + 1) || currentDate != parseInt(date(page.posts.eq(i + 1).date, 'YYYYMM'))){ %>
+                        <% if (!site.posts.eq(i + 1) || currentDate != parseInt(date(site.posts.eq(i + 1).date, 'YYYYMM'))){ %>
                     </ul>
                 </div>
                 <% } %>
