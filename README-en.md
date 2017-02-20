@@ -9,8 +9,6 @@
 
 ![shuoit.net-iPhone_6-day](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-day.png)
 
-![shuoit.net-iPhone_6-night](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-night.png)
-
 ### Also this video may be vivid
 
 [JSimple-pc-web-demo.mp4](http://7xseox.com1.z0.glb.clouddn.com/shuoit.net-pc-demo.mp4)

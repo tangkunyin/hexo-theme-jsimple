@@ -7,9 +7,9 @@
 
 - [**☞ 一睹为快**](https://shuoit.net) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README-en.md)
 
-![shuoit.net-iPhone_6-day](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-day.png)
 
 ![shuoit.net-iPhone_6-night](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-night.png)
+
 
 ### 下边这个视频更生动精彩
 
