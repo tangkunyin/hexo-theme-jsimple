@@ -94,17 +94,14 @@
    			category3: category alias3
 
 
-> Name order decide show index.The name also called category alias,so you must set category alias before start server.
-> BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
->  **Comment and CNZZ Analytics config in your site _config.yml**
+> Name order decide show index.The name also called category alias,so you must set category alias before start server. BTW, 'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus above.
 
 
-
+  **Comment and CNZZ Analytics config in your site _config.yml**
 
 ## Browser support
 
 ![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hipaper/master/source/preview/browser-support.png?raw=true)
-
 
 
 ## Contributing
