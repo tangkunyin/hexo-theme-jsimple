@@ -1,60 +1,47 @@
-# 导航菜单(顺序决定排序)
-## 此处的菜单名称为分类别名，需要与_config.yml中category_map设定的值一致
-menu:
-   技术: tech
-   人文: humanity
-   资源: resource
-
-# 网站建立时间
-siteBuildingTime: 12/12/2014
-
 # favicon
 favicon: /images/favicon.png
 
-# cover
+# cover info config
 coverTitle: 说人文，撸科技
 indexCover: /images/coverImage.jpg
 
-# 首页文章排序(-1: 最新的靠前，1: 最旧的靠前)
+# Home page sort type: -1: newer first，1: older first.
 homePageSortType: -1
-# 首页最新文章数量(默认5篇)
+# Home page article shown number)
 homeArticleShown: 10
 
-# 作者信息
+# webmaster info config
 avatar: /images/favicon.png
 authorName: 唐先森
 authorLink: https://www.tangkunyin.com
 authorAbout: https://about.tangkunyin.com
 authorDesc: 一个写代码的「伪文人」
 
-
-# 社交信息
-sinaWb: https://weibo.com/tangkunyin
-facebook: https://fackbook.com/tangkunyin
-github: https://github.com/tangkunyin
-
-# Search
-search:
-  insight: true # you need to install `hexo-generator-json-content` before using Insight Search
-  swiftype: # enter swiftype install key here
-  baidu: false # you need to disable other search engines to use Baidu search, options: true, false
+# your site build time or founded date
+siteBuildingTime: 12/12/2014
 
 
-# comment ShortName, you can choose only ONE to display.
-duoshuo_shortname: shuoit
-disqus_shortname:
+# Top navigate menu name
+## Notice:
+## Name order decide show index.The name also called category alias,so you must set category alias before start server.
+## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
+menu:
+   技术: tech
+   人文: humanity
+   资源: resource
 
-
-
-# 独立页链接
+# Independent page of uri config
 about: /about
 links: /friendlinks
 feedback: /feedback
 timeline: /timeline
 
-# CNZZ count
-cnzz_siteid: 1261190932
+# Social info config
+sinaWb: https://weibo.com/tangkunyin
+facebook: https://fackbook.com/tangkunyin
+github: https://github.com/tangkunyin
 
-# 托管服务器信息
+
+# Git-pages server info
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
