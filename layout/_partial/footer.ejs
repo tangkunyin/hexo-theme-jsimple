@@ -14,6 +14,6 @@
             ，作者<a href="<%= theme.authorLink %>" target="_blank"><%= theme.authorName %></a>
             ，感谢<a href="<%= theme.pageServerUrl %>" target="_blank"><%= theme.pageServerName %></a>提供免费优质的强力驱动
         </p>
+        <%- partial('_widget/site-analytics') %>
     </div>
-    <%- partial('_widget/site-analytics', null, {cache: !config.relative_link}) %>
 </footer>
