@@ -40,7 +40,7 @@ var SimpleCore = {
             SimpleCore.pajx_loadDuodsuo();//pjax加载完成之后调用重载多说函数
         });
         $(document).on('pjax:end', function (e) {
-            if (e.relatedTarget.baseURI.indexOf('.html') == -1) {
+            if (!e.currentTarget || e.currentTarget.baseURI.indexOf('.html') == -1) {
                 SimpleCore.current = 'archive';
             }else {
                 SimpleCore.current = 'post';
