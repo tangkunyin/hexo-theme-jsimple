@@ -45,7 +45,6 @@
 2. cover info config
 
 		coverTitle: your cover title string
-		indexCover: coverImage.jpg path
 
 3. Home page sort type and article shown number
 
