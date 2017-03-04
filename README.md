@@ -46,7 +46,6 @@
 2. 封面图和标题配置
 
 		coverTitle: your cover title string
-		indexCover: coverImage.jpg path
 
 3. 首页文档展示顺序和展示数目
 
