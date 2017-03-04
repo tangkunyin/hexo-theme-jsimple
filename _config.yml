@@ -1,9 +1,11 @@
+# theme dev or test model
+themeDev: true
+
 # favicon
 favicon: /images/favicon.png
 
 # cover info config
 coverTitle: 说人文，撸科技
-indexCover: /images/coverImage.jpg
 
 # Home page sort type: -1: newer first，1: older first.
 homePageSortType: -1
