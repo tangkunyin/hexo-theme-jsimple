@@ -3,11 +3,11 @@
 [![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
 
 
-**Simple three columns theme for HEXO. Inspired by JianShu.com**.
+**JSimple is a responsive blog theme for Hexo which include day night model,insight search,article view count etc. Inspired by JianShu.com**.
 
-- [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
+- [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
-![shuoit.net-iPhone_6-day](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-day.png)
+![JSimple-iPhone-Landscape-Night-Demo](/source/images/JSimple-iPhone-Landscape-Night-Demo.jpg)
 
 ### Also this video may be vivid
 
@@ -101,6 +101,7 @@
 
 ![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hipaper/master/source/preview/browser-support.png?raw=true)
 
+![JSimple-iPhone-Portrait-Day-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.jpg)
 
 ## Contributing
 
