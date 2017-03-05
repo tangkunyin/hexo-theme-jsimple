@@ -21,9 +21,10 @@
                 <span class="ds-thread-count" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="comments"></span>
             </a>
             <em>·</em>
-            <a href="<%- url_for(post.path) %>" target="<%= external_link %>">阅读：?</a><em>·</em>
             <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
-                <span class="ds-like-panel ds-highlight" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="likes"></span>
+                <span class="ds-like-panel" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="likes">
+                    <span class="ds-highlight"></span> 赞
+                </span>
             </a>
             <% } else if (config.disqus_shortname) { %>
             <a href="<%- url_for(post.path) %>#disqus_thread" target="<%= external_link %>">热门评论</a>
