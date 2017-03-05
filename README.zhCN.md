@@ -5,7 +5,7 @@
 
 **适用于HEXO的三栏简书式主题。支持响应式、站内搜索、多说评论、文章浏览统计以及白天和夜间模式**.
 
-- [**☞ 一睹为快**](https://shuoit.net) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README-en.md)
+- [**☞ 一睹为快**](https://shuoit.net) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
 
 ![shuoit.net-iPhone_6-night](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-night.png)

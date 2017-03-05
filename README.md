@@ -5,9 +5,11 @@
 
 **Simple three columns theme for HEXO. Inspired by JianShu.com**.
 
-- [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
+- [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
-![shuoit.net-iPhone_6-day](https://o7x2uynbh.qnssl.com/shuoit.net-%28iPhone%206%29-day.png)
+![JSimple-iPhone-Portrait-Day-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.png)
+
+![JSimple-iPhone-Landscape-Night-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.png)
 
 ### Also this video may be vivid
 
