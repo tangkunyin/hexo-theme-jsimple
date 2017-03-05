@@ -56,14 +56,10 @@ var SimpleCore = {
         $(document).on('click', '.btn-donate', function (e) {
             e.preventDefault();
             if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('<h3>扫描二维码打赏</h3><img style="width:160px;background:#fff;" src="' + SimpleCore.donateImg + '">', 'success', 0);
+                SimpleCore.alert('小奖赏激发大动力','<img style="width:160px;background:#fff;" src="' + SimpleCore.donateImg + '">');
             } else {
-                SimpleCore.alert('暂未开通打赏功能');
+                SimpleCore.alert('暂未开通打赏功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
-        });
-        $(document).on('click', '.btn-like', function () {
-            SimpleCore.ajaxSetLike($(this));
-            return false;
         });
         $(document).on('click', '.btn-gotop', function (e) {
             e.preventDefault();
@@ -165,15 +161,6 @@ var SimpleCore = {
             });
         }
     },
-    ajaxSetLike: function (that) {		//提交like
-        var cid = that.data('cid');
-        var num = parseInt(that.find('span').text());
-        if (cid === undefined) {
-            SimpleCore.alert('请选择要点赞的文章!', type);
-            return false;
-        }
-        SimpleCore.alert('多谢支持 ：）');
-    },
     switchSearch: function () {	//显示搜索
         var srh = $('#search');
         if (srh.hasClass('active')) {
@@ -211,12 +198,11 @@ var SimpleCore = {
             });
         }
     },
-    alert: function (msg, type, time) {  //提示信息
+    alert: function (title,msg) {
         var id = 'notice-' + (new Date().getTime());
-        type = type === 'error' ? 'error' : 'success';
-        time = time === undefined ? (type == 'success' ? 3000 : 5000) : time;
-        var html = '<div id="' + id + '" class="notice-item ' + type + '"><span class="notice-item-close"><i class="fa fa-close"></i></span>'
-            + '<span class="notice-item-type"><i class="fa fa-' + type + '"></i></span><p>' + msg + '</p></div>';
+        var html = '<div id="' + id + '" class="notice-item">'
+            + '<span class="notice-item-close"><i class="fa fa-close"></i></span>'
+            + '<p><h3 style="text-align: center;margin:0 0 10px 0">'+title+'</h3>' + msg + '</p></div>';
         var notice = $('#notice');
         if (notice.length == 0) {
             $('<div id="notice"></div>').appendTo($('body'));
@@ -225,13 +211,11 @@ var SimpleCore = {
             $(this).parent().remove();
             return false;
         });
-        //居中显示
+        //居中显示，于8秒后自动关闭
         $('#notice').css('margin-right', -$('#notice').width() / 2);
-        if (time != 0) {
-            setTimeout(function () {
-                $('#' + id).remove();
-            }, time);
-        }
+        setTimeout(function () {
+            $('#' + id).remove();
+        }, 8000);
     },
     setLocalData: function (key, value) {
         if (window.localStorage) {
