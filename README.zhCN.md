@@ -7,16 +7,13 @@
 
 - [**☞ 一睹为快**](https://shuoit.net) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
-
-![JSimple-iPhone-Portrait-Day-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.jpg)
-
 ![JSimple-iPhone-Landscape-Night-Demo](/source/images/JSimple-iPhone-Landscape-Night-Demo.jpg)
-
 
 ### 下边这个视频更生动精彩
 
-[JSimple-pc-web-demo.mp4](http://7xseox.com1.z0.glb.clouddn.com/shuoit.net-pc-demo.mp4)
+![JSimple-iPhone-Portrait-Day-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.jpg)
 
+[JSimple-pc-web-demo.mp4](http://7xseox.com1.z0.glb.clouddn.com/shuoit.net-pc-demo.mp4)
 
 <!--more-->
 
