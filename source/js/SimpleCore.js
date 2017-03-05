@@ -2,20 +2,16 @@
  * Created by tangkunyin on 2017/1/25.
  */
 var SimpleCore = {
-    url: null,	//网址
-    buildingTime: new Date(), //网站建立时间，默认当前
-    prefix: null,	//cookie前缀
-    current: null,	//当前页面类型
+    buildingTime: new Date(),
+    current: null,
     prevTop: 0,
     headerShow: true,
     loadingShow: true,
     usePjax: true,
     donateImg: null,
     initParams: function (params) {
-        SimpleCore.url = params.url;
         SimpleCore.buildingTime = params.buildingTime;
         SimpleCore.usePjax = params.usePjax;
-        SimpleCore.prefix = params.prefix;
         SimpleCore.current = params.current;
         SimpleCore.donateImg = params.donateImg;
     },

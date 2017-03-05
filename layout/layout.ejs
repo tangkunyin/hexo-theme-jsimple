@@ -53,11 +53,9 @@
 <script>
     $(function () {
         SimpleCore.init({
-            url: '<%= config.url %>',
             buildingTime: '<%= theme.siteBuildingTime %>',
             usePjax: true,
             current: $('.post-tags').length > 0 ? 'post' : 'archive',
-            prefix: '_<%= config.url %>',
             donateImg: '/images/weixin_donate.png'
         });
     });
