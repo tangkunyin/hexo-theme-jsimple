@@ -13,10 +13,7 @@
             </div>
             <h2 class="post-title"><%- post.title %></h2>
             <div class="post-meta">
-                <a href="<%- url_for(post.path) %>#disqus_thread">评论：X</a>
-                <em>·</em>
-                <a href="<%- url_for(post.path) %>">阅读：Y</a><em>·</em>
-                <span>喜欢：Z</span>
+                您是本文的第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -27,13 +24,13 @@
                 <i class="fa fa-thumbs-up" aria-hidden="true"></i> 赏
             </a>
         </div>
-        <% if (post.tags){%>
-        <div class="post-tags"><%= __('tags')  %>：
+        <% if (post.tags){ %>
+        <div class="post-tags"><%= __('tags') %>：
             <% post.tags.each(function(tag){ %>
             <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
             <% }) %>
         </div>
-        <% }%>
+        <% } %>
     </article>
     <%- partial('_partial/comments-ui', {post: post}) %>
 </div>
