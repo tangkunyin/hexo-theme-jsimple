@@ -16,12 +16,18 @@
         </div>
         <a class="post-title" href="<%- url_for(post.path) %>" target="<%= external_link %>" title="<%= post.title %>"><%= post.title %></a>
         <div class="post-meta">
-            <a href="<%- url_for(post.path) %><%= config.duoshuo_shortname.length ? '#ds-thread' : '#disqus_thread' %>" target="<%= external_link %>">
-                <span class="ds-thread-count" data-thread-key="<%- config.root %><%- post.path %>" data-title="<%-post.title %>" data-url="<%- post.permalink %>" data-count-type="comments" itemprop="commentsCount"></span>
+            <% if (config.duoshuo_shortname){ %>
+            <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
+                <span class="ds-thread-count" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="comments"></span>
             </a>
             <em>·</em>
             <a href="<%- url_for(post.path) %>" target="<%= external_link %>">阅读：?</a><em>·</em>
-            <span>喜欢：?</span>
+            <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
+                <span class="ds-like-panel ds-highlight" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="likes"></span>
+            </a>
+            <% } else if (config.disqus_shortname) { %>
+            <a href="<%- url_for(post.path) %>#disqus_thread" target="<%= external_link %>">热门评论</a>
+            <% } %>
         </div>
     </div>
     <div class="post-desc">
