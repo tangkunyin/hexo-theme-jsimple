@@ -3131,15 +3131,6 @@ body {
     float: right;
 }
 
-#pjax-loading {
-    position: fixed;
-    z-index: 2500;
-    top: 0;
-    left: 0;
-    height: 2px;
-    background-color: #24AA42;
-}
-
 /* ------------------
  * Header
  * --------------- */
