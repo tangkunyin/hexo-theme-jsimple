@@ -18,11 +18,11 @@
         <div class="post-meta">
             <% if (config.duoshuo_shortname){ %>
             <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
-                <span class="ds-thread-count" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="comments"></span>
+                <span class="ds-thread-count" data-thread-key="<%- post.permalink %>" data-count-type="comments"></span>
             </a>
             <em>·</em>
             <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
-                <span class="ds-like-panel" data-thread-key="<%- config.root %><%- post.path %>" data-count-type="likes">
+                <span class="ds-like-panel" data-thread-key="<%- post.permalink %>" data-count-type="likes">
                     <span class="ds-highlight"></span> 赞
                 </span>
             </a>
