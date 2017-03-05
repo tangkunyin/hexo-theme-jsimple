@@ -1,5 +1,5 @@
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-fullHttps: false
+fullHttps: true
 
 # favicon
 favicon: /images/favicon.png
