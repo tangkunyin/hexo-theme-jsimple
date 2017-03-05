@@ -1,5 +1,5 @@
-# theme dev or test model
-themeDev: true
+# full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
+fullHttps: false
 
 # favicon
 favicon: /images/favicon.png
