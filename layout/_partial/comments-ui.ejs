@@ -1,6 +1,6 @@
 <% if (config.duoshuo_shortname && page.comments){ %>
 <!-- 多说评论框 start -->
-<div id="ds-thread" class="ds-thread" data-thread-key="<%- post.permalink %>" data-title="<%- post.title %>" data-url="<%- post.permalink %>"></div>
+<div id="ds-thread" class="ds-thread" data-thread-key="<%- post.path %>" data-title="<%- post.title %>" data-url="<%- post.permalink %>"></div>
 <!-- 多说评论框 end -->
 <% } else if (config.disqus_shortname && page.comments) { %>
 <section class="post-comments">
