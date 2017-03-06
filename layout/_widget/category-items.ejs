@@ -21,9 +21,7 @@
                 <span class="ds-thread-count" data-thread-key="<%- post.path %>" data-count-type="comments"></span>
             </a>
             <em>·</em>
-            <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
-                <span class="ds-thread-count" data-thread-key="<%- post.path %>" data-count-type="likes"></span>
-            </a>
+            <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">去赞一下</a>
             <% } else if (config.disqus_shortname) { %>
             <a href="<%- url_for(post.path) %>#disqus_thread" target="<%= external_link %>">热门评论</a>
             <% } %>
