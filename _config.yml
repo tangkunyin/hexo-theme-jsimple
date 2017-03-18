@@ -4,8 +4,6 @@ fullHttps: true
 # favicon
 favicon: /images/favicon.png
 
-# cover info config
-coverTitle: 说人文，撸科技
 
 # Home page sort type: -1: newer first，1: older first.
 homePageSortType: -1
@@ -32,13 +30,9 @@ menu:
    人文: humanity
    资源: resource
 
-# Independent page of uri config
-about: /about
-links: /friendlinks
-feedback: /feedback
-timeline: /timeline
 
-# Social info config
+# cover info config
+coverTitle: 主动 惜时 思考
 sinaWb: https://weibo.com/tangkunyin
 facebook: https://fackbook.com/tangkunyin
 github: https://github.com/tangkunyin
