@@ -65,12 +65,12 @@
 
 		siteBuildingTime: 12/12/2014
 
-6. 独立页面链接，如需更改，请直接修改主题对应字段
+6. 独立页面链接，请自行生成，如不合适请自行修改
 
-		about: /about
-		links: /friendlinks
-		feedback: /feedback
-		timeline: /timeline
+		```
+		# 例如：
+		hexo n page about
+		```
 
 7. 社交信息
 
