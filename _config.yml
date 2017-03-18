@@ -1,3 +1,14 @@
+# site name
+siteName: 说IT
+shortName: 说
+
+# cover info config
+coverTitle: 交流代码，畅想科技
+coverDescription: 一个关注技术与人文的IT博客
+sinaWb: https://weibo.com/tangkunyin
+facebook: https://fackbook.com/tangkunyin
+github: https://github.com/tangkunyin
+
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
 fullHttps: true
 
@@ -29,13 +40,6 @@ menu:
    技术: tech
    人文: humanity
    资源: resource
-
-
-# cover info config
-coverTitle: 主动 惜时 思考
-sinaWb: https://weibo.com/tangkunyin
-facebook: https://fackbook.com/tangkunyin
-github: https://github.com/tangkunyin
 
 
 # Git-pages server info
