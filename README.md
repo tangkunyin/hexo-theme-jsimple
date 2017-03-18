@@ -66,12 +66,12 @@
 
 		siteBuildingTime: 12/12/2014
 
-6. Independent page of uri config
+6. Independent page of uri please generate yourself
 
-		about: /about
-		links: /friendlinks
-		feedback: /feedback
-		timeline: /timeline
+		```
+		# Example
+		hexo n page about
+		```
 
 7. Social info config
 
