@@ -13,7 +13,7 @@
             </div>
             <h2 class="post-title"><%- post.title %></h2>
             <div class="post-meta">
-                您是本文的第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>个小伙伴
+                本文总共<%- strip_html(post.content).length %>个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
