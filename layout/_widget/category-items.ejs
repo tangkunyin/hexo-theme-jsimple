@@ -16,15 +16,11 @@
         </div>
         <a class="post-title" href="<%- url_for(post.path) %>" target="<%= external_link %>" title="<%= post.title %>"><%= post.title %></a>
         <div class="post-meta">
-            <% if (config.duoshuo_shortname){ %>
-            <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">
-                <span class="ds-thread-count" data-thread-key="<%- post.path %>" data-count-type="comments"></span>
-            </a>
-            <em>·</em>
-            <a href="<%- url_for(post.path) %>#ds-thread" target="<%= external_link %>">去赞一下</a>
-            <% } else if (config.disqus_shortname) { %>
-            <a href="<%- url_for(post.path) %>#disqus_thread" target="<%= external_link %>">热门评论</a>
-            <% } %>
+            <a href="/tags" target="<%= external_link %>"><i class="fa fa-tags"></i></a>
+            <% post.tags.each((tag)=>{ %>
+                <em>·</em>
+                <a href="<%= tag.permalink %>" target="<%= external_link %>"><%= tag.name %></a>
+            <% }) %>
         </div>
     </div>
     <div class="post-desc">

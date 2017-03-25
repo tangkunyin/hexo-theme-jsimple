@@ -93,7 +93,7 @@
 
 > 名称的顺序决定在首页的展示顺序，因此在你启动网页服务器时，请先设置网站分类、标签的别名。具体字段是`category_map`和 `tag_map`,别名必须和这里的菜单设置一致。否则访问将出现异常。
 
-  评论和统计的配置直接写在_config.yml，请自行添加`duoshuo_shortname`、`disqus_shortname`和`cnzz_siteid`
+  评论(`仅支持disqus`)和统计的配置直接写在_config.yml，请自行添加`disqus_shortname`和`cnzz_siteid`
 
 ## 浏览器支持
 
