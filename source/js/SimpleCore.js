@@ -32,7 +32,7 @@ var SimpleCore = {
         $(document).on('click', '.btn-donate', function (e) {
             e.preventDefault();
             if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('小奖赏激发大创造','<img style="width:160px;background:#fff;" src="' + SimpleCore.donateImg + '">');
+                SimpleCore.alert('打个赏请我喝可乐','<img style="width:160px;background:#fff;" src="' + SimpleCore.donateImg + '">');
             } else {
                 SimpleCore.alert('暂未开通打赏功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
