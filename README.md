@@ -9,10 +9,6 @@
 
 ![JSimple-iPhone-Landscape-Night-Demo](/source/images/JSimple-iPhone-Landscape-Night-Demo.jpg)
 
-### Also this video may be vivid
-
-[JSimple-pc-web-demo.mp4](http://7xseox.com1.z0.glb.clouddn.com/shuoit.net-pc-demo.mp4)
-
 
 <!--more-->
 
@@ -37,65 +33,69 @@
 
 ## Configurations
 
-1. favicon
+For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be more convenient.
 
-		favicon: favicon.png path
+### Important config
 
-2. cover info config
+1. fullHttps: Boolean value( `true` or `false`)
 
-		coverTitle: your cover title string
-		
-	There are two kinds of cover image. replace day and night in your theme images dir.
+Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in 
+html meat tag. Please set `fullHttps` false when you test on localhost or your online server not support https.
+Otherwise the css and js in theme reference will be error and the home page will be open error.
 
-3. Home page sort type and article shown number
+2. menu: Map value
+
+Name order decide show index.The name also called category alias,so you must set category alias before start server. 
+Also the `categories` and `tags` in your scaffolds post.md file must be set before start server.
+BTW, `category_map` and `tag_map` field in site `_config.yml` file must one to one correspondence with menus above.
+
+		menu:
+  			category1: category alias1
+   			category2: category alias2
+   			category3: category alias3
+   			
+3. comment and  analytics config in your site _config.yml, please add them manually.**comment support disqus only and analytics support cnzz only**
+
+ 		
+ 		# comment ShortName, you can choose only ONE to display.
+        disqus_shortname: your shortname
+        # CNZZ count
+        cnzz_siteid: your siteid
+   			
+### Other config   			
+
+1. cover images config
+
+        There are two kinds of cover image. replace day and night in your theme images dir.
+
+2. Home page sort type and article shown number
 
 		homeArticleShown: 10
 		homePageSortType: -1
 
 	type: -1: newer first，1: older first.
 
-4. webmaster info config
 
-		avatar: avatar.png path
-		authorName: your name
-		authorLink: your website link
-		authorAbout: about you link
-		authorDesc: you description string
-
-5. your site build time or founded date
+3. your site build time or founded date
 
 		siteBuildingTime: 12/12/2014
 
-6. Independent page of uri please generate yourself
+4. Independent page of uri please generate yourself
 
 		```
 		# Example
 		hexo n page about
 		```
 
-7. Social info config
+5. Social info config
 
 		sinaWb: https://weibo.com/tangkunyin
 		facebook: https://fackbook.com/tangkunyin
 		github: https://github.com/tangkunyin
 
-8. Git-pages server info
 
-		pageServerName: your page server name
-		pageServerUrl: page server invite link
+6. Other settings please replace with your own directly.
 
-9. Top navigate menu name
-
-		menu:
-  			category1: category alias1
-   			category2: category alias2
-   			category3: category alias3
-
-
-> Name order decide show index.The name also called category alias,so you must set category alias before start server. BTW, `category_map` and `tag_map` field in site `_config.yml` file must one to one correspondence with menus above.
-
-
-**Comment and CNZZ Analytics config in your site _config.yml, please add them manually**
 
 ## Browser support
 
