@@ -9,9 +9,6 @@
 
 ![JSimple-iPhone-Landscape-Night-Demo](/source/images/JSimple-iPhone-Landscape-Night-Demo.jpg)
 
-### 下边这个视频更生动精彩
-
-[JSimple-pc-web-demo.mp4](http://7xseox.com1.z0.glb.clouddn.com/shuoit.net-pc-demo.mp4)
 
 <!--more-->
 
@@ -36,64 +33,70 @@
 
 ## 配置
 
-1. favicon
+便于快速上手, 直接看我的 [网站备份](https://github.com/shuoit/blog) 可能更方便。好多朋友下载主题使用报错，戳那里最直接。
 
-		favicon: favicon.png path
+### 重要的配置说明
 
-2. 封面图和标题配置
+1. fullHttps: 一个布尔值( `true` or `false`)
 
-		coverTitle: your cover title string
-		
-	有两种封面，分别是白天和夜间模式。对应的你只需要将主题文件夹下的相关图片换成你喜欢的就可以了
+全站强制性`https`访问，意味着网页中**Content-Security-Policy为upgrade-insecure-requests**。好处是当你忘记引用正确的https资源时它会帮你自动转成https。
 
-3. 首页文档展示顺序和展示数目
+但是如果你在本地调试，或者你的线上服务器不支持`https`，请把该项设置成`false`，否则主题中的css和js等资源将无法被正确引用。你打开的首页将因为加载不到css变得异常难看。
+
+
+2. menu: Map值
+
+在你启动本地服务或正式服务时，请记得配置`分类别名`。此处有三个地方要配置：文章模板、 主题配置文件、站点配置文件。
+站点的对应的`scaffolds`文件夹下的`post.md`模板，需要手动加入`categories`和`tags`，并设置值。这样能确保你某篇文章属于哪个分类。
+站点配置文件`_config.yml`中的`category_map` 和 `tag_map`都需要手动配置，并且分类别名要和主题中的menu一一对应，主题中的配置顺序决定网站导航菜单顺序。
+
+		menu:
+  			category1: 分类1
+   			category2: 分类2
+   			category3: 分类3
+   			
+3. 评论和统计在站点配置文件中，请按照下边的变量手动添加进去。**评论仅支持Disqus，统计仅支持CNZZ**，需要其他组件请自行替换。
+
+ 		
+ 		# comment ShortName, you can choose only ONE to display.
+        disqus_shortname: your shortname
+        # CNZZ count
+        cnzz_siteid: your siteid
+   			
+### Other config   			
+
+1. 封面图和封面信息的设置
+
+        有两种封面，分别是白天和夜间模式。对应的你只需要将主题文件夹下的相关图片换成你喜欢的就可以了，封面信息对应主题改成你的信息即可。
+
+2. 首页文档展示顺序和展示数目
 
 		homeArticleShown: 10
 		homePageSortType: -1
 
 	type: -1: 最新的在前，1: 最旧的在前
 
-4. 网站管理者信息，这些信息将显示在文章头部
 
-		avatar: avatar.png path
-		authorName: your name
-		authorLink: your website link
-		authorAbout: about you link
-		authorDesc: you description string
-
-5. 网站建立时间，来纪念网站活了多久
+3. 网站建立时间，来纪念网站活了多久
 
 		siteBuildingTime: 12/12/2014
 
-6. 独立页面链接，请自行生成，如不合适请自行修改
+4. 独立页面链接，请自行生成，如不合适请自行修改
 
 		```
-		# 例如：
+		# Example
 		hexo n page about
 		```
 
-7. 社交信息
+5. 社交信息
 
-		sinaWb: https://weibo.com/tangkunyin
-		facebook: https://fackbook.com/tangkunyin
-		github: https://github.com/tangkunyin
-
-8. 托管服务器信息
-
-		pageServerName: your page server name
-		pageServerUrl: page server invite link
-
-9. 顶部导航菜单名称配置
-
-		menu:
-  			分类1: 分类别名1
-   			分类2: 分类别名2
-   			分类3: 分类别名3
+		sinaWb: 你的新浪微博地址
+		facebook: 你的脸书地址
+		github: 你的`GitHub`地址
 
 
-> 名称的顺序决定在首页的展示顺序，因此在你启动网页服务器时，请先设置网站分类、标签的别名。具体字段是`category_map`和 `tag_map`,别名必须和这里的菜单设置一致。否则访问将出现异常。
+6. 其他信息对应词义直接替换成你的信息就好了。
 
-  评论(`仅支持disqus`)和统计的配置直接写在_config.yml，请自行添加`disqus_shortname`和`cnzz_siteid`
 
 ## 浏览器支持
 
