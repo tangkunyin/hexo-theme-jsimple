@@ -6,11 +6,11 @@ var SimpleCore = {
     current: null,
     prevTop: 0,
     headerShow: true,
-    donateImg: null,
+    customImg: null,
     initParams: function (params) {
         SimpleCore.buildingTime = params.buildingTime;
         SimpleCore.current = params.current;
-        SimpleCore.donateImg = params.donateImg;
+        SimpleCore.customImg = params.customImg;
     },
     //外部调用初始化
     init: function (params) {
@@ -29,12 +29,12 @@ var SimpleCore = {
             e.preventDefault();
             SimpleCore.switchSearch();
         });
-        $(document).on('click', '.btn-donate', function (e) {
+        $(document).on('click', '.btn-weixin-mp', function (e) {
             e.preventDefault();
-            if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('打个赏请我喝可乐','<img style="width:160px;background:#fff;" src="' + SimpleCore.donateImg + '">');
+            if (SimpleCore.customImg != '') {
+                SimpleCore.alert('更多精彩扫扫这里','<img style="width:160px;background:#fff;" src="' + SimpleCore.customImg + '">');
             } else {
-                SimpleCore.alert('暂未开通打赏功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
+                SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
         });
         $(document).on('click', '.btn-gotop', function (e) {
