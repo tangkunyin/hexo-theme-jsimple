@@ -37,31 +37,36 @@
 
 ### 重要的配置说明
 
-1. fullHttps: 一个布尔值( `true` or `false`)
+#### 1. fullHttps: 一个布尔值( `true` or `false`)
 
 全站强制性`https`访问，意味着网页中**Content-Security-Policy为upgrade-insecure-requests**。好处是当你忘记引用正确的https资源时它会帮你自动转成https。
 
 但是如果你在本地调试，或者你的线上服务器不支持`https`，请把该项设置成`false`，否则主题中的css和js等资源将无法被正确引用。你打开的首页将因为加载不到css变得异常难看。
 
 
-2. menu: Map值
+#### 2. menu: Map值
 
 在你启动本地服务或正式服务时，请记得配置`分类别名`。此处有三个地方要配置：文章模板、 主题配置文件、站点配置文件。站点的对应的`scaffolds`文件夹下的`post.md`模板，需要手动加入`categories`和`tags`，并设置值。这样能确保你某篇文章属于哪个分类。站点配置文件`_config.yml`中的`category_map` 和 `tag_map`都需要手动配置，并且分类别名要和主题中的menu一一对应，主题中的配置顺序决定网站导航菜单顺序。
 
-	
-	menu:
-      	category1: 分类1
-       	category2: 分类2
-       	category3: 分类3
+
+```
+menu:
+    category1: 分类1
+    category2: 分类2
+    category3: 分类3
+```
 	
    			
-3. 评论和统计在站点配置文件中，请按照下边的变量手动添加进去。**评论仅支持Disqus，统计仅支持CNZZ**，需要其他组件请自行替换。
+#### 3. 评论和统计在站点配置文件中，请按照下边的变量手动添加进去。
 
- 		
- 	# comment ShortName, you can choose only ONE to display.
-    disqus_shortname: your shortname
-    # CNZZ count
-    cnzz_siteid: your siteid
+```
+
+## 评论仅支持Disqus，统计仅支持CNZZ，需要其他组件请自行替换
+disqus_shortname: your shortname
+## CNZZ count
+cnzz_siteid: your siteid
+
+```
  		
  			
 ### Other config   			
@@ -119,3 +124,5 @@
 ## License
 
 JSimple is under the MIT license. See the [LICENSE](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/LICENSE) file for details.
+
+
