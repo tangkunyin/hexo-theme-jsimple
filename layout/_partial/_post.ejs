@@ -1,10 +1,14 @@
 <div class="page-title">
     <ul>
         <li><a href="/">最新</a></li>
-        <% for (var i in theme.menu){ %>
-        <li class="<%= (page.categories.first().name == i) ? 'active' : '' %>">
-            <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
-        </li>
+        <% if(page.categories && page.categories.first()){ %>
+            <% for (let name of theme.menu){ %>
+                <li class="<%= (page.categories.first().name == name) ? 'active' : '' %>">
+                    <a href="/categories/<%= theme.menu[name] %>" data-name="<%= name %>"><%= name %></a>
+                </li>
+            <% } %>
+        <% }else { %>
+        <% console.error('Error ******* Please set categories in your scaffold file at least  *******') %>
         <% } %>
         <%- partial('_widget/search-bar') %>
     </ul>
