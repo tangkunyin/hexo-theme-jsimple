@@ -39,28 +39,26 @@ For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be m
 
 1. fullHttps: Boolean value( `true` or `false`)
 
-Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in 
-html meat tag. Please set `fullHttps` false when you test on localhost or your online server not support https.
-Otherwise the css and js in theme reference will be error and the home page will be open error.
+Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in html meat tag. Please set `fullHttps` false when you test on localhost or your online server not support https.Otherwise the css and js in theme reference will be error and the home page will be open error.
 
 2. menu: Map value
 
-Name order decide show index.The name also called category alias,so you must set category alias before start server. 
-Also the `categories` and `tags` in your scaffolds post.md file must be set before start server.
-BTW, `category_map` and `tag_map` field in site `_config.yml` file must one to one correspondence with menus above.
+Name order decide show index.The name also called category alias,so you must set category alias before start server. Also the `categories` and `tags` in your scaffolds post.md file must be set before start server.BTW, `category_map` and `tag_map` field in site `_config.yml` file must one to one correspondence with menus above.
 
-		menu:
-  			category1: category alias1
-   			category2: category alias2
-   			category3: category alias3
+	
+	menu:
+      	category1: category alias1
+       	category2: category alias2
+       	category3: category alias3
    			
+
 3. comment and  analytics config in your site _config.yml, please add them manually.**comment support disqus only and analytics support cnzz only**
 
- 		
- 		# comment ShortName, you can choose only ONE to display.
-        disqus_shortname: your shortname
-        # CNZZ count
-        cnzz_siteid: your siteid
+ 	
+ 	# comment ShortName, you can choose only ONE to display.
+    disqus_shortname: your shortname
+    # CNZZ count
+    cnzz_siteid: your siteid
    			
 ### Other config   			
 
@@ -101,7 +99,6 @@ BTW, `category_map` and `tag_map` field in site `_config.yml` file must one to o
 
 ![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hipaper/master/source/preview/browser-support.png?raw=true)
 
-![JSimple-iPhone-Portrait-Day-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.jpg)
 
 ## Contributing
 
