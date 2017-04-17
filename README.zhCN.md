@@ -46,23 +46,24 @@
 
 2. menu: Map值
 
-在你启动本地服务或正式服务时，请记得配置`分类别名`。此处有三个地方要配置：文章模板、 主题配置文件、站点配置文件。
-站点的对应的`scaffolds`文件夹下的`post.md`模板，需要手动加入`categories`和`tags`，并设置值。这样能确保你某篇文章属于哪个分类。
-站点配置文件`_config.yml`中的`category_map` 和 `tag_map`都需要手动配置，并且分类别名要和主题中的menu一一对应，主题中的配置顺序决定网站导航菜单顺序。
+在你启动本地服务或正式服务时，请记得配置`分类别名`。此处有三个地方要配置：文章模板、 主题配置文件、站点配置文件。站点的对应的`scaffolds`文件夹下的`post.md`模板，需要手动加入`categories`和`tags`，并设置值。这样能确保你某篇文章属于哪个分类。站点配置文件`_config.yml`中的`category_map` 和 `tag_map`都需要手动配置，并且分类别名要和主题中的menu一一对应，主题中的配置顺序决定网站导航菜单顺序。
 
-		menu:
-  			category1: 分类1
-   			category2: 分类2
-   			category3: 分类3
+	
+	menu:
+      	category1: 分类1
+       	category2: 分类2
+       	category3: 分类3
+	
    			
 3. 评论和统计在站点配置文件中，请按照下边的变量手动添加进去。**评论仅支持Disqus，统计仅支持CNZZ**，需要其他组件请自行替换。
 
  		
- 		# comment ShortName, you can choose only ONE to display.
-        disqus_shortname: your shortname
-        # CNZZ count
-        cnzz_siteid: your siteid
-   			
+ 	# comment ShortName, you can choose only ONE to display.
+    disqus_shortname: your shortname
+    # CNZZ count
+    cnzz_siteid: your siteid
+ 		
+ 			
 ### Other config   			
 
 1. 封面图和封面信息的设置
@@ -102,7 +103,6 @@
 
 ![](https://raw.githubusercontent.com/iTimeTraveler/hexo-theme-hipaper/master/source/preview/browser-support.png?raw=true)
 
-![JSimple-iPhone-Portrait-Day-Demo](/source/images/JSimple-iPhone-Portrait-Day-Demo.jpg)
 
 ## 贡献
 
