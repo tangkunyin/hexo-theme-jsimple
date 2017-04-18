@@ -2,14 +2,14 @@
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
             <div class="post-author clearfix">
-                <a class="avatar fleft" href="<%= theme.authorLink %>" target="_blank">
-                    <img width="48" src="<%= theme.avatar %>" alt="avatar"/>
+                <a class="avatar fleft" href="<%= post.authorLink %>" target="_blank">
+                    <img width="48" src="<%= post.avatar %>" alt="avatar"/>
                 </a>
                 <p><span class="label">作者</span>
-                    <a href="<%= theme.authorAbout %>" target="_blank"><%= post.author %></a>
+                    <a href="<%= post.authorAbout %>" target="_blank"><%= post.author %></a>
                     <span title="最后编辑于<%= date(post.date) %>"><%= date(post.date) %></span>
                 </p>
-                <p><%= theme.authorDesc %></p>
+                <p><%= post.authorDesc %></p>
             </div>
             <h2 class="post-title"><%- post.title %></h2>
             <div class="post-meta">

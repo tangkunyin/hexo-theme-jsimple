@@ -2,31 +2,19 @@
 siteName: 说IT
 shortName: 说
 
-# cover info config
-coverTitle: 交流技术，畅谈人文
-coverDescription: 一个关注技术与人文的IT博客
-sinaWb: https://weibo.com/tangkunyin
-facebook: https://fackbook.com/tangkunyin
-github: https://github.com/tangkunyin
 
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
 fullHttps: false
 
-# favicon
+# favicon and site master avatar
 favicon: /images/favicon.png
-
+avatar: /images/favicon.png
 
 # Home page sort type: -1: newer first，1: older first.
 homePageSortType: -1
 # Home page article shown number)
 homeArticleShown: 10
 
-# webmaster info config
-avatar: /images/favicon.png
-authorName: 唐先森
-authorLink: https://www.tangkunyin.com
-authorAbout: https://about.tangkunyin.com
-authorDesc: 一个写代码的「伪文人」
 
 # your site build time or founded date
 siteBuildingTime: 08/20/2014
@@ -40,6 +28,14 @@ menu:
    技术: tech
    人文: humanity
    资源: resource
+
+
+# cover info config
+coverTitle: 交流技术，畅谈人文
+coverDescription: 一个关注技术与人文的IT博客
+sinaWb: https://weibo.com/tangkunyin
+facebook: https://fackbook.com/tangkunyin
+github: https://github.com/tangkunyin
 
 
 # Git-pages server info

@@ -9,7 +9,7 @@
     <% } %>
     <div class="post-header">
         <div class="post-meta">
-            <a href="<%= theme.authorLink %>" target="<%= external_link %>">
+            <a href="<%= post.authorLink %>" target="<%= external_link %>">
                 <strong><%= post.author %></strong>
             </a>
             <em>·</em><%= date(post.date) %>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="post-desc">
-        <%= post.description || post.slug %>
+        <%= post.description || post.title %>
     </div>
 </article>
 
