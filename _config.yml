@@ -4,7 +4,7 @@ shortName: 说
 
 
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-fullHttps: false
+fullHttps: true
 
 # favicon and site master avatar
 favicon: /images/favicon.png
@@ -25,8 +25,9 @@ siteBuildingTime: 08/20/2014
 ## Name order decide show index.The name also called category alias,so you must set category alias before start server.
 ## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
 menu:
-   技术: tech
-   人文: humanity
+   前端: big-front-end
+   后台: server-side
+   设计: design
    资源: resource
 
 
