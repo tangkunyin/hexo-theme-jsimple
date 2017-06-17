@@ -4,7 +4,7 @@ shortName: 说
 
 
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-fullHttps: true
+fullHttps: false
 
 # favicon and site master avatar
 favicon: /images/favicon.png
