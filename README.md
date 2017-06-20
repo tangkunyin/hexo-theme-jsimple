@@ -22,6 +22,9 @@
  2. Enable
 
  Modify `theme` setting in `_config.yml` to `jsimple`.
+ 
+ To ensure the normal use of the search, please add `"hexo-generator-json-content": "^2.2.0"` to your site package.json file 
+ manually
 
  3. Update
 

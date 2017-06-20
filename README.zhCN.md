@@ -22,6 +22,8 @@
  2. 去主题中开启
 
  在`_config.yml`中更改 `theme` 字段为 `jsimple`.
+ 
+ 请在站点配置文件中，手动添加依赖： `"hexo-generator-json-content": "^2.2.0"` ，搜索会用到此依赖。
 
  3. 更新主题
 
