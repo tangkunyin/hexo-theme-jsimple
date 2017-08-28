@@ -4,7 +4,7 @@
             <a href="/" data-name="最近文章">最近</a>
         </li>
         <% for (var i in theme.menu){ %>
-        <li class="<%= (page.category == i) ? 'active' : '' %>">
+        <li class="<%= (page.category == theme[i]) ? 'active' : '' %>">
             <a href="/categories/<%= theme.menu[i] %>" data-name="<%= i %>"><%= i %></a>
         </li>
         <% } %>

@@ -44,3 +44,13 @@ github: https://github.com/tangkunyin
 # Git-pages server info
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
+
+# Gitment
+# Introduction: https://imsun.net/posts/gitment-introduction/
+gitment:
+  enable: true
+  githubID: 
+  repo: 
+  ClientID: 
+  ClientSecret: 
+  lazy: true
