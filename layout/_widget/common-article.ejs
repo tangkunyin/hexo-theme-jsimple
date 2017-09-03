@@ -20,8 +20,8 @@
             <%- post.content %>
         </div>
         <div class="post-tool">
-            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
-                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
             </a>
         </div>
         <% if (post.tags){ %>
@@ -32,6 +32,9 @@
         </div>
         <% } %>
     </article>
+    <% if(post.layout && post.layout === 'post' && theme.postDeclare) { %>
+    <p><%= theme.postDeclare %></p>
+    <% } %>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
