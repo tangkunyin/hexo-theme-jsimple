@@ -32,6 +32,16 @@ menu:
    设计: design
    资源: resource
 
+# Left menu of single pages settings
+## Notice: (Array<Object>). faName is FontAwesome style name
+leftPagesMenu:
+- uri: cross_fire
+  title: 穿越火线
+  faName: fa-wifi
+- uri: help
+  title: 急救中心
+  faName: fa-question-circle
+
 
 # cover info config
 coverTitle: 聊技术，谈情怀
