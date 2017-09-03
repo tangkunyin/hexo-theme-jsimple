@@ -33,7 +33,7 @@ menu:
    资源: resource
 
 # Left menu of single pages settings
-## Notice: (Array<Object>). faName is FontAwesome style name
+## Notice: faName is FontAwesome style name
 leftPagesMenu:
 - uri: cross_fire
   title: 穿越火线
