@@ -16,7 +16,7 @@ homePageSortType: -1
 homeArticleShown: 10
 
 
-# your site build time or founded date
+# your site build time or domain buy time
 siteBuildingTime: 08/20/2014
 
 
@@ -47,10 +47,14 @@ sns:
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 
+
+## Comments settings.You can choose only ONE to display.
+# disqus shortName,
+disqus_shortname:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
-  enable: true
+  enable: false
   githubID: 
   repo: 
   ClientID: 
