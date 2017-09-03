@@ -6,9 +6,11 @@ shortName: 说
 # full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
 fullHttps: false
 
-# favicon and site master avatar
+# favicon
 favicon: /images/favicon.png
-avatar: /images/favicon.png
+# unique avatar
+avatarShow: false
+avatarImage: /images/favicon.png
 
 # Home page sort type: -1: newer first，1: older first.
 homePageSortType: -1
@@ -32,7 +34,7 @@ menu:
 
 
 # cover info config
-coverTitle: 交流技术，畅谈人文
+coverTitle: 聊技术，谈情怀
 coverDescription: 一个关注技术与人文的IT博客
 
 # sns url

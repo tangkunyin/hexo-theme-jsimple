@@ -460,6 +460,18 @@ body {
     text-align: center
 }
 
+#cover .cover-siteName {
+    font-family: Kai,Kaiti SC,KaiTi,BiauKai,\\6977\4F53,\\6977\4F53_GB2312,Songti SC,serif;
+}
+
+#cover .cover-siteTitle {
+    font-family: Georgia,Times New Roman,Times,Songti SC,serif;
+}
+
+#cover .cover-siteDesc {
+    font-family: "Kaiti SC";
+}
+
 #cover .cover-sns .btn {
     height: 24px;
     line-height: 24px;
