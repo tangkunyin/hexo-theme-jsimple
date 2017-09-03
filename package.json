@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-jsimple",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple three column theme for Hexo.Inspired by JianShu.com",
   "license": "MIT",
   "dependencies": {
@@ -23,6 +23,6 @@
   "author": {
     "name": "Thomas Tang",
     "url": "https://www.tangkunyin.com",
-    "email": "iam@tangkunyin.com"
+    "email": "tangkunyin@gmail.com"
   }
 }
