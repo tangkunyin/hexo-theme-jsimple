@@ -42,6 +42,8 @@ sns:
   twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
 
+# your article copyright or content declare
+postDeclare: 本文内容仅作为作者个人兴趣与观点，不代表所在公司及团队的观点和决策。若有不恰当之处，望不吝赐教
 
 # Git-pages server info
 pageServerName: Coding
