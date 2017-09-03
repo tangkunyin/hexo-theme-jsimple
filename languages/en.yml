@@ -6,8 +6,6 @@ search: Search
 searchPlaceHolder: Input Search key Words Here
 tags: Tags
 tagcloud: Tag Cloud
-video: Video
-help: Help
 prev: Prev
 next: Next
 comment: Comments
@@ -17,7 +15,6 @@ newer: Newer
 older: Older
 share: Share
 theme_by: Theme by
-cross_fire: Cross GFW
 category: Category
 tag: Tag
 connect: 'Connect With Us'

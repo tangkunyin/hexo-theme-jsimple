@@ -3,7 +3,7 @@
         <li class="<%= pagination == 2 ? 'active' : '' %>">
             <a href="/" data-name="最近文章">最近</a>
         </li>
-        <% for (const menuKey in theme.menu){ %>
+        <% for (let menuKey in theme.menu){ %>
         <li class="<%= (page.category == menuKey) ? 'active' : '' %>">
             <a href="/categories/<%= theme.menu[menuKey] %>" data-name="<%= menuKey %>"><%= menuKey %></a>
         </li>
