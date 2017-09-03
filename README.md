@@ -58,11 +58,8 @@ menu:
 #### 3. comment and  analytics config in your site _config.yml, please add them manually.
 
  ```
- ## comment support disqus only and analytics support cnzz only
- # comment ShortName, you can choose only ONE to display.
- disqus_shortname: your shortname
- # CNZZ count
- cnzz_siteid: your siteid
+    ## Aanalytics support cnzz only.Config it in your site yml file
+    cnzz_siteid: your siteId
  ```
    			
 ### The other settings   			
