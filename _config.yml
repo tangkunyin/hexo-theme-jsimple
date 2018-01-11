@@ -49,8 +49,8 @@ coverDescription: 一个关注技术与人文的IT博客
 
 # sns url
 sns:
-  telegram: http://t.me/codeist
-  instagram: https://www.instagram.com/coder.thomas/
+  telegram: http://t.me/kunyintang
+  instagram: https://www.instagram.com/mtangsir/
   twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
 
@@ -64,7 +64,7 @@ pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f72
 
 ## Comments settings.You can choose only ONE to display.
 # disqus shortName,
-disqus_shortname:
+disqus_shortname: 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
