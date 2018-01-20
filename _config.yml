@@ -52,7 +52,7 @@ sns:
   github: https://github.com/tangkunyin
 
 # your article copyright or content declare
-postDeclare: 本文内容仅作为作者个人兴趣与观点，不代表所在公司及团队的观点和决策。若有不恰当之处，望不吝赐教
+postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！
 
 # Git-pages server info
 pageServerName: Coding
