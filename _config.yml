@@ -19,7 +19,7 @@ homeArticleShown: 10
 
 
 # your site build time or domain buy time
-siteBuildingTime: 08/20/2014
+siteBuildingTime: 01/20/2018
 
 
 # Top navigate menu name
@@ -35,42 +35,43 @@ menu:
 # Left menu of single pages settings
 ## Notice: faName is FontAwesome style name
 leftPagesMenu:
-- uri: cross_fire
-  title: 穿越火线
-  faName: fa-wifi
 - uri: help
-  title: 急救中心
+  title: 帮助
   faName: fa-question-circle
 
 
 # cover info config
-coverTitle: 聊技术，谈情怀
+coverTitle: 做产品，写代码
 coverDescription: 一个关注技术与人文的IT博客
 
 # sns url
 sns:
-  telegram: http://t.me/codeist
-  instagram: https://www.instagram.com/coder.thomas/
+  telegram: http://t.me/kunyintang
+  instagram: https://www.instagram.com/mtangsir/
   twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
 
 # your article copyright or content declare
-postDeclare: 本文内容仅作为作者个人兴趣与观点，不代表所在公司及团队的观点和决策。若有不恰当之处，望不吝赐教
+postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！
 
 # Git-pages server info
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 
 
-## Comments settings.You can choose only ONE to display.
-# disqus shortName,
-disqus_shortname:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
   enable: false
-  githubID: 
-  repo: 
-  ClientID: 
-  ClientSecret: 
+  githubID:
+  repo:
+  ClientID:
+  ClientSecret:
   lazy: true
+
+## Comments settings.You can choose only ONE to display.
+# disqus shortName,
+disqus_shortname:
+
+# Analytics
+tentcentAnalyticsId:
