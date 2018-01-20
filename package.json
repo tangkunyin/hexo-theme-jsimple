@@ -1,11 +1,11 @@
 {
   "name": "hexo-theme-jsimple",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple three column theme for Hexo.Inspired by JianShu.com",
   "license": "MIT",
   "dependencies": {
-    "hexo-renderer-ejs": "^0.2.0",
-    "hexo-renderer-marked": "^0.2.11"
+    "hexo-renderer-ejs": "^0.3.1",
+    "hexo-renderer-marked": "^0.3.2"
   },
   "repository": {
     "type": "git",

@@ -6,12 +6,12 @@ var SimpleCore = {
     current: null,
     prevTop: 0,
     headerShow: true,
-    wxMpImg: null,
+    snsQRCode: null,
     donateImg: null,
     initParams: function (params) {
         SimpleCore.buildingTime = params.buildingTime;
         SimpleCore.current = params.current;
-        SimpleCore.wxMpImg = params.wxMpImg;
+        SimpleCore.snsQRCode = params.snsQRCode;
         SimpleCore.donateImg = params.donateImg;
     },
     //外部调用初始化
@@ -31,10 +31,10 @@ var SimpleCore = {
             e.preventDefault();
             SimpleCore.switchSearch();
         });
-        $(document).on('click', '.btn-weixin-mp', function (e) {
+        $(document).on('click', '.btn-sns-qr', function (e) {
             e.preventDefault();
-            if (SimpleCore.wxMpImg != '') {
-                SimpleCore.alert('更多精彩扫扫这里','<img style="width:160px;background:#fff;" src="' + SimpleCore.wxMpImg + '">');
+            if (SimpleCore.snsQRCode != '') {
+                SimpleCore.alert('来不及解释了赶紧上车','<img style="width:180px;background:#fff;" src="' + SimpleCore.snsQRCode + '">');
             } else {
                 SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
@@ -42,7 +42,7 @@ var SimpleCore = {
         $(document).on('click', '.btn-thumbs-up', function (e) {
             e.preventDefault();
             if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('扫码请我喝可乐','<img style="width:160px;background:#fff;" src="' + SimpleCore.donateImg + '">');
+                SimpleCore.alert('点个赞，你高兴就好','<img style="width:180px;background:#fff;" src="' + SimpleCore.donateImg + '">');
             } else {
                 SimpleCore.alert('未开通自定义功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
             }
