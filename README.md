@@ -58,8 +58,8 @@ menu:
 #### 3. comment and  analytics config in your site _config.yml, please add them manually.
 
  ```
-    ## Aanalytics support cnzz only.Config it in your site yml file
-    cnzz_siteid: your siteId
+    ## Tencent Aanalytics is default. You can update it in site-analytics.ejs file yourself
+    tentcentAnalyticsId: your siteId
  ```
    			
 ### The other settings   			
@@ -89,13 +89,10 @@ menu:
 
 5. Social info settings. telegram,instagram,twitter,github,sinaWb,facebook,github are support.
 
-		telegram: http://t.me/codeist
-		instagram: https://www.instagram.com/coder.thomas/
-		twitter: https://twitter.com/tangkunyin
-		github: https://github.com/tangkunyin
-		sinaWb: https://weibo.com/tangkunyin
-		facebook: https://fackbook.com/tangkunyin
-		github: https://github.com/tangkunyin
+		telegram: http://t.me/kunyintang
+        instagram: https://www.instagram.com/mtangsir/
+        twitter: https://twitter.com/tangkunyin
+        github: https://github.com/tangkunyin
 
 
 6. Other settings please replace with your own directly.

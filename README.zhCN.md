@@ -62,9 +62,9 @@ menu:
 
 ```
 
-## 统计仅支持CNZZ，需要其他组件请自行替换
-## CNZZ count
-cnzz_siteid: your siteid
+## 统计默认腾讯分析。使用其他统计请自行替换site-analytics.ejs文件中的相关代码
+## Tencent Aanalytics
+tentcentAnalyticsId: your siteid
 
 ```
 		
