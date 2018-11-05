@@ -27,10 +27,9 @@ siteBuildingTime: 01/20/2018
 ## Name order decide show index.The name also called category alias,so you must set category alias before start server.
 ## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
 menu:
-   前端: front-end
-   后台: back-end
-   设计: product-design
-   资源: resource
+   技术: tech-notes
+   人文: humanities
+   其他: others
 
 # Left menu of single pages settings
 ## Notice: faName is FontAwesome style name
@@ -70,7 +69,7 @@ gitment:
   lazy: true
 
 ## Comments settings.You can choose only ONE to display.
-# disqus shortName,
+# disqus shortName
 disqus_shortname:
 
 # Analytics
