@@ -38,9 +38,9 @@ $ git pull
 
 ### 重要的配置说明
 
-#### 1. fullHttps: 一个布尔值( `true` or `false`)
+#### 1. CSPEnable: 一个布尔值( `true` or `false`)
 
-全站强制性`https`访问，意味着网页中**Content-Security-Policy为upgrade-insecure-requests**。好处是当你忘记引用正确的https资源时它会帮你自动转成https。
+内容安全策略配置，可使全站强制性`https`访问，意味着网页中**Content-Security-Policy为upgrade-insecure-requests**。好处是当你忘记引用正确的https资源时它会帮你自动转成https。
 
 但是如果你在本地调试，或者你的线上服务器不支持`https`，请把该项设置成`false`，否则主题中的css和js等资源将无法被正确引用。你打开的首页将因为加载不到css变得异常难看。
 
@@ -56,8 +56,8 @@ menu:
    category2: 分类2
    category3: 分类3
 ```
-	
-  			
+
+
 #### 3. 统计在站点配置文件中，请按照下边的变量手动添加进去。
 
 ```
@@ -67,9 +67,9 @@ menu:
 tentcentAnalyticsId: your siteid
 
 ```
-		
-			
-### Other config   			
+
+
+### Other config
 
 1. 封面图和封面信息的设置
 

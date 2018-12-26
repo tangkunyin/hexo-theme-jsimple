@@ -3,8 +3,8 @@ siteName: 说IT
 shortName: 说
 
 
-# full https model which means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-fullHttps: true
+# CSP Model, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
+CSPEnable: false
 
 # favicon
 favicon: /images/favicon.png
@@ -68,9 +68,8 @@ gitment:
   ClientSecret:
   lazy: true
 
-## Comments settings.You can choose only ONE to display.
-# disqus shortName
+## Comments settings. Disqus support only by default.
 disqus_shortname:
 
 # Analytics
-tentcentAnalyticsId:
+ tentcentAnalyticsId:
