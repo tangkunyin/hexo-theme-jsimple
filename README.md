@@ -22,8 +22,8 @@
  2. Enable
 
  Modify `theme` setting in `_config.yml` to `jsimple`.
- 
- To ensure the normal use of the search, please add `"hexo-generator-json-content": "^2.2.0"` to your site package.json file 
+
+ To ensure the normal use of the search, please add `"hexo-generator-json-content": "^2.2.0"` to your site package.json file
  manually
 
  3. Update
@@ -40,9 +40,9 @@ For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be m
 
 ### Important settings
 
-#### 1. fullHttps: Boolean value( `true` or `false`)
+#### 1. CSPEnable: Boolean value( `true` or `false`)
 
-Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in html meat tag. Please set `fullHttps` false when you test on localhost or your online server not support https.Otherwise the css and js in theme reference will be error and the home page will be open error.
+Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in html meat tag. Please set `CSPEnable` false when you test on localhost or your online server not support https.Otherwise the css and js in theme reference will be error and the home page will be open error.
 
 #### 2. menu: Map value
 
@@ -53,7 +53,7 @@ menu:
    category1: category alias1
    category2: category alias2
    category3: category alias3
-``` 			
+```
 
 #### 3. comment and  analytics config in your site _config.yml, please add them manually.
 
@@ -61,8 +61,8 @@ menu:
     ## Tencent Aanalytics is default. You can update it in site-analytics.ejs file yourself
     tentcentAnalyticsId: your siteId
  ```
-   			
-### The other settings   			
+
+### The other settings
 
 1. cover images setting
 
