@@ -188,5 +188,6 @@ var SimpleCore = {
         var now = new Date();
         var ile = now.getTime() - urodz.getTime();
         $('#siteBuildingTime').html(Math.floor(ile / (1000 * 60 * 60 * 24)));
+        $('#cpYear').html(now.getFullYear());
     }
 }
