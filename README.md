@@ -58,8 +58,8 @@ menu:
 #### 3. comment and  analytics config in your site _config.yml, please add them manually.
 
  ```
-    ## Tencent Aanalytics is default. You can update it in site-analytics.ejs file yourself
-    tentcentAnalyticsId: your siteId
+    ## Google Aanalytics is default. You can update it in analytics.ejs file yourself
+    analyticsId: your id
  ```
 
 ### The other settings

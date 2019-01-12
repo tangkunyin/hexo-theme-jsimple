@@ -71,5 +71,5 @@ gitment:
 ## Comments settings. Disqus support only by default.
 disqus_shortname:
 
-# Analytics
- tentcentAnalyticsId:
+## Analytics setting. Google default
+analyticsId:
