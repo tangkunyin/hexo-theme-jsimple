@@ -2,13 +2,14 @@
 
 v0.0.7 - Jau 12, 2019
 
-* optimize the code-highlight-style spaces in night model
-* make copyright year text to configurable
-* update default donate qrcode and some tips
-* update csp model field and 404 page description
-* analytics now only support google
-* google AdSense now support 
-
+* Optimize the code-highlight-style spaces in night model
+* Make copyright year text to configurable
+* Update default donate qrcode and some tips
+* Update csp model field and 404 page description
+* Analytics now only support google
+* Google AdSense now support 
+* Post declare text align center
+* Gitalk and Disqus support at the same time 
 
 v0.0.6 - Nov 5, 2018
 
