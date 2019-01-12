@@ -6,8 +6,6 @@ v0.0.7 - Jau 12, 2019
 * make copyright year text to configurable
 * update default donate qrcode and some tips
 * update csp model field and 404 page description
-* add online music url ref and play
-* add tentcent qq to social menu
 * analytics now only support google
 * google AdSense now support 
 
