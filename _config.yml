@@ -57,9 +57,14 @@ postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之�
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 
+## Analytics setting. Google default
+analyticsId:
 
-# Gitment
-# Introduction: https://imsun.net/posts/gitment-introduction/
+
+## Comments settings. Disqus | Gitment
+disqus_shortname:
+
+#### Gitment: Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
   enable: false
   githubID:
@@ -68,8 +73,3 @@ gitment:
   ClientSecret:
   lazy: true
 
-## Comments settings. Disqus support only by default.
-disqus_shortname:
-
-## Analytics setting. Google default
-analyticsId:
