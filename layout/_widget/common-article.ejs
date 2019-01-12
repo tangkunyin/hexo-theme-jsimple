@@ -33,7 +33,7 @@
         <% } %>
     </article>
     <% if(post.layout && post.layout === 'post' && theme.postDeclare) { %>
-    <p><%= theme.postDeclare %></p>
+    <p style="text-align: center"><%= theme.postDeclare %></p>
     <% } %>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
