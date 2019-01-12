@@ -9,7 +9,7 @@ v0.0.7 - Jau 12, 2019
 * Analytics now only support google
 * Google AdSense now support 
 * Post declare text align center
-* Gitalk and Disqus support at the same time 
+* Replace search module with `hexo-generator-search`
 
 v0.0.6 - Nov 5, 2018
 
