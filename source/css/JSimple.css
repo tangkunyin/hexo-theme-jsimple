@@ -1202,6 +1202,7 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 }
 .markdown-body table tr {
     background-color:#fff;
+    flex: 1;
 }
 .markdown-body table tr:nth-child(2n) {
     background-color:#f8f8f8
@@ -1298,14 +1299,14 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 }
 .markdown-body pre,.markdown-body .highlight {
     background:#f8f8f8;
-    margin:15px 0;
-    padding:15px 20px;
+    margin:10px 0;
+    padding:5px;
     border-style:solid;
     border-color:#eef1f8;
     border-width:1px 0;
     overflow:auto;
     color:#4d4d4c;
-    line-height:22.400000000000002px;
+    line-height:22px;
 }
 .markdown-body .highlight .gutter pre,.markdown-body .gist .gist-file .gist-data .line-numbers {
     color:#666;
@@ -1327,16 +1328,21 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 .markdown-body .highlight pre {
     border:none;
     margin:0;
-    padding:0;
+    width: 100%;
 }
 .markdown-body .highlight table {
     margin:0;
     width:auto;
     border:none;
 }
+.markdown-body .highlight tbody {
+    margin:0;
+    display: flex;
+}
 .markdown-body .highlight td {
     border:none;
     padding:0;
+    display: flex;
 }
 .markdown-body .highlight figcaption {
     font-size:0.85em;
@@ -1359,7 +1365,7 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
     padding-right:20px;
 }
 .markdown-body .highlight .line {
-    height:22.400000000000002px;
+    height:22px;
 }
 .markdown-body .highlight .line.marked {
     background:#d6d6d6;
@@ -1483,7 +1489,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     color:#4094c7
 }
 .night-mode pre,.night-mode code,.night-mode blockquote {
-    background-color:#555 !important;
+    background-color: #333 !important;
     border-color:#2f2f2f;
     color:#fff
 }
