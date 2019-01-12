@@ -62,9 +62,9 @@ menu:
 
 ```
 
-## 统计默认腾讯分析。使用其他统计请自行替换site-analytics.ejs文件中的相关代码
-## Tencent Aanalytics
-tentcentAnalyticsId: your siteid
+## 统计默认谷歌分析。使用其他统计请自行替换analytics.ejs文件中的相关代码
+## Google Aanalytics
+analyticsId: your id
 
 ```
 
