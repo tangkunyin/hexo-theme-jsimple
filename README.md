@@ -95,7 +95,12 @@ menu:
         github: https://github.com/tangkunyin
 
 
-6. Other settings please replace with your own directly.
+6. Search module. Please install and configure this plugin first.
+
+- [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
+
+
+7. Other settings please replace with your own directly.
 
 
 ## Browser support

@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
 
 
-**适用于Hexo的三栏简书式主题。支持响应式、站内搜索、多说评论、文章浏览统计以及白天和夜间模式**.
+**适用于Hexo的三栏简书式主题。支持响应式、站内搜索、主流评论系统、文章浏览统计以及白天和夜间模式**.
 
 [**☞ 一睹为快**](https://shuoit.net) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
@@ -101,7 +101,21 @@ analyticsId: your id
 		github: 你的`GitHub`地址
 
 
-6. 其他信息对应词义直接替换成你的信息就好了。
+6. 搜索模块
+
+鉴于旧版本搜索有样式问题，另外检索词并不能匹配文章，也不能突出颜色。所以新版直接换成了`hexo-generator-search`
+
+- [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
+- [为 Hexo 博客创建本地搜索引擎](https://liam.page/2017/09/21/local-search-engine-in-Hexo-site/)
+
+
+7. 其他信息对应词义直接替换成你的信息就好了。
+
+其中关于配置分类别名以及自定义文章链接，请看如下文章操作：
+
+- [JSimple主题用户指南](https://shuoit.net/others/jsimple-usage-1492480198.html)
+- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech-notes/hexo-links-1483800845.html)
+- [将Hexo博客url优化进行到底](https://shuoit.net/tech-notes/permalink-optimize-hexo-1528003174.html)
 
 
 ## 浏览器支持
