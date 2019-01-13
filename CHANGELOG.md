@@ -10,6 +10,7 @@ v0.0.7 - Jau 12, 2019
 * Google AdSense now support 
 * Post declare text align center
 * Replace search module with `hexo-generator-search`
+* Some colors and font style optimized
 
 v0.0.6 - Nov 5, 2018
 

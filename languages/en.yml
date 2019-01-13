@@ -18,14 +18,7 @@ theme_by: Theme by
 category: Category
 tag: Tag
 connect: 'Connect With Us'
-post_total_count: There are %d posts in total till now.
+post_total_count: Nice! %d posts in total. Keep on posting.
 read_more: Continue Reading →
 contents: Contents
 none: None
-insight:
-    hint: 'Type something...'
-    posts: 'Posts'
-    pages: 'Pages'
-    categories: 'Categories'
-    tags: 'Tags'
-    untitled: '(Untitled)'
