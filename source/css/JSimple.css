@@ -543,7 +543,7 @@ body {
     font-weight: bold;
 }
 .post-meta a:hover,.post-meta span:hover {
-    color: #f88a0c;
+    color: #666;
 }
 .post-meta em {
     margin:0 5px;
@@ -954,6 +954,9 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 }
 .night-mode .post-tool a {
     color:#e78170
+}
+.night-mode .post-desc {
+    color:#fff
 }
 .night-mode .post-author a,.night-mode .comment-meta-author {
     color:#3dbcf5
