@@ -17,7 +17,6 @@
  */
 (function($, window, document, undefined) {
     var $window = $(window);
-
     $.fn.lazyload = function(options) {
         var elements = this;
         var $container;
@@ -33,10 +32,8 @@
             load            : null,
             placeholder     : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
         };
-
         function update() {
             var counter = 0;
-
             elements.each(function() {
                 var $this = $(this);
                 if (settings.skip_invisible && !$this.is(":visible")) {
@@ -783,10 +780,10 @@ var SimpleCore = {
         console.log("%c\n"+asciiTxt, "color: #527fe2; font-family:KaiTi;font-size: 16px");
     },
     lazyLoadPostsImages: function() {
-        $(document).find('img').lazyload({
+        $('body').find('img').lazyload({
             //placeholder: '/images/loading.gif',
             effect   : 'fadeIn',
-            threshold: 0,
+            threshold: 2,
             failure_limit: 3
         });
     },
