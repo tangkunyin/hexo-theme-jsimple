@@ -17,6 +17,25 @@
     </div><!-- end #body -->
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
 </div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input"
+                   spellcheck="false"
+                   type="text"
+                   autocomplete="off"
+                   placeholder="<%= __('searchPlaceHolder') %>"/>
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
@@ -27,7 +46,12 @@
             current: $('.post-tags').length > 0 ? 'post' : 'archive',
             snsQRCode: '/images/sns-qrcode.png',
             donateImg: '/images/donate-qr.png',
-            searchPath: '/<%= config.search.path %>'
+            localSearch: {
+                dbPath: '/<%= config.search.path %>',
+                trigger: '<%= theme.local_search.trigger %>',
+                topN: '<%= theme.local_search.top_n_per_article %>',
+                unescape: '<%= theme.local_search.unescape %>'
+            }
         });
     });
 </script>

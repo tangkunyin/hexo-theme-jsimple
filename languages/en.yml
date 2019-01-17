@@ -3,7 +3,8 @@ archives: Archives
 about: About
 categories: Categories
 search: Search
-searchPlaceHolder: Input Search key Words Here
+searchTip: click to search...
+searchPlaceHolder: Input query keywords here...
 tags: Tags
 tagcloud: Tag Cloud
 prev: Prev
