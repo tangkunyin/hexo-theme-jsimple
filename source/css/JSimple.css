@@ -20,12 +20,18 @@ audio:not([controls]) {
     display:none
 }
 html {
+    height: 100%;
     font-family:sans-serif;
     -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%
+    -webkit-text-size-adjust:100%;
+    overflow: -moz-hidden-unscrollable;
 }
 body {
-    margin:0
+    margin:0;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 a {
     background:transparent
@@ -221,27 +227,6 @@ input[type="button"],input[type="reset"],input[type="search-form-submit"] {
 select,input[type="file"] {
     height:36px;
     line-height:30px
-}
-::-webkit-scrollbar {
-    width:8px;
-    height:8px
-}
-::-webkit-scrollbar-track-piece {
-    background-color:#e0e0e0
-}
-::-webkit-scrollbar-thumb {
-    border:0
-}
-::-webkit-scrollbar-thumb:vertical:hover,::-webkit-scrollbar-thumb:horizontal:hover {
-    background-color:#aaa
-}
-::-webkit-scrollbar-thumb:vertical {
-    height:5px;
-    background-color:#bbb
-}
-::-webkit-scrollbar-thumb:horizontal {
-    width:5px;
-    background-color:#bbb
 }
 ::selection {
     color:#fff;

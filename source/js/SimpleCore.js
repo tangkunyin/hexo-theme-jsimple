@@ -653,7 +653,9 @@ var SimpleCore = {
         });
     },
     scrollCallback: function () {
-        var top = document.body.scrollTop;
+        var top = document.documentElement.scrollTop
+            || document.body.scrollTop
+            || 0;
         if (top > 100) {
             $('.fixed-btn').show();
         } else {
