@@ -11,6 +11,7 @@ v0.0.7 - Jau 12, 2019
 * Post declare text align center
 * Replace search module with `hexo-generator-search`
 * Some colors and font style optimized
+* Images lazyload support
 
 v0.0.6 - Nov 5, 2018
 
