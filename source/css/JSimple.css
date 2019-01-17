@@ -942,8 +942,8 @@ body.night-mode,.night-mode #body,.night-mode .page-title,.night-mode .fixed-btn
     color:#b1b1b1
 }
 .night-mode input,.night-mode textarea {
-    background-color:#555 !important;
-    color:#b1b1b1;
+    background-color:#555;
+    color:#555;
     outline:0
 }
 .night-mode input:focus,.night-mode textarea:focus {
