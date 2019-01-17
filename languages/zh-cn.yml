@@ -3,7 +3,8 @@ archives: 归档
 about: 关于本站
 categories: 分类
 search: 搜索
-searchPlaceHolder: 请输入关键字
+searchTip: 读物检索~
+searchPlaceHolder: 请输入查询关键词
 tags: 标签
 tagcloud: 标签云
 prev: 上一页

@@ -1487,6 +1487,10 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     color:#fff
 }
 /* for local search */
+#local-search-input-tip {
+    border-radius:16px;
+    font-family: Hannotate SC;
+}
 .local-search-pop-overlay {
     position: fixed;
     width: 100%;
@@ -1494,7 +1498,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     top: 0;
     left: 0;
     z-index: 2080;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.4);
 }
 .local-search-popup {
     display: none;
@@ -1567,6 +1571,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     border: none;
     background: transparent;
     vertical-align: middle;
+    box-sizing: unset;
 }
 .local-search-popup .search-icon,
 .local-search-popup .popup-btn-close {
@@ -1574,6 +1579,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     font-size: 18px;
     color: #999;
     height: 36px;
+    line-height: 36px;
     width: 18px;
     padding-left: 10px;
     padding-right: 10px;

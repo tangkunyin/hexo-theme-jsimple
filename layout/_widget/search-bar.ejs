@@ -1,23 +1,9 @@
 <li class="page-search">
     <form id="search" class="search-form">
-        <input type="text" id="local-search-input" class="st-search-input" placeholder="<%= __('searchPlaceHolder') %>" />
-        <button type="button" class="search-form-submit" title="<%= __('search') %>"><i class="fa fa-search"></i></button>
+        <input type="text"
+               readonly="readonly"
+               id="local-search-input-tip"
+               placeholder="<%= __('searchTip') %>" />
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
     </form>
 </li>
-<!-- search results -->
-<div class="site-search">
-    <div class="popup search-popup local-search-popup">
-        <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-            <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-            <div class="local-search-input-wrapper">
-                <input autocomplete="off" placeholder="<%= __('searchPlaceHolder') %>" spellcheck="false" type="text" id="local-search-input">
-            </div>
-        </div>
-        <div id="local-search-result"></div>
-    </div>
-</div>

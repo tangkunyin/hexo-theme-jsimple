@@ -57,6 +57,17 @@ postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之�
 pageServerName: Coding
 pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
 
+# Local search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # unescape html strings to the readable one
+  unescape: false
+
 ## Analytics setting. Google default
 analyticsId:
 
