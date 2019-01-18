@@ -8,9 +8,9 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">总的来说 - 目前共计<%= site.tags.length %>类标签</h3>
+            <h3 class="post-title"><%= __('tag_total_count', site.tags.length) %></h3>
         </div>
-        <p><img src="/images/tags-bg.jpg" alt="tags-bg"></p> 
+        <p><img src="/images/tags-bg.jpg" alt="tags-bg"></p>
         <div class="post-content markdown-body" itemprop="articleBody">
             <ul class="tag-list">
                 <% site.tags.sort('name').map(function(tag){  %>

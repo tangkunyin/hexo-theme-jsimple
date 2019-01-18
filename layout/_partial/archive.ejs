@@ -1,7 +1,7 @@
 <div class="page-title">
     <ul>
         <li class="<%= pagination == 2 ? 'active' : '' %>">
-            <a href="/" data-name="最近文章">最近</a>
+            <a href="/" data-name="<%= __('recent_posts')  %>"><%= __('recent_posts')  %></a>
         </li>
         <% for (let menuKey in theme.menu){ %>
         <li class="<%= (page.category == menuKey) ? 'active' : '' %>">
