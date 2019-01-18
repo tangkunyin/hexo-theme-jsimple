@@ -13,6 +13,8 @@ v0.0.7 - Jau 12, 2019
 * Some colors and font style optimized
 * Images lazyload support
 * ScrollBar hidden and go2Top bug fixed in Chrome
+* I18N optimized（English Only）
+
 
 v0.0.6 - Nov 5, 2018
 

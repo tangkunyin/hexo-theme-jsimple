@@ -8,9 +8,9 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">坦率的讲 - 本站目前共计<%= site.posts.length %>篇文章</h3>
+            <h3 class="post-title"><%= __('post_total_count', site.posts.length) %></h3>
         </div>
-        <p>不信，你数数 ：） </p>
+        <p> 稍等，加点料 </p>
         <div class="post-content markdown-body" itemprop="articleBody">
             <div class="archives">
                 <% var lastDate; %>

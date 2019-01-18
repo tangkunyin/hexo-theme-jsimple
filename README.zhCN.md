@@ -38,7 +38,7 @@ $ git pull
 
 ### 重要的配置说明
 
-#### 1. CSPEnable: 一个布尔值( `true` or `false`)
+#### 1. CSP_Enable: 一个布尔值( `true` or `false`)
 
 内容安全策略配置，可使全站强制性`https`访问，意味着网页中**Content-Security-Policy为upgrade-insecure-requests**。好处是当你忘记引用正确的https资源时它会帮你自动转成https。
 

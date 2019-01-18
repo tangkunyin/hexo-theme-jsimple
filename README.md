@@ -40,9 +40,9 @@ For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be m
 
 ### Important settings
 
-#### 1. CSPEnable: Boolean value( `true` or `false`)
+#### 1. CSP_Enable: Boolean value( `true` or `false`)
 
-Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in html meat tag. Please set `CSPEnable` false when you test on localhost or your online server not support https.Otherwise the css and js in theme reference will be error and the home page will be open error.
+Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in html meat tag. Please set `CSP_Enable` false when you test on localhost or your online server not support https.Otherwise the css and js in theme reference will be error and the home page will be open error.
 
 #### 2. menu: Map value
 
