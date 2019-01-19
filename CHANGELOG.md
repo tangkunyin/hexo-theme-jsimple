@@ -2,18 +2,18 @@
 
 v0.0.7 - Jau 12, 2019
 
-* Optimize the code-highlight-style spaces in night model
+* Some `colors`、`font styles`、`body styles` optimized
+* Fixed the code-highlight-style spaces defects in night model
 * Make copyright year text to configurable
 * Update default donate qrcode and some tips
 * Update csp model field and 404 page description
 * Analytics now only support google
 * Google AdSense now support 
-* Post declare text align center
 * Replace search module with `hexo-generator-search`
-* Some colors and font style optimized
-* Images lazyload support
+* Image lazy-load support
 * ScrollBar hidden and go2Top bug fixed in Chrome
 * I18N optimized（English Only）
+* Post sticky top support
 
 
 v0.0.6 - Nov 5, 2018
