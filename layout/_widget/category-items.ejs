@@ -9,8 +9,8 @@
     <% } %>
     <div class="post-header">
         <div class="post-meta">
-            <a href="<%= post.authorLink %>" target="<%= external_link %>">
-                <strong><%= post.author %></strong>
+            <a href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>" target="<%= external_link %>">
+                <strong><%= post.author ? post.author : theme.webmaster.name %></strong>
             </a>
             <em>·</em><%= date(post.date) %>
         </div>

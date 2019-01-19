@@ -2,14 +2,16 @@
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
             <div class="post-author clearfix">
-                <a class="avatar fleft" href="<%= post.authorLink %>" target="_blank">
-                    <img width="48" src="<%= post.avatar %>" alt="avatar"/>
+                <a class="avatar fleft" href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>"
+                   target="_blank">
+                    <img width="48" src="<%= post.avatar ? post.avatar : theme.webmaster.avatar %>" alt="avatar"/>
                 </a>
                 <p><span class="label"><%= __('author') %></span>
-                    <a href="<%= post.authorAbout %>" target="_blank"><%= post.author %></a>
+                    <a href="<%= post.authorAbout ? post.authorAbout : theme.webmaster.home %>"
+                       target="_blank"><%= post.author ? post.author : theme.webmaster.name %></a>
                     <span title="<%= __('last_edited') %>&nbsp;<%= date(post.date) %>"><%= date(post.date) %></span>
                 </p>
-                <p><%= post.authorDesc %></p>
+                <p><%= post.authorDesc ? post.authorDesc : theme.webmaster.desc %></p>
             </div>
             <h2 class="post-title"><%- post.title %></h2>
             <div class="post-meta">
