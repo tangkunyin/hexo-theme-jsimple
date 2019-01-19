@@ -330,16 +330,16 @@ var LocalSearch = {
                         keywords.push(searchText);
                     }
                     var resultItems = [];
-                    if (searchText.length > 0) {
-                        // perform local searching
-                        datas.forEach(function (data) {
+                    if (searchText.length > 0 && Array.isArray(datas)) {
+                        for (let data of datas) {
+                            if (!data || !data.content) continue;
                             var isMatch = false;
                             var hitCount = 0;
                             var searchTextCount = 0;
                             var title = data.title.trim();
                             var titleInLowerCase = title.toLowerCase();
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (LocalSearch.unescape) {
+                            if (LocalSearch.unescape && content) {
                                 content = unescapeHtml(content);
                             }
                             var contentInLowerCase = content.toLowerCase();
@@ -374,12 +374,9 @@ var LocalSearch = {
                                     hitCount = indexOfTitle.length + indexOfContent.length;
                                 }
                             }
-
                             // show search results
-
                             if (isMatch) {
                                 // sort index by position of keyword
-
                                 [indexOfTitle, indexOfContent].forEach(function (index) {
                                     index.sort(function (itemLeft, itemRight) {
                                         if (itemRight.position !== itemLeft.position) {
@@ -451,9 +448,7 @@ var LocalSearch = {
                                     }
                                     slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
                                 }
-
                                 // sort slices in content by search text's count and hits' count
-
                                 slicesOfContent.sort(function (sliceLeft, sliceRight) {
                                     if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
                                         return sliceRight.searchTextCount - sliceLeft.searchTextCount;
@@ -506,7 +501,7 @@ var LocalSearch = {
                                     id: resultItems.length
                                 });
                             }
-                        })
+                        }
                     }
                     if (keywords.length === 1 && keywords[0] === "") {
                         resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
