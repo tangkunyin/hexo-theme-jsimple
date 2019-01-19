@@ -386,8 +386,8 @@ body {
 }
 #body {
     margin-left:25%;
-    width:58.33333%;
-    max-width:1000px
+    width:66%;
+    max-width:1136px
 }
 .fleft {
     float:left
@@ -784,7 +784,7 @@ img.alignright {
     margin:0 0 0 15px
 }
 .single #body {
-    margin-left:16.66667%;
+    margin-left:17.5%;
     float:none
 }
 .single .footer {
