@@ -23,10 +23,12 @@ home_page_sort: -1
 # Home page article shown number
 home_article_shown: 10
 
+# Post sticky top support (you need to set top:number in post.md. )
+sticky_top:
+  enable: true
 
 # your site build time or domain buy time
 site_building_time: 01/20/2018
-
 
 # Top navigate menu name
 ## Notice:
