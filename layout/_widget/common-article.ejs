@@ -38,6 +38,7 @@
     <% if(post.layout && post.layout === 'post' && theme.post_declare) { %>
     <p style="text-align: center"><%= __('post_declare') %></p>
     <% } %>
+    <%- partial('_widget/ads/adSense') %>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
 <%- js(['js/busuanzi.pure.mini.js']) %>

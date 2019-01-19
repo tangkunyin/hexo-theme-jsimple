@@ -10,7 +10,7 @@
         <div class="post-header">
             <h3 class="post-title"><%= __('post_total_count', site.posts.length) %></h3>
         </div>
-        <p> 稍等，加点料 </p>
+        <%- partial('_widget/ads/adSense') %>
         <div class="post-content markdown-body" itemprop="articleBody">
             <div class="archives">
                 <% var lastDate; %>

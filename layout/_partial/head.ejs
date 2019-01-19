@@ -17,16 +17,16 @@
 <%
 var siteTitle = page.title;
 if (is_archive()) {
-    siteTitle = '归档集';
+    siteTitle = __('archives');
     if (is_month()) {
         siteTitle += '- ' + page.year + '/' + page.month;
     } else if (is_year()) {
         siteTitle += '- ' + page.year;
     }
 } else if (is_category()) {
-    siteTitle = '分类 - ' + page.category;
+    siteTitle = __('categories') + ' - ' + page.category;
 } else if (is_tag()) {
-    siteTitle = '标签 - ' + page.tag;
+    siteTitle = __('tags') + ' - ' + page.tag;
 }
 %>
 <title><% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %></title>
