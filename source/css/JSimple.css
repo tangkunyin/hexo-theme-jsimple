@@ -1589,3 +1589,28 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     transform: translate(-50%, -50%);
     color: #ccc;
 }
+/* for adsense */
+.adsense_post_left {
+    width: 160px;
+    height: 600px;
+    position: absolute;
+    top: 90px;
+    margin-left: -190px;
+    overflow: hidden;
+}
+.adsense_post_right {
+    width: 160px;
+    height: 600px;
+    position: absolute;
+    top: 90px;
+    right: 5%;
+    overflow: hidden;
+}
+@media (max-width: 896px) {
+    .adsense_post_left {
+        display: none;
+    }
+    .adsense_post_right {
+        display: none;
+    }
+}

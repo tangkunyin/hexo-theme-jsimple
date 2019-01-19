@@ -1,0 +1,16 @@
+<% if (auto) { %>
+    <ins class="adsbygoogle"
+         style="<%- adStyles %>"
+         data-ad-client="<%= theme.adsense.client_id %>"
+         data-ad-slot="<%- slotId %>"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+<% } else { %>
+    <ins class="adsbygoogle"
+         style="<%- adStyles %>"
+         data-ad-client="<%= theme.adsense.client_id %>"
+         data-ad-slot="<%- slotId %>"></ins>
+<% } %>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
