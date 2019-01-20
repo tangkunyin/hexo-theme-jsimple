@@ -1,12 +1,12 @@
 <div id="cover">
     <div class="cover-img"></div>
     <div class="cover-info">
-        <% if (theme.avatarShow) { %>
-        <img class="avatar" width="72" src="<%= theme.avatarImage %>" alt="avatar"/>
+        <% if (theme.avatar_show) { %>
+        <img class="avatar" width="72" src="<%= theme.avatar_image %>" alt="avatar"/>
         <% } %>
-        <h1 class="cover-siteName"><%= theme.siteName %></h1>
-        <h3 class="cover-siteTitle"><%= theme.coverTitle %></h3>
-        <p class="cover-siteDesc"><%= theme.coverDescription %></p>
+        <h1 class="cover-siteName"><%= theme.site_name %></h1>
+        <h3 class="cover-siteTitle"><%= theme.cover_title %></h3>
+        <p class="cover-siteDesc"><%= theme.cover_description %></p>
         <div class="cover-sns">
             <% for (let snsKey in theme.sns){ %>
             <div class="btn btn-<%= snsKey %>">

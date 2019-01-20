@@ -1,7 +1,7 @@
 <% var external_link = config.external_link ? '_blank' : '_self'; %>
 <article class="post">
     <% if (post.photos && post.photos.length){ %>
-    <!-- 有配图默认渲染第一张 -->
+    <!-- render the first if pics exists. -->
     <div class="post-cover">
         <a href="<%- url_for(post.path) %>" target="<%= external_link %>" title="<%= post.title %>"
            style="background-image:url(<%= post.photos[0] %>)"></a>
@@ -9,10 +9,13 @@
     <% } %>
     <div class="post-header">
         <div class="post-meta">
-            <a href="<%= post.authorLink %>" target="<%= external_link %>">
-                <strong><%= post.author %></strong>
+            <a href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>" target="<%= external_link %>">
+                <strong><%= post.author ? post.author : theme.webmaster.name %></strong>
             </a>
             <em>·</em><%= date(post.date) %>
+            <% if (is_home() && theme.sticky_top.enable && post.top > 0){ %>
+                <span class="label" style="color:#e78170"><%= __('sticky') %></span>
+            <% } %>
         </div>
         <a class="post-title" href="<%- url_for(post.path) %>" target="<%= external_link %>" title="<%= post.title %>"><%= post.title %></a>
         <div class="post-meta">

@@ -1,26 +1,34 @@
 # site name
-siteName: 说IT
-shortName: 说
+site_name: 说IT
+short_name: 说
 
+# Master info. It won't work if the one from (author|authorLink|avatar|authorDesc) be written in post.md
+webmaster:
+  name: 纠结伦
+  avatar: /images/favicon.png
+  home: https://shuoit.net
+  desc: 一个搬🧱的劳斯基😁️️
 
 # CSP Model, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-CSPEnable: false
+csp_enable: false
 
 # favicon
 favicon: /images/favicon.png
 # unique avatar
-avatarShow: false
-avatarImage: /images/favicon.png
+avatar_show: false
+avatar_image: /images/favicon.png
 
 # Home page sort type: -1: newer first，1: older first.
-homePageSortType: -1
+home_page_sort: -1
 # Home page article shown number
-homeArticleShown: 10
+home_article_shown: 10
 
+# Post sticky top support (you need to set top:number in post.md. )
+sticky_top:
+  enable: true
 
 # your site build time or domain buy time
-siteBuildingTime: 01/20/2018
-
+site_building_time: 01/20/2018
 
 # Top navigate menu name
 ## Notice:
@@ -31,17 +39,16 @@ menu:
    人文: humanities
    其他: others
 
-# Left menu of single pages settings
-## Notice: faName is FontAwesome style name
-leftPagesMenu:
+# Customize left navigation menus. faName is FontAwesome style name
+left_nav_menus:
 - uri: help
   title: 帮助
   faName: fa-question-circle
 
 
 # cover info config
-coverTitle: 用代码摇滚这个世界
-coverDescription: 一个关注技术与人文的IT博客
+cover_title: 用代码摇滚这个世界
+cover_description: 一个关注技术与人文的IT博客
 
 # sns url
 sns:
@@ -50,26 +57,49 @@ sns:
   twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
 
-# your article copyright or content declare
-postDeclare: 本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！
+# article declare. default content in languages
+post_declare: true
 
-# Git-pages server info
-pageServerName: Coding
-pageServerUrl: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2
+# Local search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # unescape html strings to the readable one
+  unescape: false
 
-
-# Gitment
-# Introduction: https://imsun.net/posts/gitment-introduction/
-gitment:
+## Analytics setting. Google default
+analytics:
   enable: false
-  githubID:
-  repo:
-  ClientID:
-  ClientSecret:
-  lazy: true
+  google_analytics_id:
 
-## Comments settings. Disqus support only by default.
-disqus_shortname:
+## Google AdSense.
+adsense:
+  enable: false
+  auto: false
+  client_id:
+  archive_id:
+  tags_id:
+  post_left_id:
+  post_right_id:
+  post_bottom_id:
 
-# Analytics
- tentcentAnalyticsId:
+
+## Comments settings. Disqus | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
+comments:
+  enable: false
+  disqus_shortname:
+  gitment:
+    repo:
+    githubID:
+    ClientID:
+    ClientSecret:
+    lazy: true
+
+
+# Git-pages server info (Coding Pages|Github Pages)
+server_name: Coding Pages
+server_url: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2

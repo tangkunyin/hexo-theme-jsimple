@@ -2,18 +2,21 @@
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
             <div class="post-author clearfix">
-                <a class="avatar fleft" href="<%= post.authorLink %>" target="_blank">
-                    <img width="48" src="<%= post.avatar %>" alt="avatar"/>
+                <a class="avatar fleft" href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>"
+                   target="_blank">
+                    <img width="48" src="<%= post.avatar ? post.avatar : theme.webmaster.avatar %>" alt="avatar"/>
                 </a>
-                <p><span class="label">作者</span>
-                    <a href="<%= post.authorAbout %>" target="_blank"><%= post.author %></a>
-                    <span title="最后编辑于<%= date(post.date) %>"><%= date(post.date) %></span>
+                <p><span class="label"><%= __('author') %></span>
+                    <a href="<%= post.authorAbout ? post.authorAbout : theme.webmaster.home %>"
+                       target="_blank"><%= post.author ? post.author : theme.webmaster.name %></a>
+                    <span title="<%= __('last_edited') %>&nbsp;<%= date(post.date) %>"><%= date(post.date) %></span>
                 </p>
-                <p><%= post.authorDesc %></p>
+                <p><%= post.authorDesc ? post.authorDesc : theme.webmaster.desc %></p>
             </div>
             <h2 class="post-title"><%- post.title %></h2>
             <div class="post-meta">
-                本文总共<%- strip_html(post.content).length %>个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                <%= __('post_words_count', strip_html(post.content).length) %> |
+                <%= __('post_view_count_prefix') %>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span><%= __('post_view_count_subfix') %>
             </div>
         </div>
         <div class="post-content markdown-body">
@@ -21,7 +24,7 @@
         </div>
         <div class="post-tool">
             <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> <%= __('donate') %>
             </a>
         </div>
         <% if (post.tags){ %>
@@ -32,9 +35,10 @@
         </div>
         <% } %>
     </article>
-    <% if(post.layout && post.layout === 'post' && theme.postDeclare) { %>
-    <p><%= theme.postDeclare %></p>
+    <% if(post.layout && post.layout === 'post' && theme.post_declare) { %>
+    <p style="text-align: center"><%= __('post_declare') %></p>
     <% } %>
+    <%- partial('_widget/ads/adSense') %>
     <%- partial('_partial/comments', {post: post}) %>
 </div>
 <%- js(['js/busuanzi.pure.mini.js']) %>
