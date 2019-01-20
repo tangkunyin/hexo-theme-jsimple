@@ -2,20 +2,20 @@
 <html class="no-js" lang="zh-CN">
 <head>
     <%- partial('_partial/head') %>
-    <%- partial('_widget/ads/adSense-auto') %>
-    <%- partial('_widget/analytics') %>
+    <%- partial('_widget/ads/adSense-auto', null, {cache: !config.relative_link}) %>
+    <%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
 </head>
 <body>
-<%- partial('_partial/leftMenu', null, {cache: !config.relative_link}) %>
+<%- partial('_partial/leftMenu') %>
 <%- partial('_widget/user-entry', null, {cache: !config.relative_link}) %>
 <div id="wrapper" class="clearfix">
     <div id="body">
         <div class="main" id="main">
-            <%- partial('_partial/middleCover', {cache: !config.relative_link}) %>
+            <%- partial('_partial/middleCover', null, {cache: !config.relative_link}) %>
             <%- body %>
         </div><!-- end #main-->
     </div><!-- end #body -->
-    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/footer', null, {cache: false}) %>
 </div>
 <!-- search pop -->
 <div class="popup search-popup local-search-popup">

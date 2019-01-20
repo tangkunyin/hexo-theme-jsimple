@@ -2,7 +2,7 @@
     <ul>
         <li><a href="/" data-name="<%= __('home') %>" title="Back Home"><%= __('home') %></a></li>
         <li><a href="/tags" data-name="<%= __('tagcloud')  %>" title="<%= __('tagcloud')  %>"><%= __('tags')  %></a></li>
-        <%- partial('_widget/search-bar', null, {cache: !config.relative_link}) %>
+        <%- partial('_widget/search-bar') %>
     </ul>
 </div>
 <div class="main-inner">

@@ -8,7 +8,7 @@
             <a href="/categories/<%= theme.menu[menuKey] %>" data-name="<%= menuKey %>"><%= menuKey %></a>
         </li>
         <% } %>
-        <%- partial('_widget/search-bar', null, {cache: !config.relative_link}) %>
+        <%- partial('_widget/search-bar') %>
     </ul>
 </div>
 <div class="main-inner">
