@@ -23,7 +23,10 @@
                     <ul class="archives_list">
                         <% } %>
                         <li><%= date(post.date, 'DD') %>日<%= time(post.date) %>
-                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>，作者
+                            <a href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>"
+                               target="_blank"
+                               rel="author"><%= post.author ? post.author : theme.webmaster.name %></a>
                         </li>
                         <% if (!site.posts.sort('date', theme.home_page_sort).eq(i + 1) || currentDate != parseInt(date(site.posts.sort('date', theme.home_page_sort).eq(i + 1).date, 'YYYYMM'))){ %>
                     </ul>
