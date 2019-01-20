@@ -2,8 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
 
-
-**JSimple is a responsive blog theme for Hexo which include day night model,insight search,article view count etc. Inspired by JianShu.com**.
+**JSimple is a responsive blog theme for Hexo which include day-night mode, local search, article view count etc. Inspired by JianShu that in the earliest**.
 
 - [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
@@ -22,8 +21,7 @@
 
  Modify `theme` setting in `_config.yml` to `jsimple`.
 
- To ensure the normal use of the search, please add `"hexo-generator-json-content": "^2.2.0"` to your site package.json file
- manually
+ To use of the local search, please add `hexo-generator-search`
 
  3. Update
 
@@ -32,74 +30,135 @@
  $ git pull
  ```
 
-
 ## Configurations
 
 For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be more convenient.
 
-### Important settings
+### site _config.yml
 
-#### 1. CSP_Enable: Boolean value( `true` or `false`)
+```yml
+# choose your language. default Chinese
+language:
+    - en
+    - zh-cn
 
-Mandatory total https access. Full https model which means **Content-Security-Policy is upgrade-insecure-requests** in html meat tag. Please set `CSP_Enable` false when you test on localhost or your online server not support https.Otherwise the css and js in theme reference will be error and the home page will be open error.
+# URL （Notice the permalink. Variable timestamp in post.md was added from hexo lib source）
+##  Please see the scripts in patch dir for more details
+url: https://shuoit.net
+root: /
+permalink: :category/:entitle-:timestamp.html
+permalink_defaults:
+  lang: en
 
-#### 2. menu: Map value
-
-Name order decide show index.The name also called category alias,so you must set category alias before start server. Also the `categories` and `tags` in your scaffolds post.md file must be set before start server.BTW, `category_map` and `tag_map` field in site `_config.yml` file must one to one correspondence with menus above.
-
+# Local search
+search:
+  path: search.json
+  field: all
+  content: true
+  
+# Category alias
+default_category: Tech
+category_map:
+   Tech: tech-notes
+tag_map:
+  hexo: hexo
 ```
+
+
+### theme _config.yml
+
+```yml
+# Master information. At the other hand, the fields int post.md(author|avatar|authorLink|authorAbout|authorDesc）also have the same effects
+## The priority in article config is higher than theme when you configuring at the same time. This used for multiplayer creation 
+webmaster:
+  name: Thomas Tang
+  avatar: /images/favicon.png
+  home: https://shuoit.net
+  desc: Senior Chinglish writer and coder😁️️
+
+# Decide whether the 'Content-Security-Policy = upgrade-insecure-requests' will be add in head tag.
+csp_enable: false
+
+# Article sort mode: -1(newer first)，1(older first). home_article_shown means paging count
+home_page_sort: -1
+home_article_shown: 10
+
+# Article sticky top. You need to set top field to your post.md. The larger value of top the front the article.
+sticky_top:
+  enable: true
+
+# Article category navigation 
 menu:
-   category1: category alias1
-   category2: category alias2
-   category3: category alias3
+  Tech: tech-notes
+  Life: humanities
+
+# Left navigation link. The faName is in FontAwesome styles.
+left_nav_menus:
+- uri: help
+  title: Help
+  faName: fa-question-circle
+  
+  
+# Google AdSense. Support auto-ads and manual-unit
+adsense:
+  enable: false// manual-unit-ads
+  auto: false// auto-ads
+  client_id:
+  archive_id:
+  tags_id:    
+  post_left_id:
+  post_right_id:
+  post_bottom_id:
+
+
+# Only support Disqus and Gitment so far.
+comments:
+  enable: false
+  disqus_shortname:
+  gitment:
+    repo:
+    githubID:
+    ClientID:
+    ClientSecret:
+    lazy: true
 ```
 
-#### 3. comment and  analytics config in your site _config.yml, please add them manually.
-
- ```
-    ## Google Aanalytics is default. You can update it in analytics.ejs file yourself
-    analyticsId: your id
- ```
-
-### The other settings
-
-1. cover images setting
-
-        There are two kinds of cover image. replace day and night in your theme images dir.
-
-2. Home page sort type and article shown number
-
-		homeArticleShown: 10
-		homePageSortType: -1
-
-	type: -1: newer first，1: older first.
+### Other config
 
 
-3. your site build time or founded date
+#### Search Module
 
-		siteBuildingTime: 12/12/2014
+Because of the search in previous version didn't work well. Such as highlight content, responsive problem in small screen.
 
-4. Independent page of uri please generate yourself
+So I replace it with `hexo-generator-search`. Thanks for [Next](https://github.com/theme-next/hexo-theme-next) theme.
 
-		```
-		# Example
-		hexo n page about
-		```
-
-5. Social info settings. telegram,instagram,twitter,github,sinaWb,facebook,github are support.
-
-		telegram: http://t.me/kunyintang
-        instagram: https://www.instagram.com/mtangsir/
-        twitter: https://twitter.com/tangkunyin
-        github: https://github.com/tangkunyin
-
-
-6. Search module. Please install and configure this plugin first.
+There are two Chinese articles that told how to create local-search in hexo.
 
 - [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
+- [为 Hexo 博客创建本地搜索引擎](https://liam.page/2017/09/21/local-search-engine-in-Hexo-site/)
 
 
-7. Other settings please replace with your own directly.
+#### How sticky top and timestamp works
+
+ I have made some changes in hexo lib source code so that timestamp and sticky datasource could get when hexo-cli generating articles.
+ 
+ From version `0.0.7`, JSimple have been adding `patch` scripts. You need to excute `patch/run.sh` when `node_modules` was deleted.
+  
+ You have to copy the `patch` dir into your site dir, otherwise sticky top and timestamp in permalink will not work.
+
+#### AdSence
+
+From version `0.0.7`. Google AdSense have been added. If you don't need this, just close it.
+
+
+#### The other things about JSimple
+
+If you don't understand Chinese. You can translate online by [Google Translate](https://translate.google.com/)  🤣🤣🤣
+
+- [JSimple主题用户指南](https://shuoit.net/others/jsimple-usage-1492480198.html)
+- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech-notes/hexo-links-1483800845.html)
+- [将Hexo博客url优化进行到底](https://shuoit.net/tech-notes/permalink-optimize-hexo-1528003174.html)
+- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech-notes/the-update-for-jsimple-in-early2019-1547728233.html)
 
 
 ## Browser support
