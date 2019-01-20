@@ -1539,6 +1539,8 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     position: relative;
     padding: 5px 25px;
     height: calc(100% - 55px);
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .local-search-popup .local-search-input-wrapper {
     display: inline-block;
