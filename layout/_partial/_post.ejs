@@ -1,6 +1,6 @@
 <div class="page-title">
     <ul>
-        <li><a href="/">最新</a></li>
+        <li><a href="/"><%= __('recent_posts') %></a></li>
         <% if(page.categories && page.categories.first()){ %>
             <% for (var name in theme.menu){ %>
                 <li class="<%= (page.categories.first().name == name) ? 'active' : '' %>">
@@ -8,7 +8,7 @@
                 </li>
             <% } %>
         <% }else { %>
-        <% console.error('Error ******* Please set categories in your scaffold file at least  *******') %>
+        <% console.warn('Error ******* Please set categories in your scaffold file at least  *******') %>
         <% } %>
         <%- partial('_widget/search-bar') %>
     </ul>

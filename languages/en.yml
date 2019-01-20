@@ -1,9 +1,13 @@
 home: Home
 archives: Archives
 about: About
+help: Help
+links: Links
+app: App
 categories: Categories
 search: Search
-searchPlaceHolder: Input Search key Words Here
+search_tip: click to search...
+search_placeholder: Input query keywords here...
 tags: Tags
 tagcloud: Tag Cloud
 prev: Prev
@@ -14,18 +18,24 @@ recent_posts: Recent Posts
 newer: Newer
 older: Older
 share: Share
-theme_by: Theme by
 category: Category
 tag: Tag
 connect: 'Connect With Us'
-post_total_count: There are %d posts in total till now.
+post_total_count: Nice 🥳 %d posts in total. Keep on posting.
+tag_total_count: There are %d tags so far.
 read_more: Continue Reading →
 contents: Contents
 none: None
-insight:
-    hint: 'Type something...'
-    posts: 'Posts'
-    pages: 'Pages'
-    categories: 'Categories'
-    tags: 'Tags'
-    untitled: '(Untitled)'
+donate: Donate
+buildTip: Has been established
+day: Days
+licenses: Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+based_on: Based on
+theme_by: Theme by
+author: Author
+last_edited: Last edited at
+post_words_count: emm... %d words in the article
+post_view_count_prefix: you are the
+post_view_count_subfix: th friend who reading now
+post_declare: This article just represents my own viewpoint. If there is something wrong, please correct me.
+sticky: Stickied

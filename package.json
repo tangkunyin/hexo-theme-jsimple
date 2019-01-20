@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-jsimple",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple three column theme for Hexo.Inspired by JianShu.com",
   "license": "MIT",
   "dependencies": {

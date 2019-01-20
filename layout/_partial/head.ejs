@@ -2,7 +2,7 @@
 <meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html">
 <![endif]-->
 <meta charset="utf-8">
-<% if (theme.CSPEnable){ %>
+<% if (theme.csp_enable){ %>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <% } %>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -10,23 +10,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 <meta http-equiv="mobile-agent" content="format=html5; url=<%= config.url %>">
 <meta name="author" content="<%= config.author %>">
-<%- css(['/css/SimpleStyle.min.css']) %>
+<%- css(['/css/JSimple.css']) %>
 <% if (theme.favicon){ %>
 <%- favicon_tag(theme.favicon) %>
 <% } %>
 <%
 var siteTitle = page.title;
 if (is_archive()) {
-    siteTitle = '归档集';
+    siteTitle = __('archives');
     if (is_month()) {
         siteTitle += '- ' + page.year + '/' + page.month;
     } else if (is_year()) {
         siteTitle += '- ' + page.year;
     }
 } else if (is_category()) {
-    siteTitle = '分类 - ' + page.category;
+    siteTitle = __('categories') + ' - ' + page.category;
 } else if (is_tag()) {
-    siteTitle = '标签 - ' + page.tag;
+    siteTitle = __('tags') + ' - ' + page.tag;
 }
 %>
 <title><% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %></title>

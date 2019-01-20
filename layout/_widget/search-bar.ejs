@@ -1,8 +1,9 @@
 <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only"><%= __('searchPlaceHolder') %></label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="<%= __('searchPlaceHolder') %>" />
-        <button type="submit" class="search-form-submit" title="<%= __('search') %>"><i class="fa fa-search"></i></button>
+        <input type="text"
+               readonly="readonly"
+               id="local-search-input-tip"
+               placeholder="<%= __('search_tip') %>" />
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
     </form>
-    <%- partial('search/insight') %>
 </li>

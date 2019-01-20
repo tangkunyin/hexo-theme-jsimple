@@ -1,43 +1,44 @@
-<% if (theme.disqus_shortname && page.comments) { %>
-<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    var disqus_config = function () {
-        this.page.url = '<%- post.permalink %>';
-        this.page.identifier = '<%- post.path %>';
-    };
-    (function () { // DON'T EDIT BELOW THIS LINE
-        var d = document, disqus_shortname = '<%= theme.disqus_shortname %>', s = d.createElement('script');
-        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
-<% } else if (theme.gitment.enable) { %>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<div id="gitment-container"></div>
-<script type="text/javascript">
-    var gitment = new Gitment({
-        id: document.location.href,
-        owner: '<%= theme.gitment.githubID %>',
-        repo: '<%= theme.gitment.repo %>',
-        oauth: {
-            client_id: '<%= theme.gitment.ClientID %>',
-            client_secret: '<%= theme.gitment.ClientSecret %>',
-        }
-    });
-    gitment.render('gitment-container');
-</script>
-<% if (theme.gitment.lazy) { %>
-<script>
-    document.getElementById("gitment-display-button").style.display = "none";
-    document.getElementById("gitment-container").style.display = "block";
-</script>
-<% } %>
+<% if (theme.comments.enable){ %>
+    <% if (theme.comments.disqus_shortname && page.comments) { %>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+            var disqus_config = function () {
+                this.page.url = '<%- post.permalink %>';
+                this.page.identifier = '<%- post.path %>';
+            };
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, disqus_shortname = '<%= theme.comments.disqus_shortname %>', s = d.createElement('script');
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <% } else if (theme.comments.gitment.ClientID && theme.comments.gitment.ClientSecret) { %>
+        <div id="gitment-container"></div>
+        <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+        <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script type="text/javascript">
+            var gitment = new Gitment({
+                id: document.location.href,
+                owner: '<%= theme.comments.gitment.githubID %>',
+                repo: '<%= theme.comments.gitment.repo %>',
+                oauth: {
+                    client_id: '<%= theme.comments.gitment.ClientID %>',
+                    client_secret: '<%= theme.comments.gitment.ClientSecret %>',
+                }
+            });
+            gitment.render('gitment-container');
+        </script>
+        <% if (theme.comments.gitment.lazy) { %>
+            <script>
+                document.getElementById("gitment-display-button").style.display = "none";
+                document.getElementById("gitment-container").style.display = "block";
+            </script>
+        <% } %>
+    <% } %>
 <% } %>

@@ -1,12 +1,12 @@
 <div id="nav">
     <nav class="nav-menu">
-        <a class="site-name current" href="/" title="<%= theme.shortName %>"><%= theme.shortName %></a>
+        <a class="site-name current" href="/" title="<%= theme.short_name %>"><%= theme.short_name %></a>
         <a class="site-index current" href="/"><i class="fa fa-home"></i><span><%= __('home') %></span></a>
         <a href="/archives" title="<%= __('archives')  %>"><i class="fa fa-archives"></i><span><%= __('archives')  %></span></a>
         <a href="/tags" title="<%= __('tags')  %>"><i class="fa fa-tags"></i><span><%= __('tags')  %></span></a>
         <!-- custom single page of menus -->
-        <% for (let index in theme.leftPagesMenu){ %>
-        <% let obj = theme.leftPagesMenu[index]; %>
+        <% for (let index in theme.left_nav_menus){ %>
+        <% let obj = theme.left_nav_menus[index]; %>
         <a href="/<%= obj.uri %>" title="<%= obj.title %>">
             <i class="fa <%= obj.faName %>"></i>
             <span><%= obj.title %></span>

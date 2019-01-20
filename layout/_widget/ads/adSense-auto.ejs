@@ -1,0 +1,10 @@
+<% if (theme.adsense.auto && theme.adsense.client_id){ %>
+    <!-- 自动广告 -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "<%= theme.adsense.client_id %>",
+            enable_page_level_ads: true
+        });
+    </script>
+<% } %>

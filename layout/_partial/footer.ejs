@@ -1,20 +1,19 @@
 <footer class="footer">
-    <div class="footer-inner">
+    <div class="footer-inner" style="text-align: <%- is_post() ? 'center' : 'left' %>">
         <p>
             <a href="/about"  title="<%= __('about') %>"><%= __('about') %></a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
-            <a href="/help" title="<%= __('help') %>" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/app" title="App下载">App下载</a>
+            <a href="/help" title="<%= __('help') %>" ><%= __('help') %></a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="<%= __('links') %>"><%= __('links') %></a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="<%= __('app') %>"><%= __('app') %></a>
         </p>
         <p>
-            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
-            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
-            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
-            ，作者<a href="https://www.tangkunyin.com" target="_blank">唐先森</a>
-            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+            <%= __('buildTip') %>&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbsp<%= __('day') %>，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence"><%= __('licenses') %></a><br/>
+            ©2017-<span id="cpYear"></span> <%= __('based_on') %>&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，<%= __('theme_by') %>&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，<%= __('author') %>&nbsp<a href="<%= theme.webmaster.home %>" target="_blank" rel="friend"><%= theme.webmaster.name %></a>
+            ，Hosted by <a href="<%= theme.server_url %>" style="font-weight: bold" target="_blank" rel="nofollow"><%= theme.server_name %></a>
         </p>
-        <%- partial('_widget/site-analytics') %>
     </div>
 </footer>
-<%- js(['js/InsightSearch','js/SimpleCore']) %>
+<%- js(['js/SimpleCore']) %>
