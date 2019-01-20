@@ -281,19 +281,24 @@ var LocalSearch = {
     },
     // search function;
     searchFunc: function (search_id, content_id) {
+        // if loading exists then return.
+        if (!$('.search-popup-overlay').is(':visible')) {
+            // start loading animation
+            $("body").append('<div class="search-popup-overlay local-search-pop-overlay">' +
+                '<div id="search-loading-icon">' +
+                '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+                '</div>' +
+                '</div>').css('overflow', 'hidden');
+            $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+        } else {
+            alert("Fetching data...don't worry")
+        }
         var input = document.getElementById(search_id);
         var resultContent = document.getElementById(content_id);
         if (!input || !resultContent) {
             console.error('Elements not exists with searchId: '+search_id+', resultContentId: '+content_id);
             return;
         }
-        // start loading animation
-        $("body").append('<div class="search-popup-overlay local-search-pop-overlay">' +
-                '<div id="search-loading-icon">' +
-                '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-                '</div>' +
-                '</div>').css('overflow', 'hidden');
-        $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
         if (LocalSearch.unescape) {
             // ref: https://github.com/ForbesLindesay/unescape-html
             var unescapeHtml = function(html) {
@@ -310,6 +315,7 @@ var LocalSearch = {
         }
         $.ajax({
             url: LocalSearch.searchPath,
+            timeout: 5000,
             dataType: LocalSearch.isXml ? "xml" : "json",
             async: true,
             success: function (res) {
@@ -540,6 +546,11 @@ var LocalSearch = {
                 $(".local-search-pop-overlay").remove();
                 $('body').css('overflow', '');
                 LocalSearch.proceedsearch();
+            },
+            error: function (xhr,status,error) {
+                alert(status+', Load error when get '+ LocalSearch.searchPath);
+                console.error(error);
+                window.location.reload(true);
             }
         });
     },
