@@ -7,8 +7,7 @@
 
 - [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
-![JSimple-iPhone-Landscape-Night-Demo](/source/images/JSimple-iPhone-Landscape-Night-Demo.jpg)
-
+![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
 
 <!--more-->
 
