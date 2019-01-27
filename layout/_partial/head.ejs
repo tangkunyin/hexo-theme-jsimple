@@ -2,6 +2,22 @@
 <meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html">
 <![endif]-->
 <meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="<%= config.url %>">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="<%= config.url %>">
+<link rel="prefetch" href="//www.google-analytics.com">
+<% if (theme.comments.disqus_shortname) { %>
+    <link rel="dns-prefetch" href="//disqus.com">
+    <link rel="dns-prefetch" href="//<%= theme.comments.disqus_shortname %>.disqus.com">
+    <link rel="prefetch" href="//disqus.com">
+    <link rel="prefetch" href="//<%= theme.comments.disqus_shortname %>.disqus.com">
+<% } %>
+<% if (theme.comments.gitment.ClientID && theme.comments.gitment.ClientSecret) { %>
+    <link rel="dns-prefetch" href="//imsun.github.io">
+    <link rel="prefetch" href="//imsun.github.io">
+<% } %>
+<link rel="prerender" href="<%= config.url %>">
 <% if (theme.csp_enable){ %>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <% } %>
