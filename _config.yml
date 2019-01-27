@@ -99,7 +99,3 @@ comments:
     ClientSecret:
     lazy: true
 
-
-# Git-pages server info (Coding Pages|Github Pages)
-server_name: Coding Pages
-server_url: https://coding.net/register?key=bcace447-fa41-4579-9783-86fdf0f723e2

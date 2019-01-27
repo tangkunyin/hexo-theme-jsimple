@@ -8,13 +8,7 @@
         <h3 class="cover-siteTitle"><%= theme.cover_title %></h3>
         <p class="cover-siteDesc"><%= theme.cover_description %></p>
         <div class="cover-sns">
-            <% for (let snsKey in theme.sns){ %>
-            <div class="btn btn-<%= snsKey %>">
-                <a href="<%= theme.sns[snsKey] %>" target="_blank" title="<%= snsKey %>" ref="friend">
-                    <i class="fa fa-<%= snsKey %>"></i>
-                </a>
-            </div>
-            <% } %>
+            <%- partial('_widget/sns-entry', null, {cache: !config.relative_link}) %>
         </div>
     </div>
 </div>
