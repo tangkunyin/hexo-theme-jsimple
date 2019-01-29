@@ -99,3 +99,5 @@ comments:
     ClientSecret:
     lazy: true
 
+## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
+baidu_auto_push: false 
