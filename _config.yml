@@ -99,3 +99,18 @@ comments:
     ClientSecret:
     lazy: true
 
+  gitalk:
+    on: true
+    owner: xx
+    repo: xx.github.io
+    admin: ['xxx']
+    clientID: 
+    clientSecret: 
+
+# Git-pages server info (Coding Pages|Github Pages)
+server_name: 
+server_url: 
+
+mathjax:
+   enable: true
+
