@@ -1,5 +1,15 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+v0.0.8 - Mar 3, 2019
+
+* Gitalk support by pr [pr-36](https://github.com/tangkunyin/hexo-theme-jsimple/pull/36)
+* Default reading mode support [issues-37](https://github.com/tangkunyin/hexo-theme-jsimple/issues/37)
+* Code line number style error fixed [issues-32](https://github.com/tangkunyin/hexo-theme-jsimple/issues/32)
+* Hexo server error when local-search not been set [issues-34](https://github.com/tangkunyin/hexo-theme-jsimple/issues/34)
+* Baidu auto push support
+* Remove archive author when always you
+* Mathjax support
+
 v0.0.7 - Jau 12, 2019
 
 * Some `colors`、`font styles`、`body styles` optimized
