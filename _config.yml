@@ -88,7 +88,9 @@ adsense:
   post_bottom_id:
 
 
-## Comments settings. Disqus | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
+## Comments settings. Disqus
+##                  | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
+##                  | gitalk  (Official website: https://gitalk.github.io/)
 comments:
   enable: false
   disqus_shortname:
@@ -98,6 +100,20 @@ comments:
     ClientID:
     ClientSecret:
     lazy: true
+  gitalk:
+    on: true
+    owner: xx
+    repo: xx.github.io
+    admin: ['xxx']
+    clientID:
+    clientSecret:
+
+# Git-pages server info (Coding Pages|Github Pages)
+server_name:
+server_url:
+
+mathjax:
+   enable: true
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
-baidu_auto_push: false 
+   baidu_auto_push: false
