@@ -9,8 +9,11 @@ webmaster:
   home: https://shuoit.net
   desc: 一个搬🧱的劳斯基😁️️
 
-# CSP Model, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
+# CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
 csp_enable: false
+
+# Read Mode. day or night
+read_mode: day
 
 # favicon
 favicon: /images/favicon.png
