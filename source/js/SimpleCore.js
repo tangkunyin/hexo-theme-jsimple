@@ -575,12 +575,14 @@ var SimpleCore = {
     snsQRCode: null,
     donateImg: null,
     localSearch: {},
+    readMode: 'day',
     initParams: function (params) {
         SimpleCore.buildingTime = params.buildingTime;
         SimpleCore.current = params.current;
         SimpleCore.snsQRCode = params.snsQRCode;
         SimpleCore.donateImg = params.donateImg;
         SimpleCore.localSearch = params.localSearch;
+        SimpleCore.readMode = params.readMode;
     },
     //外部调用初始化
     init: function (params) {
@@ -638,6 +640,7 @@ var SimpleCore = {
         SimpleCore.lazyLoadPostsImages();
         SimpleCore.registerESCKeyEvent();
         SimpleCore.registerFKeyEvent();
+        SimpleCore.setDefaultReadingMode();
     },
     goTop: function () {
         $("html, body").animate({scrollTop: 0}, 200);
@@ -710,8 +713,11 @@ var SimpleCore = {
             srh.addClass('active');
         }
     },
-    switchReadMode: function () {
+    switchReadMode: function (mode) {
         var next_mode = $('body').hasClass('night-mode') ? 'day' : 'night';
+        if (typeof mode === 'string' && mode.length > 0) {
+            next_mode = mode;
+        }
         SimpleCore.setLocalData('read-mode', next_mode);
         SimpleCore.changeReadModel();
     },
@@ -820,5 +826,11 @@ var SimpleCore = {
                 LocalSearch.doSearch(e);
             }
         });
+    },
+    setDefaultReadingMode() {
+        if (!SimpleCore.getLocalData('read-mode')
+            && ('day' === SimpleCore.readMode || 'night' === SimpleCore.readMode)) {
+            SimpleCore.switchReadMode(SimpleCore.readMode);
+        }
     }
 };

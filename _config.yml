@@ -9,8 +9,11 @@ webmaster:
   home: https://shuoit.net
   desc: 一个搬🧱的劳斯基😁️️
 
-# CSP Model, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
+# CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
 csp_enable: false
+
+# Read Mode. day or night
+read_mode: day
 
 # favicon
 favicon: /images/favicon.png
@@ -88,7 +91,7 @@ adsense:
   post_bottom_id:
 
 
-## Comments settings. Disqus 
+## Comments settings. Disqus
 ##                  | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
 ##                  | gitalk  (Official website: https://gitalk.github.io/)
 comments:
@@ -100,19 +103,20 @@ comments:
     ClientID:
     ClientSecret:
     lazy: true
-
   gitalk:
     on: true
     owner: xx
     repo: xx.github.io
     admin: ['xxx']
-    clientID: 
-    clientSecret: 
+    clientID:
+    clientSecret:
 
 # Git-pages server info (Coding Pages|Github Pages)
-server_name: 
-server_url: 
+server_name:
+server_url:
 
 mathjax:
    enable: true
 
+## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
+   baidu_auto_push: false
