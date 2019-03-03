@@ -41,13 +41,14 @@
 </div>
 <script>
     $(function () {
-        var jsi_config = { 
+        var jsi_config = {
             buildingTime: '<%= theme.site_building_time %>',
             current: $('.post-tags').length > 0 ? 'post' : 'archive',
             snsQRCode: '/images/sns-qrcode.png',
             donateImg: '/images/donate-qr.png',
-            localSearch: { dbPath: '' }
-        }; 
+            localSearch: { dbPath: '' },
+            readMode: '<%= theme.read_mode %>'
+        };
         <% if(config.search && config.search.path) {  %>
             jsi_config.localSearch = {
                 dbPath: '/<%= config.search.path %>',
