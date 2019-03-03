@@ -1167,8 +1167,6 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
     display:block;
     width:100%;
     overflow:auto;
-    word-break:normal;
-    word-break:keep-all
 }
 .markdown-body table th {
     font-weight:bold
@@ -1178,8 +1176,11 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
     border:1px solid #ddd
 }
 .markdown-body table tr {
-    background-color:#fff;
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 .markdown-body table tr:nth-child(2n) {
     background-color:#f8f8f8
@@ -1305,7 +1306,6 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 .markdown-body .highlight pre {
     border:none;
     margin:0;
-    width: 100%;
 }
 .markdown-body .highlight table {
     margin:0;
@@ -1317,9 +1317,8 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
     display: flex;
 }
 .markdown-body .highlight td {
-    border:none;
-    padding:0;
-    display: flex;
+    border: none;
+    padding: 0;
 }
 .markdown-body .highlight figcaption {
     font-size:0.85em;
@@ -1337,9 +1336,14 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 .markdown-body .highlight figcaption a {
     float:right;
 }
+.markdown-body .highlight .gutter {
+    width: 30px;
+}
+.markdown-body .highlight .code {
+    flex: 1;
+}
 .markdown-body .highlight .gutter pre {
-    text-align:right;
-    padding-right:20px;
+    text-align:center;
 }
 .markdown-body .highlight .line {
     height:22px;
@@ -1450,6 +1454,10 @@ pre .deletion {
 pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .javascript,pre .xml .vbscript,pre .xml .css,pre .xml .cdata {
     opacity:0.5;
 }
+
+.night-mode .markdown-body table tr {
+    background-color: #333;
+}
 .night-mode .markdown-body h2 {
     border-color:#2f2f2f
 }
@@ -1469,7 +1477,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .night-mode pre,.night-mode code,.night-mode blockquote {
     background-color: #333 !important;
     border-color:#2f2f2f;
-    color:#fff
+    color: #f3f3f3;
 }
 /* for local search */
 #local-search-input-tip {
