@@ -71,6 +71,9 @@ code,kbd,pre,samp {
 pre {
     white-space:pre-wrap
 }
+figure td.code pre {
+    white-space: pre !important;    
+}
 q {
     quotes:"\201C" "\201D" "\2018" "\2019"
 }
