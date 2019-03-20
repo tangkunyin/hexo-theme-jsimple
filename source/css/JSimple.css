@@ -71,7 +71,7 @@ code,kbd,pre,samp {
 pre {
     white-space:pre-wrap
 }
-figure td.code pre {
+.markdown-body figure td.code pre {
     white-space: pre !important;    
 }
 q {
