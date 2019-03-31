@@ -71,6 +71,9 @@ code,kbd,pre,samp {
 pre {
     white-space:pre-wrap
 }
+.markdown-body figure td.code pre {
+    white-space: pre !important;    
+}
 q {
     quotes:"\201C" "\201D" "\2018" "\2019"
 }
@@ -168,7 +171,6 @@ table {
 }
 table th,table td {
     padding:5px 10px;
-    border:1px solid #eee
 }
 table th {
     background:#f3f3f3
@@ -1175,11 +1177,13 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
     padding:6px 13px;
     border:1px solid #ddd
 }
+.markdown-body figure table tr {
+    display: flex !important;
+    justify-content: flex-start !important;
+}
 .markdown-body table tr {
     flex: 1;
-    display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: stretch;
 }
 .markdown-body table tr:nth-child(2n) {
