@@ -10,7 +10,7 @@
         <div class="post-header">
             <h3 class="post-title"><%= __('tag_total_count', site.tags.length) %></h3>
         </div>
-        <p><img src="/images/tags-bg.png" alt="tags-bg"></p>
+        <%- partial('_widget/ads/adSense') %>
         <div class="post-content markdown-body" itemprop="articleBody">
             <ul class="tag-list">
                 <% site.tags.sort('name').map(function(tag){  %>
@@ -18,6 +18,6 @@
                 <% }) %>
             </ul>
         </div>
+        <p style="width: 100%; text-align: center"><img src="/images/tags-bg.png" alt="tags-bg"></p>
     </article>
-    <%- partial('_widget/ads/adSense') %>
 </div>

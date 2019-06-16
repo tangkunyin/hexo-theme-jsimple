@@ -1,10 +1,17 @@
-<% if (auto) { %>
+<% if (format === 'auto') { %>
     <ins class="adsbygoogle"
          style="<%- adStyles %>"
          data-ad-client="<%= theme.adsense.client_id %>"
          data-ad-slot="<%- slotId %>"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
+<% } else if (format === 'fluid') { %>
+    <ins class="adsbygoogle"
+         style="<%- adStyles %>"
+         data-ad-layout="in-article"
+         data-ad-format="fluid"
+         data-ad-client="<%= theme.adsense.client_id %>"
+         data-ad-slot="<%- slotId %>"></ins>
 <% } else { %>
     <ins class="adsbygoogle"
          style="<%- adStyles %>"

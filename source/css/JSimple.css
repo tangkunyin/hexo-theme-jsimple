@@ -72,7 +72,7 @@ pre {
     white-space:pre-wrap
 }
 .markdown-body figure td.code pre {
-    white-space: pre !important;    
+    white-space: pre !important;
 }
 q {
     quotes:"\201C" "\201D" "\2018" "\2019"
@@ -1609,7 +1609,7 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     height: 600px;
     position: absolute;
     top: 90px;
-    margin-left: -190px;
+    margin-left: -221px;
     overflow: hidden;
 }
 .adsense_post_right {
@@ -1617,14 +1617,33 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
     height: 600px;
     position: absolute;
     top: 90px;
-    right: 5%;
+    right: 3.9%;
     overflow: hidden;
 }
-@media (max-width: 896px) {
+.adsense_tb_horizontal {
+    text-align: center;
+}
+.adsense_page_right {
+    width: 160px;
+    height: 600px;
+    position: fixed;
+    top: 90px;
+    right: 0.5%;
+    overflow: hidden;
+    z-index: -99;
+}
+/* 手机上就不展示了 */
+@media screen and (max-width: 768px){
     .adsense_post_left {
         display: none;
     }
     .adsense_post_right {
+        display: none;
+    }
+    .adsense_tb_horizontal {
+        display: none;
+    }
+    .adsense_page_right {
         display: none;
     }
 }
