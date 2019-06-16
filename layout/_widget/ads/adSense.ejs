@@ -3,20 +3,29 @@
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <% } %>
     <% if (is_archive()){ %>
-        <%- partial('adaptive-unit', {auto: true, slotId: theme.adsense.archive_id, adStyles: 'display:block'}) %>
+        <p class="adsense_tb_horizontal">
+            <%- partial('adaptive-unit', {format: 'auto', slotId: theme.adsense.archive_id, adStyles: 'display:block'}) %>
+        </p>
     <% } else if ('tags' === page.layout) { %>
-        <p>
-            <%- partial('adaptive-unit', {auto: true, slotId: theme.adsense.tags_id, adStyles: 'display:block'}) %>
+        <p class="adsense_tb_horizontal">
+            <%- partial('adaptive-unit', {format: 'auto', slotId: theme.adsense.tags_id, adStyles: 'display:block'}) %>
         </p>
     <% } else if (is_post()) { %>
         <div class="adsense_post_left">
-            <%- partial('adaptive-unit', {auto: false, slotId: theme.adsense.post_left_id, adStyles: 'display:inline-block;width:160px;height:600px'}) %>
+            <%- partial('adaptive-unit', {format: 'fixed', slotId: theme.adsense.post_left_id, adStyles: 'display:inline-block;width:160px;height:600px'}) %>
         </div>
         <div class="adsense_post_right">
-            <%- partial('adaptive-unit', {auto: false, slotId: theme.adsense.post_right_id, adStyles: 'display:inline-block;width:160px;height:600px'}) %>
+            <%- partial('adaptive-unit', {format: 'fixed', slotId: theme.adsense.post_right_id, adStyles: 'display:inline-block;width:160px;height:600px'}) %>
         </div>
-        <p>
-            <%- partial('adaptive-unit', {auto: true, slotId: theme.adsense.post_bottom_id, adStyles: 'display:block'}) %>
+        <p class="adsense_tb_horizontal">
+            <%- partial('adaptive-unit', {format: 'fluid', slotId: theme.adsense.post_inner_id, adStyles: 'display:block; text-align:center;'}) %>
+        </p>
+    <% } else if (is_page()) { %>
+        <div class="adsense_page_right">
+            <%- partial('adaptive-unit', {format: 'fixed', slotId: theme.adsense.post_right_id, adStyles: 'display:inline-block;width:160px;height:600px'}) %>
+        </div>
+        <p class="adsense_tb_horizontal">
+            <%- partial('adaptive-unit', {format: 'auto', slotId: theme.adsense.page_tb_id, adStyles: 'display:block'}) %>
         </p>
     <% } %>
 <% } %>

@@ -83,12 +83,13 @@ analytics:
 adsense:
   enable: false
   auto: false
-  client_id:
-  archive_id:
-  tags_id:
-  post_left_id:
-  post_right_id:
-  post_bottom_id:
+  client_id: 
+  page_tb_id: 
+  archive_id: 
+  tags_id: 
+  post_inner_id: 
+  post_left_id: 
+  post_right_id: 
 
 
 ## Comments settings. Disqus
