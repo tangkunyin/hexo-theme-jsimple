@@ -155,10 +155,10 @@ From version `0.0.7`. Google AdSense have been added. If you don't need this, ju
 
 If you don't understand Chinese. You can translate online by [Google Translate](https://translate.google.com/)  🤣🤣🤣
 
-- [JSimple主题用户指南](https://shuoit.net/others/jsimple-usage-1492480198.html)
-- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech-notes/hexo-links-1483800845.html)
-- [将Hexo博客url优化进行到底](https://shuoit.net/tech-notes/permalink-optimize-hexo-1528003174.html)
-- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech-notes/the-update-for-jsimple-in-early2019-1547728233.html)
+- [JSimple主题用户指南](https://shuoit.net/tech/jsimple-usage-1492480198.html)
+- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech/hexo-links-1483800845.html)
+- [将Hexo博客url优化进行到底](https://shuoit.net/tech/permalink-optimize-hexo-1528003174.html)
+- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech/the-update-for-jsimple-in-early2019-1547728233.html)
 
 
 ## Browser support

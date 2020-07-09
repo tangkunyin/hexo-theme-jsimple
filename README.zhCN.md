@@ -150,11 +150,10 @@ comments:
 
 其中关于配置分类别名以及自定义文章链接，请看如下文章操作：
 
-- [JSimple主题用户指南](https://shuoit.net/others/jsimple-usage-1492480198.html)
-- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech-notes/hexo-links-1483800845.html)
-- [将Hexo博客url优化进行到底](https://shuoit.net/tech-notes/permalink-optimize-hexo-1528003174.html)
-- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech-notes/the-update-for-jsimple-in-early2019-1547728233.html)
-
+- [JSimple主题用户指南](https://shuoit.net/tech/jsimple-usage-1492480198.html)
+- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech/hexo-links-1483800845.html)
+- [将Hexo博客url优化进行到底](https://shuoit.net/tech/permalink-optimize-hexo-1528003174.html)
+- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech/the-update-for-jsimple-in-early2019-1547728233.html)
 
 ## 浏览器支持
 
