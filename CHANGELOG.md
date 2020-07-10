@@ -1,5 +1,13 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+v0.0.9 - July 9, 2020
+
+* Cover image bugfix, see [issues-52](https://github.com/tangkunyin/hexo-theme-jsimple/issues/52)
+* Fix wrong guide url in readme.
+* Replace JQuery with Zepto which made lib size reduce to 9.7kb.
+* Remove lazyload image code. You can use this: https://www.npmjs.com/package/hexo-lazyload-image
+
+
 v0.0.8 - Mar 3, 2019
 
 * Gitalk support by pr [pr-36](https://github.com/tangkunyin/hexo-theme-jsimple/pull/36)

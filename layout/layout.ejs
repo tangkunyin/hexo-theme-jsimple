@@ -42,6 +42,7 @@
 <script>
     $(function () {
         var jsi_config = {
+            rootUrl: '<%= config.url %><%= config.root %>',
             buildingTime: '<%= theme.site_building_time %>',
             current: $('.post-tags').length > 0 ? 'post' : 'archive',
             snsQRCode: '/images/sns-qrcode.png',
