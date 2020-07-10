@@ -560,7 +560,7 @@ var SimpleCore = {
     registerESCKeyEvent: function() {
         $(document).on('keyup', function(event) {
             var shouldDismissSearchPopup = event.which === 27
-                && $('.search-popup').is(':visible');
+                && $('.search-popup').css('display') === 'block';
             if (shouldDismissSearchPopup) {
                 $('.search-popup').hide();
                 $('.search-popup-overlay').remove();
@@ -574,7 +574,7 @@ var SimpleCore = {
     registerFKeyEvent: function(e) {
         $(document).on('keyup', function(event) {
             var shouldShowSearchPopup = event.which === 70
-                && $('.search-popup').is(':hidden');
+                && $('.search-popup').css('display') === 'none';
             if (shouldShowSearchPopup) {
                 LocalSearch.doSearch(e);
             }
