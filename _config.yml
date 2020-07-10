@@ -4,13 +4,13 @@ short_name: 说
 
 # Master info. It won't work if the one from (author|authorLink|avatar|authorDesc) be written in post.md
 webmaster:
-  name: 纠结伦
+  name: 托码思
   avatar: /images/favicon.png
-  home: https://shuoit.net
-  desc: 一个搬🧱的劳斯基😁️️
+  home: https://www.tangkunyin.com
+  desc: 一个写代码的「伪文人」
 
 # CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-csp_enable: false
+csp_enable: true
 
 # Read Mode. day or night
 read_mode: day
@@ -38,9 +38,8 @@ site_building_time: 01/20/2018
 ## Name order decide show index.The name also called category alias,so you must set category alias before start server.
 ## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
 menu:
-   技术: tech-notes
-   人文: humanities
-   其他: others
+   技术: tech
+   人文: huma
 
 # Customize left navigation menus. faName is FontAwesome style name
 left_nav_menus:
@@ -82,14 +81,14 @@ analytics:
 ## Google AdSense.
 adsense:
   enable: false
-  auto: false
-  client_id: 
-  page_tb_id: 
-  archive_id: 
-  tags_id: 
-  post_inner_id: 
-  post_left_id: 
-  post_right_id: 
+  auto: true
+  client_id:
+  page_tb_id:
+  archive_id:
+  tags_id:
+  post_inner_id:
+  post_left_id:
+  post_right_id:
 
 
 ## Comments settings. Disqus
@@ -120,4 +119,4 @@ mathjax:
    enable: true
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
-   baidu_auto_push: false
+baidu_auto_push: true
