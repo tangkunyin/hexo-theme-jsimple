@@ -1,5 +1,11 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+v0.0.9.2 - July 25, 2020
+
+* Sns information update
+* Upgrade gitTalk js lib
+
+
 v0.0.9 - July 9, 2020
 
 * Cover image bugfix, see [issues-52](https://github.com/tangkunyin/hexo-theme-jsimple/issues/52)
