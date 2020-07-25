@@ -54,10 +54,11 @@ cover_description: 一个关注技术与人文的IT博客
 
 # sns url
 sns:
-  telegram: http://t.me/kunyintang
-  instagram: https://www.instagram.com/mtangsir/
-  twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
+  twitter: https://twitter.com/tangkunyin
+  weibo: https://weibo.com/tangkunyin
+  instagram: https://www.instagram.com/mtangsir/
+  
 
 # article declare. default content in languages
 post_declare: true
