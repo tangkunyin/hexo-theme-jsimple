@@ -1,5 +1,10 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+v1.0.0 - July 26, 2020
+
+* combine and compress js & css
+
+
 v0.0.9.2 - July 25, 2020
 
 * Sns information update

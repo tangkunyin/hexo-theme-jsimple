@@ -1,11 +1,19 @@
 {
   "name": "hexo-theme-jsimple",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Simple three column theme for Hexo.Inspired by JianShu.com",
   "license": "MIT",
-  "dependencies": {
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.0.0"
+  "scripts": {
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-rename": "^2.0.0"
   },
   "repository": {
     "type": "git",
@@ -22,7 +30,7 @@
   },
   "author": {
     "name": "Thomas Tang",
-    "url": "https://www.tangkunyin.com",
+    "url": "https://shuoit.net",
     "email": "iam@tangkunyin.com"
   }
 }
