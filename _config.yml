@@ -96,21 +96,23 @@ adsense:
 ##                  | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
 ##                  | gitalk  (Official website: https://gitalk.github.io/)
 comments:
-  enable: false
+  enable: true
   disqus_shortname:
+  gitalk:
+    on: true
+    clientID:
+    clientSecret:
+    owner: 
+    repo: 
+    admin: ['your name']
+    perPage: 6
+    pagerDirection: 'last'
   gitment:
     repo:
     githubID:
     ClientID:
     ClientSecret:
     lazy: true
-  gitalk:
-    on: true
-    owner: xx
-    repo: xx.github.io
-    admin: ['xxx']
-    clientID:
-    clientSecret:
 
 # Git-pages server info (Coding Pages|Github Pages)
 server_name:
