@@ -50,10 +50,13 @@
                 clientID: '<%= theme.comments.gitalk.clientID %>',
                 clientSecret: '<%= theme.comments.gitalk.clientSecret %>',
                 id: md5(window.location.pathname),
+                title: '<%= post.title %>',
                 repo: '<%= theme.comments.gitalk.repo %>',
                 owner: '<%= theme.comments.gitalk.owner %>',
                 admin: '<%= theme.comments.gitalk.admin %>',
-                distractionFreeMode: '<%= theme.comments.gitalk.on %>'
+                distractionFreeMode: '<%= theme.comments.gitalk.on %>',
+                perPage: <%= theme.comments.gitalk.perPage %>,
+                pagerDirection: '<%= theme.comments.gitalk.pagerDirection %>'
             })
             gitalk.render('gitalk-container')
         </script>
