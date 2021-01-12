@@ -6,7 +6,7 @@ short_name: 说
 webmaster:
   name: 托码思
   avatar: /images/favicon.png
-  home: https://www.tangkunyin.com
+  home: https://about.tangkunyin.com
   desc: 一个写代码的「伪文人」
 
 # CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
@@ -56,7 +56,6 @@ cover_description: 一个关注技术与人文的IT博客
 sns:
   github: https://github.com/tangkunyin
   twitter: https://twitter.com/tangkunyin
-  weibo: https://weibo.com/tangkunyin
   instagram: https://www.instagram.com/mtangsir/
   
 
@@ -122,4 +121,4 @@ mathjax:
    enable: true
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
-baidu_auto_push: true
+baidu_auto_push: false
