@@ -62,6 +62,14 @@ if (page.description) {
 }
 %>
 <meta name="description " content="<%= description %>">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="<%= is_home() ? 'blog' : 'article' %>" />
+<meta property="og:title" content="<% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %>" />
+<meta property="og:description" content="<%= description %>" />
+<meta property="og:url" content="<%= config.url %>" />
+<meta property="og:site_name" content="<%= config.title %>" />
+
 <% if (theme.mathjax && theme.mathjax.enable){ %>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
