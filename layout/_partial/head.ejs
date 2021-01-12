@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-DNS-Prefetch-Control" content="on">
 <link rel="dns-prefetch" href="<%= config.url %>">
-<link rel="dns-prefetch" href="//www.google-analytics.com">
 <link rel="prefetch" href="<%= config.url %>">
-<link rel="prefetch" href="//www.google-analytics.com">
 <% if (theme.comments.disqus_shortname) { %>
     <link rel="dns-prefetch" href="//disqus.com">
     <link rel="dns-prefetch" href="//<%= theme.comments.disqus_shortname %>.disqus.com">
@@ -26,7 +24,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 <meta http-equiv="mobile-agent" content="format=html5; url=<%= config.url %>">
 <meta name="author" content="<%= config.author %>">
-<%- css(['/css/JSimple.css']) %>
 <% if (theme.favicon){ %>
 <%- favicon_tag(theme.favicon) %>
 <% } %>
@@ -64,6 +61,14 @@ if (page.description) {
 }
 %>
 <meta name="description " content="<%= description %>">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="<%= is_home() ? 'blog' : 'article' %>" />
+<meta property="og:title" content="<% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %>" />
+<meta property="og:description" content="<%= description %>" />
+<meta property="og:url" content="<%= config.url %>" />
+<meta property="og:site_name" content="<%= config.title %>" />
+
 <% if (theme.mathjax && theme.mathjax.enable){ %>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -74,3 +79,5 @@ if (page.description) {
         });
     </script>
 <% } %>
+<%- css(['/css/JSimple.min.css']) %>
+<%- js(['js/SimpleCore.min']) %>
