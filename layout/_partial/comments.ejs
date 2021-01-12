@@ -21,7 +21,7 @@
     <% } else if (theme.comments.gitment.ClientID && theme.comments.gitment.ClientSecret) { %>
         <div id="gitment-container"></div>
         <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-        <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script async src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
         <script type="text/javascript">
             var gitment = new Gitment({
                 id: document.location.href,
@@ -42,8 +42,7 @@
         <% } %>
     <% } else if (theme.comments.gitalk.clientID && theme.comments.gitalk.clientSecret ) { %>
         <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-        <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
-        <script src="/js/lib/md5.min.js"></script>
+        <script async src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <div id="gitalk-container"></div>
         <script type="text/javascript">
             var gitalk = new Gitalk({
