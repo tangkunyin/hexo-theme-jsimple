@@ -2,14 +2,14 @@
  * Local Search
  * @author https://github.com/theme-next/hexo-theme-next
  */
-var LocalSearch = {
+const LocalSearch = {
     searchPath: '',
     trigger: 'auto',
     topN: '1',
     unescape: false,
     isfetched: false,
     isXml: true,
-    initParams: function (data) {
+    initParams (data) {
         LocalSearch.searchPath = data.dbPath;
         LocalSearch.trigger = data.trigger;
         LocalSearch.topN = data.topN;
@@ -20,7 +20,7 @@ var LocalSearch = {
             LocalSearch.isXml = false;
         }
     },
-    onPopupClose: function () {
+    onPopupClose () {
         $('.popup').hide();
         $('#local-search-input').val('');
         $('.search-result-list').remove();
@@ -28,17 +28,17 @@ var LocalSearch = {
         $(".local-search-pop-overlay").remove();
         $('body').css('overflow', '');
     },
-    proceedsearch: function () {
+    proceedsearch () {
         $("body").append('<div class="search-popup-overlay local-search-pop-overlay"></div>').css('overflow', 'hidden');
         $('.search-popup-overlay').click(LocalSearch.onPopupClose);
         $('.popup').toggle();
-        var $localSearchInput = $('#local-search-input');
+        const $localSearchInput = $('#local-search-input');
         $localSearchInput.attr("autocapitalize", "none");
         $localSearchInput.attr("autocorrect", "off");
         $localSearchInput.focus();
     },
     // search function;
-    searchFunc: function (search_id, content_id) {
+    searchFunc (search_id, content_id) {
         // if loading exists then return.
         if (!$('.search-popup-overlay').is(':visible')) {
             // start loading animation
@@ -51,8 +51,8 @@ var LocalSearch = {
         } else {
             alert("Fetching data...don't worry")
         }
-        var input = document.getElementById(search_id);
-        var resultContent = document.getElementById(content_id);
+        const input = document.getElementById(search_id);
+        const resultContent = document.getElementById(content_id);
         if (!input || !resultContent) {
             console.error('Elements not exists with searchId: '+search_id+', resultContentId: '+content_id);
             return;
@@ -76,49 +76,49 @@ var LocalSearch = {
             timeout: 5000,
             dataType: LocalSearch.isXml ? "xml" : "json",
             async: true,
-            success: function (res) {
+            success (res) {
                 // get the contents from search data
                 LocalSearch.isfetched = true;
                 $('.popup').detach().appendTo('body');
-                var datas = LocalSearch.isXml ? $("entry", res).map(function () {
+                const datas = LocalSearch.isXml ? $("entry", res).map(function () {
                     return {
                         title: $("title", this).text(),
                         content: $("content", this).text(),
                         url: $("url", this).text()
                     };
                 }).get() : res;
-                var inputEventFunction = function () {
-                    var searchText = input.value.trim().toLowerCase();
-                    var keywords = searchText.split(/[\s\-]+/);
+                const inputEventFunction = function () {
+                    const searchText = input.value.trim().toLowerCase();
+                    const keywords = searchText.split(/[\s\-]+/);
                     if (keywords.length > 1) {
                         keywords.push(searchText);
                     }
-                    var resultItems = [];
+                    const resultItems = [];
                     if (searchText.length > 0 && Array.isArray(datas)) {
-                        for (let data of datas) {
+                        for (const data of datas) {
                             if (!data || !data.content) continue;
-                            var isMatch = false;
-                            var hitCount = 0;
-                            var searchTextCount = 0;
-                            var title = data.title.trim();
-                            var titleInLowerCase = title.toLowerCase();
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            let isMatch = false;
+                            let hitCount = 0;
+                            let searchTextCount = 0;
+                            const title = data.title.trim();
+                            const titleInLowerCase = title.toLowerCase();
+                            let content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (LocalSearch.unescape && content) {
                                 content = unescapeHtml(content);
                             }
-                            var contentInLowerCase = content.toLowerCase();
-                            var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                            var indexOfTitle = [];
-                            var indexOfContent = [];
+                            const contentInLowerCase = content.toLowerCase();
+                            const articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                            let indexOfTitle = [];
+                            let indexOfContent = [];
                             // only match articles with not empty titles
                             if (title != '') {
                                 keywords.forEach(function (keyword) {
                                     function getIndexByWord(word, text, caseSensitive) {
-                                        var wordLen = word.length;
+                                        const wordLen = word.length;
                                         if (wordLen === 0) {
                                             return [];
                                         }
-                                        var startPosition = 0, position = [], index = [];
+                                        let startPosition = 0, position = [], index = [];
                                         if (!caseSensitive) {
                                             text = text.toLowerCase();
                                             word = word.toLowerCase();
@@ -153,17 +153,17 @@ var LocalSearch = {
 
                                 // merge hits into slices
                                 function mergeIntoSlice(text, start, end, index) {
-                                    var item = index[index.length - 1];
-                                    var position = item.position;
-                                    var word = item.word;
-                                    var hits = [];
-                                    var searchTextCountInSlice = 0;
+                                    let item = index[index.length - 1];
+                                    let position = item.position;
+                                    let word = item.word;
+                                    let hits = [];
+                                    let  searchTextCountInSlice = 0;
                                     while (position + word.length <= end && index.length != 0) {
                                         if (word === searchText) {
                                             searchTextCountInSlice++;
                                         }
                                         hits.push({position: position, length: word.length});
-                                        var wordEnd = position + word.length;
+                                        const wordEnd = position + word.length;
 
                                         // move to next position of hit
 
@@ -188,19 +188,19 @@ var LocalSearch = {
                                     };
                                 }
 
-                                var slicesOfTitle = [];
+                                const slicesOfTitle = [];
                                 if (indexOfTitle.length != 0) {
                                     slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
                                 }
 
-                                var slicesOfContent = [];
+                                let slicesOfContent = [];
                                 while (indexOfContent.length != 0) {
-                                    var item = indexOfContent[indexOfContent.length - 1];
-                                    var position = item.position;
-                                    var word = item.word;
+                                    const item = indexOfContent[indexOfContent.length - 1];
+                                    const position = item.position;
+                                    const word = item.word;
                                     // cut out 100 characters
-                                    var start = position - 20;
-                                    var end = position + 80;
+                                    let start = position - 20;
+                                    let end = position + 80;
                                     if (start < 0) {
                                         start = 0;
                                     }
@@ -224,18 +224,18 @@ var LocalSearch = {
                                 });
 
                                 // select top N slices in content
-                                var upperBound = parseInt(LocalSearch.topN);
+                                const upperBound = parseInt(LocalSearch.topN);
                                 if (upperBound >= 0) {
                                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                                 }
                                 // highlight title and content
 
                                 function highlightKeyword(text, slice) {
-                                    var result = '';
-                                    var prevEnd = slice.start;
+                                    let result = '';
+                                    let prevEnd = slice.start;
                                     slice.hits.forEach(function (hit) {
                                         result += text.substring(prevEnd, hit.position);
-                                        var end = hit.position + hit.length;
+                                        const end = hit.position + hit.length;
                                         result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
                                         prevEnd = end;
                                     });
@@ -243,7 +243,7 @@ var LocalSearch = {
                                     return result;
                                 }
 
-                                var resultItem = '';
+                                let resultItem = '';
 
                                 if (slicesOfTitle.length != 0) {
                                     resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
@@ -281,7 +281,7 @@ var LocalSearch = {
                                 return resultRight.id - resultLeft.id;
                             }
                         });
-                        var searchResultList = '<ul class=\"search-result-list\">';
+                        let searchResultList = '<ul class=\"search-result-list\">';
                         resultItems.forEach(function (result) {
                             searchResultList += result.item;
                         });
@@ -305,14 +305,14 @@ var LocalSearch = {
                 $('body').css('overflow', '');
                 LocalSearch.proceedsearch();
             },
-            error: function (xhr,status,error) {
+            error (xhr,status,error) {
                 alert(status+', Load error when get '+ LocalSearch.searchPath);
                 console.error(error);
                 window.location.reload(true);
             }
         });
     },
-    doSearch: function (e) {
+    doSearch (e) {
         e && e.stopPropagation();
         if (!LocalSearch.isfetched) {
             LocalSearch.searchFunc('local-search-input', 'local-search-result');
@@ -325,7 +325,7 @@ var LocalSearch = {
  * JSimple Theme CoreLib
  * @author tangkunyin 2017/1/25.
  */
-var SimpleCore = {
+const SimpleCore = {
     rootUrl: '',
     buildingTime: new Date(),
     current: null,
@@ -335,7 +335,7 @@ var SimpleCore = {
     donateImg: null,
     localSearch: {},
     readMode: 'day',
-    initParams: function (params) {
+    initParams (params) {
         SimpleCore.rootUrl = params.rootUrl || location.href;
         SimpleCore.buildingTime = params.buildingTime;
         SimpleCore.current = params.current;
@@ -345,7 +345,7 @@ var SimpleCore = {
         SimpleCore.readMode = params.readMode;
     },
     //外部调用初始化
-    init: function (params) {
+    init (params) {
         SimpleCore.initParams(params);
         LocalSearch.initParams(SimpleCore.localSearch);
         $(window).resize(function () {
@@ -397,14 +397,13 @@ var SimpleCore = {
         SimpleCore.setBuildingTime();
         SimpleCore.syncSize();
         SimpleCore.printGreeting();
-        SimpleCore.registerESCKeyEvent();
-        SimpleCore.registerFKeyEvent();
+        SimpleCore.registerHotKeyEvent();
         SimpleCore.setDefaultReadingMode();
     },
-    goTop: function () {
+    goTop () {
         $("html, body").animate({scrollTop: 0}, 200);
     },
-    setPageCurrent: function () {
+    setPageCurrent () {
         if (SimpleCore.current === 'post') {
             $('#cover').hide();
             $('body').addClass('single');
@@ -420,8 +419,8 @@ var SimpleCore = {
             }
         });
     },
-    scrollCallback: function () {
-        var top = document.documentElement.scrollTop
+    scrollCallback () {
+        const top = document.documentElement.scrollTop
             || document.body.scrollTop
             || 0;
         if (top > 100) {
@@ -435,7 +434,7 @@ var SimpleCore = {
         }
         SimpleCore.prevTop = top;
     },
-    headerToggle: function () {
+    headerToggle () {
         if (SimpleCore.headerShow) {
             $('.page-title').css("top", 0);
             $('.nav-user').css("top", 0);
@@ -450,9 +449,9 @@ var SimpleCore = {
             }
         }
     },
-    syncSize: function () {	//同步窗口大小
-        var pageTitle = $('.page-title');
-        var size = $(window).width();
+    syncSize () {	//同步窗口大小
+        const pageTitle = $('.page-title');
+        const size = $(window).width();
         if (size > 768 && SimpleCore.current != 'post') {
             pageTitle.width($('#body > .main').width());
         } else {
@@ -464,24 +463,24 @@ var SimpleCore = {
             });
         }
     },
-    switchSearch: function () {
-        var srh = $('#search');
+    switchSearch () {
+        const srh = $('#search');
         if (srh.hasClass('active')) {
             srh.removeClass('active');
         } else {
             srh.addClass('active');
         }
     },
-    switchReadMode: function (mode) {
-        var next_mode = $('body').hasClass('night-mode') ? 'day' : 'night';
+    switchReadMode (mode) {
+        let next_mode = $('body').hasClass('night-mode') ? 'day' : 'night';
         if (typeof mode === 'string' && mode.length > 0) {
             next_mode = mode;
         }
         SimpleCore.setLocalData('read-mode', next_mode);
         SimpleCore.changeReadModel();
     },
-    changeReadModel: function () {
-        var btn = $('.btn-read-mode');
+    changeReadModel () {
+        const btn = $('.btn-read-mode');
         if (SimpleCore.getLocalData('read-mode') == 'night') {
             $('body').addClass('night-mode');
             btn.find('i').attr('class', 'fa fa-moon-o');
@@ -504,12 +503,12 @@ var SimpleCore = {
             });
         }
     },
-    alert: function (title,msg) {
-        var id = 'notice-' + (new Date().getTime());
-        var html = '<div id="' + id + '" class="notice-item">'
+    alert (title,msg) {
+        const id = 'notice-' + (new Date().getTime());
+        const html = '<div id="' + id + '" class="notice-item">'
             + '<span class="notice-item-close"><i class="fa fa-close"></i></span>'
             + '<p><h3 style="text-align: center;margin:0 0 10px 0">'+title+'</h3>' + msg + '</p></div>';
-        var notice = $('#notice');
+        const notice = $('#notice');
         if (notice.length == 0) {
             $('<div id="notice"></div>').appendTo($('body'));
         }
@@ -523,27 +522,27 @@ var SimpleCore = {
             $('#' + id).remove();
         }, 8000);
     },
-    setLocalData: function (key, value) {
+    setLocalData (key, value) {
         if (window.localStorage) {
             window.localStorage.setItem(key, value);
         }
     },
-    getLocalData: function (key) {
+    getLocalData (key) {
         if (window.localStorage) {
             return window.localStorage.getItem(key);
         }
     },
-    setBuildingTime: function () {
-        var urodz = new Date(SimpleCore.buildingTime);  //建站时间
-        var now = new Date();
-        var ile = now.getTime() - urodz.getTime();
-        var buildingDays = Math.floor(ile / (1000 * 60 * 60 * 24));
+    setBuildingTime () {
+        const urodz = new Date(SimpleCore.buildingTime);  //建站时间
+        const now = new Date();
+        const ile = now.getTime() - urodz.getTime();
+        const buildingDays = Math.floor(ile / (1000 * 60 * 60 * 24));
         $('#cpYear').html(now.getFullYear());
         $('#siteBuildingTime').html(buildingDays);
         return buildingDays;
     },
-    printGreeting: function () {
-        var asciiTxt = " _   _         _    _              _       _              _        _ \n" +
+    printGreeting () {
+        const asciiTxt = " _   _         _    _              _       _              _        _ \n" +
             "( ) ( )       (_ ) (_ )           ( )  _  ( )            (_ )     ( )\n" +
             "| |_| |   __   | |  | |    _      | | ( ) | |   _    _ __ | |    _| |\n" +
             "|  _  | /'__`\\ | |  | |  /'_`\\    | | | | | | /'_`\\ ( '__)| |  /'_` |\n" +
@@ -552,30 +551,20 @@ var SimpleCore = {
             "\n已稳定运行" + this.setBuildingTime() + "天，拦截了无数次逗比攻击！🎉🎉🎉\n    ";
         console.log("%c\n"+asciiTxt, "color: #527fe2; font-family:KaiTi;font-size: 16px");
     },
-    /**
-     * Press ESC to hide server pop :)
-     */
-    registerESCKeyEvent: function() {
+    registerHotKeyEvent(e) {
         $(document).on('keyup', function(event) {
-            var shouldDismissSearchPopup = event.which === 27
+            const shouldDismissSearchPopup = event.key === 'Escape'
                 && $('.search-popup').css('display') === 'block';
-            if (shouldDismissSearchPopup) {
-                $('.search-popup').hide();
-                $('.search-popup-overlay').remove();
-                $('body').css('overflow', '');
-            }
-        });
-    },
-    /**
-     * Press F to active local-search
-     */
-    registerFKeyEvent: function(e) {
-        $(document).on('keyup', function(event) {
-            var shouldShowSearchPopup = event.which === 70
+                if (shouldDismissSearchPopup) {
+                    $('.search-popup').hide();
+                    $('.search-popup-overlay').remove();
+                    $('body').css('overflow', '');
+                }
+            const shouldShowSearchPopup = event.key === 'Control'
                 && $('.search-popup').css('display') === 'none';
-            if (shouldShowSearchPopup) {
-                LocalSearch.doSearch(e);
-            }
+                if (shouldShowSearchPopup) {
+                    LocalSearch.doSearch(e);
+                }
         });
     },
     setDefaultReadingMode() {
