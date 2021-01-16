@@ -483,23 +483,11 @@ const SimpleCore = {
         if (SimpleCore.getLocalData('read-mode') == 'night') {
             $('body').addClass('night-mode');
             btn.find('i').attr('class', 'fa fa-moon-o');
-            $(".cover-img").css({
-                'background': `url('${SimpleCore.rootUrl}images/cover-night.jpg')`,
-                'background-image': `${SimpleCore.rootUrl}images/cover-night.jpg`,
-                'background-size': 'cover',
-                'background-position': 'center',
-                'background-repeat': 'no-repeat'
-            });
+            $(".cover-img").attr('src', `${SimpleCore.rootUrl}images/cover-night.jpg`);
         } else {
             $('body').removeClass('night-mode');
             btn.find('i').attr('class', 'fa fa-sun-o');
-            $(".cover-img").css({
-                'background': `url('${SimpleCore.rootUrl}images/cover-day.jpg')`,
-                'background-image': `${SimpleCore.rootUrl}images/cover-day.jpg`,
-                'background-size': 'cover',
-                'background-position': 'center',
-                'background-repeat': 'no-repeat'
-            });
+            $(".cover-img").attr('src', `${SimpleCore.rootUrl}images/cover-day.jpg`);
         }
     },
     alert (title,msg) {
