@@ -1,5 +1,12 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+v1.0.1 - Jua 16, 2021
+
+* optimize source loading time
+* optimize cover image loading
+* forbidden busuanzi fetch in homepage
+* fixed mathjax display problems
+
 v1.0.0 - July 26, 2020
 
 * combine and compress js & css

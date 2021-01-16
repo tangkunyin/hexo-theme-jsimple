@@ -2,8 +2,28 @@
 <html class="no-js" lang="zh-CN">
 <head>
     <%- partial('_partial/head') %>
-    <%- partial('_widget/ads/adSense-auto', null, {cache: !config.relative_link}) %>
-    <%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
+    <script type="text/javascript">
+        (function() {
+            var jsi_config = {
+                rootUrl: '<%= config.url %><%= config.root %>',
+                isPost: '<%- is_post() %>',
+                buildingTime: '<%= theme.site_building_time %>',
+                snsQRCode: '/images/sns-qrcode.png',
+                donateImg: '/images/donate-qr.png',
+                localSearch: { dbPath: '' },
+                readMode: '<%= theme.read_mode %>'
+            };
+            <% if(config.search && config.search.path) {  %>
+                jsi_config.localSearch = {
+                    dbPath: '/<%= config.search.path %>',
+                    trigger: '<%= theme.local_search.trigger %>',
+                    topN: '<%= theme.local_search.top_n_per_article %>',
+                    unescape: '<%= theme.local_search.unescape %>'
+                }
+            <% } %>
+            window.jsi_config = jsi_config;
+        })()
+    </script>
 </head>
 <body>
 <%- partial('_partial/leftMenu') %>
@@ -39,38 +59,20 @@
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
-<script>
-    $(function () {
-        var jsi_config = {
-            rootUrl: '<%= config.url %><%= config.root %>',
-            buildingTime: '<%= theme.site_building_time %>',
-            current: $('.post-tags').length > 0 ? 'post' : 'archive',
-            snsQRCode: '/images/sns-qrcode.png',
-            donateImg: '/images/donate-qr.png',
-            localSearch: { dbPath: '' },
-            readMode: '<%= theme.read_mode %>'
-        };
-        <% if(config.search && config.search.path) {  %>
-            jsi_config.localSearch = {
-                dbPath: '/<%= config.search.path %>',
-                trigger: '<%= theme.local_search.trigger %>',
-                topN: '<%= theme.local_search.top_n_per_article %>',
-                unescape: '<%= theme.local_search.unescape %>'
-            }
-        <% } %>
-        SimpleCore.init(jsi_config);
-        <% if(theme.baidu_auto_push) {  %>
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-        <% } %>
-    });
-</script>
+<script async src="/js/SimpleCore.min.js" ></script>
+<%- partial('_widget/ads/adSense-auto', null, {cache: !config.relative_link}) %>
+<%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
+<% if(theme.baidu_auto_push) {  %>
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    bp.defer = 'defer';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+<% } %>
 </body>
 </html>
