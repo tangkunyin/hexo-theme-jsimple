@@ -328,7 +328,7 @@ const LocalSearch = {
 const SimpleCore = {
     rootUrl: '',
     buildingTime: new Date(),
-    current: null,
+    isPost: 'false',
     prevTop: 0,
     headerShow: true,
     snsQRCode: null,
@@ -338,7 +338,7 @@ const SimpleCore = {
     initParams (params) {
         SimpleCore.rootUrl = params.rootUrl || location.href;
         SimpleCore.buildingTime = params.buildingTime;
-        SimpleCore.current = params.current;
+        SimpleCore.isPost = params.isPost;
         SimpleCore.snsQRCode = params.snsQRCode;
         SimpleCore.donateImg = params.donateImg;
         SimpleCore.localSearch = params.localSearch;
@@ -403,7 +403,7 @@ const SimpleCore = {
         $("html, body").animate({scrollTop: 0}, 200);
     },
     setPageCurrent () {
-        if (SimpleCore.current === 'post') {
+        if (SimpleCore.isPost === 'true') {
             $('#cover').hide();
             $('body').addClass('single');
         } else {
@@ -451,7 +451,7 @@ const SimpleCore = {
     syncSize () {	//同步窗口大小
         const pageTitle = $('.page-title');
         const size = $(window).width();
-        if (size > 768 && SimpleCore.current != 'post') {
+        if (size > 768 && SimpleCore.isPost !== 'true') {
             pageTitle.width($('#body > .main').width());
         } else {
             pageTitle.removeAttr('style');
@@ -563,6 +563,8 @@ const SimpleCore = {
 };
 
 $(function () {
+    console.log(window.jsi_config)
+    
     window.jsi_config ? SimpleCore.init(window.jsi_config)
      : console.error('JSimple get wrong config: ', window.jsi_config)
 });
