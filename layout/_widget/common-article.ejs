@@ -47,7 +47,7 @@
     <%- partial('_partial/comments', {post: post}) %>
 </div>
 <% if (theme.mathjax && theme.mathjax.enable) { %>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script type="text/x-mathjax-config">
     let isMathjaxConfig = false; // 防止重复调用Config，造成性能损耗
     const initMathjaxConfig = () => {
