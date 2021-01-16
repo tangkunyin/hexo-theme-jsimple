@@ -344,7 +344,6 @@ const SimpleCore = {
         SimpleCore.localSearch = params.localSearch;
         SimpleCore.readMode = params.readMode;
     },
-    //外部调用初始化
     init (params) {
         SimpleCore.initParams(params);
         LocalSearch.initParams(SimpleCore.localSearch);
@@ -574,3 +573,8 @@ const SimpleCore = {
         }
     }
 };
+
+$(function () {
+    window.jsi_config ? SimpleCore.init(window.jsi_config)
+     : console.error('JSimple get wrong config: ', window.jsi_config)
+});

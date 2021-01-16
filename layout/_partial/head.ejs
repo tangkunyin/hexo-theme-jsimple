@@ -2,28 +2,15 @@
 <meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html">
 <![endif]-->
 <meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta name="author" content="<%= config.author %>">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="mobile-agent" content="format=html5; url=<%= config.url %>">
 <meta http-equiv="X-DNS-Prefetch-Control" content="on">
-<link rel="dns-prefetch" href="<%= config.url %>">
-<link rel="prefetch" href="<%= config.url %>">
-<% if (theme.comments.disqus_shortname) { %>
-    <link rel="dns-prefetch" href="//disqus.com">
-    <link rel="dns-prefetch" href="//<%= theme.comments.disqus_shortname %>.disqus.com">
-    <link rel="prefetch" href="//disqus.com">
-    <link rel="prefetch" href="//<%= theme.comments.disqus_shortname %>.disqus.com">
-<% } %>
-<% if (theme.comments.gitment.ClientID && theme.comments.gitment.ClientSecret) { %>
-    <link rel="dns-prefetch" href="//imsun.github.io">
-    <link rel="prefetch" href="//imsun.github.io">
-<% } %>
-<link rel="prerender" href="<%= config.url %>">
 <% if (theme.csp_enable){ %>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <% } %>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-<meta http-equiv="mobile-agent" content="format=html5; url=<%= config.url %>">
-<meta name="author" content="<%= config.author %>">
 <% if (theme.favicon){ %>
 <%- favicon_tag(theme.favicon) %>
 <% } %>
@@ -69,15 +56,7 @@ if (page.description) {
 <meta property="og:url" content="<%= config.url %>" />
 <meta property="og:site_name" content="<%= config.title %>" />
 
-<% if (theme.mathjax && theme.mathjax.enable){ %>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-            }
-        });
-    </script>
-<% } %>
-<%- css(['/css/JSimple.min.css']) %>
-<%- js(['js/SimpleCore.min']) %>
+<link rel="dns-prefetch" href="<%= config.url %>">
+<link rel="prefetch" href="<%= config.url %>">
+<link rel="prerender" href="<%= config.url %>">
+<link rel="stylesheet" href="/css/JSimple.min.css">
