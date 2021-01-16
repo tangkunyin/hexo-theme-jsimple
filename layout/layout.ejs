@@ -6,8 +6,8 @@
         (function() {
             var jsi_config = {
                 rootUrl: '<%= config.url %><%= config.root %>',
+                isPost: '<%- is_post() %>',
                 buildingTime: '<%= theme.site_building_time %>',
-                current: document.getElementsByClassName('.post-tags').length > 0 ? 'post' : 'archive',
                 snsQRCode: '/images/sns-qrcode.png',
                 donateImg: '/images/donate-qr.png',
                 localSearch: { dbPath: '' },
