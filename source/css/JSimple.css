@@ -1009,7 +1009,8 @@ body.night-mode,.night-mode .btn,body.night-mode a,.night-mode .nav-user a,#sear
 }
 .markdown-body {
     line-height:1.6;
-    word-wrap:break-word
+    word-wrap:break-word;
+    overflow: scroll;
 }
 .markdown-body,.markdown-body p {
     word-break:break-all;
