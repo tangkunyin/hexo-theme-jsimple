@@ -328,7 +328,7 @@ const LocalSearch = {
 const SimpleCore = {
     rootUrl: '',
     buildingTime: new Date(),
-    current: null,
+    isPost: 'false',
     prevTop: 0,
     headerShow: true,
     snsQRCode: null,
@@ -338,13 +338,12 @@ const SimpleCore = {
     initParams (params) {
         SimpleCore.rootUrl = params.rootUrl || location.href;
         SimpleCore.buildingTime = params.buildingTime;
-        SimpleCore.current = params.current;
+        SimpleCore.isPost = params.isPost;
         SimpleCore.snsQRCode = params.snsQRCode;
         SimpleCore.donateImg = params.donateImg;
         SimpleCore.localSearch = params.localSearch;
         SimpleCore.readMode = params.readMode;
     },
-    //外部调用初始化
     init (params) {
         SimpleCore.initParams(params);
         LocalSearch.initParams(SimpleCore.localSearch);
@@ -404,7 +403,7 @@ const SimpleCore = {
         $("html, body").animate({scrollTop: 0}, 200);
     },
     setPageCurrent () {
-        if (SimpleCore.current === 'post') {
+        if (SimpleCore.isPost === 'true') {
             $('#cover').hide();
             $('body').addClass('single');
         } else {
@@ -452,7 +451,7 @@ const SimpleCore = {
     syncSize () {	//同步窗口大小
         const pageTitle = $('.page-title');
         const size = $(window).width();
-        if (size > 768 && SimpleCore.current != 'post') {
+        if (size > 768 && SimpleCore.isPost !== 'true') {
             pageTitle.width($('#body > .main').width());
         } else {
             pageTitle.removeAttr('style');
@@ -484,23 +483,11 @@ const SimpleCore = {
         if (SimpleCore.getLocalData('read-mode') == 'night') {
             $('body').addClass('night-mode');
             btn.find('i').attr('class', 'fa fa-moon-o');
-            $(".cover-img").css({
-                'background': `url('${SimpleCore.rootUrl}images/cover-night.jpg')`,
-                'background-image': `${SimpleCore.rootUrl}images/cover-night.jpg`,
-                'background-size': 'cover',
-                'background-position': 'center',
-                'background-repeat': 'no-repeat'
-            });
+            $(".cover-img").attr('src', `${SimpleCore.rootUrl}images/cover-night.jpg`);
         } else {
             $('body').removeClass('night-mode');
             btn.find('i').attr('class', 'fa fa-sun-o');
-            $(".cover-img").css({
-                'background': `url('${SimpleCore.rootUrl}images/cover-day.jpg')`,
-                'background-image': `${SimpleCore.rootUrl}images/cover-day.jpg`,
-                'background-size': 'cover',
-                'background-position': 'center',
-                'background-repeat': 'no-repeat'
-            });
+            $(".cover-img").attr('src', `${SimpleCore.rootUrl}images/cover-day.jpg`);
         }
     },
     alert (title,msg) {
@@ -574,3 +561,8 @@ const SimpleCore = {
         }
     }
 };
+
+$(function () {
+    window.jsi_config ? SimpleCore.init(window.jsi_config)
+     : console.error('JSimple get wrong config: ', window.jsi_config)
+});

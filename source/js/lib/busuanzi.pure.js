@@ -56,7 +56,7 @@ var bszCaller, bszTag;
       });
     };
   },
-}), bszCaller.fetch (
+}), '/' !== location.pathname && bszCaller.fetch (
   '//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback',
   function (a) {
     bszTag.texts (a), bszTag.shows ();
