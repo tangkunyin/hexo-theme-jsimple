@@ -24,6 +24,7 @@
             window.jsi_config = jsi_config;
         })()
     </script>
+    <%- js(['js/SimpleCore.min']) %>
 </head>
 <body>
 <%- partial('_partial/leftMenu') %>
@@ -59,7 +60,6 @@
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
-<script async src="/js/SimpleCore.min.js" ></script>
 <%- partial('_widget/ads/adSense-auto', null, {cache: !config.relative_link}) %>
 <%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
 <% if(theme.baidu_auto_push) {  %>
