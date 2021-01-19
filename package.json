@@ -4,11 +4,13 @@
   "description": "Simple three column theme for Hexo.Inspired by JianShu.com",
   "license": "MIT",
   "scripts": {
+    "test": "ejslint ./layout/*",
     "build": "gulp"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "ejs-lint": "^1.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
