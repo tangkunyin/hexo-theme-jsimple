@@ -60,8 +60,6 @@
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
-<%- partial('_widget/ads/adSense-auto', null, {cache: !config.relative_link}) %>
-<%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
 <% if(theme.baidu_auto_push) {  %>
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -70,9 +68,10 @@
     } else {
         bp.src = 'http://push.zhanzhang.baidu.com/push.js';
     }
-    bp.defer = 'defer';
+    bp.setAttribute("async", "");
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 <% } %>
+<%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
 </body>
 </html>
