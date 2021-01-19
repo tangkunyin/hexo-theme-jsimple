@@ -3,7 +3,5 @@ node_js:
     - "12.20.0"
 install:
     npm install
-test:
-    npm test
-build:
-    npm build
+script:
+    npm test && npm run build
