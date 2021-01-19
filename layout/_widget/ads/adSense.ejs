@@ -1,7 +1,4 @@
-<% if (theme.adsense.enable){ %>
-    <% if (!theme.adsense.auto){ %>
-        <script defer src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <% } %>
+<% if (theme.adsense.client_id){ %>
     <% if (is_archive()){ %>
         <p class="adsense_tb_horizontal">
             <%- partial('adaptive-unit', {format: 'auto', slotId: theme.adsense.archive_id, adStyles: 'display:block'}) %>
@@ -27,5 +24,10 @@
         <p class="adsense_tb_horizontal">
             <%- partial('adaptive-unit', {format: 'auto', slotId: theme.adsense.page_tb_id, adStyles: 'display:block'}) %>
         </p>
+    <% } %>
+    <% if (is_archive() || 'tags' === page.layout || is_page() || is_post()) { %>
+        <%- partial('adSense-scripts', {type: 'custom'}) %>
+    <% } else if (theme.adsense.auto && (is_home() || is_category() || is_tag())) { %>
+        <%- partial('adSense-scripts', {type: 'auto'}) %>
     <% } %>
 <% } %>

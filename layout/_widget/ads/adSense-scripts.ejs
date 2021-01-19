@@ -1,0 +1,20 @@
+<script type="text/javascript">
+$(function () {
+    setTimeout(function() {
+        let script = document.createElement("script");
+        script.setAttribute("async", "");
+        script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        document.body.appendChild(script);
+        <% if (type === 'auto') { %>
+            <!-- 自动广告 -->
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "<%= theme.adsense.client_id %>",
+                enable_page_level_ads: true
+            });
+        <% } else if (type === 'custom') { %> 
+            <!-- 自定义广告 -->
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        <% } %>
+    }, 1200);
+});
+</script>

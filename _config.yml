@@ -80,7 +80,6 @@ analytics:
 
 ## Google AdSense.
 adsense:
-  enable: false
   auto: true
   client_id:
   page_tb_id:
@@ -118,7 +117,7 @@ server_name:
 server_url:
 
 mathjax:
-   enable: true
+   enable: false
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
-baidu_auto_push: false
+baidu_auto_push: true
