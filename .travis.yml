@@ -1,5 +1,9 @@
-language: node_js
+language: ejs
 node_js:
-    - "8.12.0"
+    - "12.20.0"
 install:
     npm install
+test:
+    npm test
+build:
+    npm build
