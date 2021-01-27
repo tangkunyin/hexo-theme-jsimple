@@ -8,10 +8,10 @@
                 rootUrl: '<%= config.url %><%= config.root %>',
                 isPost: '<%- is_post() %>',
                 buildingTime: '<%= theme.site_building_time %>',
-                snsQRCode: '/images/sns-qrcode.png',
-                donateImg: '/images/donate-qr.png',
-                localSearch: { dbPath: '' },
-                readMode: '<%= theme.read_mode %>'
+                snsQRCode: '<%= theme.snsQRCode %>',
+                donateImg: '<%= theme.donateImg %>',
+                readMode: '<%= theme.read_mode %>',
+                localSearch: { dbPath: '' }
             };
             <% if(config.search && config.search.path) {  %>
                 jsi_config.localSearch = {

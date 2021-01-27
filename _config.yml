@@ -52,12 +52,16 @@ left_nav_menus:
 cover_title: 用代码摇滚这个世界
 cover_description: 一个关注技术与人文的IT博客
 
-# sns url
+# cover sns info
 sns:
   github: https://github.com/tangkunyin
   twitter: https://twitter.com/tangkunyin
   instagram: https://www.instagram.com/mtangsir/
-  
+  telegram: https://t.me/kunyintang
+
+# page pop qrcode
+donateImg: /images/donate-qr.png
+snsQRCode: 
 
 # article declare. default content in languages
 post_declare: true
