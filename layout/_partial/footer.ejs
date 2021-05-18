@@ -13,6 +13,9 @@
             ，<%= __('theme_by') %>&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
             ，<%= __('author') %>&nbsp<a href="<%= theme.webmaster.home %>" target="_blank" rel="friend"><%= theme.webmaster.name %></a>
             ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+            <% if(theme.miit_license) {  %>
+            ，<a href="https://beian.miit.gov.cn/" target="_blank"><%= theme.miit_license %></a> <img src="/images/gong-an.png" style="width:15px;height:16px">
+            <% } %>
         </p>
     </div>
 </footer>

@@ -126,3 +126,6 @@ mathjax:
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
 baidu_auto_push: true
+
+## MIIT Info. see https://beian.miit.gov.cn/#/Integrated/index
+miit_license: ## 例：京ICP备xxxxx号
