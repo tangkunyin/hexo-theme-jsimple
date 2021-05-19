@@ -12,12 +12,17 @@
         </div>
         <%- partial('_widget/ads/adSense') %>
         <div class="post-content markdown-body" itemprop="articleBody">
-            <ul class="tag-list">
-                <% site.tags.sort('name').map(function(tag){  %>
-                <li><a href="<%- url_for(tag.path) %>"><%= tag.name %>(<%= tag.length %>)</a></li>
-                <% }) %>
-            </ul>
+            <% if (site.tags.length) { %>
+            <script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcloud.js') %>"></script>
+            <script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcanvas.js') %>"></script>
+            <div class="widget-wrap">
+                <div id="myCanvasContainer" class="widget tagcloud">
+                <canvas width="250" height="250" id="resCanvas" style="width:100%">
+                    <%- tagcloud() %>
+                </canvas>
+                </div>
+            </div>
+            <% } %>
         </div>
-        <p style="width: 100%; text-align: center"><img src="/images/tags-bg.png" alt="tags-bg"></p>
     </article>
 </div>
