@@ -54,10 +54,11 @@ cover_description: 一个关注技术与人文的IT博客
 
 # cover sns info
 sns:
-  github: https://github.com/tangkunyin
-  twitter: https://twitter.com/tangkunyin
-  instagram: https://www.instagram.com/mtangsir/
   telegram: https://t.me/kunyintang
+  twitter: https://twitter.com/tangkunyin
+  github: https://github.com/tangkunyin
+  stack-overflow: https://stackoverflow.com/users/6133063/tangkunyin
+  
 
 # page pop qrcode
 donateImg: /images/donate-qr.png
@@ -85,7 +86,7 @@ analytics:
 ## Google AdSense.
 adsense:
   auto: true
-  client_id:
+  client_id:  
   page_tb_id:
   archive_id:
   tags_id:
@@ -98,14 +99,14 @@ adsense:
 ##                  | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
 ##                  | gitalk  (Official website: https://gitalk.github.io/)
 comments:
-  enable: true
+  enable: false
   disqus_shortname:
   gitalk:
     on: true
     clientID:
     clientSecret:
-    owner: 
-    repo: 
+    owner:
+    repo:
     admin: ['your name']
     perPage: 6
     pagerDirection: 'last'
@@ -124,4 +125,7 @@ mathjax:
    enable: false
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
-baidu_auto_push: true
+baidu_auto_push: false
+
+## MIIT Info. see https://beian.miit.gov.cn/#/Integrated/index
+miit_license: ## 例：京ICP备xxxxx号

@@ -447,7 +447,7 @@ const SimpleCore = {
             $('body').removeClass('single');
         }
         $.each($('.nav-menu a'), function (k, v) {
-            if (v.href == window.location.href) {
+            if (v.href === window.location.href || v.href === window.location.href.replace(/\/$/, '')) {
                 $(v).addClass('current');
             } else {
                 $(v).removeClass('current');

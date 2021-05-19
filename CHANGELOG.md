@@ -1,5 +1,12 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+v1.0.2 - May 18, 2021
+
+* optimize code line number width
+* fixed nav menu active background style
+* upgrade tag cloud, see: https://github.com/D0n9X1n/hexo-tag-cloud
+* update 404 default page styles
+
 v1.0.1 - Jua 16, 2021
 
 * optimize source loading time
