@@ -13,7 +13,7 @@
                 <strong><%= post.author ? post.author : theme.webmaster.name %></strong>
             </a>
             <em>·</em><%= date(post.date) %>
-            <% if (is_home() && theme.sticky_top.enable && post.top > 0){ %>
+            <% if (is_home() && post.sticky > 0){ %>
                 <span class="label" style="color:#e78170"><%= __('sticky') %></span>
             <% } %>
         </div>

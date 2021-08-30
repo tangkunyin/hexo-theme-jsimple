@@ -12,16 +12,10 @@
     </ul>
 </div>
 <div class="main-inner">
-    <% if (theme.sticky_top.enable) { %>
-        <% page.posts.limit(theme.home_article_shown).each(function(post){ %>
-            <%- partial('_widget/category-items', {post: post}) %>
-        <% }) %>
-    <% } else { %>
-        <!-- default get newest -->
-        <% page.posts.sort('date', theme.home_page_sort).limit(theme.home_article_shown).each(function(post){ %>
-            <%- partial('_widget/category-items', {post: post}) %>
-        <% }) %>
-    <% } %>
+    <!-- default get newest -->
+    <% page.posts.sort('date', theme.home_page_sort).limit(theme.home_article_shown).each(function(post){ %>
+        <%- partial('_widget/category-items', {post: post}) %>
+    <% }) %>
 </div>
 <% if (page.total > 1){ %>
 <div id="btn-pager">

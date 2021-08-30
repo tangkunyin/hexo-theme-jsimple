@@ -83,10 +83,6 @@ csp_enable: false
 home_page_sort: -1
 home_article_shown: 10
 
-# Article sticky top. You need to set top field to your post.md. The larger value of top the front the article.
-sticky_top:
-  enable: true
-
 # Article category navigation 
 menu:
   Tech: tech-notes

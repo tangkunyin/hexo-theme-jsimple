@@ -84,10 +84,6 @@ csp_enable: false
 home_page_sort: -1
 home_article_shown: 10
 
-# 文章置顶功能。开启后同时需要再文章种配置top字段，数字越大，越靠前
-sticky_top:
-  enable: true
-
 # 文章分类导航  
 menu:
   技术: tech-notes
