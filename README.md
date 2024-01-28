@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
 
-**JSimple is a responsive blog theme for Hexo which include day-night mode, local search, article view count etc. Inspired by JianShu that in the earliest**.
+⚠️⚠️⚠️ This theme is no longer maintained, thank you for your support. If you want to use please DIY yourself
 
-- [**☞ Preview Demo**](https://shuoit.net) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
+> JSimple is a responsive blog theme for Hexo which include day-night mode, local search, article view count etc. Inspired by JianShu that in the earliest.
+
+- [**☞ Preview Demo**](https://blog.tangkunyin.com) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
 ![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
 
@@ -32,8 +34,6 @@
 
 ## Configurations
 
-For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be more convenient.
-
 ### site _config.yml
 
 ```yml
@@ -44,7 +44,7 @@ language:
 
 # URL （Notice the permalink. Variable timestamp in post.md was added from hexo lib source）
 ##  Please see the scripts in patch dir for more details
-url: https://shuoit.net
+url: https://blog.tangkunyin.com
 root: /
 permalink: :category/:entitle-:timestamp.html
 permalink_defaults:
@@ -73,7 +73,7 @@ tag_map:
 webmaster:
   name: Thomas Tang
   avatar: /images/favicon.png
-  home: https://shuoit.net
+  home: https://blog.tangkunyin.com
   desc: Senior Chinglish writer and coder😁️️
 
 # Decide whether the 'Content-Security-Policy = upgrade-insecure-requests' will be add in head tag.
@@ -151,10 +151,10 @@ From version `0.0.7`. Google AdSense have been added. If you don't need this, ju
 
 If you don't understand Chinese. You can translate online by [Google Translate](https://translate.google.com/)  🤣🤣🤣
 
-- [JSimple主题用户指南](https://shuoit.net/tech/jsimple-usage-1492480198.html)
-- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech/hexo-links-1483800845.html)
-- [将Hexo博客url优化进行到底](https://shuoit.net/tech/permalink-optimize-hexo-1528003174.html)
-- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech/the-update-for-jsimple-in-early2019-1547728233.html)
+- [JSimple主题用户指南](https://blog.tangkunyin.com/tech/jsimple-usage-1492480198.html)
+- [在hexo博客中打造相对完美的URL](https://blog.tangkunyin.com/tech/hexo-links-1483800845.html)
+- [将Hexo博客url优化进行到底](https://blog.tangkunyin.com/tech/permalink-optimize-hexo-1528003174.html)
+- [Update-for-JSimple-in-Early2019](https://blog.tangkunyin.com/tech/the-update-for-jsimple-in-early2019-1547728233.html)
 
 
 ## Browser support

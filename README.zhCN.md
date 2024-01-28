@@ -5,7 +5,7 @@
 
 **适用于Hexo的三栏简书式主题。支持响应式、站内搜索、主流评论系统、文章浏览统计以及白天和夜间模式**.
 
-[**☞ 一睹为快**](https://shuoit.net) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
+[**☞ 一睹为快**](https://blog.tangkunyin.com) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
 ![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
 
@@ -35,8 +35,6 @@ $ git pull
 
 ## 配置
 
-便于快速上手, 直接看我的 [网站备份](https://github.com/shuoit/blog) 可能更方便，有朋友下载主题使用报错，看那里最直接。
-
 ### 站点配置
 
 ```yml
@@ -46,7 +44,7 @@ language:
     - en
 
 # URL （注意 permalink 格式。其中timestamp是改了源码加上的，具体参见patch目录文件）
-url: https://shuoit.net
+url: https://blog.tangkunyin.com
 root: /
 permalink: :category/:entitle-:timestamp.html
 permalink_defaults:
@@ -74,7 +72,7 @@ tag_map:
 webmaster:
   name: 纠结伦
   avatar: /images/favicon.png
-  home: https://shuoit.net
+  home: https://blog.tangkunyin.com
   desc: 一个搬🧱的劳斯基😁️️
 
 # 内容安全策略。 true时，会在网页头部增加一行：Content-Security-Policy = upgrade-insecure-requests。会将不是https的资源自动提升为https
@@ -146,10 +144,10 @@ comments:
 
 其中关于配置分类别名以及自定义文章链接，请看如下文章操作：
 
-- [JSimple主题用户指南](https://shuoit.net/tech/jsimple-usage-1492480198.html)
-- [在hexo博客中打造相对完美的URL](https://shuoit.net/tech/hexo-links-1483800845.html)
-- [将Hexo博客url优化进行到底](https://shuoit.net/tech/permalink-optimize-hexo-1528003174.html)
-- [Update-for-JSimple-in-Early2019](https://shuoit.net/tech/the-update-for-jsimple-in-early2019-1547728233.html)
+- [JSimple主题用户指南](https://blog.tangkunyin.com/tech/jsimple-usage-1492480198.html)
+- [在hexo博客中打造相对完美的URL](https://blog.tangkunyin.com/tech/hexo-links-1483800845.html)
+- [将Hexo博客url优化进行到底](https://blog.tangkunyin.com/tech/permalink-optimize-hexo-1528003174.html)
+- [Update-for-JSimple-in-Early2019](https://blog.tangkunyin.com/tech/the-update-for-jsimple-in-early2019-1547728233.html)
 
 ## 浏览器支持
 
