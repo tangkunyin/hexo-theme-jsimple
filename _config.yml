@@ -6,7 +6,7 @@ short_name: 说
 webmaster:
   name: 托码思
   avatar: /images/favicon.png
-  home: https://about.tangkunyin.com
+  home: https://tangkunyin.com
   desc: 一个写代码的「伪文人」
 
 # CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
