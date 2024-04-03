@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
 
+⚠️⚠️⚠️ 请注意：主题已不再进行公开维护，感谢大家过去的支持！现如有需要，请自行魔改，有问题可以飞机咨询。
 
 **适用于Hexo的三栏简书式主题。支持响应式、站内搜索、主流评论系统、文章浏览统计以及白天和夜间模式**.
 

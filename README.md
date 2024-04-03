@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
 
+⚠️⚠️⚠️ This theme is no longer maintained, thank you for your support. If you want to use please DIY yourself
+
 **JSimple is a responsive blog theme for Hexo which include day-night mode, local search, article view count etc. Inspired by JianShu that in the earliest**.
 
 - [**☞ Preview Demo**](https://thomartisen.com) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
