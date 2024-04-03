@@ -1,12 +1,12 @@
 # site name
-site_name: 说IT
-short_name: 说
+site_name: 托码
+short_name: TM
 
 # Master info. It won't work if the one from (author|authorLink|avatar|authorDesc) be written in post.md
 webmaster:
-  name: 托码思
+  name: 托码特人
   avatar: /images/favicon.png
-  home: https://tangkunyin.com
+  home: https://thomartisen.com
   desc: 一个写代码的「伪文人」
 
 # CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
@@ -50,15 +50,14 @@ cover_description: 一个关注技术与人文的IT博客
 
 # cover sns info
 sns:
-  telegram: https://t.me/kunyintang
-  twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
-  stack-overflow: https://stackoverflow.com/users/6133063/tangkunyin
-  
+  twitter: https://twitter.com/thomartisen
+  telegram: https://t.me/thomartisen
+
 
 # page pop qrcode
-donateImg: /images/donate-qr.png
-snsQRCode: 
+snsQRCode: /images/sns-qrcode.png
+#donateImg: /images/donate-qr.png
 
 # article declare. default content in languages
 post_declare: true
