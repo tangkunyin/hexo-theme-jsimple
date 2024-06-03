@@ -149,7 +149,7 @@ From version `0.0.7`. Google AdSense have been added. If you don't need this, ju
 
 If you don't understand Chinese. You can translate online by [Google Translate](https://translate.google.com/)  🤣🤣🤣
 
-- [JSimple主题用户指南](https://https://tomartisan.com/groceries/jsimple-usage/)
+- [JSimple主题用户指南](https://tomartisan.com/groceries/jsimple-usage/)
 - [在hexo博客中打造相对完美的URL](https://tomartisan.com/groceries/hexo-perfect-link/)
 - [将Hexo博客url优化进行到底](https://tomartisan.com/groceries/permalink-optimize-hexo/)
 - [Update-for-JSimple-in-Early2019](https://tomartisan.com/groceries/the-update-for-jsimple-in-early2019/)

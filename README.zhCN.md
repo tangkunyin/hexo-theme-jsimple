@@ -143,7 +143,7 @@ comments:
 
 其中关于配置分类别名以及自定义文章链接，请看如下文章操作：
 
-- [JSimple主题用户指南](https://https://tomartisan.com/groceries/jsimple-usage/)
+- [JSimple主题用户指南](https://tomartisan.com/groceries/jsimple-usage/)
 - [在hexo博客中打造相对完美的URL](https://tomartisan.com/groceries/hexo-perfect-link/)
 - [将Hexo博客url优化进行到底](https://tomartisan.com/groceries/permalink-optimize-hexo/)
 - [Update-for-JSimple-in-Early2019](https://tomartisan.com/groceries/the-update-for-jsimple-in-early2019/)
