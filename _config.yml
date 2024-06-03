@@ -6,7 +6,7 @@ short_name: TM
 webmaster:
   name: 托码特人
   avatar: /images/favicon.png
-  home: https://thomartisen.com
+  home: https://tomartisan.com
   desc: 一个写代码的「伪文人」
 
 # CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
@@ -51,8 +51,8 @@ cover_description: 一个关注技术与人文的IT博客
 # cover sns info
 sns:
   github: https://github.com/tangkunyin
-  twitter: https://twitter.com/thomartisen
-  telegram: https://t.me/thomartisen
+  twitter: https://twitter.com/tomartisan
+  telegram: https://t.me/tomartisan
 
 
 # page pop qrcode

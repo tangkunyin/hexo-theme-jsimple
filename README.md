@@ -1,12 +1,8 @@
 # JSimple
 
-[![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
-
-⚠️⚠️⚠️ This theme is no longer maintained, thank you for your support. If you want to use please DIY yourself
-
 **JSimple is a responsive blog theme for Hexo which include day-night mode, local search, article view count etc. Inspired by JianShu that in the earliest**.
 
-- [**☞ Preview Demo**](https://thomartisen.com) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
+- [**☞ Preview Demo**](https://tomartisan.com) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
 ![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
 
@@ -46,7 +42,7 @@ language:
 
 # URL （Notice the permalink. Variable timestamp in post.md was added from hexo lib source）
 ##  Please see the scripts in patch dir for more details
-url: https://thomartisen.com
+url: https://tomartisan.com
 root: /
 permalink: :category/:entitle-:timestamp.html
 permalink_defaults:
@@ -75,7 +71,7 @@ tag_map:
 webmaster:
   name: Thomas Tang
   avatar: /images/favicon.png
-  home: https://thomartisen.com
+  home: https://tomartisan.com
   desc: Senior Chinglish writer and coder😁️️
 
 # Decide whether the 'Content-Security-Policy = upgrade-insecure-requests' will be add in head tag.
@@ -153,10 +149,10 @@ From version `0.0.7`. Google AdSense have been added. If you don't need this, ju
 
 If you don't understand Chinese. You can translate online by [Google Translate](https://translate.google.com/)  🤣🤣🤣
 
-- [JSimple主题用户指南](https://https://thomartisen.com/groceries/jsimple-usage/)
-- [在hexo博客中打造相对完美的URL](https://thomartisen.com/groceries/hexo-perfect-link/)
-- [将Hexo博客url优化进行到底](https://thomartisen.com/groceries/permalink-optimize-hexo/)
-- [Update-for-JSimple-in-Early2019](https://thomartisen.com/groceries/the-update-for-jsimple-in-early2019/)
+- [JSimple主题用户指南](https://https://tomartisan.com/groceries/jsimple-usage/)
+- [在hexo博客中打造相对完美的URL](https://tomartisan.com/groceries/hexo-perfect-link/)
+- [将Hexo博客url优化进行到底](https://tomartisan.com/groceries/permalink-optimize-hexo/)
+- [Update-for-JSimple-in-Early2019](https://tomartisan.com/groceries/the-update-for-jsimple-in-early2019/)
 
 
 ## Browser support

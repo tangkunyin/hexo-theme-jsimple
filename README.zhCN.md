@@ -1,12 +1,8 @@
 # JSimple
 
-[![Build Status](https://travis-ci.org/tangkunyin/hexo-theme-jsimple.svg?branch=master)](https://travis-ci.org/tangkunyin/hexo-theme-jsimple)
-
-⚠️⚠️⚠️ 请注意：主题已不再进行公开维护，感谢大家过去的支持！现如有需要，请自行魔改，有问题可以飞机咨询。
-
 **适用于Hexo的三栏简书式主题。支持响应式、站内搜索、主流评论系统、文章浏览统计以及白天和夜间模式**.
 
-[**☞ 一睹为快**](https://thomartisen.com) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
+[**☞ 一睹为快**](https://tomartisan.com) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
 ![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
 
@@ -47,7 +43,7 @@ language:
     - en
 
 # URL （注意 permalink 格式。其中timestamp是改了源码加上的，具体参见patch目录文件）
-url: https://thomartisen.com
+url: https://tomartisan.com
 root: /
 permalink: :category/:entitle-:timestamp.html
 permalink_defaults:
@@ -75,7 +71,7 @@ tag_map:
 webmaster:
   name: 纠结伦
   avatar: /images/favicon.png
-  home: https://thomartisen.com
+  home: https://tomartisan.com
   desc: 一个搬🧱的劳斯基😁️️
 
 # 内容安全策略。 true时，会在网页头部增加一行：Content-Security-Policy = upgrade-insecure-requests。会将不是https的资源自动提升为https
@@ -147,10 +143,10 @@ comments:
 
 其中关于配置分类别名以及自定义文章链接，请看如下文章操作：
 
-- [JSimple主题用户指南](https://https://thomartisen.com/groceries/jsimple-usage/)
-- [在hexo博客中打造相对完美的URL](https://thomartisen.com/groceries/hexo-perfect-link/)
-- [将Hexo博客url优化进行到底](https://thomartisen.com/groceries/permalink-optimize-hexo/)
-- [Update-for-JSimple-in-Early2019](https://thomartisen.com/groceries/the-update-for-jsimple-in-early2019/)
+- [JSimple主题用户指南](https://https://tomartisan.com/groceries/jsimple-usage/)
+- [在hexo博客中打造相对完美的URL](https://tomartisan.com/groceries/hexo-perfect-link/)
+- [将Hexo博客url优化进行到底](https://tomartisan.com/groceries/permalink-optimize-hexo/)
+- [Update-for-JSimple-in-Early2019](https://tomartisan.com/groceries/the-update-for-jsimple-in-early2019/)
 
 ## 浏览器支持
 
@@ -172,7 +168,4 @@ comments:
 ## License
 
 JSimple is under the MIT license. See the [LICENSE](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/LICENSE) file for details.
-
-
-
 
