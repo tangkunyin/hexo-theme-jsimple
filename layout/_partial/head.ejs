@@ -1,62 +1,88 @@
 <!--[if lte IE 9]>
-<meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html">
+    <meta http-equiv="refresh" content="0;url=<%= config.url %>/warn.html">
 <![endif]-->
-<meta charset="utf-8">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-<meta name="author" content="<%= config.author %>">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta http-equiv="mobile-agent" content="format=html5; url=<%= config.url %>">
-<meta http-equiv="X-DNS-Prefetch-Control" content="on">
-<% if (theme.csp_enable){ %>
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<% } %>
-<% if (theme.favicon){ %>
-<%- favicon_tag(theme.favicon) %>
-<% } %>
 <%
 var siteTitle = page.title;
+var keywords = page.keywords ? page.keywords : config.keywords;
+var description = "";
+
+<!-- 计算页面标题 -->
 if (is_archive()) {
     siteTitle = __('archives');
     if (is_month()) {
-        siteTitle += '- ' + page.year + '/' + page.month;
+        siteTitle += ' | ' + page.year + '/' + page.month;
     } else if (is_year()) {
-        siteTitle += '- ' + page.year;
+        siteTitle += ' | ' + page.year;
     }
 } else if (is_category()) {
-    siteTitle = __('categories') + ' - ' + page.category;
+    siteTitle = __('categories') + ' | ' + page.category;
 } else if (is_tag()) {
-    siteTitle = __('tags') + ' - ' + page.tag;
+    siteTitle = __('tags') + ' | ' + page.tag;
 }
-%>
-<title><% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %></title>
-<%
-var keywords;
-if (page.keywords) {
-    keywords = page.keywords;
-} else {
-    keywords = config.keywords;
-}
-%>
-<meta name="keywords" content="<%= keywords %>">
-<%
-var description;
+
+<!-- 计算页面描述 -->
 if (page.description) {
     description = page.description;
+} else if (page.content) {
+    description = strip_html(page.content); 
 } else {
     description = config.description;
 }
+description = description.substring(0, 200).replace(/^\s+|\s+$/g, '');
 %>
-<meta name="description " content="<%= description %>">
-
-<!-- Jetpack Open Graph Tags -->
+<meta charset="utf-8" />
+<title><% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> | <% } %><%= config.title %><% if (is_home()){ %> | <%= config.subtitle %><% } %></title>
+<meta name="keywords" content="<%= keywords %>" />
+<meta name="description" content="<%= description %>" />
+<meta name="author" content="<%= config.author %>" />
+<meta name="applicable-device" content="pc,mobile" />
+<meta name="format-detection" content="telephone=no,email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="<%= config.title %>" />
+<meta name="renderer" content="webkit" />
+<meta name="force-rendering" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta property="og:type" content="<%= is_home() ? 'blog' : 'article' %>" />
-<meta property="og:title" content="<% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> - <% } %><%= config.title %><% if (is_home()){ %> - <%= config.subtitle %><% } %>" />
+<meta property="og:title" content="<% if (siteTitle){ %><%= __(siteTitle.toLowerCase()) %> | <% } %><%= config.title %><% if (is_home()){ %> | <%= config.subtitle %><% } %>" />
 <meta property="og:description" content="<%= description %>" />
 <meta property="og:url" content="<%= config.url %>" />
 <meta property="og:site_name" content="<%= config.title %>" />
 
-<link rel="dns-prefetch" href="<%= config.url %>">
-<link rel="prefetch" href="<%= config.url %>">
-<link rel="prerender" href="<%= config.url %>">
-<link rel="stylesheet" href="/css/JSimple.min.css">
+<link rel="dns-prefetch" href="<%= config.url %>" />
+<link rel="preconnect" href="<%= config.url %>" />
+<% if (is_post() || is_page()) { %>
+    <link rel="preconnect" href="https://<%= theme.comments.shortname %>.disqus.com" />
+    <link rel="preconnect" href="https://c.disquscdn.com" />
+<% } %>
+
+<link rel="icon" type="image/svg+xml" href="<%= config.url %>/images/favicon.svg" />
+<link rel="alternate icon" type="image/png" href="<%= config.url %>/images/favicon.png" />
+<link rel="alternate" type="application/xml" title="Site Map" href="<%= config.url %>/sitemap.xml"/>
+<link rel="canonical" href="<%= page.permalink || config.url %>" />
+
+
+<link rel="stylesheet" href="/css/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" media="print" onload="this.media='all'" crossorigin />
+<link rel="stylesheet" href="/css/JSimple.min.css" />
+
+<style id="highl_css"></style>
+
+<script type="text/javascript">
+    (function() {
+        let jsi_config = {
+            isPost: '<%- is_post() %>',
+            creationTime: '<%= theme.site_creation.fulltime %>',
+            highlightTheme: '<%= theme.highlight_theme %>',
+            readMode: '<%= theme.read_mode %>',
+            localSearch: { dbPath: '' }
+        };
+        <% if (config.search && config.search.path) {  %>
+            jsi_config.localSearch = {
+                dbPath: '/<%= config.search.path %>',
+                trigger: '<%= theme.local_search.trigger %>',
+                topN: '<%= theme.local_search.top_n_per_article %>',
+                unescape: '<%= theme.local_search.unescape %>'
+            }
+        <% } %>
+        window.jsi_config = jsi_config;
+    })()
+</script>

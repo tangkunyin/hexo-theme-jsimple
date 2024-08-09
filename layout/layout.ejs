@@ -1,42 +1,19 @@
 <!DOCTYPE HTML>
-<html class="no-js" lang="zh-CN">
+<html class="no-js" lang="zh-Hans">
 <head>
     <%- partial('_partial/head') %>
-    <script type="text/javascript">
-        (function() {
-            let jsi_config = {
-                rootUrl: '<%= config.url %><%= config.root %>',
-                isPost: '<%- is_post() %>',
-                buildingTime: '<%= theme.site_building_time %>',
-                snsQRCode: '<%= theme.snsQRCode %>',
-                donateImg: '<%= theme.donateImg %>',
-                readMode: '<%= theme.read_mode %>',
-                localSearch: { dbPath: '' }
-            };
-            <% if(config.search && config.search.path) {  %>
-                jsi_config.localSearch = {
-                    dbPath: '/<%= config.search.path %>',
-                    trigger: '<%= theme.local_search.trigger %>',
-                    topN: '<%= theme.local_search.top_n_per_article %>',
-                    unescape: '<%= theme.local_search.unescape %>'
-                }
-            <% } %>
-            window.jsi_config = jsi_config;
-        })()
-    </script>
-    <%- js(['js/SimpleCore.min']) %>
 </head>
 <body>
 <%- partial('_partial/leftMenu') %>
-<%- partial('_widget/user-entry', null, {cache: !config.relative_link}) %>
+<%- partial('_widget/user-entry') %>
 <div id="wrapper" class="clearfix">
     <div id="body">
         <div class="main" id="main">
-            <%- partial('_partial/middleCover', null, {cache: !config.relative_link}) %>
+            <%- partial('_partial/middleCover') %>
             <%- body %>
-        </div><!-- end #main-->
-    </div><!-- end #body -->
-    <%- partial('_partial/footer', null, {cache: false}) %>
+        </div>
+    </div>
+    <%- partial('_partial/footer') %>
 </div>
 <!-- search pop -->
 <div class="popup search-popup local-search-popup">
@@ -49,7 +26,7 @@
         </span>
         <div class="local-search-input-wrapper">
             <input id="local-search-input"
-                   spellcheck="false"
+                   spellcheck="true"
                    type="text"
                    autocomplete="off"
                    placeholder="<%= __('search_placeholder') %>"/>
@@ -60,20 +37,7 @@
 <div class="fixed-btn">
     <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
 </div>
-<% if(theme.baidu_auto_push) {  %>
-    <script type="text/javascript">
-        let bp = document.createElement('script');
-        let curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        bp.setAttribute("async", "");
-        let s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    </script>
-<% } %>
-<%- partial('_widget/analytics', null, {cache: !config.relative_link}) %>
+<script async src="/js/SimpleCore.min.js"></script>
+<%- partial('_widget/third-scripts', null, { cache: false }) %>
 </body>
 </html>

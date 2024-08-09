@@ -362,21 +362,17 @@ const LocalSearch = {
  * @author tangkunyin 2017/1/25.
  */
 const SimpleCore = {
-    rootUrl: '',
-    buildingTime: new Date(),
+    creationTime: new Date(),
+    highlightTheme: null,
     isPost: 'false',
     prevTop: 0,
     headerShow: true,
-    snsQRCode: null,
-    donateImg: null,
     localSearch: {},
     readMode: 'day',
     initParams (params) {
-        SimpleCore.rootUrl = params.rootUrl || location.href;
-        SimpleCore.buildingTime = params.buildingTime;
+        SimpleCore.creationTime = params.creationTime;
+        SimpleCore.highlightTheme = params.highlightTheme;
         SimpleCore.isPost = params.isPost;
-        SimpleCore.snsQRCode = params.snsQRCode;
-        SimpleCore.donateImg = params.donateImg;
         SimpleCore.localSearch = params.localSearch;
         SimpleCore.readMode = params.readMode;
     },
@@ -406,22 +402,6 @@ const SimpleCore = {
         });
         $(document).on('click', '.popup', function (e) {
             e.stopPropagation();
-        });
-        $(document).on('click', '.btn-sns-qr', function (e) {
-            e.preventDefault();
-            if (SimpleCore.snsQRCode != '') {
-                SimpleCore.alert('交个朋友，扫我','<img style="width:180px;background:#fff;" src="' + SimpleCore.snsQRCode + '">');
-            } else {
-                SimpleCore.alert('未开通社交功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
-            }
-        });
-        $(document).on('click', '.btn-thumbs-up', function (e) {
-            e.preventDefault();
-            if (SimpleCore.donateImg != '') {
-                SimpleCore.alert('随意赞赏，谢谢','<img style="width:180px;background:#fff;" src="' + SimpleCore.donateImg + '">');
-            } else {
-                SimpleCore.alert('未开通赞赏功能','<h4 style="text-align: center;margin: 0">联系博主试试看 ：）</h4>');
-            }
         });
         $(document).on('click', '.btn-gotop', function (e) {
             e.preventDefault();
@@ -519,31 +499,40 @@ const SimpleCore = {
         if (SimpleCore.getLocalData('read-mode') == 'night') {
             $('body').addClass('night-mode');
             btn.find('i').attr('class', 'fa fa-moon-o');
-            $(".cover-img").attr('src', `${SimpleCore.rootUrl}images/cover-night.jpg`);
+            $(".cover-img").attr('src', location.origin + '/images/cover-night.webp');
         } else {
             $('body').removeClass('night-mode');
             btn.find('i').attr('class', 'fa fa-sun-o');
-            $(".cover-img").attr('src', `${SimpleCore.rootUrl}images/cover-day.jpg`);
+            $(".cover-img").attr('src', location.origin + '/images/cover-day.webp');
         }
+        // 设置高亮主题
+        let highlCss = SimpleCore.highlightTheme || 'default';
+        if (highlCss !== 'default') {
+            highlCss += SimpleCore.getLocalData('read-mode') == 'night' ? '-dark' : '-light';
+        }
+        $('#highl_css').load(`/css/${highlCss}.min.css`);
     },
     alert (title,msg) {
-        const id = 'notice-' + (new Date().getTime());
-        const html = '<div id="' + id + '" class="notice-item">'
+        const notice = $('#notice');
+        if (notice.length > 0) {
+            return false;   
+        }
+        
+        $('<div id="notice"></div>').appendTo($('body'));
+        const item = 'notice-' + (new Date().getTime());
+        const html = '<div id="' + item + '" class="notice-item">'
             + '<span class="notice-item-close"><i class="fa fa-close"></i></span>'
             + '<p><h3 style="text-align: center;margin:0 0 10px 0">'+title+'</h3>' + msg + '</p></div>';
-        const notice = $('#notice');
-        if (notice.length == 0) {
-            $('<div id="notice"></div>').appendTo($('body'));
-        }
         $(html).appendTo($('#notice')).on('click', '.notice-item-close', function () {
-            $(this).parent().remove();
+            $('#notice').remove();
             return false;
         });
-        //居中显示，于8秒后自动关闭
+        
+        //居中显示，于x秒后自动关闭
         $('#notice').css('margin-right', -$('#notice').width() / 2);
         setTimeout(function () {
-            $('#' + id).remove();
-        }, 8000);
+            $('#notice').remove();
+        }, 10000);
     },
     setLocalData (key, value) {
         if (window.localStorage) {
@@ -556,7 +545,7 @@ const SimpleCore = {
         }
     },
     setBuildingTime () {
-        const urodz = new Date(SimpleCore.buildingTime);  //建站时间
+        const urodz = new Date(SimpleCore.creationTime);  //建站时间
         const now = new Date();
         const ile = now.getTime() - urodz.getTime();
         const buildingDays = Math.floor(ile / (1000 * 60 * 60 * 24));
@@ -583,7 +572,7 @@ const SimpleCore = {
                     $('.search-popup-overlay').remove();
                     $('body').css('overflow', '');
                 }
-            const shouldShowSearchPopup = event.key === 'Control'
+            const shouldShowSearchPopup = event.key === 'Shift'
                 && $('.search-popup').css('display') === 'none';
                 if (shouldShowSearchPopup) {
                     LocalSearch.doSearch(e);
@@ -599,6 +588,5 @@ const SimpleCore = {
 };
 
 $(function () {
-    window.jsi_config ? SimpleCore.init(window.jsi_config)
-     : console.error('JSimple get wrong config: ', window.jsi_config)
+    window.jsi_config ? SimpleCore.init(window.jsi_config) : console.error('JSimple get wrong config: ', window.jsi_config)
 });

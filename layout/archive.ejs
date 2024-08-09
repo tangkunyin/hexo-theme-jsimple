@@ -6,12 +6,12 @@
     </ul>
 </div>
 <div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title"><%= __('post_total_count', site.posts.length) %></h3>
+            <h2 class="post-title"><%= __('post_total_count', site.posts.length) %></h2>
         </div>
         <%- partial('_widget/ads/adSense') %>
-        <div class="post-content markdown-body" itemprop="articleBody">
+        <div class="post-content markdown-body">
             <div class="archives">
                 <% var lastDate; %>
                 <% site.posts.sort('date', theme.home_page_sort).each(function(post, i){ %>
@@ -19,17 +19,18 @@
                 <% if (lastDate != currentDate){ %>
                 <% lastDate = currentDate; %>
                 <div class="archives-item">
-                    <h2><%= date(post.date, 'YYYY') %>年<%= date(post.date, 'MM') %>月</h2>
+                    <h3><%= date(post.date, 'YYYY') %>年<%= date(post.date, 'MM') %>月</h3>
                     <ul class="archives_list">
                         <% } %>
-                        <li><%= date(post.date, 'DD') %>日<%= time(post.date) %>
-                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-                            <% if(post.author && theme.webmaster.name && post.author != theme.webmaster.name) { %>
-                                ，作者<a href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>" 
+                        <li><h4 class="archives-title">
+                            <span itemprop="datePublished" content="<%= full_date(post.date, 'yyyy-MM-DDTHH:mm:ss.SSSZ')%>"><%= date(post.date, 'DD') %>日，<%= time(post.date) %></span>
+                            <a href="<%- url_for(post.path) %>" rel="noopener" target="_blank"><span itemprop="headline"><%= post.title %></span></a>
+                            <% if(post.author && theme.authorInfo.name && post.author != theme.authorInfo.name) { %>
+                                ，作者<a href="<%= theme.authorInfo.home %>" 
                                    target="_blank"
-                                   rel="author"><%= post.author ? post.author : theme.webmaster.name %></a>
+                                   rel="author"><%= post.author ? post.author : theme.authorInfo.name %></a>
                             <% } %>
-                        </li>
+                        </h4></li>
                         <% if (!site.posts.sort('date', theme.home_page_sort).eq(i + 1) || currentDate != parseInt(date(site.posts.sort('date', theme.home_page_sort).eq(i + 1).date, 'YYYYMM'))){ %>
                     </ul>
                 </div>

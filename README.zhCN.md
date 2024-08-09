@@ -4,9 +4,7 @@
 
 [**☞ 一睹为快**](https://tomartisan.com) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
-![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
-
-<!--more-->
+![JSimple-Desktop](/source/images/JSimple-Desktop.png)
 
 
 ## 安装步骤
@@ -31,8 +29,6 @@ $ git pull
 
 
 ## 配置
-
-~~便于快速上手, 直接看我的 [网站备份](https://github.com/shuoit/blog) 可能更方便，有朋友下载主题使用报错，看那里最直接。~~
 
 ### 站点配置
 
@@ -119,8 +115,9 @@ comments:
 
 ### 其他配置说明
 
-
 #### 搜索模块
+
+![JSimple-Desktop](/source/images/JSimple-Desktop-With-LocalSearch.png)
 
 鉴于旧版本搜索有样式问题，另外检索词并不能匹配文章，也不能突出颜色。所以新版直接换成了`hexo-generator-search`
 

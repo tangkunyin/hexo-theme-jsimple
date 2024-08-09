@@ -4,7 +4,7 @@
 
 - [**☞ Preview Demo**](https://tomartisan.com) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
-![JSimple-Snapshot-Macbook Pro15](/source/images/JSimple-Snapshot-Macbook%20Pro15.png)
+![JSimple-Desktop](/source/images/JSimple-Desktop.png)
 
 <!--more-->
 
@@ -29,8 +29,6 @@
  ```
 
 ## Configurations
-
-~~For a quick start, see my [Site backup](https://github.com/shuoit/blog) may be more convenient.~~
 
 ### site _config.yml
 
@@ -121,6 +119,8 @@ comments:
 
 
 #### Search Module
+
+![JSimple-Desktop](/source/images/JSimple-Desktop-With-LocalSearch.png)
 
 Because of the search in previous version didn't work well. Such as highlight content, responsive problem in small screen.
 

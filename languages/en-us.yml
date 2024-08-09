@@ -1,13 +1,11 @@
 home: Home
 archives: Archives
 about: About
-help: Help
-links: Links
 app: App
 map: SiteMap
 categories: Categories
 search: Search
-search_tip: click to search...
+search_tip: Press Shift to Searching
 search_placeholder: Input query keywords here...
 tags: Tags
 tagcloud: Tag Cloud
@@ -15,7 +13,7 @@ prev: Prev
 next: Next
 comment: Comments
 page: Page %d
-recent_posts: Recent Posts
+recent_posts: Latest
 newer: Newer
 older: Older
 share: Share
@@ -27,16 +25,15 @@ tag_total_count: There are %d tags so far.
 read_more: Continue Reading →
 contents: Contents
 none: None
-donate: Donate
+donate: Buymeacoffee
 buildTip: Has been established
 day: Days
-licenses: Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 based_on: Based on
 theme_by: Theme by
 author: Author
 last_edited: Last edited at
 post_words_count: emm... %d words in the article
 post_view_count_prefix: you are the
-post_view_count_subfix: th friend who reading now
-post_declare: This article just represents my own viewpoint. If there is something wrong, please correct me.
+post_view_count_subfix: th visited person
+post_declare: Please note
 sticky: Stickied

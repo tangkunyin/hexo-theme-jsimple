@@ -1,16 +1,31 @@
 {
   "name": "hexo-theme-jsimple",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Simple three column theme for Hexo.Inspired by JianShu.com",
   "license": "MIT",
-  "scripts": {
-    "test": "ejslint ./layout/*",
-    "build": "gulp"
+  "keywords": [
+    "Simple",
+    "Three Column",
+    "Jian Shu",
+    "Hexo"
+  ],
+  "author": {
+    "name": "Thomas Tang",
+    "url": "https://tomartisan.com",
+    "email": "hello@tangkunyin.com"
   },
+  "scripts": {
+    "lint": "ejslint ./layout/*",
+    "build:css": "gulp build-minifyCss",
+    "build:all": "gulp",
+    "publish": "pnpm run lint && pnpm run build:all"
+  },
+  "type": "module",
+  "packageManager": "pnpm@9.4.0",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "ejs-lint": "^1.1.0",
+    "ejs-lint": "^2.0.0",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -22,18 +37,10 @@
     "type": "git",
     "url": "git+https://github.com/tangkunyin/hexo-theme-jsimple.git"
   },
-  "keywords": [
-    "Simple",
-    "Three Column",
-    "Jian Shu",
-    "Hexo"
-  ],
   "bugs": {
     "url": "https://github.com/tangkunyin/hexo-theme-jsimple/issues"
   },
-  "author": {
-    "name": "Thomas Tang",
-    "url": "https://tomartisan.com",
-    "email": "hello@tangkunyin.com"
+  "engines": {
+    "node": ">=18"
   }
 }

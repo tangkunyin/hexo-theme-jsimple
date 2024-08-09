@@ -6,23 +6,24 @@
     </ul>
 </div>
 <div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title"><%= __('tag_total_count', site.tags.length) %></h3>
+            <h2 class="post-title"><%= __('tag_total_count', site.tags.length) %></h2>
         </div>
-        <%- partial('_widget/ads/adSense') %>
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <% if (site.tags.length) { %>
-            <script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcloud.js') %>"></script>
-            <script type="text/javascript" charset="utf-8" src="<%- url_for('/js/tagcanvas.js') %>"></script>
-            <div class="widget-wrap">
-                <div id="myCanvasContainer" class="widget tagcloud">
-                <canvas width="250" height="250" id="resCanvas" style="width:100%">
-                    <%- tagcloud() %>
-                </canvas>
-                </div>
-            </div>
-            <% } %>
+        <p class="tags-bg"><img src="/images/tags-bg.webp" alt="tags-bg"></p>
+        <div class="post-content markdown-body">
+            <ul class="tag-list">
+                <% site.tags.sort('name').map(function(tag){  %>
+                    <li><h4 class="tag-list-item">
+                        <a href="<%- url_for(tag.path) %>" target="_blank" rel="noopener">
+                            <span itemprop="articleSection"><%= tag.name %></span>(<%= tag.length %>)
+                        </a>
+                    </h4></li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="tagV-ads">
+            <%- partial('_widget/ads/adSense') %>
         </div>
     </article>
 </div>

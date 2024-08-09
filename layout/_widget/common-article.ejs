@@ -1,35 +1,41 @@
 <div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="post-header">
-            <div class="post-author clearfix">
-                <a class="avatar fleft" href="<%= post.authorLink ? post.authorLink : theme.webmaster.home %>"
-                   target="_blank">
-                    <img width="48" src="<%= post.avatar ? post.avatar : theme.webmaster.avatar %>" alt="avatar"/>
+            <div class="post-author clearfix" itemscope itemtype="https://schema.org/Person">
+                <a class="avatar fleft" href="<%= theme.authorInfo.home %>" rel="author">
+                    <img width="48" src="<%= post.avatar ? post.avatar : theme.authorInfo.avatar %>" alt="avatar" itemprop="image"/>
                 </a>
                 <p><span class="label"><%= __('author') %></span>
-                    <a href="<%= post.authorAbout ? post.authorAbout : theme.webmaster.home %>"
-                       target="_blank"><%= post.author ? post.author : theme.webmaster.name %></a>
-                    <span title="<%= __('last_edited') %>&nbsp;<%= date(post.date) %>"><%= date(post.date) %></span>
+                    <a href="<%= post.author ? post.author : theme.authorInfo.home %>" itemprop="url"><span itemprop="name"><%= post.author ? post.author : theme.authorInfo.name %></span></a>
+                    <span itemprop="datePublished" content="<%= full_date(post.date, 'yyyy-MM-DDTHH:mm:ss.SSSZ')%>"><%= __('last_edited') %>&nbsp;<%= date(post.date) %></span>
                 </p>
-                <p><%= post.authorDesc ? post.authorDesc : theme.webmaster.desc %></p>
+                <p itemprop="description"><%= theme.authorInfo.desc %></p>
             </div>
-            <h2 class="post-title"><%- post.title %></h2>
-            <div class="post-meta">
+            <h1 class="post-title">
+                <a target="_self" href="<%= post.permalink %>" itemprop="mainEntityOfPage"><span itemprop="headline"><%- post.title %></span></a>
+            </h1>
+            <div class="post-meta" itemprop="wordCount">
                 <%= __('post_words_count', strip_html(post.content).length) %> |
-                <%= __('post_view_count_prefix') %>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span><%= __('post_view_count_subfix') %>
+                <span id="busuanzi_container_page_pv">
+                    <%= __('post_view_count_prefix') %>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span><%= __('post_view_count_subfix') %>
+                </span>
             </div>
         </div>
-        <div class="post-content markdown-body">
+        <div class="post-content markdown-body articleBody" itemprop="articleBody">
             <%- post.content %>
             <% if(post.layout && post.layout === 'post') { %>
-                <%- partial('_widget/ads/adSense') %>
+                <%- partial('_widget/ads/adSense', null, { cache: false }) %>
             <% } %>
         </div>
-        <div class="post-tool">
-            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i> <%= __('donate') %>
-            </a>
-        </div>
+
+        <% if (theme.donateLink){ %>
+            <div class="post-tool">
+                <a class="btn-thumbs-up" title="buy me a coffee" href="<%= theme.donateLink %>" aria-label="donate link" rel="external nofollow">
+                    <i class="fa fa-thumbs-up" aria-hidden="true"></i> <%= __('donate') %>
+                </a>
+            </div>
+        <% } %>
+
         <% if (post.tags){ %>
         <div class="post-tags"><%= __('tags') %>：
             <% post.tags.each(function(tag){ %>
@@ -39,39 +45,10 @@
         <% } %>
     </article>
     <% if(post.layout && post.layout === 'post' && theme.post_declare) { %>
-        <p style="text-align: center"><%= __('post_declare') %></p>
+        <p style="text-align: center"><%= __('post_declare') %>: <%= theme.post_declare.desc %></p>
     <% } %>
     <% if(post.layout && post.layout !== 'post') { %>
-        <%- partial('_widget/ads/adSense') %>
+        <%- partial('_widget/ads/adSense', null, { cache: false }) %>
     <% } %>
-    <%- partial('_partial/comments', {post: post}) %>
+    <%- partial('_partial/comments', null, { cache: false }) %>
 </div>
-<% if (theme.mathjax && theme.mathjax.enable) { %>
-<script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script type="text/x-mathjax-config">
-    let isMathjaxConfig = false; // 防止重复调用Config，造成性能损耗
-    const initMathjaxConfig = () => {
-    if (!window.MathJax) {
-        return;
-    }
-    window.MathJax.Hub.Config({
-        showProcessingMessages: false, //关闭js加载过程信息
-        messageStyle: "none", //不显示信息
-        jax: ["input/TeX", "output/HTML-CSS"],
-        tex2jax: {
-        inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
-        displayMath: [["?", "?"], ["\\[", "\\]"]], //段内公式选择符
-        skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
-        },
-        "HTML-CSS": {
-        availableFonts: ["STIX", "TeX"], //可选字体
-        showMathMenu: false //关闭右击菜单显示
-        }
-    });
-        isMathjaxConfig = true; // 
-    };
-    if (isMathjaxConfig === false) {
-        initMathjaxConfig();
-    }
-</script>
-<% } %>

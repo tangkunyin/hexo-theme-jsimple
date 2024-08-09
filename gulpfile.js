@@ -1,46 +1,70 @@
-'use strict';
+import gulp from "gulp";
+import babel from "gulp-babel";
+import minifycss from "gulp-clean-css";
+import uglify from "gulp-uglify";
+import rename from "gulp-rename";
+import concat from "gulp-concat";
 
-const gulp = require ('gulp');
-const babel = require ('gulp-babel');
-const minifycss = require ('gulp-clean-css');
-const uglify = require ('gulp-uglify');
-const rename = require ('gulp-rename');
-const concat = require ('gulp-concat');
+process.on('unhandledRejection', error => {
+  console.error('unhandledRejection', error);
+  process.exit(1);
+});
 
-const srcIgnore = [
-  './source/js/lib/zepto.min.js',
-  './source/js/lib/busuanzi.pure.js',
-  './source/js/lib/md5.js',
-];
-gulp.task ('minify-js', async function () {
+const CleanCssOps = {
+  level: {
+    1: {
+      specialComments: 0
+    },
+    2: {
+      all: true
+    }
+  }
+}
+
+const cssLib = ["./source/css/fonts/FontModule.css"];
+gulp.task('build-theme-minifyCss', async function () {
   await gulp
-    .src (srcIgnore.concat('./source/js/lib/SimpleCore.js'))
-    .pipe (
-      babel ({
-        ignore: srcIgnore,
+    .src(cssLib.concat('./source/css/JSimple.css'))
+    .pipe(minifycss(CleanCssOps))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(gulp.dest('./source/css'));
+});
+gulp.task("build-highlight-minifyCss", async function () {
+  await gulp
+      .src("./source/css/highlight/*.css")
+      .pipe(minifycss(CleanCssOps))
+      .pipe(rename({ extname: ".min.css" }))
+      .pipe(gulp.dest("./source/css"));
+});
+
+
+const jsLib = ["./source/js/lib/zepto.min.js"];
+gulp.task('build-minifyJs', async function () {
+  await gulp
+    .src(jsLib.concat('./source/js/lib/SimpleCore.js'))
+    .pipe(
+      babel({
+        ignore: jsLib,
         presets: ['@babel/preset-env']
       })
     )
-    .pipe (uglify ())
-    .pipe (concat ('./source/js/SimpleCore.min.js'))
-    .pipe (gulp.dest ('./'));
-});
-gulp.task ('minify-css', async function () {
-  await gulp
-    .src ('./source/css/JSimple.css')
-    .pipe (minifycss ())
-    .pipe (rename ({extname: '.min.css'}))
-    .pipe (gulp.dest ('./source/css'));
+    .pipe(uglify())
+    .pipe(concat('./source/js/SimpleCore.min.js'))
+    .pipe(gulp.dest('./'));
 });
 
-process.on ('unhandledRejection', error => {
-  console.error ('unhandledRejection', error);
-  process.exit (1); // To exit with a 'failure' code
-});
 
-gulp.task (
+gulp.task(
+  "build-minifyCss",
+  gulp.parallel("build-theme-minifyCss", "build-highlight-minifyCss", function (done) {
+      done();
+  })
+);
+
+
+gulp.task(
   'default',
-  gulp.parallel ('minify-js', 'minify-css', function (done) {
-    done ();
+  gulp.parallel('build-minifyCss', 'build-minifyJs', function (done) {
+    done();
   })
 );

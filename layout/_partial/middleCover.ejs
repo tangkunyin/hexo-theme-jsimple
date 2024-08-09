@@ -1,14 +1,12 @@
 <div id="cover">
-    <img class="cover-img" src="//images/cover-day.jpg" alt="cover-img" loading="lazy" />
+    <img class="cover-img" src="/images/cover-day.webp" alt="cover-img" loading="lazy"/>
     <div class="cover-info">
-        <% if (theme.avatar_show) { %>
-        <img class="avatar" width="72" src="<%= theme.avatar_image %>" alt="avatar"/>
-        <% } %>
-        <h1 class="cover-siteName"><%= theme.site_name %></h1>
-        <h3 class="cover-siteTitle"><%= theme.cover_title %></h3>
-        <p class="cover-siteDesc"><%= theme.cover_description %></p>
+        <img class="avatar" src="<%= theme.authorInfo.avatar %>" width="100" alt="avatar" loading="lazy"/>
+        <h1><%= theme.site_name %></h1>
+        <h3><%= theme.cover_title %></h3>
+        <h4><%= theme.cover_description %></h4>
         <div class="cover-sns">
-            <%- partial('_widget/sns-entry', null, {cache: !config.relative_link}) %>
+            <%- partial('_widget/sns-entry') %>
         </div>
     </div>
 </div>

@@ -1,69 +1,81 @@
-# site name
-site_name: 托码
-short_name: TM
+# 站点名称、简称
+site_name: JSimple
+short_name: JSM
 
-# Master info. It won't work if the one from (author|authorLink|avatar|authorDesc) be written in post.md
-webmaster:
-  name: 托码特人
-  avatar: /images/favicon.png
-  home: https://tomartisan.com
-  desc: 一个写代码的「伪文人」
 
-# CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
-csp_enable: true
+# 站长基本信息
+authorInfo:
+  name: 托码斯
+  home: https://bento.me/tomartisan
+  desc: 一个爱吃苹果的「小黄人」
+  avatar: /images/avatar.webp
 
-# Read Mode. day or night
+# 默认主题：浅色(day)，深色(night)
 read_mode: day
 
-# favicon
-favicon: /images/favicon.png
-# unique avatar
-avatar_show: false
-avatar_image: /images/favicon.png
-
-# Home page sort type: -1: newer first，1: older first.
+# 首页文章排序方式: 最新在前（-1），最老在前（1）
 home_page_sort: -1
-# Home page article shown number
+# 首页展示多少篇文章
 home_article_shown: 10
 
-# your site build time or domain buy time
-site_building_time: 01/20/2018
+# 代码高亮配置，采用 hightlight，样式在 css/hightlight/* 定义
+highlight_theme: atom-one
 
-# Top navigate menu name
-## Notice:
-## Name order decide show index.The name also called category alias,so you must set category alias before start server.
-## BTW,'category_map' and 'tag_map' field in site '_config.yml' file must one to one correspondence with menus below.
+
+# 顶部导航菜单名称和别名配置
+## 此处申明的菜单条目，需要和站点根目录下"_config.yml"中分类的配置对应，建议不超过4个。如：
+###   default_category: 产品研发
+###   category_map:
+###     顶部菜单1: top1
+###     顶部菜单2: top2
+###     顶部菜单3: top3
+###     顶部菜单4: top4
 menu:
-   技术: tech
-   人文: huma
+  顶部菜单1: top1
+  顶部菜单2: top2
+  顶部菜单3: top3
+  顶部菜单4: top4
 
-# Customize left navigation menus. faName is FontAwesome style name
+# 最左侧常驻的导航菜单，一般指向 /about 即可
 left_nav_menus:
-- uri: help
-  title: 帮助
+- uri: about
+  title: 关于
   faName: fa-question-circle
 
 
-# cover info config
+# 中间封面信息
 cover_title: 用代码摇滚这个世界
-cover_description: 一个关注技术与人文的IT博客
+cover_description: 一个关注科技与人文的技术博客
 
-# cover sns info
+# 中间封面社交连接
 sns:
   github: https://github.com/tangkunyin
-  twitter: https://twitter.com/tomartisan
-  telegram: https://t.me/tomartisan
+  youtube: https://www.youtube.com/@itomartisan
 
 
-# page pop qrcode
-snsQRCode: /images/sns-qrcode.png
-#donateImg: /images/donate-qr.png
+# 站点互动信息连接，如聊天室和捐赠地址
+chatLink: https://t.me/tomartisen
+donateLink: https://buymeacoffee.com/tomartisan
 
-# article declare. default content in languages
-post_declare: true
 
-# Local search
-# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+# 文章内容申明
+post_declare: 
+  enable: true
+  desc: 本文所述内容及观点仅代表个人看法，由于知识水平有限，行文难免出现差错，欢迎留言交流。谢谢！
+
+# 站点创建时间，用于页底动态展示：成立X天
+site_creation:
+  year: 2020
+  fulltime: 08/08/2024
+
+# 托管商信息
+serveInfo:
+  name: github
+  url: https://pages.github.com
+
+
+# 本地搜索
+# 依赖库: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
@@ -73,54 +85,29 @@ local_search:
   # unescape html strings to the readable one
   unescape: false
 
-## Analytics setting. Google default
+## 网站统计，仅支持Google。需要别的自行修改源码
 analytics:
-  enable: false
-  google_analytics_id:
+  enable: true
+  shortname: tomax
+
+## 网站评论，仅支持Disqus。需要别的自行修改源码
+comments:
+  enable: true
+  configId: 12345
+
+## 微软的clarity服务
+clarity:
+  enable: true
+  configId: 54321
 
 ## Google AdSense.
 adsense:
-  auto: true
-  client_id:  
-  page_tb_id:
-  archive_id:
-  tags_id:
-  post_inner_id:
-  post_left_id:
+  auto: false
+  client_id: 
+  page_tb_id: 
+  archive_id: 
+  tags_id: 
+  post_inner_id: 
+  post_left_id: 
   post_right_id:
 
-
-## Comments settings. Disqus
-##                  | Gitment（Introduction: https://imsun.net/posts/gitment-introduction/）
-##                  | gitalk  (Official website: https://gitalk.github.io/)
-comments:
-  enable: false
-  disqus_shortname:
-  gitalk:
-    on: true
-    clientID:
-    clientSecret:
-    owner:
-    repo:
-    admin: ['your name']
-    perPage: 6
-    pagerDirection: 'last'
-  gitment:
-    repo:
-    githubID:
-    ClientID:
-    ClientSecret:
-    lazy: true
-
-# Git-pages server info (Coding Pages|Github Pages)
-server_name:
-server_url:
-
-mathjax:
-   enable: false
-
-## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
-baidu_auto_push: false
-
-## MIIT Info. see https://beian.miit.gov.cn/#/Integrated/index
-miit_license: ## 例：京ICP备xxxxx号
