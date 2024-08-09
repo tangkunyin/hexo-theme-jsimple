@@ -26,8 +26,8 @@ gulp.task('build-theme-minifyCss', async function () {
   await gulp
     .src(cssLib.concat('./source/css/JSimple.css'))
     .pipe(minifycss(CleanCssOps))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./source/css'));
+    .pipe(concat("./source/css/JSimple.min.css"))
+    .pipe(gulp.dest('./'));
 });
 gulp.task("build-highlight-minifyCss", async function () {
   await gulp
