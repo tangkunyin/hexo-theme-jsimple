@@ -31,6 +31,7 @@ day: 天
 based_on: 基于
 theme_by: 主题采用
 author: 作者
+hosted: 托管于
 last_edited: 最后编辑于
 post_words_count: 本文共计%d个字
 post_view_count_prefix: 你是第

@@ -24,7 +24,7 @@ highlight_theme: atom-one
 
 # 顶部导航菜单名称和别名配置
 ## 此处申明的菜单条目，需要和站点根目录下"_config.yml"中分类的配置对应，建议不超过4个。如：
-###   default_category: 产品研发
+###   default_category: top1
 ###   category_map:
 ###     顶部菜单1: top1
 ###     顶部菜单2: top2
@@ -39,7 +39,7 @@ menu:
 # 最左侧常驻的导航菜单，一般指向 /about 即可
 left_nav_menus:
 - uri: about
-  title: 关于
+  title: About
   faName: fa-question-circle
 
 
@@ -87,17 +87,17 @@ local_search:
 
 ## 网站统计，仅支持Google。需要别的自行修改源码
 analytics:
-  enable: true
+  enable: false
   shortname: tomax
 
 ## 网站评论，仅支持Disqus。需要别的自行修改源码
 comments:
-  enable: true
+  enable: false
   configId: 12345
 
 ## 微软的clarity服务
 clarity:
-  enable: true
+  enable: false
   configId: 54321
 
 ## Google AdSense.

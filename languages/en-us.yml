@@ -5,7 +5,7 @@ app: App
 map: SiteMap
 categories: Categories
 search: Search
-search_tip: Press Shift to Searching
+search_tip: Press Shift to Search
 search_placeholder: Input query keywords here...
 tags: Tags
 tagcloud: Tag Cloud
@@ -31,6 +31,7 @@ day: Days
 based_on: Based on
 theme_by: Theme by
 author: Author
+hosted: Hosted
 last_edited: Last edited at
 post_words_count: emm... %d words in the article
 post_view_count_prefix: you are the
