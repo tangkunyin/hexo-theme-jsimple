@@ -1,119 +1,92 @@
 # JSimple
 
-**适用于Hexo的三栏简书式主题。支持响应式、站内搜索、主流评论系统、文章浏览统计以及白天和夜间模式**.
+> 主题样式参考简书早期时候的风格
+
+**适用于Hexo的三栏式主题。支持响应式、站内搜索、主流评论系统、文章浏览统计以及白天和夜间模式**.
 
 [**☞ 一睹为快**](https://tomartisan.com) | [**For English Document click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.md)
 
 ![JSimple-Desktop](/source/images/JSimple-Desktop.png)
 
+## 使用简介
 
-## 安装步骤
+### 1. 下载代码到hexo站点的theme文件夹
 
-1. 从 GitHub 下载代码
+```bash
+cd themes
 
-```shell
-$ git clone https://github.com/tangkunyin/hexo-theme-jsimple themes/jsimple
-```
-2. 去主题中开启
-
-在`_config.yml`中更改 `theme` 字段为 `jsimple`.
-
-请在站点配置文件中，手动添加依赖： `hexo-generator-search` ，搜索会用到此
-
-3. 更新主题
-
-```shell
-$ cd themes/jsimple
-$ git pull
+$ git clone https://github.com/tangkunyin/hexo-theme-jsimple
 ```
 
+### 2. 添加必要的依赖
 
-## 配置
+```bash
+yarn add hexo-generator-search hexo-generator-sitemap
+```
+
+### 3. 站点配置文件，更新主题设置和主题必须的配置
+
+1. 启用新主题：`theme: hexo-theme-jsimple`
+2. 配置分类、搜索、站点地图等设置项（下文详述）
+
+
+### 4. 运行测试
+
+```bash
+yarn run server
+
+or
+
+hexo s
+```
+
+
+## 配置说明
 
 ### 站点配置
 
 ```yml
-# 语言配置
-language:
-    - zh-cn
-    - en
+# 启用主题
+theme: hexo-theme-jsimple
 
-# URL （注意 permalink 格式。其中timestamp是改了源码加上的，具体参见patch目录文件）
-url: https://tomartisan.com
-root: /
-permalink: :category/:entitle-:timestamp.html
-permalink_defaults:
-  lang: en
-
-# 搜索配置
+# 本地搜索配置，如果此项不配置。主题则无法使用搜索功能
 search:
   path: search.json
   field: all
   content: true
   
-# 分类和标签别名
-default_category: 技术
-category_map:
-   技术: tech-notes
-tag_map:
-  hexo: hexo
-```
 
+# 网站地图配置
+## Doc: https://github.com/hexojs/hexo-generator-sitemap#readme
+sitemap:
+  rel: true
+  tags: true
+  categories: true
+  path:
+    - sitemap.xml
+    - sitemap.txt
+
+# 分类配置，此处需要和主题中一一对应。文章分类不建议设置过多
+default_category: top1
+category_map:
+  顶部菜单1: top1
+  顶部菜单2: top2
+  顶部菜单3: top3
+  顶部菜单4: top4
+```
 
 ### 主题配置
 
-```yml
-# 作者信息。文章页同样有配置字段：(author|avatar|authorLink|authorAbout|authorDesc），同时配置时，文章页的会优先于主题。当多人创作时，这个配置会很有用
-webmaster:
-  name: 纠结伦
-  avatar: /images/favicon.png
-  home: https://tomartisan.com
-  desc: 一个搬🧱的劳斯基😁️️
+在主题目录下的`_config.yml`中，设置站点信息、三方功能增强等。
+由于 [_config.yml](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/_config.yml) 文件每一项头部均有说明，配置一看就明白了，此处就不再赘述。
 
-# 内容安全策略。 true时，会在网页头部增加一行：Content-Security-Policy = upgrade-insecure-requests。会将不是https的资源自动提升为https
-csp_enable: false
+**要注意的是：对于站点统计和评论，仅支持Google和Disqus。因为就不打算支持别的，所以请勿提交这方面的PR或ISSUES**，像国内的备案号或其他模块更不会支持，有需要的朋友请自行解决。
 
-# 文章排序模式: -1新的靠前，1旧的靠前。home_article_shown是每一页显示的文章数量（分页条数）
-home_page_sort: -1
-home_article_shown: 10
+> PS：目前支持的功能基本上能完美覆盖正常使用，因此这或许是继上一次以来的最后一波更新。且用，且珍惜！
 
-# 文章分类导航  
-menu:
-  技术: tech-notes
-  人文: humanities
+![JSimple-Desktop](/source/images/pagespeed-test.png)
 
-# 左侧自定义导航。图标是FontAwesome名称，不支持的请更换内置的FontAwesome字体库
-left_nav_menus:
-- uri: help
-  title: 帮助
-  faName: fa-question-circle
-  
-  
-# Google AdSense. 支持手动位置，即内置固定位置广告。还有自动广告，自动广告是否显示、显示在哪，由谷歌决定，因此你如果觉得手动广告不爽，可是用自动模式
-adsense:
-  enable: false     // 手动广告开关
-  auto: false       // 自动广告位开关 
-  client_id:
-  archive_id:       // 归档页广告
-  tags_id:          // 标签页广告
-  post_left_id:    // 文章页左侧，竖条横幅
-  post_right_id:   // 文章页右侧，竖条横幅
-  post_bottom_id:  // 文章页评论上边，竖条横幅
-
-
-# 评论支持 Disqus和Gitment
-comments:
-  enable: false     // 总开关
-  disqus_shortname:
-  gitment:
-    repo:
-    githubID:
-    ClientID:
-    ClientSecret:
-    lazy: true
-```
-
-### 其他配置说明
+### 其他
 
 #### 搜索模块
 
@@ -124,12 +97,6 @@ comments:
 - [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
 - [为 Hexo 博客创建本地搜索引擎](https://liam.page/2017/09/21/local-search-engine-in-Hexo-site/)
 
-
-#### 置顶和时间戳数据源处理
-
- 从`0.0.7`版本开始，增加了`patch`脚本。某些不适合PR的改动，就自己改了源码，当`node_modules`被删后，需要手动执行一下`patch/run.sh`
- 
- 主题安装后，请把`patch`文件夹复制到站点根目录。一定要执行一次，否则置顶功能和时间戳会有问题
 
 #### AdSence广告
 

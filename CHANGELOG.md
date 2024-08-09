@@ -1,5 +1,19 @@
 #### I decide to make a change log for this project from 2019. Just want remember all of us's coding footprint.
 
+
+
+v1.1.0 - Aug 9, 2024
+
+> Long time no see, this version brings many updates and optimizations. Mabye it's the lastest update, use it and cherish it!
+
+* remove all those unnecessary configrations, keep it simpify, optimization and re-optimization
+* updated a lot of styles for home-page and post-page, even on mobile
+* use webp files insted of png which were default use under the theme images
+* added common highlight css themes for coding posts
+* accelerated website access, especially improved SEO performance. Now analyzed using the [pagespeed](https://pagespeed.web.dev) test with a score of 95 or higher
+* gulp support, that means we could use the best source files support
+
+
 v1.0.2 - May 18, 2021
 
 * optimize code line number width
@@ -82,3 +96,5 @@ v0.0.2 - Mar 5, 2017
 v0.0.1 - Feb 22, 2017
 
 * `JSimple` was born at the end of 2016. Feb 22, 2017, the first version was released.
+
+
