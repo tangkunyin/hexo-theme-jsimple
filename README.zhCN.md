@@ -15,7 +15,7 @@
 ```bash
 cd themes
 
-$ git clone https://github.com/tangkunyin/hexo-theme-jsimple
+git clone https://github.com/tangkunyin/hexo-theme-jsimple
 ```
 
 ### 2. 添加必要的依赖

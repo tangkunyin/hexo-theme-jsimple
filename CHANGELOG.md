@@ -4,7 +4,7 @@
 
 v1.1.0 - Aug 9, 2024
 
-> Long time no see, this version brings many updates and optimizations. Mabye it's the lastest update, use it and cherish it!
+> Long time no see, this version brings many updates and optimizations. Maybe it's the last update, use it and cherish it!
 
 * remove all those unnecessary configrations, keep it simpify, optimization and re-optimization
 * updated a lot of styles for home-page and post-page, even on mobile

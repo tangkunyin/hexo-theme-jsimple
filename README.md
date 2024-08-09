@@ -1,159 +1,109 @@
 # JSimple
 
-**JSimple is a responsive blog theme for Hexo which include day-night mode, local search, article view count etc. Inspired by JianShu that in the earliest**.
+> The style of this theme is inspired by the earlier stage of Jianshu.com
+
+**JSimple is a responsive blog theme for Hexo, including local search, day-night mode, article view count, etc.**.
 
 - [**☞ Preview Demo**](https://tomartisan.com) | [**For Chinese click here**](https://github.com/tangkunyin/hexo-theme-jsimple/blob/master/README.zhCN.md)
 
 ![JSimple-Desktop](/source/images/JSimple-Desktop.png)
 
-<!--more-->
 
-## Installation
+## Usage
 
- 1. Get it from GitHub
+### 1. Download it to the theme folder of Hexo site
 
- ```shell
- $ git clone https://github.com/tangkunyin/hexo-theme-jsimple themes/jsimple
- ```
- 2. Enable
+```bash
+cd themes
 
- Modify `theme` setting in `_config.yml` to `jsimple`.
+git clone https://github.com/tangkunyin/hexo-theme-jsimple
+```
+ 
+### 2. Add dependencies for runtime
 
- To use of the local search, please add `hexo-generator-search`
+```bash
+yarn add hexo-generator-search hexo-generator-sitemap
+```
 
- 3. Update
+### 3. Configurations for site and theme
 
- ```shell
- $ cd themes/jsimple
- $ git pull
- ```
+1. Enable new theme: `theme: hexo-theme-jsimple`
+2. Configure categories, local-search, site-map
 
-## Configurations
+#### Config Details
 
-### site _config.yml
+##### For Site
 
 ```yml
-# choose your language. default Chinese
-language:
-    - en
-    - zh-cn
+# Enable theme
+theme: hexo-theme-jsimple
 
-# URL （Notice the permalink. Variable timestamp in post.md was added from hexo lib source）
-##  Please see the scripts in patch dir for more details
-url: https://tomartisan.com
-root: /
-permalink: :category/:entitle-:timestamp.html
-permalink_defaults:
-  lang: en
-
-# Local search
+# Enable local search, you must do this, otherwise it will not work for search(when press 'Shift' key)
 search:
   path: search.json
   field: all
   content: true
   
-# Category alias
-default_category: Tech
+
+# Sitemap config. It's not necessary.
+## Doc: https://github.com/hexojs/hexo-generator-sitemap#readme
+sitemap:
+  rel: true
+  tags: true
+  categories: true
+  path:
+    - sitemap.xml
+    - sitemap.txt
+
+# Category settings, need to correspond one-to-one in the theme settings. It is not recommended to have too many article categories
+default_category: top1
 category_map:
-   Tech: tech-notes
-tag_map:
-  hexo: hexo
+  顶部菜单1: top1
+  顶部菜单2: top2
+  顶部菜单3: top3
+  顶部菜单4: top4
 ```
 
 
-### theme _config.yml
+##### For theme
 
-```yml
-# Master information. At the other hand, the fields int post.md(author|avatar|authorLink|authorAbout|authorDesc）also have the same effects
-## The priority in article config is higher than theme when you configuring at the same time. This used for multiplayer creation 
-webmaster:
-  name: Thomas Tang
-  avatar: /images/favicon.png
-  home: https://tomartisan.com
-  desc: Senior Chinglish writer and coder😁️️
+Config file under the theme folder, also named `_config.yml`. We can put site info, and third extensions in it.
 
-# Decide whether the 'Content-Security-Policy = upgrade-insecure-requests' will be add in head tag.
-csp_enable: false
+**Note: For site statistics and comments, only Google and Disqus are supported, and since there is no intention to support anything else, please do not submit PRs or ISSUES for this**, if you need other features, just do it yourself.
 
-# Article sort mode: -1(newer first)，1(older first). home_article_shown means paging count
-home_page_sort: -1
-home_article_shown: 10
+> PS: The current version brings many updates and optimizations, enough to cover most application scenarios. so use it and cherish it, maybe the last update.
 
-# Article category navigation 
-menu:
-  Tech: tech-notes
-  Life: humanities
+![JSimple-Desktop](/source/images/pagespeed-test.png)
 
-# Left navigation link. The faName is in FontAwesome styles.
-left_nav_menus:
-- uri: help
-  title: Help
-  faName: fa-question-circle
-  
-  
-# Google AdSense. Support auto-ads and manual-unit
-adsense:
-  enable: false// manual-unit-ads
-  auto: false// auto-ads
-  client_id:
-  archive_id:
-  tags_id:    
-  post_left_id:
-  post_right_id:
-  post_bottom_id:
+## Other notes
 
-
-# Only support Disqus and Gitment so far.
-comments:
-  enable: false
-  disqus_shortname:
-  gitment:
-    repo:
-    githubID:
-    ClientID:
-    ClientSecret:
-    lazy: true
-```
-
-### Other config
-
-
-#### Search Module
+#### Local Search
 
 ![JSimple-Desktop](/source/images/JSimple-Desktop-With-LocalSearch.png)
 
-Because of the search in previous version didn't work well. Such as highlight content, responsive problem in small screen.
+Because the search in the previous version didn't work well. Such as highlighting content, and responsive problems on small screens.
 
 So I replace it with `hexo-generator-search`. Thanks for [Next](https://github.com/theme-next/hexo-theme-next) theme.
 
-There are two Chinese articles that told how to create local-search in hexo.
+There are two Chinese articles that told how to create local-search in Hexo.
 
 - [hexo-generator-search](https://github.com/wzpan/hexo-generator-search)
 - [为 Hexo 博客创建本地搜索引擎](https://liam.page/2017/09/21/local-search-engine-in-Hexo-site/)
 
 
-#### How sticky top and timestamp works
-
- I have made some changes in hexo lib source code so that timestamp and sticky datasource could get when hexo-cli generating articles.
- 
- From version `0.0.7`, JSimple have been adding `patch` scripts. You need to excute `patch/run.sh` when `node_modules` was deleted.
-  
- You have to copy the `patch` dir into your site dir, otherwise sticky top and timestamp in permalink will not work.
-
 #### AdSence
 
-From version `0.0.7`. Google AdSense have been added. If you don't need this, just close it.
+From version `0.0.7`. Google AdSense has been added. If you don't need this, just close it.
 
 
-#### The other things about JSimple
+#### Something about Hexo optimizations
 
-If you don't understand Chinese. You can translate online by [Google Translate](https://translate.google.com/)  🤣🤣🤣
+> I have written some posts for optimizing Hexo usage, if need please refer below articles
 
 - [JSimple主题用户指南](https://tomartisan.com/groceries/jsimple-usage/)
 - [在hexo博客中打造相对完美的URL](https://tomartisan.com/groceries/hexo-perfect-link/)
 - [将Hexo博客url优化进行到底](https://tomartisan.com/groceries/permalink-optimize-hexo/)
 - [Update-for-JSimple-in-Early2019](https://tomartisan.com/groceries/the-update-for-jsimple-in-early2019/)
-
 
 ## Browser support
 
