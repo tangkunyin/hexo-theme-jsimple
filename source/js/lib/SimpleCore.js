@@ -304,9 +304,15 @@ const LocalSearch = {
                         }
                     }
                     if (keywords.length === 1 && keywords[0] === "") {
-                        resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+                        resultContent.innerHTML = `<div id="no-result">
+                            <i class="fa fa-search fa-5x"></i>
+                            <p>按Esc退出搜索...</p>
+                        </div>`
                     } else if (resultItems.length === 0) {
-                        resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+                        resultContent.innerHTML = `<div id="no-result">
+                            <i class="fa fa-frown-o fa-5x"></i>
+                            <p>暂未查到有关内容，催更点<a href="${SimpleCore.chatLink}" target="blank">这里</a></p>
+                        </div>`
                     } else {
                         resultItems.sort(function (resultLeft, resultRight) {
                             if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -369,12 +375,14 @@ const SimpleCore = {
     headerShow: true,
     localSearch: {},
     readMode: 'day',
+    chatLink: '/',
     initParams (params) {
         SimpleCore.creationTime = params.creationTime;
         SimpleCore.highlightTheme = params.highlightTheme;
         SimpleCore.isPost = params.isPost;
         SimpleCore.localSearch = params.localSearch;
         SimpleCore.readMode = params.readMode;
+        SimpleCore.chatLink = params.chatLink;
     },
     init (params) {
         SimpleCore.initParams(params);

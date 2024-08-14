@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 html {
     height: 100%;
 }
@@ -13,10 +17,6 @@ body {
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
-}
-
-body::-webkit-scrollbar {
-    display: none;
 }
 
 a {
@@ -1730,7 +1730,7 @@ body.night-mode a,
 .local-search-popup #local-search-result {
     overflow: auto;
     position: relative;
-    padding: 5px 25px;
+    padding: 6px 13px;
     height: calc(100% - 55px);
     overflow-x: hidden;
     overflow-y: scroll;
@@ -1781,6 +1781,9 @@ body.night-mode a,
     position: absolute;
     left: 50%;
     top: 50%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
     -webkit-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);

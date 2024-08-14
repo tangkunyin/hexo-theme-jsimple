@@ -44,17 +44,17 @@ left_nav_menus:
 
 
 # 中间封面信息
-cover_title: 用代码摇滚这个世界
-cover_description: 一个关注科技与人文的技术博客
-
-# 中间封面社交连接
-sns:
-  github: https://github.com/tangkunyin
-  youtube: https://www.youtube.com/@itomartisan
+middleCover:
+  title: 用代码摇滚这个世界
+  description: 一个关注科技与人文的技术博客
+  # 中间封面社交连接
+  sns:
+    github: https://github.com/tangkunyin
+    youtube: https://www.youtube.com/@itomartisan
 
 
 # 站点互动信息连接，如聊天室和捐赠地址
-chatLink: https://t.me/tomartisen
+chatLink: https://t.me/itomartisan
 donateLink: https://buymeacoffee.com/tomartisan
 
 

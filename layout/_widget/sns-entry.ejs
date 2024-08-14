@@ -1,6 +1,6 @@
-<% for (let snsKey in theme.sns){ %>
+<% for (let snsKey in theme.middleCover.sns){ %>
     <div class="btn btn-<%= snsKey %>">
-        <a href="<%= theme.sns[snsKey] %>" title="<%= snsKey %>" rel="external nofollow noopener" target="_blank">
+        <a href="<%= theme.middleCover.sns[snsKey] %>" title="<%= snsKey %>" rel="external nofollow noopener" target="_blank">
             <i class="fa fa-<%= snsKey %>"></i>
         </a>
     </div>
