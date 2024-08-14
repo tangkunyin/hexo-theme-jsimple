@@ -61,7 +61,7 @@ donateLink: https://buymeacoffee.com/tomartisan
 # 文章内容申明
 post_declare: 
   enable: true
-  desc: 本文所述内容及观点仅代表个人看法，由于知识水平有限，行文难免出现差错，欢迎留言交流。谢谢！
+  desc: 本文内容由托码斯作创作整理，由于知识水平和时效性问题，行文可能存在差错，欢迎留言交流。读者若需转载，请保留出处，谢谢！
 
 # 站点创建时间，用于页底动态展示：成立X天
 site_creation:
